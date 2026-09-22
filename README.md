@@ -24,18 +24,22 @@
 
 | 东西 | 位置 |
 |---|---|
-| 飞书表 | https://vcnf6h45v8ij.feishu.cn/base/EvaGbAs5jaY6Yvs1J6qcBAwZnHb （表「订阅日报」「AI热点推荐」） |
+| 飞书表 | https://vcnf6h45v8ij.feishu.cn/base/UoUlb5rcca4QN1s8e5UcY7OVn8f （表「订阅日报」「AI热点推荐」） |
 | 云端运行记录 | https://github.com/qiao-chief/qiao-content-radar/actions |
 | 得到大脑知识库 | 「对标博主」，topic_id `JlWpjOb0`；手机：左上 ☰ → 知识库 → 对标博主 → 订阅的博主 |
 | 本机代码 | `/Users/qiaozhanglong/WorkBuddy/内容雷达-飞书/cloud/` |
 
-另外四张表「情报雷达」「选题工厂」「发布记录」「信息源台账」是 WorkBuddy 第一版留下的，本脚本不读也不写。
+这个多维表格是 2026-09-23 新建的，里面只有这两张表。旧表格（token `EvaGbAs5…`）被 WorkBuddy 整个删了，进了飞书回收站，不再使用。
 
-## 两张表的字段
+## 两张表的字段和视图
 
-**订阅日报**（一条视频一行）：标题 / 博主 / 推荐等级 / 选题推荐 / AI摘要 / 发布时间 / 链接 / 转写状态 / 已采用（乔帮主手动勾） / 文字稿 / 内容ID（去重用，别改）
+**订阅日报**（一条视频一行）：标题 / 博主 / 推荐等级 / 选题推荐 / AI摘要 / 发布时间 / 链接 / 转写状态 / 已采用（乔帮主手动勾） / 文字稿 / 内容ID（去重用，别改） / 入表时间（自动）
+- 默认视图「最新」：只显示昨天和今天入表的，强烈推荐排最前
+- 视图「全部」：按发布时间倒序
 
-**AI热点推荐**（一个选题一行）：选题 / 状态（默认"待判断"，乔帮主手动改）/ 一句话核心内容 / 选题理由 / 切入角度 / 原文链接（去重用）/ 来源 / 发现时间
+**AI热点推荐**（一个选题一行）：选题 / 状态（默认"待判断"，乔帮主手动改）/ 一句话核心内容 / 选题理由 / 切入角度 / 原文链接（去重用）/ 来源 / 发现时间 / 入表时间（自动）
+- 默认视图「待判断」：只显示还没判断过的
+- 视图「全部」
 
 ## 钥匙（都在 GitHub 仓库的 Secrets 里，本机也有来源）
 
@@ -73,7 +77,7 @@ python3 local_env.py             # 正式跑
 | `得到大脑命令 … 失败` | 得到大脑会员到期，或 API key 失效 | 乔帮主续会员；key 失效就在本机 `getnote auth login` 重新授权，再重跑一键配置 |
 | `超过 48 小时没有新视频` | 得到大脑停止更新（多半是会员到期） | 同上 |
 | `订阅状态是 … 不是 READY` | 某个博主订阅异常 | 手机 App 里看这个博主，必要时删掉重订 |
-| `小K 拿不到飞书令牌` / `飞书接口 … 91403` | 小K 的应用密钥变了，或丢了表格编辑权限 | 重新授权：`lark-cli drive +member-add --as user --token EvaGbAs5jaY6Yvs1J6qcBAwZnHb --type bitable --member-type appid --member-id cli_aab10a0a45b8dbb6 --perm edit --yes` |
+| `小K 拿不到飞书令牌` / `飞书接口 … 91403` | 小K 的应用密钥变了，或丢了表格编辑权限 | 重新授权：`lark-cli drive +member-add --as user --token UoUlb5rcca4QN1s8e5UcY7OVn8f --type bitable --member-type appid --member-id cli_aab10a0a45b8dbb6 --perm edit --yes` |
 | `AI 打标失败` | DeepSeek 欠费或接口故障 | 行照样写入，等级标"待打标"；充值后不用补，下一批正常 |
 | `AIHOT 热点这次没拿到` | AIHOT 接口故障 | 只影响热点表，第二天自动恢复 |
 

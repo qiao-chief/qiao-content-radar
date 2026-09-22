@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
 CST = timezone(timedelta(hours=8))
-BASE_TOKEN = "EvaGbAs5jaY6Yvs1J6qcBAwZnHb"
+BASE_TOKEN = "UoUlb5rcca4QN1s8e5UcY7OVn8f"
 BASE_URL = f"https://vcnf6h45v8ij.feishu.cn/base/{BASE_TOKEN}"
 TOPIC_ID = "JlWpjOb0"  # 得到大脑知识库「对标博主」
 NOTIFY_OPEN_ID = "ou_35260b8ce426b2d39a9e13b63f8da15b"  # 乔帮主在小K 应用下的 open_id
@@ -47,6 +47,7 @@ SUB_FIELDS = [
     {"field_name": "已采用", "type": 7},
     {"field_name": "文字稿", "type": 1},
     {"field_name": "内容ID", "type": 1},
+    {"field_name": "入表时间", "type": 1001},
 ]
 HOT_TABLE = "AI热点推荐"
 HOT_FIELDS = [
@@ -58,6 +59,7 @@ HOT_FIELDS = [
     {"field_name": "原文链接", "type": 15},
     {"field_name": "来源", "type": 1},
     {"field_name": "发现时间", "type": 5, "property": {"date_formatter": "yyyy/MM/dd HH:mm"}},
+    {"field_name": "入表时间", "type": 1001},
 ]
 
 PROFILE = """你在给「乔帮主」筛选题。

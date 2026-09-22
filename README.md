@@ -1,0 +1,86 @@
+# 内容雷达（qiao-content-radar）
+
+照 Jacky 的选题体系做的：**让素材自己进门，乔帮主早上只做挑选。**
+每天自动把 10 个对标抖音博主的新视频、当天的 AI 热点，打好推荐等级后写进飞书多维表，再由小K 私信通知。
+
+**固定脚本，没有 Agent。** 每一步都写死在 `radar.py` 里，AI（DeepSeek）只负责给每条内容打"推荐等级"和"选题推荐"，每次运行只调用 1–2 次。
+
+## 每天怎么跑
+
+```
+08:00  得到大脑服务器：抓订阅博主前一天的视频 → 转写成文字 → 生成总结（他家做，我们不维护）
+09:40  GitHub Actions 闹钟响 → 借一台云端电脑跑 radar.py：
+         ① 用 getnote 命令行拉知识库「对标博主」里各博主近 3 天的新视频
+         ② 拉 AIHOT 精选热点（每天只挑一次）
+         ③ DeepSeek 打标：推荐等级（强烈推荐/推荐/一般）+ 一句话选题推荐
+         ④ 小K 写进飞书表「订阅日报」「AI热点推荐」
+         ⑤ 小K 私信乔帮主：新增几条、强烈推荐几条、表格链接；出错也会私信
+13:40  再跑一次兜底（重跑不会重复写）
+```
+
+乔帮主的 Mac 关机也照跑。
+
+## 在哪看
+
+| 东西 | 位置 |
+|---|---|
+| 飞书表 | https://vcnf6h45v8ij.feishu.cn/base/EvaGbAs5jaY6Yvs1J6qcBAwZnHb （表「订阅日报」「AI热点推荐」） |
+| 云端运行记录 | https://github.com/qiao-chief/qiao-content-radar/actions |
+| 得到大脑知识库 | 「对标博主」，topic_id `JlWpjOb0`；手机：左上 ☰ → 知识库 → 对标博主 → 订阅的博主 |
+| 本机代码 | `/Users/qiaozhanglong/WorkBuddy/内容雷达-飞书/cloud/` |
+
+另外四张表「情报雷达」「选题工厂」「发布记录」「信息源台账」是 WorkBuddy 第一版留下的，本脚本不读也不写。
+
+## 两张表的字段
+
+**订阅日报**（一条视频一行）：标题 / 博主 / 推荐等级 / 选题推荐 / AI摘要 / 发布时间 / 链接 / 转写状态 / 已采用（乔帮主手动勾） / 文字稿 / 内容ID（去重用，别改）
+
+**AI热点推荐**（一个选题一行）：选题 / 状态（默认"待判断"，乔帮主手动改）/ 一句话核心内容 / 选题理由 / 切入角度 / 原文链接（去重用）/ 来源 / 发现时间
+
+## 钥匙（都在 GitHub 仓库的 Secrets 里，本机也有来源）
+
+| Secret 名 | 是什么 | 本机来源 |
+|---|---|---|
+| `XIAOK_APP_ID` / `XIAOK_APP_SECRET` | 飞书机器人小K，负责写表和发消息 | `~/.lark-channel/config-xiaok.json` |
+| `DEEPSEEK_API_KEY` | 打标用的 AI | 知识库 `工具/凭证/deepseek.md` |
+| `GETNOTE_API_KEY` / `GETNOTE_CLIENT_ID` | 得到大脑开放接口 | `~/.getnote/config.json`；登记在知识库 `工具/凭证/得到大脑.md` |
+
+换钥匙：改好本机来源后，双击 `../一键配置云端.command` 重新上传。
+
+## 常见操作
+
+**本机手动跑一次**（不用等云端）：
+
+```bash
+cd "/Users/qiaozhanglong/WorkBuddy/内容雷达-飞书/cloud"
+python3 local_env.py --dry-run   # 试跑：只看不写
+python3 local_env.py             # 正式跑
+```
+
+**云端手动跑一次**：`gh workflow run radar.yml -R qiao-chief/qiao-content-radar`，然后在 Actions 页面看结果。
+
+**加一个抖音博主**：拿到博主主页链接（`https://www.douyin.com/user/MS4w...`，注意不能是带 `/search/` 的搜索页），运行
+`getnote kb blogger-follow JlWpjOb0 <链接>`，再用 `getnote kb bloggers JlWpjOb0` 核对返回的名字对不对。也可以在手机 App 的知识库里订阅。下一次运行会自动带上新博主，只取近 3 天的视频，不会把他的历史视频全灌进表。
+
+**调整 AI 的判断标准**：改 `radar.py` 里的 `PROFILE`（乔帮主定位和红线）和 `tag_posts` 里的等级规则，先 `--dry-run` 看效果再提交。
+
+## 出问题怎么查
+
+小K 会私信报错原文和运行记录链接。按报错关键词查：
+
+| 报错里有 | 原因 | 处理 |
+|---|---|---|
+| `得到大脑命令 … 失败` | 得到大脑会员到期，或 API key 失效 | 乔帮主续会员；key 失效就在本机 `getnote auth login` 重新授权，再重跑一键配置 |
+| `超过 48 小时没有新视频` | 得到大脑停止更新（多半是会员到期） | 同上 |
+| `订阅状态是 … 不是 READY` | 某个博主订阅异常 | 手机 App 里看这个博主，必要时删掉重订 |
+| `小K 拿不到飞书令牌` / `飞书接口 … 91403` | 小K 的应用密钥变了，或丢了表格编辑权限 | 重新授权：`lark-cli drive +member-add --as user --token EvaGbAs5jaY6Yvs1J6qcBAwZnHb --type bitable --member-type appid --member-id cli_aab10a0a45b8dbb6 --perm edit --yes` |
+| `AI 打标失败` | DeepSeek 欠费或接口故障 | 行照样写入，等级标"待打标"；充值后不用补，下一批正常 |
+| `AIHOT 热点这次没拿到` | AIHOT 接口故障 | 只影响热点表，第二天自动恢复 |
+
+GitHub 那边如果运行失败，也会给账号邮箱发邮件。
+
+## 已知情况
+
+- 卡兹克约四成视频得到大脑转写不出来（文字稿只有"时候。"），这些行标"未转写"，只保留标题和链接。其余 9 位博主转写正常。
+- 得到大脑只能订阅**抖音**博主。视频号（比如张咋啦）和公众号订不了，要接公众号得另外上 wechat2rss。
+- 得到大脑会员是 2026-09-23 开的 14 天试用，到期不续，第 ① 步就会失败并告警。

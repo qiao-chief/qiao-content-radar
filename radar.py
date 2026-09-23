@@ -390,8 +390,11 @@ def run(fs: Feishu) -> None:
         return
     fs.create_records(sub_tid, rows)
     fs.create_records(hot_tid, hot_rows)
-    if rows or hot_rows or warnings:
+    strong = [r for r in rows if r["推荐等级"] == "强烈推荐"]
+    if strong or warnings:
         fs.send(f"🎯 内容雷达 · {now:%-m月%-d日}", build_message(rows, hots, warnings, sub_tid, hot_tid))
+    else:
+        log(f"无强烈推荐、无警告，不发私信。新增 {len(rows)} 条日报、{len(hots)} 条热点")
     log("完成")
 
 

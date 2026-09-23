@@ -13,9 +13,16 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+# getnote 装在 ~/.npm-global/bin、gh 在 /opt/homebrew/bin，这两个目录不一定在调用者的 PATH 里
+# （WorkBuddy 的 shell 里就没有，结果误判成「工具没装、系统故障」）。这里自己补上。
+TOOL_DIRS = [str(Path.home() / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
+os.environ["PATH"] = os.pathsep.join(TOOL_DIRS + [os.environ.get("PATH", "")])
 
 import radar
 from local_env import load_env
@@ -108,15 +115,20 @@ def check_schedule(rep: Report, now: datetime) -> None:
                  f"连续两天不足 1 趟才需要动手。运行记录：{ACTIONS_URL}")
 
 
-def check_source(rep: Report, now: datetime, days: int) -> list[dict]:
+def check_source(rep: Report, now: datetime, days: int) -> list[dict] | None:
     """得到大脑这头的料。比 radar 的窗口多看一天，才能发现「已经掉出窗口、再也补不回来」的条目。"""
     since = now - timedelta(days=days + 1)
     try:
         bloggers = getnote("kb", "bloggers", TOPIC_ID).get("bloggers") or []
+    except FileNotFoundError:  # 本机环境缺工具，不是系统故障，别报成故障
+        rep.add(SKIP, "得到大脑供料", "未测：本机找不到 getnote 命令", "命令能跑通")
+        rep.note("装它：`npm i -g @getnote/cli@1.5.10`，再 `getnote auth login`。"
+                 "云端 GitHub Actions 每次自己装，所以这不影响系统运行，只是本机少测两项。")
+        return None
     except Exception as e:
         rep.add(BAD, "得到大脑供料", f"拉不动：{str(e)[:60]}", "命令能跑通")
         rep.note("多半是会员到期或 API key 失效。续会员，或本机 `getnote auth login` 重新授权后重跑一键配置。")
-        return []
+        return None
 
     bad = [b for b in bloggers if b.get("hook_state") != "READY"]
     rep.add(BAD if bad else OK, "博主订阅状态",
@@ -141,7 +153,7 @@ def check_source(rep: Report, now: datetime, days: int) -> list[dict]:
     return items
 
 
-def check_tables(rep: Report, fs: Feishu, now: datetime, source: list[dict], days: int) -> None:
+def check_tables(rep: Report, fs: Feishu, now: datetime, source: list[dict] | None, days: int) -> None:
     sub_tid = fs.ensure_table(radar.SUB_TABLE, radar.SUB_FIELDS)
     hot_tid = fs.ensure_table(radar.HOT_TABLE, radar.HOT_FIELDS)
     rows = fs.records(sub_tid, ["内容ID", "推荐等级", "发布时间"])
@@ -161,14 +173,18 @@ def check_tables(rep: Report, fs: Feishu, now: datetime, source: list[dict], day
     # 对账：得到大脑有的，表里是不是都写进去了。
     # radar.py 每趟往回看 days 天，所以窗口内漏的下一趟会自己补上（得到大脑转写有延迟，属正常）；
     # 只有掉出窗口还没进表的，才是再也补不回来的真漏。
-    in_table = {r["内容ID"] for r in rows if r["内容ID"]}
-    edge = now - timedelta(days=days)
-    missing = [i for i in source if i["id"] not in in_table]
-    lost = [i for i in missing if i["发布"] < edge]
-    pending = [i for i in missing if i["发布"] >= edge]
-    rep.add(BAD if lost else OK, f"对账（近{days + 1}天）",
-            f"料源 {len(source)} 条，永久漏 {len(lost)} 条，待下趟补 {len(pending)} 条",
-            f"永久漏 0 条（掉出 {days} 天窗口才算）")
+    if source is None:
+        rep.add(SKIP, "对账", "未测：拿不到料源，无从比对", f"永久漏 0 条（掉出 {days} 天窗口才算）")
+        lost = pending = []
+    else:
+        in_table = {r["内容ID"] for r in rows if r["内容ID"]}
+        edge = now - timedelta(days=days)
+        missing = [i for i in source if i["id"] not in in_table]
+        lost = [i for i in missing if i["发布"] < edge]
+        pending = [i for i in missing if i["发布"] >= edge]
+        rep.add(BAD if lost else OK, f"对账（近{days + 1}天）",
+                f"料源 {len(source)} 条，永久漏 {len(lost)} 条，待下趟补 {len(pending)} 条",
+                f"永久漏 0 条（掉出 {days} 天窗口才算）")
     if lost:
         rep.note("永久漏清单：" + "、".join(f"{m['博主']}/{m['发布']:%m-%d %H:%M}" for m in lost[:8]))
         rep.note(f"这些已经掉出 {days} 天窗口，定时任务再也捞不到。先跑 `python3 local_env.py --dry-run` 确认，"

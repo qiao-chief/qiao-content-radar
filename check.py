@@ -32,6 +32,7 @@ REPO = "qiao-chief/qiao-content-radar"
 ACTIONS_URL = f"https://github.com/{REPO}/actions"
 RUN_MAX_AGE_H = 26      # 每天至少该成功跑一趟，超过这个钟点没跑过就是定时任务出问题
 ROW_MAX_AGE_H = 72      # 表里超过三天没进过新行，且料源有货，就是写表环节断了
+RUNS_PER_DAY = 3        # radar.yml 里排了三趟：09:13 / 12:13 / 18:13
 
 OK, WARN, BAD, SKIP = "✅", "⚠️", "❌", "—"
 
@@ -98,7 +99,7 @@ def check_schedule(rep: Report, now: datetime) -> None:
     mark = OK if age <= RUN_MAX_AGE_H else BAD
     rep.add(mark, "云端定时任务", f"最近一次成功 {age:.1f} 小时前", f"≤{RUN_MAX_AGE_H}小时")
 
-    # 近 5 天台账：每天该有 2 趟（09:40 主跑 + 13:40 兜底），少了就是被 GitHub 丢了。
+    # 近 5 天台账：每天该有 RUNS_PER_DAY 趟，少了就是被 GitHub 丢了。
     # 系统上线前的日子不算数，否则永远飘红。
     born = when(runs[-1]).date()
     ledger: dict[str, list[str]] = {}
@@ -106,10 +107,10 @@ def check_schedule(rep: Report, now: datetime) -> None:
         if r["event"] == "schedule":
             ledger.setdefault(when(r).strftime("%m-%d"), []).append(when(r).strftime("%H:%M"))
     days = [now - timedelta(days=i) for i in range(5) if (now - timedelta(days=i)).date() > born]
-    missed = [d for d in days[1:] if len(ledger.get(d.strftime("%m-%d"), [])) < 2]  # 今天可能还没跑完，不算
+    missed = [d for d in days[1:] if len(ledger.get(d.strftime("%m-%d"), [])) < RUNS_PER_DAY]  # 今天可能还没跑完，不算
     rep.add(WARN if missed else OK, "定时触发台账",
             " / ".join(f"{d:%m-%d} {len(ledger.get(d.strftime('%m-%d'), []))}趟" for d in days) or "上线首日，还没有整天台账",
-            "每天 2 趟")
+            f"每天 {RUNS_PER_DAY} 趟")
     if missed:
         rep.note(f"少跑的那几趟是 GitHub 高峰期把排队任务丢了（官方文档写明会发生），兜底那趟就是为这个准备的。"
                  f"连续两天不足 1 趟才需要动手。运行记录：{ACTIONS_URL}")

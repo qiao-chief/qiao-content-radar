@@ -25,8 +25,16 @@ TOOL_DIRS = [str(Path.home() / ".npm-global" / "bin"), "/opt/homebrew/bin", "/us
 os.environ["PATH"] = os.pathsep.join(TOOL_DIRS + [os.environ.get("PATH", "")])
 
 import radar
-from local_env import load_env
 from radar import CST, STALE_HOURS, TOPIC_ID, Feishu, getnote, parse_cst
+
+
+def load_keys() -> dict:
+    """云端（GitHub Actions）走环境变量；本机没有环境变量时，回落到 local_env 读本地配置。"""
+    need = ("XIAOK_APP_ID", "XIAOK_APP_SECRET")
+    if all(os.environ.get(k) for k in need):
+        return {k: os.environ[k] for k in need}
+    from local_env import load_env
+    return load_env()
 
 REPO = "qiao-chief/qiao-content-radar"
 ACTIONS_URL = f"https://github.com/{REPO}/actions"
@@ -77,7 +85,8 @@ def hours_since(t: datetime, now: datetime) -> float:
     return (now - t).total_seconds() / 3600
 
 
-def check_schedule(rep: Report, now: datetime) -> None:
+def check_schedule(rep: Report, now: datetime) -> bool | None:
+    """返回今天是否已有成功运行；None 表示没测出来（gh 不可用）。"""
     """云端到底跑没跑。抓的是「该跑却没触发」——GitHub 高峰期会把排队的定时任务直接丢掉。"""
     try:
         raw = subprocess.run(["gh", "api", f"repos/{REPO}/actions/runs?per_page=60"],
@@ -85,7 +94,7 @@ def check_schedule(rep: Report, now: datetime) -> None:
         runs = json.loads(raw.stdout)["workflow_runs"]
     except Exception as e:
         rep.add(SKIP, "云端定时任务", f"未测（gh 命令不可用：{str(e)[:40]}）", "每天≥1次成功")
-        return
+        return None
 
     def when(r: dict) -> datetime:
         return datetime.strptime(r["created_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).astimezone(CST)
@@ -93,7 +102,7 @@ def check_schedule(rep: Report, now: datetime) -> None:
     ok_runs = [r for r in runs if r["conclusion"] == "success"]
     if not ok_runs:
         rep.add(BAD, "云端定时任务", "查不到任何成功运行", f"≤{RUN_MAX_AGE_H}小时内有成功运行")
-        return
+        return False
 
     age = hours_since(when(ok_runs[0]), now)
     mark = OK if age <= RUN_MAX_AGE_H else BAD
@@ -114,6 +123,7 @@ def check_schedule(rep: Report, now: datetime) -> None:
     if missed:
         rep.note(f"少跑的那几趟是 GitHub 高峰期把排队任务丢了（官方文档写明会发生），兜底那趟就是为这个准备的。"
                  f"连续两天不足 1 趟才需要动手。运行记录：{ACTIONS_URL}")
+    return any(when(r).date() == now.date() for r in ok_runs)
 
 
 def check_source(rep: Report, now: datetime, days: int) -> list[dict] | None:
@@ -204,17 +214,53 @@ def check_tables(rep: Report, fs: Feishu, now: datetime, source: list[dict] | No
         rep.note("「待打标」是 DeepSeek 那次没调通留下的，不影响数据完整，多半是欠费。")
 
 
+def heal(rep: Report, fs: Feishu) -> None:
+    """今天云端一趟都没成功跑过，就地补跑一趟。这是「无人值守」最后那道保险。"""
+    if not os.environ.get("DEEPSEEK_API_KEY"):
+        rep.note("本该就地补跑，但缺 DEEPSEEK_API_KEY，跳过。")
+        return
+    rep.note("⚡ 今天一趟都没成功跑过，正在就地补跑。")
+    try:
+        radar.run(fs)
+        rep.note("⚡ 补跑完成，数据已经补上。")
+    except Exception as e:
+        rep.add(BAD, "自愈补跑", f"失败：{str(e)[:90]}", "补跑成功")
+
+
+def backup(fs: Feishu, outdir: str, now: datetime) -> str:
+    """把整个多维表格导成一份 JSON 存本地。表在别人家，自己手里得有底。"""
+    out = Path(outdir)
+    out.mkdir(parents=True, exist_ok=True)
+    dump: dict[str, list] = {}
+    for t in fs.call("GET", f"/bitable/v1/apps/{radar.BASE_TOKEN}/tables",
+                     params={"page_size": 100}).get("items", []):
+        rows, params = [], {"page_size": 500, "automatic_fields": "true"}
+        while True:
+            data = fs.call("GET", f"/bitable/v1/apps/{radar.BASE_TOKEN}/tables/{t['table_id']}/records",
+                           params=params)
+            rows += data.get("items") or []
+            if not data.get("has_more"):
+                break
+            params["page_token"] = data["page_token"]
+        dump[t["name"]] = rows
+    path = out / f"内容雷达备份-{now:%Y%m%d}.json"
+    path.write_text(json.dumps(dump, ensure_ascii=False, indent=2), encoding="utf-8")
+    return str(path)
+
+
 def main() -> int:
     argv = sys.argv[1:]
     days = int(argv[argv.index("--days") + 1]) if "--days" in argv else radar.WINDOW_DAYS
     now = datetime.now(CST)
     rep = Report()
 
-    env = load_env()
+    env = load_keys()
     fs = Feishu(env["XIAOK_APP_ID"], env["XIAOK_APP_SECRET"])
     rep.add(OK, "小K 权限", "拿到令牌、能读表", "能读写飞书表")
 
-    check_schedule(rep, now)
+    ran_today = check_schedule(rep, now)
+    if "--heal" in argv and ran_today is False:
+        heal(rep, fs)
     source = check_source(rep, now, days)
     check_tables(rep, fs, now, source, days)
 
@@ -222,8 +268,13 @@ def main() -> int:
     print(rep.text())
     print()
 
+    if "--backup" in argv:
+        rep.note(f"已备份：{backup(fs, argv[argv.index('--backup') + 1], now)}")
+        print(rep.notes[-1])
+
     if "--notify" in argv and rep.failed:
-        fs.send(f"🔧 内容雷达巡检不合格 · {now:%-m月%-d日}", rep.markdown() + f"\n\n把这条转给 WorkBuddy，让它按 content-radar 技能排查。")
+        fs.send(f"🔧 内容雷达巡检不合格 · {now:%-m月%-d日}",
+                rep.markdown() + "\n\n把这条转给 WorkBuddy，让它按 content-radar 技能排查。")
     return 1 if rep.failed else 0
 
 

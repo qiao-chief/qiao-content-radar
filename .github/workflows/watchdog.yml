@@ -1,0 +1,65 @@
+name: 内容雷达看门狗
+
+# 这个工作流的存在理由：让「采集层有没有出问题」这件事不依赖任何人在场。
+# 乔帮主不用记得查，小九不用开着，WorkBuddy 也不用常驻。
+#   ① 每天自己跑一遍十项巡检（判据全是新鲜度和对账差额，不是"端口通不通"）
+#   ② 发现今天一趟都没成功跑过 → 就地补跑一趟 radar，把数据补上
+#   ③ 补完还不合格 → 小K 私信乔帮主，附上是哪一项挂了
+#   ④ 顺手把整个多维表格导成 JSON 提交进本仓库，表在别人家，自己手里得有底
+# 全过就什么都不做。没收到消息 = 已经替你验过了。
+
+on:
+  schedule:
+    # 排在 radar 六趟之后，给它留足补跑的机会；照例多排几趟扛 GitHub 的调度延迟
+    - cron: "29 8 * * *"   # 北京时间 16:29
+    - cron: "47 11 * * *"  # 北京时间 19:47
+    - cron: "11 14 * * *"  # 北京时间 22:11
+  workflow_dispatch:
+    inputs:
+      heal:
+        description: "发现今天没跑过就就地补跑"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write      # 备份要提交回仓库
+  actions: read        # 巡检要读 radar 的运行记录
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: Asia/Shanghai
+      XIAOK_APP_ID: ${{ secrets.XIAOK_APP_ID }}
+      XIAOK_APP_SECRET: ${{ secrets.XIAOK_APP_SECRET }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GETNOTE_API_KEY: ${{ secrets.GETNOTE_API_KEY }}
+      GETNOTE_CLIENT_ID: ${{ secrets.GETNOTE_CLIENT_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 安装得到大脑命令行工具
+        run: npm install -g @getnote/cli@1.5.10 && getnote version
+
+      - name: 巡检 + 自愈 + 备份
+        run: |
+          python check.py --notify \
+            ${{ (inputs.heal == false) && ' ' || '--heal' }} \
+            --backup 备份
+        continue-on-error: true   # 巡检不合格不算工作流失败，小K 已经通知了；备份照常提交
+
+      - name: 把备份提交回仓库
+        run: |
+          git config user.name "内容雷达看门狗"
+          git config user.email "noreply@github.com"
+          git add 备份 || true
+          git diff --cached --quiet && echo "备份没变化，不提交" && exit 0
+          git commit -m "每日备份 $(date +%Y-%m-%d)"
+          git push

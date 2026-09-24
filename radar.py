@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -28,6 +29,7 @@ DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL") or "deepseek-v4-flash"
 WINDOW_DAYS = int(os.environ.get("RADAR_WINDOW_DAYS") or 3)
 STALE_HOURS = 48
+GETNOTE_RETRIES = 3  # 跨境调用偶发 TLS 握手超时，重试三次
 DRY_RUN = os.environ.get("RADAR_DRY_RUN") == "1"
 
 LEVELS = ["强烈推荐", "推荐", "一般", "待打标"]
@@ -150,15 +152,21 @@ class Feishu:
 # ---------- 得到大脑 ----------
 
 def getnote(*args: str) -> dict:
+    """得到大脑的服务器在国内，GitHub 的机器在国外，偶发 TLS 握手超时。这里全是读操作，重试安全。"""
     env = {k: v for k, v in os.environ.items() if "proxy" not in k.lower()}
-    r = subprocess.run(["getnote", *args, "-o", "json"], capture_output=True, text=True, timeout=120, env=env)
-    try:
-        d = json.loads(r.stdout)
-    except json.JSONDecodeError:
-        d = {}
-    if r.returncode != 0 or not d.get("success"):
-        raise RuntimeError(f"得到大脑命令 `{' '.join(args[:2])}` 失败：{(r.stderr or r.stdout).strip()[-300:]}")
-    return d.get("data") or {}
+    last = ""
+    for attempt in range(1, GETNOTE_RETRIES + 1):
+        r = subprocess.run(["getnote", *args, "-o", "json"], capture_output=True, text=True, timeout=120, env=env)
+        try:
+            d = json.loads(r.stdout)
+        except json.JSONDecodeError:
+            d = {}
+        if r.returncode == 0 and d.get("success"):
+            return d.get("data") or {}
+        last = (r.stderr or r.stdout).strip()[-300:]
+        if attempt < GETNOTE_RETRIES:
+            time.sleep(5 * attempt)
+    raise RuntimeError(f"得到大脑命令 `{' '.join(args[:2])}` 连试 {GETNOTE_RETRIES} 次都失败：{last}")
 
 
 @dataclass
@@ -220,10 +228,19 @@ def fetch_new_posts(existing_ids: set[str], since: datetime) -> tuple[list[Post]
         name = b.get("account_name") or b["follow_id_str"]
         if b.get("hook_state") != "READY":
             warnings.append(f"博主「{name}」订阅状态是 {b.get('hook_state')}，不是正常的 READY")
-        items = recent_items(b["follow_id_str"], since)
+        # 单个博主拉不动就跳过它，不要把整趟拖死——去重靠内容ID，窗口有 3 天，下一趟会自动补上
+        try:
+            items = recent_items(b["follow_id_str"], since)
+        except Exception as e:
+            warnings.append(f"博主「{name}」这次没拉到，已跳过，下一趟会补：{str(e)[:120]}")
+            continue
         times += [parse_cst(i["post_publish_time"]) for i in items]
         fresh = [i for i in items if parse_cst(i["post_publish_time"]) >= since and i["post_id_alias"] not in existing_ids]
-        posts += [load_post(name, i) for i in fresh]
+        for i in fresh:
+            try:
+                posts.append(load_post(name, i))
+            except Exception as e:
+                warnings.append(f"博主「{name}」有一条正文没取到，已跳过，下一趟会补：{str(e)[:120]}")
     return sorted(posts, key=lambda p: p.published, reverse=True), warnings, max(times, default=None)
 
 

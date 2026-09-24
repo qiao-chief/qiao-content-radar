@@ -32,7 +32,7 @@ REPO = "qiao-chief/qiao-content-radar"
 ACTIONS_URL = f"https://github.com/{REPO}/actions"
 RUN_MAX_AGE_H = 26      # 每天至少该成功跑一趟，超过这个钟点没跑过就是定时任务出问题
 ROW_MAX_AGE_H = 72      # 表里超过三天没进过新行，且料源有货，就是写表环节断了
-RUNS_PER_DAY = 3        # radar.yml 里排了三趟：09:13 / 12:13 / 18:13
+RUNS_PER_DAY = 6        # radar.yml 里排了六趟：09:13 09:51 10:37 12:23 15:41 18:19
 
 OK, WARN, BAD, SKIP = "✅", "⚠️", "❌", "—"
 

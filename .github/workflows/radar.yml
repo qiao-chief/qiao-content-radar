@@ -27,6 +27,8 @@ jobs:
   radar:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: write   # 提交发布步骤要 push docs/ 回仓库
     env:
       TZ: Asia/Shanghai
       XIAOK_APP_ID: ${{ secrets.XIAOK_APP_ID }}

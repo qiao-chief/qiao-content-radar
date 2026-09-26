@@ -1,0 +1,12 @@
+name = "radar-capture"
+main = "src/index.js"
+compatibility_date = "2026-09-26"
+
+# 自定义域名路由（radar.qiao-flow.cn 的 DNS 在 Cloudflare，挂上后 Worker 接管 /api/capture）
+routes = [
+  { pattern = "radar.qiao-flow.cn/api/capture", zone_name = "qiao-flow.cn" }
+]
+
+# 密钥用 wrangler secret put 设置，不写进这个文件：
+#   npx wrangler secret put XIAOK_APP_ID
+#   npx wrangler secret put XIAOK_APP_SECRET

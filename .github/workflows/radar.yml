@@ -48,3 +48,13 @@ jobs:
         run: npm install -g @getnote/cli@1.5.10 && getnote version
       - name: 拉料、打标、写飞书表
         run: python radar.py
+      - name: 生成看板网页
+        run: python build_site.py   # 输出到 docs/index.html + docs/CNAME；失败会非零退出让 CI 标红
+      - name: 提交发布
+        run: |
+          git config user.name "内容雷达"
+          git config user.email "noreply@github.com"
+          git add docs
+          git diff --cached --quiet && echo "网页没变化，不提交" && exit 0
+          git commit -m "更新看板 $(date +%Y-%m-%d\ %H:%M)"
+          git push

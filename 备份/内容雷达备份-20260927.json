@@ -2810,5 +2810,29 @@
       "record_id": "recvw887pahNSG"
     }
   ],
-  "网站速记": []
+  "网站速记": [
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790439524000,
+      "fields": {
+        "内容": "测试保存灵感。",
+        "时间": 1790439523713,
+        "状态": "待分诊"
+      },
+      "id": "recvwlnMpOSHZr",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790439524000,
+      "record_id": "recvwlnMpOSHZr"
+    }
+  ]
 }

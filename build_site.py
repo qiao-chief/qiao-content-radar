@@ -26,6 +26,13 @@ TBL_HOT = "tbl4DgFmDlMc5SQ6"   # AI热点推荐
 TBL_NOTE = "tblixXr2RAgrcYCW"  # 网站速记
 CST = timezone(timedelta(hours=8))
 
+FEISHU_BASE_URL = "https://vcnf6h45v8ij.feishu.cn/base/UoUlb5rcca4QN1s8e5UcY7OVn8f"
+FS_TABLE_LINK = {
+    "sub": f"{FEISHU_BASE_URL}?table={TBL_SUB}",
+    "hot": f"{FEISHU_BASE_URL}?table={TBL_HOT}",
+    "note": f"{FEISHU_BASE_URL}?table={TBL_NOTE}",
+}
+
 OUT_DIR = Path(__file__).resolve().parent / "docs"
 OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))  # 强制直连
 
@@ -79,6 +86,25 @@ class Feishu:
             if not data.get("has_more"):
                 return out
             params["page_token"] = data["page_token"]
+
+    def share_links(self, table_id: str, record_ids: list[str]) -> dict[str, str]:
+        """批量生成记录的飞书分享跳转链接（飞书自己发的一次性短链，不暴露内部 record_id）。"""
+        out: dict[str, str] = {}
+        for i in range(0, len(record_ids), 100):  # 接口单批最多 100 条
+            chunk = [r for r in record_ids[i:i + 100] if r]
+            if not chunk:
+                continue
+            r = http_json(
+                "POST",
+                f"{FEISHU}/base/v3/bases/{BASE_TOKEN}/tables/{table_id}/records/share_links/batch",
+                {"record_ids": chunk},
+                headers={"Authorization": f"Bearer {self.token}"},
+            )
+            if r.get("code") != 0:
+                log(f"分享链接生成失败（{table_id}）：{r.get('msg')}，该批跳过")
+                continue
+            out.update((r.get("data") or {}).get("record_share_links") or {})
+        return out
 
 
 def cell_text(value: object) -> str:
@@ -143,8 +169,12 @@ def fetch_sub(fs: Feishu) -> list[dict]:
             "time": ts_to_str(f.get("发布时间")),
             "link": cell_text(f.get("链接")),
             "adopted": cell_bool(f.get("已采用")),
+            "_rid": it.get("record_id", ""),
         })
     rows.sort(key=lambda r: r["time"], reverse=True)
+    links = fs.share_links(TBL_SUB, [r["_rid"] for r in rows])
+    for r in rows:
+        r["feishu_link"] = links.get(r.pop("_rid"), "")
     return rows
 
 
@@ -165,8 +195,12 @@ def fetch_hot(fs: Feishu) -> list[dict]:
             "time": ts_to_str(f.get("发现时间")),
             "link": cell_text(f.get("原文链接")),
             "source": cell_text(f.get("来源")),
+            "_rid": it.get("record_id", ""),
         })
     rows.sort(key=lambda r: r["time"], reverse=True)
+    links = fs.share_links(TBL_HOT, [r["_rid"] for r in rows])
+    for r in rows:
+        r["feishu_link"] = links.get(r.pop("_rid"), "")
     return rows
 
 
@@ -183,8 +217,12 @@ def fetch_notes(fs: Feishu) -> list[dict]:
             "content": cell_text(f.get("内容")),
             "link": cell_text(f.get("链接")),
             "time": ts_to_str(f.get("时间")) or ts_to_str(it.get("created_time")),
+            "_rid": it.get("record_id", ""),
         })
     rows.sort(key=lambda r: r["time"], reverse=True)
+    links = fs.share_links(TBL_NOTE, [r["_rid"] for r in rows])
+    for r in rows:
+        r["feishu_link"] = links.get(r.pop("_rid"), "")
     return rows
 
 
@@ -212,7 +250,10 @@ def build_html(sub_rows: list[dict], hot_rows: list[dict], note_rows: list[dict]
         .replace("__N_POOL__", str(len(sub_rows) + len(hot_rows))) \
         .replace("__N_SUB__", str(len(sub_rows))) \
         .replace("__N_HOT__", str(len(hot_rows))) \
-        .replace("__N_NOTE__", str(len(note_rows)))
+        .replace("__N_NOTE__", str(len(note_rows))) \
+        .replace("__FS_SUB__", esc(FS_TABLE_LINK["sub"])) \
+        .replace("__FS_HOT__", esc(FS_TABLE_LINK["hot"])) \
+        .replace("__FS_NOTE__", esc(FS_TABLE_LINK["note"]))
 
 
 TEMPLATE = r"""<!DOCTYPE html>
@@ -253,13 +294,14 @@ body{
 .hero .guide{margin-top:8px;font-size:13px;opacity:.8}
 .hero .meta{margin-top:12px;font-size:12px;opacity:.55}
 
-/* 四宫格 */
+/* 四宫格：每张卡片直接跳转飞书对应的表 */
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
 .chip{
-  border-radius:var(--radius); padding:14px 14px 12px; cursor:pointer;
+  display:block;
+  border-radius:var(--radius); padding:14px 14px 12px;
   border:1px solid rgba(42,32,32,.06);
   transition:transform .12s ease, box-shadow .12s ease;
-  color:var(--fg-0); user-select:none;
+  color:var(--fg-0); text-decoration:none; user-select:none;
 }
 .chip:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(61,36,54,.10)}
 .chip .n{font-size:26px;font-weight:700}
@@ -268,7 +310,6 @@ body{
 .chip.c-sage{background:var(--chip-sage)}
 .chip.c-tan{background:var(--chip-tan)}
 .chip.c-mauve{background:var(--chip-mauve)}
-.chip.active{outline:2px solid var(--accent);outline-offset:2px}
 
 /* 工具条 */
 .toolbar{
@@ -323,7 +364,7 @@ body{
 .card .summary p{margin:6px 0}
 .card .summary strong{color:var(--fg-0)}
 .card .link-btn{
-  display:inline-block;margin-top:12px;font-size:13px;
+  display:inline-block;margin-top:12px;margin-right:18px;font-size:13px;
   color:var(--accent);text-decoration:none;font-weight:600;
 }
 .card .link-btn:hover{text-decoration:underline}
@@ -380,10 +421,18 @@ body{
   </div>
 
   <div class="grid4">
-    <div class="chip c-rose active" data-goto="sub"><div class="n">__N_SUB__</div><div class="t">订阅日报</div></div>
-    <div class="chip c-sage" data-goto="hot"><div class="n">__N_HOT__</div><div class="t">AI 热点推荐</div></div>
-    <div class="chip c-tan" data-goto="capture"><div class="n">✎</div><div class="t">灵感速记</div></div>
-    <div class="chip c-mauve" data-goto="notes"><div class="n">__N_NOTE__</div><div class="t">速记回顾</div></div>
+    <a class="chip c-rose" href="__FS_SUB__" target="_blank" rel="noopener" title="在飞书里打开「订阅日报」">
+      <div class="n">__N_SUB__</div><div class="t">订阅日报</div>
+    </a>
+    <a class="chip c-sage" href="__FS_HOT__" target="_blank" rel="noopener" title="在飞书里打开「AI热点推荐」">
+      <div class="n">__N_HOT__</div><div class="t">AI 热点推荐</div>
+    </a>
+    <a class="chip c-tan" href="__FS_NOTE__" target="_blank" rel="noopener" title="在飞书里打开「网站速记」">
+      <div class="n">✎</div><div class="t">灵感速记</div>
+    </a>
+    <a class="chip c-mauve" href="__FS_NOTE__" target="_blank" rel="noopener" title="在飞书里打开「网站速记」">
+      <div class="n">__N_NOTE__</div><div class="t">速记回顾</div>
+    </a>
   </div>
 
   <div class="capture" id="sec-capture">
@@ -451,6 +500,7 @@ function subCard(r){
     ${r.recommend ? `<div class="recommend">${escHtml(r.recommend)}</div>` : ''}
     <div class="summary">${mdRender(r.summary_md)}</div>
     ${r.link ? `<a class="link-btn" href="${escHtml(r.link)}" target="_blank" rel="noopener">看原视频 →</a>` : ''}
+    ${r.feishu_link ? `<a class="link-btn" href="${escHtml(r.feishu_link)}" target="_blank" rel="noopener">在飞书打开 →</a>` : ''}
   </div>`;
 }
 
@@ -462,6 +512,7 @@ function hotCard(r){
     ${r.core ? `<div class="recommend">${escHtml(r.core)}</div>` : ''}
     ${r.angle ? `<div class="summary"><p><strong>切入角度：</strong>${escHtml(r.angle)}</p></div>` : ''}
     ${r.link ? `<a class="link-btn" href="${escHtml(r.link)}" target="_blank" rel="noopener">看原文 →</a>` : ''}
+    ${r.feishu_link ? `<a class="link-btn" href="${escHtml(r.feishu_link)}" target="_blank" rel="noopener">在飞书打开 →</a>` : ''}
   </div>`;
 }
 
@@ -488,7 +539,7 @@ function render(){
 function renderNotes(){
   notesEl.innerHTML = DATA.notes.map(n => `<div class="note">
     <div>${escHtml(n.content)}</div>
-    <div class="nt">${escHtml(n.time)}${n.link ? ' · <a href="' + escHtml(n.link) + '" target="_blank" rel="noopener">链接</a>' : ''} · ${escHtml(n.status)}</div>
+    <div class="nt">${escHtml(n.time)}${n.link ? ' · <a href="' + escHtml(n.link) + '" target="_blank" rel="noopener">链接</a>' : ''} · ${escHtml(n.status)}${n.feishu_link ? ' · <a href="' + escHtml(n.feishu_link) + '" target="_blank" rel="noopener">在飞书打开</a>' : ''}</div>
   </div>`).join('') || '<div class="empty">还没有速记</div>';
 }
 
@@ -520,28 +571,6 @@ document.getElementById('status-filters').addEventListener('click', e => {
 document.getElementById('search').addEventListener('input', e => {
   state.q = e.target.value.trim();
   render();
-});
-
-// 四宫格跳转
-document.querySelectorAll('.chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    const target = chip.dataset.goto;
-    if (target === 'sub' || target === 'hot'){
-      state.src = target;
-      document.querySelectorAll('#src-seg button').forEach(b => b.classList.toggle('on', b.dataset.src === target));
-      document.getElementById('level-filters').style.display = target === 'sub' ? '' : 'none';
-      document.getElementById('status-filters').style.display = target === 'hot' ? '' : 'none';
-      render();
-      document.querySelector('.toolbar').scrollIntoView({ behavior: 'smooth' });
-    } else if (target === 'capture'){
-      document.getElementById('sec-capture').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('cap-content').focus();
-    } else if (target === 'notes'){
-      document.getElementById('sec-notes').scrollIntoView({ behavior: 'smooth' });
-    }
-  });
 });
 
 // 灵感速记提交（Cloudflare Worker 代理，密钥不进浏览器）

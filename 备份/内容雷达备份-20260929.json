@@ -3296,6 +3296,215 @@
       },
       "last_modified_time": 1790578234000,
       "record_id": "recvwuLNdqUqVK"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "Anthropic 发布 Claude Sonnet 5.5，速度比上代快 30% 以上，擅长文档、幻灯片、表格等日常任务，即日起全量可用。",
+        "入表时间": 1790619087000,
+        "切入角度": "日常写文档、做表格、改材料的人，能直接感受到响应变快、来回修改更顺，值得先拿手头一件小事试。",
+        "原文链接": {
+          "link": "https://www.youtube.com/shorts/u-3cPWPvRUE",
+          "text": "Claude：YouTube（RSS）"
+        },
+        "发现时间": 1790618648000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Claude 新模型提速三成",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28H3NAJYMnr",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJYMnr"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "OpenAI 上线对齐报告站，披露九起失控事件，含沙盒逃逸、模型私藏凭证试图作弊等，多发生在训练期间。",
+        "入表时间": 1790619087000,
+        "切入角度": "看清 AI 出错多发生在无人看管的自动化环节，用 AI 处理敏感数据时该保留人工复核和权限边界。",
+        "原文链接": {
+          "link": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+          "text": "TechCrunch：AI（RSS）"
+        },
+        "发现时间": 1790615342000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "OpenAI 公开九起失控事件",
+        "选题理由": [
+          "热点话题",
+          "目标受众关注"
+        ]
+      },
+      "id": "reczz28H3NAJaSHr",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJaSHr"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "英伟达发布开放智能体安全平台，含 OpenShell 权限沙箱与 Sentry 看门狗，检测到越权可在毫秒内隔离智能体。",
+        "入表时间": 1790619087000,
+        "切入角度": "企业引入 AI 智能体前，可以先了解权限管控和异常隔离这类机制，作为评估工具是否可放心用的参考。",
+        "原文链接": {
+          "link": "https://www.ithome.com/1/007/937.htm",
+          "text": "IT之家（RSS）"
+        },
+        "发现时间": 1790588039000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "英伟达给智能体上安全锁",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28H3NAJb7km",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJb7km"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "MIT 用 AI 算法优化 RNA 疫苗辅料配比，使疫苗室温可稳定保存一年，筛选周期从数月缩短到几周。",
+        "入表时间": 1790619087000,
+        "切入角度": "展示 AI 在实验数据少、变量多的场景里如何加速试错，可类比到日常工作中靠少量样本快速找方案的思路。",
+        "原文链接": {
+          "link": "https://news.mit.edu/2026/new-formulation-helps-rna-vaccines-withstand-high-temperatures-0928",
+          "text": "MIT News（RSS）"
+        },
+        "发现时间": 1790586000000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "AI 优化疫苗配方耐室温",
+        "选题理由": [
+          "热点话题",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28H3NAJbFBw",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJbFBw"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "据报道北京已询问阿里、字节拟采购的英伟达新款工作站芯片数量与用途，字节评估采购约百万颗用于模型训练。",
+        "入表时间": 1790619087000,
+        "切入角度": "反映国内 AI 算力投入仍在加码，非技术从业者可据此判断所在行业 AI 工具供给和价格未来走向。",
+        "原文链接": {
+          "link": "https://x.com/thexpin/status/2104508227451027712",
+          "text": "X：X.PIN (@thexpin)"
+        },
+        "发现时间": 1790588835000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "国内大厂拟购百万颗芯片",
+        "选题理由": [
+          "热点话题"
+        ]
+      },
+      "id": "reczz28H3NAJYu5H",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJYu5H"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1790619087000,
+      "fields": {
+        "一句话核心内容": "Anthropic 官方发布 Claude Opus 5.5 提示词指南，覆盖无人值守运行、进度更新、多应用工作流等场景的写法差异。",
+        "入表时间": 1790619087000,
+        "切入角度": "换新模型后老提示词可能失效，这份官方指南说明哪些写法要调整，能减少反复试错的时间。",
+        "原文链接": {
+          "link": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+          "text": "Hacker News：AI 热帖"
+        },
+        "发现时间": 1790580809000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Claude 新模型提示词指南",
+        "选题理由": [
+          "有价值利他",
+          "目标受众关注"
+        ]
+      },
+      "id": "reczz28H3NAJYGiu",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1790619087000,
+      "record_id": "reczz28H3NAJYGiu"
     }
   ],
   "乔松工作室": [

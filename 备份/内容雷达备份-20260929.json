@@ -2158,6 +2158,7 @@
         "内容ID": "weYNGrVmQLy0GQkv",
         "博主": "清华姜学长",
         "发布时间": 1790502739000,
+        "挑题卡": "▸ 一个元提示词先评估内容目标、分析短板再重写，附同稿对照实测\n📐 万能提示词核心特点 / 实测对比效果 / 使用注意事项\n🎬 能够彻底重构AI的输出逻辑，生成真正实用的内容",
         "推荐等级": "推荐",
         "文字稿": "**标题：**实测硅谷AI专家的万能提示词 实测硅谷AI专家的万能提示词#howto入门codex #人工智能 #大模型 #提示词 #姜学长\n\n一个硅谷的AI专家分享了一个万能提示词，他说呢，这条指令能够让AI给出的结果好10倍，我呢，拿它测了几次，属于原体式词的那种，结果呢，非常惊艳，顺手也把它设置成了我的快捷输入。And it's a meta prompt that can be applied to most queries, completely restructure the entire thing in a way that is genuinely useful and so I've used this from everything from emails to negotiations to documents like financial documents. This is a very important financial projection. You know assess its goal, analyze it for shortcomings against that goal, and then recreate it, to address those shortcomings like that is I've found a very useful framework, to push any AI to give you 10X better results than what it would be getting if you just, 其中一次我用同一个AI，同一段原稿开了两个独立对话，唯一改动就是这个提升词。第一个对话我只是说帮我把下面的这段稿子改的更好，你看这一版呢，表达确实更顺，但他没有去先判断目标，也没有告诉我去修改依据。好，第2个对话我就用了这条完整提示词。那这一版就没有直接去改稿了，而是先判断稿子的目标，然后指出4个具体问题。\n\n观点太笼统，没有解释怎么才算好？缺少场景对比，没有可执行的方法。最后，他补上了例子和行动的步骤，把整篇稿子重新去写了一遍。那问题就在这里改的更好。没有评价标准，AI只能自己去猜换者这要提的词，他会先确定这段内容想表达什么目标，再按照目标去找问题，最后针对问题去重写评价标准，明确以后，AI改动的就不只是词句了，结构也可以及时调整。不过还有一个使用边界，就是如果你本来就知道目标，最好直接去告诉AI。比如说让这篇稿子要让谁看，希望对方看完做什么，哪些事实不能去改。AI可以去推测目标，但也可能去猜错这条提示词不用现在硬记，可以先把这条命令给它收藏起来，下次改稿的时候，拿同一份旧稿跑两遍，一边只说改的更好，另一边用这条完整提示词差别会更加直观。好，我是江学长，希望能跟你一起去用AI解放生产力，咱们AI学习相见啊。",
         "标题": "实测硅谷AI专家的万能提示词",
@@ -2171,11 +2172,11 @@
       "id": "reczz28H11GHln0I",
       "last_modified_by": {
         "email": "",
-        "en_name": "小k",
-        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
-        "name": "小k"
+        "en_name": "乔彰龙",
+        "id": "ou_35260b8ce426b2d39a9e13b63f8da15b",
+        "name": "乔彰龙"
       },
-      "last_modified_time": 1790610799000,
+      "last_modified_time": 1790684675000,
       "record_id": "reczz28H11GHln0I"
     },
     {
@@ -3575,9 +3576,9 @@
       "created_time": 1790513009000,
       "fields": {
         "博主": "神烦老狗",
-        "数据更新时间": "2026-09-27 23:00:00",
-        "粉丝数": "52093",
-        "红狐指数": "0"
+        "数据更新时间": "2026-09-28 23:00:03",
+        "粉丝数": "52103",
+        "红狐指数": "550.7729"
       },
       "id": "recvwqm7iyDjvW",
       "last_modified_by": {
@@ -3586,7 +3587,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551804000,
+      "last_modified_time": 1790638204000,
       "record_id": "recvwqm7iyDjvW"
     },
     {
@@ -3599,7 +3600,7 @@
       "created_time": 1790513011000,
       "fields": {
         "博主": "木子不写代码",
-        "数据更新时间": "2026-09-27 23:00:01",
+        "数据更新时间": "2026-09-28 23:00:07",
         "粉丝数": "328349",
         "红狐指数": "678.1977"
       },
@@ -3610,7 +3611,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551806000,
+      "last_modified_time": 1790638205000,
       "record_id": "recvwqm7JViFKm"
     },
     {
@@ -3623,9 +3624,9 @@
       "created_time": 1790513012000,
       "fields": {
         "博主": "柱子哥TzFilm",
-        "数据更新时间": "2026-09-27 23:00:03",
-        "粉丝数": "217189",
-        "红狐指数": "695.4347"
+        "数据更新时间": "2026-09-28 23:00:08",
+        "粉丝数": "217488",
+        "红狐指数": "635.079"
       },
       "id": "recvwqm85EmS6i",
       "last_modified_by": {
@@ -3634,7 +3635,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551807000,
+      "last_modified_time": 1790638207000,
       "record_id": "recvwqm85EmS6i"
     },
     {
@@ -3647,9 +3648,9 @@
       "created_time": 1790513014000,
       "fields": {
         "博主": "姜胡说",
-        "数据更新时间": "2026-09-27 23:00:11",
-        "粉丝数": "4899309",
-        "红狐指数": "806.2613"
+        "数据更新时间": "2026-09-28 23:00:09",
+        "粉丝数": "4901697",
+        "红狐指数": "821.1134"
       },
       "id": "recvwqm8rEwIdx",
       "last_modified_by": {
@@ -3658,7 +3659,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551808000,
+      "last_modified_time": 1790638208000,
       "record_id": "recvwqm8rEwIdx"
     },
     {
@@ -3671,9 +3672,9 @@
       "created_time": 1790513015000,
       "fields": {
         "博主": "大师的AI小灶",
-        "数据更新时间": "2026-09-27 23:00:19",
-        "粉丝数": "351169",
-        "红狐指数": "646.4386"
+        "数据更新时间": "2026-09-28 23:00:17",
+        "粉丝数": "351405",
+        "红狐指数": "675.8783"
       },
       "id": "recvwqm8NFzDiU",
       "last_modified_by": {
@@ -3682,7 +3683,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551809000,
+      "last_modified_time": 1790638209000,
       "record_id": "recvwqm8NFzDiU"
     },
     {
@@ -3695,9 +3696,9 @@
       "created_time": 1790513017000,
       "fields": {
         "博主": "FredTalk",
-        "数据更新时间": "2026-09-27 23:00:26",
-        "粉丝数": "59432",
-        "红狐指数": "524.3769"
+        "数据更新时间": "2026-09-28 23:00:18",
+        "粉丝数": "59522",
+        "红狐指数": "611.0746"
       },
       "id": "recvwqm9abntYs",
       "last_modified_by": {
@@ -3706,7 +3707,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551810000,
+      "last_modified_time": 1790638210000,
       "record_id": "recvwqm9abntYs"
     },
     {
@@ -3719,9 +3720,9 @@
       "created_time": 1790513018000,
       "fields": {
         "博主": "光郡",
-        "数据更新时间": "2026-09-27 23:00:32",
-        "粉丝数": "31690",
-        "红狐指数": "522.8414"
+        "数据更新时间": "2026-09-28 23:00:22",
+        "粉丝数": "31728",
+        "红狐指数": "529.0551"
       },
       "id": "recvwqm9xipjtd",
       "last_modified_by": {
@@ -3730,7 +3731,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551812000,
+      "last_modified_time": 1790638212000,
       "record_id": "recvwqm9xipjtd"
     },
     {
@@ -3743,9 +3744,9 @@
       "created_time": 1790513019000,
       "fields": {
         "博主": "晓辉博士",
-        "数据更新时间": "2026-09-27 23:00:39",
-        "粉丝数": "514462",
-        "红狐指数": "715.5166"
+        "数据更新时间": "2026-09-28 23:00:29",
+        "粉丝数": "514612",
+        "红狐指数": "711.8839"
       },
       "id": "recvwqm9TRQ8Pl",
       "last_modified_by": {
@@ -3754,7 +3755,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551813000,
+      "last_modified_time": 1790638213000,
       "record_id": "recvwqm9TRQ8Pl"
     },
     {
@@ -3767,9 +3768,9 @@
       "created_time": 1790513021000,
       "fields": {
         "博主": "清华姜学长",
-        "数据更新时间": "2026-09-27 23:00:46",
-        "粉丝数": "235204",
-        "红狐指数": "595.2602"
+        "数据更新时间": "2026-09-28 23:00:36",
+        "粉丝数": "235344",
+        "红狐指数": "622.2221"
       },
       "id": "recvwqmafVtUJ7",
       "last_modified_by": {
@@ -3778,7 +3779,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551814000,
+      "last_modified_time": 1790638214000,
       "record_id": "recvwqmafVtUJ7"
     },
     {
@@ -3791,9 +3792,9 @@
       "created_time": 1790513022000,
       "fields": {
         "博主": "数字生命卡兹克",
-        "数据更新时间": "2026-09-27 23:00:53",
-        "粉丝数": "127269",
-        "红狐指数": "604.8206"
+        "数据更新时间": "2026-09-28 23:00:43",
+        "粉丝数": "127506",
+        "红狐指数": "620.4513"
       },
       "id": "recvwqmaAsB7Rl",
       "last_modified_by": {
@@ -3802,7 +3803,7 @@
         "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
         "name": "小k"
       },
-      "last_modified_time": 1790551815000,
+      "last_modified_time": 1790638215000,
       "record_id": "recvwqmaAsB7Rl"
     }
   ]

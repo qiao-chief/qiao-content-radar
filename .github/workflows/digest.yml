@@ -1,0 +1,30 @@
+name: 内容雷达日报
+
+on:
+  schedule:
+    # 北京时间 19:30，排在当天最后一趟 radar（18:19）之后，汇总全天入表的内容。
+    # GitHub 定时任务可能晚到几十分钟，不影响内容，只是晚一点收到。
+    - cron: "30 11 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "试跑：只打印日报内容，不发消息"
+        type: boolean
+        default: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TZ: Asia/Shanghai
+      XIAOK_APP_ID: ${{ secrets.XIAOK_APP_ID }}
+      XIAOK_APP_SECRET: ${{ secrets.XIAOK_APP_SECRET }}
+      RADAR_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 汇总当天入表内容，小K 私信
+        run: python digest.py

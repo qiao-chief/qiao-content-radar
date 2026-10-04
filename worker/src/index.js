@@ -3,15 +3,27 @@
 // 密钥只存在 Worker 环境变量（XIAOK_APP_ID / XIAOK_APP_SECRET），浏览器从不接触。
 // 访问控制依赖 Cloudflare Access（整个 radar.qiao-flow.cn 域名挂密码门），本 Worker 不写独立认证。
 //
+// 同时负责定时触发云端任务（Cloudflare Cron → GitHub workflow_dispatch），
+// 比 GitHub 自带的 schedule 稳。时间表见 SCHEDULES，UTC 时间。
+//
 // 部署：
 //   cd cloud/worker
 //   npx wrangler deploy
 //   npx wrangler secret put XIAOK_APP_ID
 //   npx wrangler secret put XIAOK_APP_SECRET
+//   npx wrangler secret put GITHUB_TOKEN   # 细粒度 PAT，仅 qiao-content-radar 仓库，Actions 读写权限
 
 const FEISHU = "https://open.feishu.cn/open-apis";
 const BASE_TOKEN = "UoUlb5rcca4QN1s8e5UcY7OVn8f";
 const TABLE_ID = "tblixXr2RAgrcYCW"; // 网站速记
+const GITHUB_REPO = "qiao-chief/qiao-content-radar";
+
+// Cron 表达式（UTC）→ 要触发的 workflow 文件。北京时间 = UTC + 8
+const SCHEDULES = {
+  "13 1 * * *": "radar.yml",   // 北京时间 09:13
+  "19 10 * * *": "radar.yml",  // 北京时间 18:19
+  "30 11 * * *": "digest.yml", // 北京时间 19:30
+};
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "https://radar.qiao-flow.cn",
@@ -60,7 +72,27 @@ async function createRecord(token, content, link) {
   return data.data.record.record_id;
 }
 
+async function dispatch(env, workflow) {
+  const r = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/${workflow}/dispatches`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "radar-capture-cron",
+    },
+    body: JSON.stringify({ ref: "main" }),
+  });
+  if (!r.ok) throw new Error(`触发 ${workflow} 失败：${r.status} ${await r.text()}`);
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    const workflow = SCHEDULES[event.cron];
+    if (!workflow) return;
+    ctx.waitUntil(dispatch(env, workflow));
+  },
+
   async fetch(request, env) {
     const url = new URL(request.url);
 

@@ -10,3 +10,7 @@ routes = [
 # 密钥用 wrangler secret put 设置，不写进这个文件：
 #   npx wrangler secret put XIAOK_APP_ID
 #   npx wrangler secret put XIAOK_APP_SECRET
+
+# 定时触发（UTC）：见 src/index.js 的 SCHEDULES
+[triggers]
+crons = ["13 1 * * *", "19 10 * * *", "30 11 * * *"]

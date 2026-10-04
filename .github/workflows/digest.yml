@@ -1,10 +1,7 @@
 name: 内容雷达日报
 
 on:
-  schedule:
-    # 北京时间 19:30，排在当天最后一趟 radar（18:19）之后，汇总全天入表的内容。
-    # GitHub 定时任务可能晚到几十分钟，不影响内容，只是晚一点收到。
-    - cron: "30 11 * * *"
+  # 定时由 Cloudflare Worker（radar-capture）触发，见 worker/src/index.js 的 SCHEDULES。
   workflow_dispatch:
     inputs:
       dry_run:

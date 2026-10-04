@@ -40,7 +40,8 @@ REPO = "qiao-chief/qiao-content-radar"
 ACTIONS_URL = f"https://github.com/{REPO}/actions"
 RUN_MAX_AGE_H = 26      # 每天至少该成功跑一趟，超过这个钟点没跑过就是定时任务出问题
 ROW_MAX_AGE_H = 72      # 表里超过三天没进过新行，且料源有货，就是写表环节断了
-RUNS_PER_DAY = 6        # radar.yml 里排了六趟：09:13 09:51 10:37 12:23 15:41 18:19
+RUNS_PER_DAY = 2        # Cloudflare Worker 每天触发两趟：09:13 和 18:19（见 worker/src/index.js）
+RADAR_WORKFLOW = "内容雷达"  # radar.yml 的 name；台账只数它，不数看门狗和日报
 
 OK, WARN, BAD, SKIP = "✅", "⚠️", "❌", "—"
 
@@ -87,11 +88,11 @@ def hours_since(t: datetime, now: datetime) -> float:
 
 def check_schedule(rep: Report, now: datetime) -> bool | None:
     """返回今天是否已有成功运行；None 表示没测出来（gh 不可用）。"""
-    """云端到底跑没跑。抓的是「该跑却没触发」——GitHub 高峰期会把排队的定时任务直接丢掉。"""
+    """云端到底跑没跑。抓的是「该跑却没触发」。现在定时由 Cloudflare Worker 发起，记录里是 workflow_dispatch。"""
     try:
         raw = subprocess.run(["gh", "api", f"repos/{REPO}/actions/runs?per_page=60"],
                              capture_output=True, text=True, timeout=60)
-        runs = json.loads(raw.stdout)["workflow_runs"]
+        runs = [r for r in json.loads(raw.stdout)["workflow_runs"] if r["name"] == RADAR_WORKFLOW]
     except Exception as e:
         rep.add(SKIP, "云端定时任务", f"未测（gh 命令不可用：{str(e)[:40]}）", "每天≥1次成功")
         return None
@@ -113,7 +114,7 @@ def check_schedule(rep: Report, now: datetime) -> bool | None:
     born = when(runs[-1]).date()
     ledger: dict[str, list[str]] = {}
     for r in runs:
-        if r["event"] == "schedule":
+        if r["event"] in ("schedule", "workflow_dispatch"):  # 手动跑也会计入，偶尔多算一趟不影响判断
             ledger.setdefault(when(r).strftime("%m-%d"), []).append(when(r).strftime("%H:%M"))
     days = [now - timedelta(days=i) for i in range(5) if (now - timedelta(days=i)).date() > born]
     missed = [d for d in days[1:] if len(ledger.get(d.strftime("%m-%d"), [])) < RUNS_PER_DAY]  # 今天可能还没跑完，不算
@@ -121,8 +122,8 @@ def check_schedule(rep: Report, now: datetime) -> bool | None:
             " / ".join(f"{d:%m-%d} {len(ledger.get(d.strftime('%m-%d'), []))}趟" for d in days) or "上线首日，还没有整天台账",
             f"每天 {RUNS_PER_DAY} 趟")
     if missed:
-        rep.note(f"少跑的那几趟是 GitHub 高峰期把排队任务丢了（官方文档写明会发生），兜底那趟就是为这个准备的。"
-                 f"连续两天不足 1 趟才需要动手。运行记录：{ACTIONS_URL}")
+        rep.note(f"少跑的那趟多半是 Cloudflare 定时没发出去，先看 Worker 日志（cloud/worker 里 npx wrangler tail），"
+                 f"再看 GITHUB_TOKEN 是否过期。运行记录：{ACTIONS_URL}")
     return any(when(r).date() == now.date() for r in ok_runs)
 
 

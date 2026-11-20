@@ -15,8 +15,10 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 CST = timezone(timedelta(hours=8))
 BASE_TOKEN = "UoUlb5rcca4QN1s8e5UcY7OVn8f"
@@ -25,6 +27,16 @@ TOPIC_ID = "JlWpjOb0"  # 得到大脑知识库「对标博主」
 NOTIFY_OPEN_ID = "ou_35260b8ce426b2d39a9e13b63f8da15b"  # 乔帮主在小K 应用下的 open_id
 FEISHU = "https://open.feishu.cn/open-apis"
 AIHOT_URL = "https://aihot.news/api/v1/items?mode=selected&window=24h"
+OVERSEAS_RSS = [
+    ("One Useful Thing", "https://www.oneusefulthing.org/feed"),
+    ("Every", "https://every.to/feeds/rss.xml"),
+    ("Interconnects", "https://www.interconnects.ai/feed"),
+    ("Latent Space", "https://www.latent.space/feed"),
+    ("Stratechery", "https://stratechery.com/feed/"),
+    ("Simon Willison", "https://simonwillison.net/atom/everything/"),
+    ("Ben's Bites", "https://www.bensbites.com/feed"),
+    ("OpenAI News", "https://openai.com/news/rss.xml"),
+]
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL") or "deepseek-v4-flash"
 WINDOW_DAYS = int(os.environ.get("RADAR_WINDOW_DAYS") or 3)
@@ -248,7 +260,86 @@ def fetch_new_posts(existing_ids: set[str], since: datetime) -> tuple[list[Post]
 
 def fetch_aihot() -> list[dict]:
     r = http_json("GET", AIHOT_URL, headers={"User-Agent": "qiao-content-radar/1.0"}, timeout=30)
-    return r.get("items") or []
+    items = r.get("items") or []
+    for it in items:
+        it.setdefault("_source_tag", "AIHOT")
+    return items
+
+
+def _strip_html(text: str) -> str:
+    return re.sub(r"<[^>]+>", " ", text or "").replace("\n", " ").strip()
+
+
+def _parse_rss_date(raw: str) -> datetime | None:
+    if not raw:
+        return None
+    raw = raw.strip()
+    try:
+        dt = parsedate_to_datetime(raw)
+        return dt.astimezone(timezone.utc) if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        pass
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return dt.astimezone(timezone.utc) if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        return None
+
+
+def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
+    """抓取海外顶级一手 AI RSS（兼容 RSS 2.0 和 Atom）。"""
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=since_hours)
+    results: list[dict] = []
+    for name, url in OVERSEAS_RSS:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; qiao-content-radar/1.0)"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                xml_bytes = resp.read()
+            root = ET.fromstring(xml_bytes)
+            # 兼容 Atom ({http://www.w3.org/2005/Atom}entry) 与 RSS 2.0 (channel/item)
+            atom_ns = "{http://www.w3.org/2005/Atom}"
+            entries = root.findall(f".//{atom_ns}entry")
+            if entries:
+                for entry in entries[:8]:
+                    title = (entry.findtext(f"{atom_ns}title") or "").strip()
+                    link_el = entry.find(f"{atom_ns}link[@rel='alternate']") or entry.find(f"{atom_ns}link")
+                    link = (link_el.attrib.get("href") if link_el is not None else "") or ""
+                    pub_raw = entry.findtext(f"{atom_ns}published") or entry.findtext(f"{atom_ns}updated") or ""
+                    dt = _parse_rss_date(pub_raw)
+                    if dt and dt < cutoff:
+                        continue
+                    summary = _strip_html(entry.findtext(f"{atom_ns}summary") or entry.findtext(f"{atom_ns}content") or "")
+                    if title and link:
+                        results.append({
+                            "title": title,
+                            "summary": summary[:400],
+                            "links": {"original": link},
+                            "source": {"name": f"海外·{name}"},
+                            "_source_tag": f"海外·{name}",
+                            "publishedAt": dt.isoformat() if dt else "",
+                        })
+            else:
+                for item in root.findall(".//item")[:8]:
+                    title = (item.findtext("title") or "").strip()
+                    link = (item.findtext("link") or "").strip()
+                    pub_raw = item.findtext("pubDate") or item.findtext("{http://purl.org/dc/elements/1.1/}date") or ""
+                    dt = _parse_rss_date(pub_raw)
+                    if dt and dt < cutoff:
+                        continue
+                    summary = _strip_html(item.findtext("description") or item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or "")
+                    if title and link:
+                        results.append({
+                            "title": title,
+                            "summary": summary[:400],
+                            "links": {"original": link},
+                            "source": {"name": f"海外·{name}"},
+                            "_source_tag": f"海外·{name}",
+                            "publishedAt": dt.isoformat() if dt else "",
+                        })
+        except Exception as e:
+            log(f"海外RSS抓取跳过（{name}）：{e}")
+    log(f"海外一手RSS抓到近 {since_hours}h 文章 {len(results)} 篇")
+    return results
 
 
 # ---------- DeepSeek ----------
@@ -291,18 +382,18 @@ def tag_posts(posts: list[Post]) -> dict[str, dict]:
 def pick_hot(items: list[dict], recent_topics: list[str]) -> list[dict]:
     if not items:
         return []
-    brief = [{"idx": i, "标题": it.get("title", ""), "摘要": (it.get("summary") or "")[:200]} for i, it in enumerate(items)]
+    brief = [{"idx": i, "来源": it.get("_source_tag", "AIHOT"), "标题": it.get("title", ""), "摘要": (it.get("summary") or "")[:250]} for i, it in enumerate(items)]
     # 同上：判断只看热点本身对受众有没有用，不替乔帮主设计角度、编身份。
-    prompt = f"""下面是今天的 AI 热点。挑出最值得关注的，最多 6 条；同一件事只挑一条；纯跑分、纯融资新闻，除非对非技术受众有实用角度，否则不挑。
+    prompt = f"""下面是今天的海内外 AI 精选资讯与一手文章（包含海外英文一手源和国内热点）。挑出最值得关注的，最多 8 条（**优先挑选「海外·xxx」的一手深度文章，每条英文内容必须翻译成自然地道的简体中文**）；同一件事只挑一条；纯跑分、纯融资新闻，除非对非技术受众有实用角度，否则不挑。
 这些话题最近 3 天已经推荐过，同一件事不要再挑：{json.dumps(recent_topics, ensure_ascii=False)}
 每条给出：
-- 选题：不超过 20 字
-- 一句话核心内容：不超过 50 字，讲清发生了什么
+- 选题：中文标题，不超过 22 字
+- 一句话核心内容：中文，不超过 60 字，讲清发生了什么或核心洞察
 - 选题理由：从「目标受众关注」「有价值利他」「热点话题」里选 1 到 3 个
-- 切入角度：不超过 40 字，**客观说清这条热点对受众最有用的那个点**，不是"乔帮主可以怎么讲"。
+- 切入角度：中文，不超过 45 字，**客观说清这条料对受众最有用的那个点**，不是"乔帮主可以怎么讲"。
   严禁替任何人设计角度、编造身份或经历，禁止出现「乔帮主」「以HR身份」「用自己的经历」这类字样。
 输出格式：{{"items": [{{"idx": 0, "选题": "...", "一句话核心内容": "...", "选题理由": ["..."], "切入角度": "..."}}]}}
-热点列表：
+候选列表：
 {json.dumps(brief, ensure_ascii=False)}"""
     picks = []
     for p in deepseek(prompt).get("items", []):
@@ -345,7 +436,7 @@ def hot_row(pick: dict) -> dict:
         "选题理由": [r for r in pick.get("选题理由") or [] if r in REASONS],
         "切入角度": pick.get("切入角度") or "",
         "原文链接": {"link": link, "text": (item.get("source") or {}).get("name") or "原文"},
-        "来源": "AIHOT",
+        "来源": item.get("_source_tag") or (item.get("source") or {}).get("name") or "AIHOT",
         "发现时间": ms(datetime.fromisoformat(published.replace("Z", "+00:00"))) if published else None,
     }
 
@@ -363,7 +454,8 @@ def fresh_hots(existing: list[dict], now: datetime) -> list[dict]:
         return []
     seen = {r["原文链接"] for r in existing}
     recent = [r["选题"] for r in existing if r["created"] >= today - 3 * 86400_000]
-    return pick_hot([it for it in fetch_aihot() if item_link(it) not in seen], recent)
+    combined = fetch_overseas_rss() + fetch_aihot()
+    return pick_hot([it for it in combined if item_link(it) not in seen], recent)
 
 
 def build_message(rows: list[dict], hots: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:

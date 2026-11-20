@@ -628,10 +628,17 @@ def main() -> None:
     log(f"已生成 {out}（{len(html_text)//1024} KB）")
 
     # 红线自检：不该出现的东西直接报错退出，让 CI 标红
-    banned = ["文字稿", "内容ID", "record_id", "app_secret", "tenant_access_token"]
-    for word in banned:
-        if word in html_text:
-            print(f"红线违规：生成的 HTML 里出现了「{word}」", file=sys.stderr)
+    # 1. 严禁泄露的内部字段键名（检查输出行对象的 keys 及 JSON 键名，避免误伤标题/摘要正文中的正常词汇）
+    for rows in (sub_rows, hot_rows, note_rows):
+        for r in rows:
+            for forbidden_key in ("文字稿", "内容ID", "record_id"):
+                if forbidden_key in r:
+                    print(f"红线违规：数据字段里出现了「{forbidden_key}」", file=sys.stderr)
+                    sys.exit(1)
+    # 2. 严禁泄露的技术密钥字样
+    for secret_word in ("record_id", "app_secret", "tenant_access_token"):
+        if secret_word in html_text:
+            print(f"红线违规：生成的 HTML 里出现了「{secret_word}」", file=sys.stderr)
             sys.exit(1)
     log("红线自检通过：无文字稿/内容ID/record_id/密钥")
 

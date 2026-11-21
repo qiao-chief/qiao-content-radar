@@ -458,14 +458,44 @@ def fresh_hots(existing: list[dict], now: datetime) -> list[dict]:
     return pick_hot([it for it in combined if item_link(it) not in seen], recent)
 
 
-def build_message(rows: list[dict], hots: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:
-    strong = [r for r in rows if r["推荐等级"] == "强烈推荐"]
-    lines = [f"**订阅日报**：新增 {len(rows)} 条，强烈推荐 {len(strong)} 条"]
-    lines += [f"- 🔥 {r['博主']}｜{r['标题'][:30]}" for r in strong[:5]]
-    lines += [f"**AI 热点**：新增 {len(hots)} 条待判断"]
-    lines += [f"- {h.get('选题', '')}" for h in hots[:3]]
-    lines += ["", f"👉 [打开订阅日报]({BASE_URL}?table={sub_tid})　[打开 AI 热点]({BASE_URL}?table={hot_tid})"]
-    lines += [""] + [f"⚠️ {w}" for w in warnings]
+def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:
+    lines: list[str] = []
+
+    # 1. 海外一手精选（从 AI热点推荐 挑出的高价值内容，优先展示海外·来源）
+    if hot_rows:
+        lines.append("**🌍 海外一手与热点精选**")
+        for hr in hot_rows[:6]:
+            src = hr.get("来源", "")
+            title = hr.get("选题", "")
+            core = hr.get("一句话核心内容", "")
+            link_obj = hr.get("原文链接") or {}
+            url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
+            link_md = f" [原文]({url})" if url else ""
+            lines.append(f"• **[{src}] {title}**{link_md}")
+            if core:
+                lines.append(f"  {core}")
+        lines.append("")
+
+    # 2. 得到大脑关注的国内博主动态（优先展示强烈推荐，其次展示其他有转写的更新）
+    if rows:
+        lines.append("**📱 关注博主更新（得到大脑）**")
+        sorted_rows = sorted(rows, key=lambda r: 0 if r.get("推荐等级") == "强烈推荐" else 1)
+        for r in sorted_rows[:6]:
+            mark = "🔥 " if r.get("推荐等级") == "强烈推荐" else ""
+            blogger = r.get("博主", "")
+            title = (r.get("标题") or "")[:36]
+            rec = r.get("选题推荐") or ""
+            link_obj = r.get("链接") or {}
+            url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
+            link_md = f" [看视频]({url})" if url else ""
+            lines.append(f"• {mark}**{blogger}｜{title}**{link_md}")
+            if rec:
+                lines.append(f"  {rec}")
+        lines.append("")
+
+    lines.append(f"📂 [订阅总表]({BASE_URL}?table={sub_tid}) ｜ [海外热点表]({BASE_URL}?table={hot_tid})")
+    if warnings:
+        lines += [""] + [f"⚠️ {w}" for w in warnings]
     return "\n".join(lines)
 
 
@@ -506,11 +536,10 @@ def run(fs: Feishu) -> None:
         return
     fs.create_records(sub_tid, rows)
     fs.create_records(hot_tid, hot_rows)
-    strong = [r for r in rows if r["推荐等级"] == "强烈推荐"]
-    if strong or warnings:
-        fs.send(f"🎯 内容雷达 · {now:%-m月%-d日}", build_message(rows, hots, warnings, sub_tid, hot_tid))
+    if rows or hot_rows or warnings:
+        fs.send(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", build_message(rows, hots, hot_rows, warnings, sub_tid, hot_tid))
     else:
-        log(f"无强烈推荐、无警告，不发私信。新增 {len(rows)} 条日报、{len(hots)} 条热点")
+        log("本次无新增内容且无警告，跳过发信")
     log("完成")
 
 

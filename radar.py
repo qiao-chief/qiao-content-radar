@@ -37,6 +37,11 @@ OVERSEAS_RSS = [
     ("Ben's Bites", "https://www.bensbites.com/feed"),
     ("OpenAI News", "https://openai.com/news/rss.xml"),
 ]
+MACRO_RSS = [
+    ("Project Syndicate", "https://www.project-syndicate.org/rss"),
+    ("Calculated Risk", "https://www.calculatedriskblog.com/feeds/posts/default"),
+    ("CNBC Economy", "https://www.cnbc.com/id/20910258/device/rss/rss.html"),
+]
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL") or "deepseek-v4-flash"
 WINDOW_DAYS = int(os.environ.get("RADAR_WINDOW_DAYS") or 3)
@@ -301,23 +306,24 @@ def _parse_rss_date(raw: str) -> datetime | None:
         return None
 
 
-def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
-    """抓取海外顶级一手 AI RSS（兼容 RSS 2.0 和 Atom）。"""
+def _fetch_rss_list(feeds: list[tuple[str, str]], prefix: str, since_hours: int = 72) -> list[dict]:
+    """通用 RSS/Atom 抓取器（兼容 RSS 2.0 和 Atom）。"""
     cutoff = datetime.now(timezone.utc) - timedelta(hours=since_hours)
     results: list[dict] = []
-    for name, url in OVERSEAS_RSS:
+    for name, url in feeds:
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; qiao-content-radar/1.0)"})
             with urllib.request.urlopen(req, timeout=15) as resp:
                 xml_bytes = resp.read()
             root = ET.fromstring(xml_bytes)
-            # 兼容 Atom ({http://www.w3.org/2005/Atom}entry) 与 RSS 2.0 (channel/item)
             atom_ns = "{http://www.w3.org/2005/Atom}"
             entries = root.findall(f".//{atom_ns}entry")
             if entries:
                 for entry in entries[:8]:
                     title = (entry.findtext(f"{atom_ns}title") or "").strip()
-                    link_el = entry.find(f"{atom_ns}link[@rel='alternate']") or entry.find(f"{atom_ns}link")
+                    link_el = entry.find(f"{atom_ns}link[@rel='alternate']")
+                    if link_el is None:
+                        link_el = entry.find(f"{atom_ns}link")
                     link = (link_el.attrib.get("href") if link_el is not None else "") or ""
                     pub_raw = entry.findtext(f"{atom_ns}published") or entry.findtext(f"{atom_ns}updated") or ""
                     dt = _parse_rss_date(pub_raw)
@@ -327,10 +333,10 @@ def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
                     if title and link:
                         results.append({
                             "title": title,
-                            "summary": summary[:400],
+                            "summary": summary[:450],
                             "links": {"original": link},
-                            "source": {"name": f"海外·{name}"},
-                            "_source_tag": f"海外·{name}",
+                            "source": {"name": f"{prefix}{name}"},
+                            "_source_tag": f"{prefix}{name}",
                             "publishedAt": dt.isoformat() if dt else "",
                         })
             else:
@@ -345,16 +351,80 @@ def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
                     if title and link:
                         results.append({
                             "title": title,
-                            "summary": summary[:400],
+                            "summary": summary[:450],
                             "links": {"original": link},
-                            "source": {"name": f"海外·{name}"},
-                            "_source_tag": f"海外·{name}",
+                            "source": {"name": f"{prefix}{name}"},
+                            "_source_tag": f"{prefix}{name}",
                             "publishedAt": dt.isoformat() if dt else "",
                         })
         except Exception as e:
-            log(f"海外RSS抓取跳过（{name}）：{e}")
-    log(f"海外一手RSS抓到近 {since_hours}h 文章 {len(results)} 篇")
+            log(f"RSS抓取跳过（{name}）：{e}")
     return results
+
+
+def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
+    items = _fetch_rss_list(OVERSEAS_RSS, "海外·", since_hours)
+    log(f"海外一手RSS抓到近 {since_hours}h 文章 {len(items)} 篇")
+    return items
+
+
+def fetch_macro_metrics() -> list[dict]:
+    """抓取 3 个核心资金锚点：10年期美债收益率、离岸人民币汇率、上证指数。"""
+    targets = [
+        ("^TNX", "10Y美债", "%"),
+        ("CNH=X", "离岸人民币", ""),
+        ("000001.SS", "上证指数", ""),
+    ]
+    out: list[dict] = []
+    for sym, label, unit in targets:
+        try:
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(sym)}?interval=1d&range=2d"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read().decode())
+            meta = data["chart"]["result"][0]["meta"]
+            price = meta.get("regularMarketPrice")
+            prev = meta.get("chartPreviousClose")
+            if price is not None:
+                diff_pct = ((price - prev) / prev * 100) if prev else 0.0
+                sign = "+" if diff_pct >= 0 else ""
+                val_str = f"{price:.2f}{unit}" if unit == "%" else (f"{price:.4f}" if sym == "CNH=X" else f"{price:.2f}")
+                out.append({"label": label, "value": val_str, "change": f"{sign}{diff_pct:.2f}%"})
+        except Exception as e:
+            log(f"宏观指标获取跳过（{label}）：{e}")
+    return out
+
+
+def fetch_macro_opinions(since_hours: int = 72) -> list[dict]:
+    """抓取全球经济学家/宏观分析师评论并请 DeepSeek 挑出 2 条翻译提炼。"""
+    items = _fetch_rss_list(MACRO_RSS, "", since_hours)
+    if not items:
+        return []
+    brief = [{"idx": i, "来源": it["_source_tag"], "标题": it["title"], "摘要": it["summary"][:300]} for i, it in enumerate(items[:18])]
+    prompt = f"""你是给非金融专业出身的企业主/个人投资者做宏观内参的财经助理。
+请从下面的全球经济学家/宏观分析师文章中，挑出最有助于理解「美联储利率/美元流向/中美经济/大类资产动荡」的 **2 篇**深度评论或数据解读。
+要求：
+- 标题：中文，不超过 24 字，点明核心判断
+- 摘要：中文大白话（80~110字），讲清专家的核心观点、逻辑和对中国市场/资金流向的启示，禁止晦涩金融黑话
+输出格式：{{"items": [{{"idx": 0, "标题": "...", "摘要": "..."}}]}}
+文章列表：{json.dumps(brief, ensure_ascii=False)}"""
+    try:
+        picks = []
+        for p in deepseek(prompt).get("items", [])[:2]:
+            idx = p.get("idx")
+            if isinstance(idx, int) and 0 <= idx < len(items):
+                it = items[idx]
+                picks.append({
+                    "source": it["_source_tag"],
+                    "title": p.get("标题") or it["title"],
+                    "summary": p.get("摘要") or "",
+                    "url": (it.get("links") or {}).get("original", ""),
+                    "publishedAt": it.get("publishedAt", ""),
+                })
+        return picks
+    except Exception as e:
+        log(f"宏观专家评论提炼跳过：{e}")
+        return []
 
 
 # ---------- DeepSeek ----------
@@ -498,7 +568,15 @@ def _extract_url(val: object) -> str:
     return ""
 
 
-def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> list[dict]:
+def build_card_elements(
+    rows: list[dict],
+    hot_rows: list[dict],
+    warnings: list[str],
+    sub_tid: str,
+    hot_tid: str,
+    macro_metrics: list[dict] | None = None,
+    macro_opinions: list[dict] | None = None,
+) -> list[dict]:
     elements: list[dict] = []
 
     # 1. 海外一手洞察
@@ -553,6 +631,26 @@ def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[s
             elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
             if idx < min(len(sorted_rows), 5):
                 elements.append({"tag": "hr"})
+
+    # 3. 宏观资金风向与经济学家视点
+    if macro_metrics or macro_opinions:
+        if elements:
+            elements.append({"tag": "hr"})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟢 财经风向与专家视点**　<font color='grey'>全球流动性 · 宏观专家拆解</font>"}})
+        if macro_metrics:
+            metrics_str = " ｜ ".join(f"**{m['label']}** `{m['value']}` ({m['change']})" for m in macro_metrics)
+            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": metrics_str}})
+        if macro_opinions:
+            elements.append({"tag": "hr"})
+            for idx, op in enumerate(macro_opinions, 1):
+                pub_t = op.get("publishedAt", "")[:10]
+                meta = f"<font color='green'>{op['source']}</font>　<font color='grey'>{pub_t}</font>" if pub_t else f"<font color='green'>{op['source']}</font>"
+                url = op.get("url", "")
+                link_md = f"　[看原文 ↗]({url})" if url else ""
+                block = f"{meta}\n**{idx}. {op['title']}**{link_md}\n<font color='grey'>{op['summary']}</font>"
+                elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
+                if idx < len(macro_opinions):
+                    elements.append({"tag": "hr"})
 
     elements.append({"tag": "hr"})
     elements.append({
@@ -669,7 +767,9 @@ def run(fs: Feishu) -> None:
     fs.create_records(sub_tid, rows)
     fs.create_records(hot_tid, hot_rows)
     if rows or hot_rows or warnings:
-        elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid)
+        macro_metrics = fetch_macro_metrics()
+        macro_opinions = fetch_macro_opinions()
+        elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid, macro_metrics, macro_opinions)
         fs.send_card(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", elements)
     else:
         log("本次无新增内容且无警告，跳过发信")

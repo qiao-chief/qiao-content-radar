@@ -103,9 +103,11 @@ def http_json(method: str, url: str, body: dict | None = None, headers: dict | N
 
 
 def cell_text(value: object) -> str:
-    """飞书单元格读出来可能是字符串、富文本分段列表或链接对象，统一成字符串。"""
+    """飞书单元格读出来可能是字符串、数字、富文本分段列表或链接对象，统一成字符串。"""
     if isinstance(value, str):
         return value
+    if isinstance(value, (int, float)):
+        return str(int(value))
     if isinstance(value, list):
         return "".join(seg.get("text", "") for seg in value if isinstance(seg, dict))
     if isinstance(value, dict):
@@ -447,62 +449,89 @@ def item_link(item: dict) -> str:
 
 
 def fresh_hots(existing: list[dict], now: datetime) -> list[dict]:
-    """热点一天只挑一次；挑之前去掉已入表的链接，并把近 3 天的话题告诉 AI 避免同一件事重复。"""
+    """每天各挑一次；用原文链接去重，分别检查 AIHOT 和 海外RSS 今天是否已入表，互不阻塞。"""
     today = ms(now.replace(hour=0, minute=0, second=0, microsecond=0))
-    if any(r["created"] >= today for r in existing):
-        log("今天已经推荐过热点，跳过")
-        return []
     seen = {r["原文链接"] for r in existing}
     recent = [r["选题"] for r in existing if r["created"] >= today - 3 * 86400_000]
-    combined = fetch_overseas_rss() + fetch_aihot()
-    return pick_hot([it for it in combined if item_link(it) not in seen], recent)
+    has_overseas_today = any(r["created"] >= today and str(r.get("来源", "")).startswith("海外·") for r in existing)
+    has_aihot_today = any(r["created"] >= today and str(r.get("来源", "")) == "AIHOT" for r in existing)
+
+    candidates: list[dict] = []
+    if not has_overseas_today:
+        candidates.extend(fetch_overseas_rss())
+    if not has_aihot_today:
+        candidates.extend(fetch_aihot())
+    if not candidates:
+        log("今天海外RSS与热点均已推荐过，跳过")
+        return []
+    return pick_hot([it for it in candidates if item_link(it) not in seen], recent)
 
 
 def _fmt_ts(val: object) -> str:
-    if isinstance(val, (int, float)) and val > 0:
-        return datetime.fromtimestamp(val / 1000, CST).strftime("%m-%d %H:%M")
+    try:
+        num = float(val) if isinstance(val, (int, float, str)) and str(val).strip() else 0
+        if num > 0:
+            return datetime.fromtimestamp(num / 1000, CST).strftime("%m-%d %H:%M")
+    except (ValueError, TypeError):
+        pass
+    return ""
+
+
+def _extract_url(val: object) -> str:
+    if isinstance(val, dict):
+        return val.get("link", "")
+    if isinstance(val, str) and val.startswith("http"):
+        return val
     return ""
 
 
 def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:
     lines: list[str] = []
 
-    # 1. 海外一手精选（从 AI热点推荐 挑出的高价值内容，优先展示海外·来源）
+    # 1. 海外一手精选（优先把「海外·」排在最前面展示）
     if hot_rows:
         lines.append("**🌍 海外一手与热点精选**")
-        for hr in hot_rows[:6]:
+        sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
+        for idx, hr in enumerate(sorted_hots[:6], 1):
             src = hr.get("来源", "")
             title = hr.get("选题", "")
             core = hr.get("一句话核心内容", "")
             pub_t = _fmt_ts(hr.get("发现时间"))
-            t_tag = f"[{pub_t}] " if pub_t else ""
-            link_obj = hr.get("原文链接") or {}
-            url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
-            link_md = f" [原文]({url})" if url else ""
-            lines.append(f"• **{t_tag}[{src}] {title}**{link_md}")
+            t_tag = f"`{pub_t}` " if pub_t else ""
+            url = _extract_url(hr.get("原文链接"))
+            link_md = f" 👉 [看原文]({url})" if url else ""
+            lines.append(f"**【{idx}】** {t_tag}**[{src}] {title}**{link_md}")
             if core:
-                lines.append(f"  {core}")
+                lines.append(f"　　{core}")
         lines.append("")
 
-    # 2. 得到大脑关注的国内博主动态（优先展示强烈推荐，其次展示其他有转写的更新）
-    if rows:
+    # 2. 得到大脑关注的国内博主动态（过滤掉“未转写/仅有标题”的废行，优先强烈推荐）
+    valid_rows = [
+        r for r in rows
+        if r.get("转写状态") != "未转写" and "仅有标题" not in (r.get("选题推荐") or "")
+    ]
+    if valid_rows:
+        lines.append("---")
         lines.append("**📱 关注博主更新（得到大脑）**")
-        sorted_rows = sorted(rows, key=lambda r: 0 if r.get("推荐等级") == "强烈推荐" else 1)
-        for r in sorted_rows[:6]:
+        sorted_rows = sorted(
+            valid_rows,
+            key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
+        )
+        for idx, r in enumerate(sorted_rows[:5], 1):
             mark = "🔥 " if r.get("推荐等级") == "强烈推荐" else ""
             blogger = r.get("博主", "")
             title = (r.get("标题") or "")[:36]
             rec = r.get("选题推荐") or ""
             pub_t = _fmt_ts(r.get("发布时间"))
-            t_tag = f"[{pub_t}] " if pub_t else ""
-            link_obj = r.get("链接") or {}
-            url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
-            link_md = f" [看视频]({url})" if url else ""
-            lines.append(f"• {mark}**{t_tag}{blogger}｜{title}**{link_md}")
+            t_tag = f"`{pub_t}` " if pub_t else ""
+            url = _extract_url(r.get("链接"))
+            link_md = f" 👉 [看视频]({url})" if url else ""
+            lines.append(f"**【{idx}】** {mark}{t_tag}**{blogger}｜{title}**{link_md}")
             if rec:
-                lines.append(f"  {rec}")
+                lines.append(f"　　{rec}")
         lines.append("")
 
+    lines.append("---")
     lines.append(f"📂 [订阅总表]({BASE_URL}?table={sub_tid}) ｜ [海外热点表]({BASE_URL}?table={hot_tid})")
     if warnings:
         lines += [""] + [f"⚠️ {w}" for w in warnings]
@@ -532,7 +561,7 @@ def run(fs: Feishu) -> None:
         warnings.append(f"AI 打标失败，本批标成「待打标」：{e}")
 
     try:
-        hots = fresh_hots(fs.records(hot_tid, ["选题", "原文链接"]), now)
+        hots = fresh_hots(fs.records(hot_tid, ["选题", "原文链接", "来源"]), now)
     except Exception as e:
         hots = []
         warnings.append(f"AIHOT 热点这次没拿到：{e}")

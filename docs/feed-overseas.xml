@@ -6,6 +6,38 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Latent Space] 黎曼猜想被证明……两次独立证明？</title>
+    <link>https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/</link>
+    <guid isPermaLink="false">overseas-5c282b7409adeedb</guid>
+    <pubDate>Sat, 21 Nov 2026 13:02:13 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>在几小时内（时间线），两位数学家分别宣称独立证明了黎曼猜想——数学界最著名的未解难题（《科学美国人》报道）。</p>
+<p>Anthropic 的 Levent Alpöge 首先用 Claude 驱动生成了一份证明，以 Lean 代码形式发布（1.3GB，约相当于 25 万页），而非完整论文。Elliot Glazer 确认形式化陈述是广义黎曼猜想（GRH），并认为 Lean 出 bug 的概率远低于 1%。所以，如果它能在没有额外公理的情况下编译通过，那很可能就是正确的，而且永远不会有任何人完整读过它……</p>
+<p>……这促使 Alessandro Masullo 发布了他 940 页、100% 由人类完成、仍在进行中的证明——他已经研究了 12 年（据 Kevin Hartnett 说，还经过了秘密的人工审查和修订）。</p>
+<p>这是前沿数学突破三部曲中的第三部，前两部是纳维-斯托克斯方程的解和准黎曼界，但事情似乎还没完。OpenAI 九月份的纳维-斯托克斯声明仍是前车之鉴：批评者认为其 Lean 证明与自然语言结果不符。两项 AI 宣称的千禧年大奖难题成果都需要数年时间来验证。</p>
+<p>除了这个数学界最著名问题的惊人成就之外，人们无法忽视其中的反差：AI 写的证明可能是正确的，但无法理解；另一个证明可能在技术上有误，但可以理解。</p>
+<p>由 Agentfield.AI 赞助
+开源模型已经就绪。大多数编程工具还没准备好。在 DeepSWE 上，CodeAF 在同一个开源模型上排名十强第一，领先于 Claude Code，且每次修复成本最低。
+试试 CodeAF！</p>
+<p>正如 Levent 雄辩地指出：“在接近终点线时，Claude 远远超过了我。不，Claude 在终点线附近飞翔、舞蹈、闪耀。”</p>
+<p>这也与我们播客和本通讯中讨论过的其他 AI 主题相关：</p>
+<p>垃圾内容（Slop）的本质：Levent 说：“我在还没有掌握其数学周围一大片领域之前，就向世界呈现了一个完整的论证。显然，试图发布一些庞大且不可读的‘垃圾’是不合适的，所以我决定只呈现 Lean。” 《反垃圾宣言》的关键原则之一是你应该理解你所发布的东西（“垃圾就是当我们投入的精力少于我们要求消费者花在理解上的精力时。”）。然而，这一大堆 Lean 代码是可验证正确的，并且在人类历史上具有难以置信的重要性。我们是否应该仅仅因为我们没有理解其中的每一个细节，就将其发布推迟十年？</p>
+<p>弱到强对齐：使用智能体的典型体验是强到弱——我们作为通用智能，指导不那么聪明的 AI 去做我们擅长的事情。我们也常常期望 AI 自动化大多数</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Within a few hours of each other (timeline), two mathematicians claimed independent proofs of the Riemann Hypothesis, the most famous open problem in mathematics (Scientific American).</p>
+<p>Levent Alpöge of Anthropic first made his Claude-driven proof in a note released with Lean code (1.3GB worth, ~250,000 page equivalent) rather than a full paper. Elliot Glazer confirms that the formalized statement is GRH and puts the chance of a Lean bug well under 1%. So if it finishes compiling with no extra axioms, it is probably correct, and no human will ever have read all of it…</p>
+<p>…prompting Alessandro Masullo to release his 940 page, 100% human, work in progress proof he had been working on for the last 12 years (and had been undergoing secret manual review and revision per Kevin Hartnett).</p>
+<p>This is the third in the trilogy of frontier math breakthroughs, following from the Navier Stokes solutions and the Quasi-Riemann bounding, but it doesn’t feel over. OpenAI&#x27;s September Navier-Stokes claim is still the cautionary tale: critics argued that its Lean proof did not match the natural-language result. Both AI-claimed Millennium Prize results will take years to verify.</p>
+<p>Apart from the incredible accomplishment of the most famous problem in mathematics, one cannot miss the contrast that the AI-written solution is probably correct but incomprehensible, and the other solution is probably technically incorrect but understandable.</p>
+<p>Sponsored by Agentfield.AI
+Open models are ready. Most coding harnesses aren’t. On DeepSWE, CodeAF finished #1 of ten on the same open model, ahead of Claude Code, at the lowest cost per fix.
+Try CodeAF!</p>
+<p>As Levent eloquently put it: “Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.”</p>
+<p>This also ties into other AI themes we’ve covered on the podcast and on this newsletter:</p>
+<p>The nature of Slop: Levent says “I am presenting the world with a complete argument before having mastered a massive neighbourhood around its mathematics. It being obviously inappropriate to attempt to post some massive unreadable travesty of &quot;slop&quot;, I decided to only present Lean.” One of the key tenets of the No Slop Manifesto is that you should understand what you ship (“Slop is when we put less effort into producing something than we ask the consumer to spend understanding it.”). And yet, this giant pile of Lean is verifiably correct and is incredibly significant in human history. Should we have delayed</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Latent Space] 对抗AI垃圾内容：形式化验证成为新武器</title>
     <link>https://latent.space/p/formal-verification/</link>
     <guid isPermaLink="false">overseas-a45c88c92cca7243</guid>
@@ -209,39 +241,6 @@ Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an
 <p>MedChemBench 用来评估 AI 模型在早期药物发现中的表现：看它们能不能读懂分子结构、能不能根据实验证据进行推理，以及能不能挑出合适的化合物。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] Linear 如何将 GTM 做到 1 亿美元 ARR——COO Cristina Cordova 访谈</title>
-    <link>https://latent.space/p/linear-scaling/</link>
-    <guid isPermaLink="false">overseas-af7ab104329c0da3</guid>
-    <pubDate>Fri, 20 Nov 2026 07:58:21 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/linear-scaling/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Linear 创立之初是为了打造一个更好的问题追踪工具。七年过去，融资 1.34 亿美元后，其 CEO Karri Saarinen 却发表了一篇题为《问题追踪已死》的文章。本期节目我们邀请到 Linear 的 COO Cristina Cordova，聊聊公司如何应对这一转变，以及其市场进入策略（GTM）一路走来发生了哪些变化。</p>
-<p>Cristina 在 Stripe 工作了七年半，在 Notion 负责平台与合作，加入 Linear 前是 First Round 的合伙人，2023 年才来到 Linear。Linear 的创始人们是在 Coinbase、Airbnb 和 Uber 受够了老旧问题追踪工具的折磨后，才动手做了这款产品，并通过 Vercel、Ramp 等创业公司以自助方式传播开来。</p>
-<p>她加入时，Linear 大约 40 人，只有一名销售。此后，公司陆续推出了 MCP 服务器、一个用于在 Linear 内构建智能体的平台、与 Codex、Cursor 和 GitHub Copilot 的集成，以及自家的 Linear Agent。一年前，智能体只创造了 Linear 上 3% 的工作量，如今已超过一半。今年 Linear 的 ARR 突破 1 亿美元，付费客户超过 4 万家，净收入留存率达 177%，8 月员工还以 25 亿美元估值出售了 9900 万美元的股票。</p>
-<p>我们聊了为什么她加入三周后就停止追逐大企业订单，为什么 Linear 从未招聘过一名销售开发代表（SDR），为什么不让大语言模型独自回答支持工单，以及几个月内做到 1 亿美元 ARR 背后的 AI 预算对其他人意味着什么。</p>
-<p>现在 Linear 上一半的工作由智能体创建</p>
-<p>Linear 于 2025 年 5 月推出 MCP 服务器，Cristina 说这基本是同类产品中的第一个。一年半后，Linear 上创建的工单超过一半来自智能体。</p>
-<p>但这并不意味着 Linear 想成为一个上面架着 MCP 服务器的数据库。Cristina 认为，那些满足于此的 SaaS 公司犯了大错。如果你产品内部的智能体工作流不比外部的更好，那就没人有理由打开你的应用。</p>
-<p>所以她关注两条线：智能体使用量和应用使用量。如果智能体使用量上升而应用使用量不升，你就在变成商品。在 Linear，两者都在向右上方增长，因为人们仍然会回到应用里查看和协调工作。</p>
-<p>跳转到 MCP 讨论 →</p>
-<p>“问题追踪已死”</p>
-<p>当 Karri 在 3 月发表《问题追踪已死》时，Linear 的大多数客户都同意他的观点。然后他们问了一个显而易见的问题：那我到底在买什么？Linear 的答案是：一个围绕智能体编排构建的产品开发系统，人类不再需要手动提交、标记、分配和关闭工单。</p>
-<p>客户一直在推动它往这个方向走。大多数前沿 AI 实验室都在用 Linear，并希望它跑得更快。像 Ramp 和 Coinbase 这样的前 AI 时代公司正在构建自己的内部智能体，需要一个 API 来接入它们。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Open video on YouTube ↗</p>
-<p>Linear was founded to build a better issue tracker. Seven years and $134 million in funding later, its CEO Karri Saarinen published a post titled &quot;Issue tracking is dead.&quot; In this episode, we chat with Cristina Cordova, COO of Linear, about how the company navigated that and how its go-to-market changed along the way.</p>
-<p>Cristina spent seven and a half years at Stripe, led platform and partnerships at Notion, and was a partner at First Round before joining Linear in 2023. Linear&#x27;s founders built it after living with legacy issue trackers at Coinbase, Airbnb and Uber, and it spread self-serve through startups like Vercel and Ramp.</p>
-<p>When she joined, Linear had about 40 people and one salesperson. Since then it has shipped an MCP server, a platform for building agents into Linear, integrations with Codex, Cursor and GitHub Copilot, and its own Linear Agent. Agents created 3% of Linear&#x27;s work a year ago. Now it&#x27;s more than half. Linear passed $100 million in ARR this year with more than 40,000 paying customers and 177% net revenue retention, and in August employees sold $99 million in stock at a $2.5 billion valuation.</p>
-<p>We talk about why she stopped chasing enterprise deals three weeks after joining, why Linear has never hired a single SDR, why it won&#x27;t let an LLM answer support tickets on its own, and what the AI budgets behind $100M-in-months ARR mean for everyone else.</p>
-<p>Half the work on Linear is now created by agents</p>
-<p>Linear shipped its MCP server in May 2025, and Cristina says it was basically the first in its category. A year and a half later, more than half the issues created in Linear come from agents.</p>
-<p>That doesn&#x27;t mean Linear wants to be a database with an MCP server on top. Cristina thinks SaaS companies settling for that are making a big mistake. If the agent workflows inside your product aren&#x27;t better than the ones outside it, nobody has a reason to open your app.</p>
-<p>So she watches two lines: agent usage and app usage. If agent usage climbs and app usage doesn&#x27;t, you&#x27;re becoming a commodity. At Linear, both are up and to the right, because people still come back to the app to see and coordinate the work.</p>
-<p>Jump to the MCP discussion →</p>
-<p>&quot;Issue tracking is dead&quot;</p>
-<p>When Karri published &quot;Issue tracking is dead&quot; in March, most of Linear&#x27;s customers agreed with him. Then they asked the obvious question: so what am I buying? Linear&#x27;s answer is a product development system built around agent orchestration, where humans st</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 我老婆以为AI是个人</title>

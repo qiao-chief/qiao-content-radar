@@ -458,6 +458,12 @@ def fresh_hots(existing: list[dict], now: datetime) -> list[dict]:
     return pick_hot([it for it in combined if item_link(it) not in seen], recent)
 
 
+def _fmt_ts(val: object) -> str:
+    if isinstance(val, (int, float)) and val > 0:
+        return datetime.fromtimestamp(val / 1000, CST).strftime("%m-%d %H:%M")
+    return ""
+
+
 def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:
     lines: list[str] = []
 
@@ -468,10 +474,12 @@ def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warn
             src = hr.get("来源", "")
             title = hr.get("选题", "")
             core = hr.get("一句话核心内容", "")
+            pub_t = _fmt_ts(hr.get("发现时间"))
+            t_tag = f"[{pub_t}] " if pub_t else ""
             link_obj = hr.get("原文链接") or {}
             url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
             link_md = f" [原文]({url})" if url else ""
-            lines.append(f"• **[{src}] {title}**{link_md}")
+            lines.append(f"• **{t_tag}[{src}] {title}**{link_md}")
             if core:
                 lines.append(f"  {core}")
         lines.append("")
@@ -485,10 +493,12 @@ def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warn
             blogger = r.get("博主", "")
             title = (r.get("标题") or "")[:36]
             rec = r.get("选题推荐") or ""
+            pub_t = _fmt_ts(r.get("发布时间"))
+            t_tag = f"[{pub_t}] " if pub_t else ""
             link_obj = r.get("链接") or {}
             url = link_obj.get("link", "") if isinstance(link_obj, dict) else ""
             link_md = f" [看视频]({url})" if url else ""
-            lines.append(f"• {mark}**{blogger}｜{title}**{link_md}")
+            lines.append(f"• {mark}**{t_tag}{blogger}｜{title}**{link_md}")
             if rec:
                 lines.append(f"  {rec}")
         lines.append("")

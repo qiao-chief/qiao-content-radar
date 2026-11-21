@@ -1,0 +1,90 @@
+{
+  "overseas:https://latent.space/p/formal-verification/": {
+    "zh_title": "对抗AI垃圾内容：形式化验证成为新武器",
+    "zh_body": "2026年AI行业的年度关键词是“slop”——指大语言模型生成的低质量输出。如今大量代码由AI生成，如何避免slop已成为软件工程师的日常难题。一个办法是使用形式化验证系统，它利用数学证明和逻辑来验证软件或硬件的正确性。\n\n随着AI在解决数学问题上的能力日益增强，现在有多家AI公司提供形式化验证系统，包括Harmonic、Theorem、Axiom Math，以及新入局的&Truth（读作“and truth”）。本文将介绍这些公司采用的一些方法。\n\n形式化验证在当今软件和AI中的应用\n\n为了更好地了解形式化验证系统的格局，我们采访了该领域的主要倡导者之一：&Truth的联合创始人兼联合CEO Clark Barrett。他同时也是斯坦福大学计算机科学系Corbel教授（研究岗），并且是cvc5的联合创造者——cvc5是一款广泛用于形式化验证的自动推理引擎。\n\n简单来说，cvc5是用于可满足性模理论（SMT）的“求解器”，Barrett表示，亚马逊等公司广泛使用它。例如，cvc5被用于亚马逊的智能体开发环境Kiro中的规范分析和测试生成。\n\n“看着我的工具从实验室里的好点子，变成如今在亚马逊生产流水线中每天被调用数十亿次，这很有趣，”Barrett告诉我们。\n\n（附图：Clark Barrett等人2022年合著的关于cvc5的论文）\n\n当AI编程智能体公司谈论“验证”自己的工作时，通常指的是智能体运行测试、自我批评输出，或让另一个AI模型来评判。于是我询问Barrett，这与真正的验证相差多远？\n\n“主要区别就在于，你怎么知道什么时候算完成了，”他回答说。“如果你在做测试、打补丁、扫描——使用所有这些现有工具——它们相当不错。我的意思是，它们能发现大量问题，并提出这些问题。但你永远不太确定，我是不是找到了所有问题，还是有一个潜伏着、我的工具找不到？”\n\n&Atlas是&Truth的第一款工具；它是“一张世界开源代码的地图，从用C语言编写的代码开始。”\n\nLean在形式化验证中的角色\n\n&Truth基于Lean构建，Lean是一个开源编程语言和证明助手。该公司将AI与自动推理技术相结合，构建出Lean可以检查的证明。\n\nLean是前沿模型用来解决各种极其困难数学问题的语言。例如，就在本周，GPT-6.2 Astra产出了Vals认为的“那个……”（原文在此处中断）"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/20/ravi-vakil/": {
+    "zh_title": "拉维·瓦基尔谈马苏洛的广义黎曼猜想证明",
+    "zh_body": "亚历山德罗·马苏洛提出了一个广义黎曼猜想的证明，布莱恩·康拉德已经仔细研究了几个月，给出了大量反馈，目前正在被采纳，而且到目前为止看起来不错。这完全是人类的工作，没有用到人工智能。原本的希望是把亚历山德罗请到斯坦福待一年，打磨一下写作，然后在征求足够多的人的意见之后公布。现在看来，最好还是先把当前的草稿发出来。\n\n—— 拉维·瓦基尔，《匆忙的公告：亚历山德罗·马苏洛的广义黎曼猜想》\n\n标签：数学"
+  },
+  "overseas:https://stratechery.com/2026/down-in-dc/": {
+    "zh_title": "2026.47：华盛顿失意",
+    "zh_body": "安德鲁犯了个致命错误——对奇才队抱了太大希望；在Sharp Text节目里，他琢磨着这一切到底是怎么搞砸的。（图片：Todd Olszewski/Getty Images）\n\n欢迎回到本周的Stratechery！\n\n提醒一下：每周五我们都会发送这份Stratechery内容包概览，标亮的链接对所有人免费。另外，你完全可以自己控制我们发给你的内容。如果你不想收到This Week in Stratechery的邮件（没有播客），请在投递设置里取消勾选。\n\n说到这里，以下是本周我们最喜欢的几篇。\n\n讣告与例外主义。在黄仁勋令人震惊地离职几天后，本在周一的文章里写了一篇综合讣告，悼念可能正在终结的美国多个时代。文章梳理了让黄仁勋伟大的那些决策、让他成为靶子的那些策略、他的离去对科技生态其余部分的影响，以及美国政府对科技公司——尤其是AI公司——看法的转变，而黄仁勋始终没能适应这种转变。周一的文章既全面又动人。——安德鲁·夏普\n\n关于智能体的争论。Stratechery的常客、广告专家埃里克·索弗特在数字广告格局的看法上常常和本一致，所以本周的Stratechery访谈很有意思：本坚信智能体商务有巨大潜力，而埃里克过去一年一直在（正确地）戳穿各种被炒作的智能体商务故事和趋势。两人周四各自陈述了观点，访谈前后还聊了Muse打算怎么变现、市场为何误读了谷歌最近的财报，以及ChatGPT在广告业务上的进展。——AS\n\n本入手了一台Duo。在满是英伟达观点和不祥基础设施故障的一周里，我惊喜地发现本不仅买了一台iPhone Duo，还很喜欢它。周二Update结尾有他的评测，接着周二Dithering里他和约翰·格鲁伯的讨论也别错过。本周Sharp Tech结尾我们又绕回来（Duo回来？）把这一切聊了个遍，包括一些上手测试、和iPhone Air的对比，以及对iPhone Pro的各种吐槽。——AS\n\n本文由以下赞助商呈现\n\n随着AI模型不断进步，你可能会以为市场会向少数几家提供商集中。但用户数据讲的是另一个故事。\n\n在OpenRouter每月消费至少100美元的客户中，过去一年里使用中的AI模型家族数量中位数翻了一倍，从三个增加到六个。\n\n即便AI模型能力越来越强，企业用的模型却越来越多，而不是越来越少。这让"
+  },
+  "overseas:https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "新闻业不该沦为AI的免费饲料",
+    "zh_body": "人工智能正在从根本上改变信息环境，新闻出版商面临一个危险：沦为大型科技公司的内容供应商，除此之外什么都不是。为了不落得这个下场，许多出版商正利用自己的档案库和专业积累来开发AI工具，让自己能按自己的规则运营和竞争。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/20/levent-alpoge/": {
+    "zh_title": "Levent Alpöge 称与 Claude 合作证明黎曼猜想",
+    "zh_body": "我相信，在与 Claude 的合作下，我发现了一个黎曼猜想的证明。事实上，这个方法很容易进一步推广，解决了所谓的广义黎曼猜想，而且我预计，假以时日，也能解决扩展黎曼猜想。Claude 和我还在没有假设的情况下形式化了论证。人们自然会觉得这是一个终点，对我来说是失去了一盏主要的指路明灯，但在进展过程中我所看到的一切让我如此惊叹，以至于我相信这是科学界迎来某种更伟大事物的曙光。[...]\n\n近几个月来，Claude 和我一起度过了愉快的时光，涉猎广泛，但这一次，Claude 在接近终点线时远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。\n\n—— Levent Alpöge, alpo.ge/remark.pdf\n\n标签：anthropic, claude, 生成式AI, 数学, AI, 大语言模型, levent-alpoge"
+  },
+  "overseas:https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "非洲经济治理：从现实出发，而非照搬旧路",
+    "zh_body": "非洲无法靠沿用那些当初制造出这些发展难题的知识、经济和创新体系，来克服自身的发展挑战。要设想并治理出新的前进道路，需要在思想上实现三次突破。"
+  },
+  "overseas:https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "让地球再次凉爽：气候多边主义的双轨新局",
+    "zh_body": "气候多边主义正在演变为一个双轨体系：一边是围绕共同承诺展开的高层谈判，另一边是气候解决方案在现实世界中的落地实施，而这两条轨道正变得越来越相互支撑。只有让这种良性循环充分运转起来，我们才有望守住全球升温不超过1.5ºC的目标。"
+  },
+  "overseas:https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/": {
+    "zh_title": "Sharp Tech视频首秀：黄仁勋不会回头，AI购物与iPhone双机时代",
+    "zh_body": "Sharp Tech首次推出视频版。你有三种方式收看：YouTube、Spotify，以及Stratechery本站。"
+  },
+  "overseas:https://openai.com/index/combatting-adversarial-distillation": {
+    "zh_title": "OpenAI 如何应对对抗性蒸馏：分层防御保护模型能力",
+    "zh_body": "OpenAI 应对对抗性蒸馏（adversarial distillation）采用的是分层策略，把模型训练、安全防护、检测与执法结合起来，防止模型能力被提取。\n\n所谓对抗性蒸馏，是指有人试图通过大量调用模型输出，把模型的能力“蒸馏”到自己的模型里。OpenAI 的防御不是单点措施，而是一套组合拳：在训练阶段就考虑抗蒸馏能力，在部署时加上安全防护，同时持续检测可疑的提取行为，并在发现违规后采取执法行动。\n\n这套分层做法覆盖了从模型开发到实际使用的多个环节，目标是让能力提取变得更难、更容易被发现，也更有后果。"
+  },
+  "overseas:https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/": {
+    "zh_title": "Anthropic完成史上最大IPO，估值1.5万亿美元",
+    "zh_body": "正如我们在《上市前须知》播客里预告的那样，Anthropic把IPO发行价定在83美元，今天$ANT收盘报97.17美元，较发行价上涨17%（盘后回落5%，报92.60美元）。这次813亿美元的发行规模超过了SpaceX今年6月的IPO，成为史上最大IPO。\n\n达里奥和丹妮拉（达里奥的发言、创始人信）借这个机会表态：Anthropic会根据能否让系统保持安全、处于人类控制之下来决定训练和部署的节奏。\n\n他们的F类股票在多数股东事项上拥有50.1%的投票权。预计锁定期到期会给股价带来压力——未来一年约有价值一万亿美元的股票解禁，而Anthropic至少目前还得守住全球最强模型的位置。\n\n2026年11月18日至19日AI新闻。我们查看了12个subreddit和X上的544个账号。往期内容可在AINews存档中搜索。\n\nAI推特回顾\n\nAnthropic以$ANT为代码在纳斯达克上市，发行价83美元，开盘大涨34%，估值接近2万亿美元。\n\n上市：Anthropic敲响了纳斯达克开盘钟（@kimmonismus、@yacinelearning）。官方账号发布了一条仅限媒体的上市消息，互动量是当天最高的（@AnthropicAI）。\n\n开盘交易：$ANT开盘报111.50美元，比83美元的IPO发行价高出28.50美元（34.3%）（@TheRundownAI、@kimmonismus）。盘前指示价约110美元，涨约32%（@kimmonismus）。\n\n创纪录募资：813亿美元的募资额超过SpaceX的750亿美元（6月），成为史上最大IPO（@TheRundownAI）。\n\n净募资额：计入同步进行的私募配售，预计净募资额为1048亿美元。开盘时完全稀释估值约2万亿美元（@kimmonismus）。\n\nAMD投资：AMD同意在IPO同时向Anthropic投资25亿美元。同一天上午，AMD股价下跌，此前Hunterbrook报道称一家被美国列入黑名单的中国服务器厂商仍在出货较新的AMD固件（@kimmonismus，来源）。\n\nCEO声明：达里奥·阿莫代伊发布了IPO发言，作出强有力的安全承诺（详见下文）（@AnthropicAI）。\n\n员工财富：根据SEC文件和投资者说法，普通员工的身家可能超过4000万美元（@kimmonismus）。Anthropic的5300名创始人和员工现在的身家超过了美国最底层三分之一的家庭，约4500万户（@SteveRattner）。\n\n达里奥·阿莫代伊的IPO发言（官方立场）\n\n个人经历：达里奥和丹妮拉的父亲死于一种几年后就能治愈的疾病。达里奥提到CRISPR从发现到治疗走了几十年。\n\n核心论点：强大的AI与人类协作，“可能把一个世纪的科学和医学进步压缩到十年”。他强调目前只有早期成果。\n\n点明的风险：个人或民族国家的滥用、经济冲击、失控。列出的安全工作包括生物/网络安全防护、对齐训练和可解释性（“就像"
+  },
+  "x:https://x.com/swyx/status/2123659761887625602": {
+    "zh_title": "你不是认真的吧",
+    "zh_body": "你不是认真的吧 https://t.co/pll3CcsPFp"
+  },
+  "x:https://x.com/petergyang/status/2123648490844897389": {
+    "zh_title": "谷歌10万员工内测AI工具，这其实是隐藏优势",
+    "zh_body": "大家都爱调侃谷歌公司大、官僚气重，但我倒觉得，他们的一大竞争优势在于：在正式大范围发布之前，有超过10万名员工在测试他们最新的模型和工具。\n\n员工规模到了这个量级，你甚至可以在内部员工中做A/B测试，而且结果还能达到统计显著性 :)"
+  },
+  "x:https://x.com/petergyang/status/2123620968568676457": {
+    "zh_title": "Opus 5.5 对决 Gemini 4 Neon：夜晚涩谷十字路口，你更爱哪版？",
+    "zh_body": "Opus 5.5 和 Gemini 4 Neon 在夜晚涩谷十字路口的对比。你更喜欢哪一个？\n\n📌 想看另外 4 组一对一对比，点这里：https://t.co/8rKllg4xBx https://t.co/QrSv4LzvmI https://t.co/p7nr6lHYU0"
+  },
+  "x:https://x.com/thsottiaux/status/2123612889416339762": {
+    "zh_title": "团队竟敢相信能原地改善12亿用户的体验",
+    "zh_body": "这个团队疯得可以，居然觉得自己能在不推倒重来的前提下，把12亿用户正在用的体验给改好。\n\n那就看看这套策略最后能不能跑通吧。"
+  },
+  "x:https://x.com/thsottiaux/status/2123612433923051976": {
+    "zh_title": "ChatGPT 2.0 来了",
+    "zh_body": "ChatGPT 2.0 来了 https://t.co/QooOVLPLlf"
+  },
+  "x:https://x.com/swyx/status/2123591875349422435": {
+    "zh_title": "刷社交媒体时，别忘了这个套路",
+    "zh_body": "刷社交媒体的时候，我觉得有件事值得记在心里：你可以说“达到SOTA的概率已经降到零了”，然后收获一大堆点赞；三个月后人家真达到了SOTA，你再发个道歉声明，点赞反而更多。而你写的那个对象，还会把你的话打印出来，谢谢你给的动力。\n\n说错话完全没代价，夸张反而处处有奖励，X的算法就是照着这个逻辑调的。"
+  },
+  "x:https://x.com/adityaag/status/2123579739868959110": {
+    "zh_title": "今天，我为我们的行业深感自豪",
+    "zh_body": "今天，我为我们这个行业感到无比自豪。\n\n这不是一个零和博弈的日子。\n\n我们所有身处“计算机”行业、硅谷和风险投资领域的人，都应该感到骄傲。\n\n我们都在为加速人类进步贡献力量。\n\n能活在这个时代，真好。"
+  },
+  "x:https://x.com/thsottiaux/status/2123557171321561133": {
+    "zh_title": "ChatGPT 移动端新体验来了",
+    "zh_body": "我们正在为 ChatGPT 打造全新的移动端体验！\n\n新界面让你更容易找到常用功能，也更容易发现 ChatGPT 能帮你做什么。这次先从 Pro 用户开始——也就是已经拥有 dot 或符合条件可以创建 dot 的用户。你的 dot 会有独立标签页，你还可以把 Codex、Projects、Images 等功能固定到标签栏上。部分用户会默认看到新界面。\n\n你随时可以在「设置 > 新版 ChatGPT 设计」里打开或关闭它。\n\n在更大范围推送之前，非常期待听到你的反馈！"
+  },
+  "x:https://x.com/rauchg/status/2123553975945556144": {
+    "zh_title": "公司的起点，是那个帮你把公司搭起来的智能体",
+    "zh_body": "一家公司的起点，就是那个帮你把公司建起来的智能体。https://t.co/JAeoreokGR"
+  },
+  "x:https://x.com/swyx/status/2123552457649492023": {
+    "zh_title": "fuuuuuuck",
+    "zh_body": "fuuuuuuck\n\nhttps://t.co/y1lntMSVtd"
+  },
+  "x:https://x.com/petergyang/status/2123540875733315815": {
+    "zh_title": "Gemini 4 Neon 好评如潮，我做了个对比视频",
+    "zh_body": "Gemini 4 Neon 最近好评如潮，所以我做了个新视频，把它和我日常干活最爱用的 Opus 5.5 放在一起比了比。\n\n几点感受：\n\n1. 从我的测试看，Opus 在 3D 和设计上还是更强，但 Neon 在写作和「性格」上已经不相上下、甚至更好，这已经很了不起了。\n\n2. @Google 的 Gemini 4 一共有 3 个模型，但实际上我觉得 99% 的任务我都会用 Neon。它比 Carbon 快得多，效果却一样好。\n\n3. 每月 100 美元的 Gemini Ultra 订阅挺划算。你能拿到 Gemini 4、YouTube Premium 家庭版（我最爱的订阅，没有之一，YouTube 和 Music 都免广告）、20 TB 存储空间放照片和文件，还有更多。\n\n📌 想看我在 5 个使用场景里实测 Neon 对 Opus，点这里：https://t.co/irRiNDdqgY"
+  },
+  "x:https://x.com/amasad/status/2123535544718418191": {
+    "zh_title": "一条提示词，打造你自己的 Muse 式个人智能体",
+    "zh_body": "只需一条提示词，就能搭建属于你自己的、类似 Muse 的个人智能体。https://t.co/24iScdeQvb"
+  }
+}

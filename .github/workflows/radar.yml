@@ -41,6 +41,8 @@ jobs:
         run: npm install -g @getnote/cli@1.5.10 && getnote version
       - name: 拉料、打标、写飞书表
         run: python radar.py
+      - name: 生成三大独立中文RSS频道
+        run: python build_rss_channels.py
       - name: 生成看板网页
         run: python build_site.py   # 输出到 docs/index.html + docs/CNAME；失败会非零退出让 CI 标红
       - name: 提交发布

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>🔵 海外深度精翻</title>
+  <link>https://radar.qiao-flow.cn/</link>
+  <description>8大海外AI博客与经济学家深度文章（中文精翻+原文）</description>
+  <language>zh-CN</language>
+  <item>
+    <title>[Latent Space] 对抗AI垃圾内容：形式化验证成为新武器</title>
+    <link>https://latent.space/p/formal-verification/</link>
+    <guid isPermaLink="false">overseas-a45c88c92cca7243</guid>
+    <pubDate>Sat, 21 Nov 2026 05:18:41 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/formal-verification/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>2026年AI行业的年度关键词是“slop”——指大语言模型生成的低质量输出。如今大量代码由AI生成，如何避免slop已成为软件工程师的日常难题。一个办法是使用形式化验证系统，它利用数学证明和逻辑来验证软件或硬件的正确性。</p>
+<p>随着AI在解决数学问题上的能力日益增强，现在有多家AI公司提供形式化验证系统，包括Harmonic、Theorem、Axiom Math，以及新入局的&amp;Truth（读作“and truth”）。本文将介绍这些公司采用的一些方法。</p>
+<p>形式化验证在当今软件和AI中的应用</p>
+<p>为了更好地了解形式化验证系统的格局，我们采访了该领域的主要倡导者之一：&amp;Truth的联合创始人兼联合CEO Clark Barrett。他同时也是斯坦福大学计算机科学系Corbel教授（研究岗），并且是cvc5的联合创造者——cvc5是一款广泛用于形式化验证的自动推理引擎。</p>
+<p>简单来说，cvc5是用于可满足性模理论（SMT）的“求解器”，Barrett表示，亚马逊等公司广泛使用它。例如，cvc5被用于亚马逊的智能体开发环境Kiro中的规范分析和测试生成。</p>
+<p>“看着我的工具从实验室里的好点子，变成如今在亚马逊生产流水线中每天被调用数十亿次，这很有趣，”Barrett告诉我们。</p>
+<p>（附图：Clark Barrett等人2022年合著的关于cvc5的论文）</p>
+<p>当AI编程智能体公司谈论“验证”自己的工作时，通常指的是智能体运行测试、自我批评输出，或让另一个AI模型来评判。于是我询问Barrett，这与真正的验证相差多远？</p>
+<p>“主要区别就在于，你怎么知道什么时候算完成了，”他回答说。“如果你在做测试、打补丁、扫描——使用所有这些现有工具——它们相当不错。我的意思是，它们能发现大量问题，并提出这些问题。但你永远不太确定，我是不是找到了所有问题，还是有一个潜伏着、我的工具找不到？”</p>
+<p>&amp;Atlas是&amp;Truth的第一款工具；它是“一张世界开源代码的地图，从用C语言编写的代码开始。”</p>
+<p>Lean在形式化验证中的角色</p>
+<p>&amp;Truth基于Lean构建，Lean是一个开源编程语言和证明助手。该公司将AI与自动推理技术相结合，构建出Lean可以检查的证明。</p>
+<p>Lean是前沿模型用来解决各种极其困难数学问题的语言。例如，就在本周，GPT-6.2 Astra产出了Vals认为的“那个……”（原文在此处中断）</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>The word of the year in the AI industry over 2026 has been “slop” — meaning low-quality output from a large language model. And with so much code being AI-generated now, avoiding slop has become a daily concern for software engineers. So how to do that? One way is to use formal verification systems, which use mathematical proofs and logic to verify the correctness of software or hardware.</p>
+<p>With AI’s growing prowess at solving math problems, there’s now a number of AI companies offering formal verification systems. They include Harmonic, Theorem, Axiom Math, and a new entrant called &amp;amp;Truth (pronounced ‘and truth’). In this article we’ll look at some of the approaches these companies are taking.</p>
+<p>How formal verification is used in software and AI today</p>
+<p>In order to better understand the landscape of formal verification systems, we spoke to one of its leading proponents: Clark Barrett, &amp;amp;Truth’s co-founder and co-CEO. He’s also Corbel Professor (Research) of Computer Science at Stanford and was the co-creator of cvc5, a popular automated reasoning engine used in formal verification.</p>
+<p>Without getting too in the weeds, cvc5 is what’s called a “solver” for satisfiability modulo theories (SMT), which Barrett says is widely used in companies like Amazon. For instance, cvc5 is used for specification analysis and test generation in Kiro, Amazon’s agentic development environment.</p>
+<p>“It&#x27;s been fun to see my tools go from a good idea in the lab to cvc5 is now called billions of times a day in production pipelines at Amazon,” Barrett told us.</p>
+<p>Via a 2022 paper about cvc5 co-authored by Clark Barrett.</p>
+<p>When AI coding agent companies talk about “verifying” their work, it typically means agents running tests, critiquing their own output, or having another AI model judge it. So I asked Barrett how far short of real verification does that fall?</p>
+<p>“The main difference is really just, how do you know when you&#x27;re done,” he replied. “So if you&#x27;re testing, patching, scanning — using all these existing tools — they&#x27;re quite good. I mean, they find a ton of problems. They raise those issues. But you&#x27;re never quite sure, did I find all of them [the issues] or is there one more lurking there that my tool can&#x27;t find?”</p>
+<p>&amp;amp;Atlas, the first tool of &amp;amp;Truth; it’s “a map of the world’s open-source code, starting with code written in the C programming language.”</p>
+<p>Lean’s role in formal verification</p>
+<p>&amp;amp;Truth builds on Lean, an open-source programming language and p</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] 拉维·瓦基尔谈马苏洛的广义黎曼猜想证明</title>
+    <link>https://simonwillison.net/2026/Nov/20/ravi-vakil/</link>
+    <guid isPermaLink="false">overseas-cf3b0c6c1cbc2369</guid>
+    <pubDate>Sat, 21 Nov 2026 03:21:49 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/ravi-vakil/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>亚历山德罗·马苏洛提出了一个广义黎曼猜想的证明，布莱恩·康拉德已经仔细研究了几个月，给出了大量反馈，目前正在被采纳，而且到目前为止看起来不错。这完全是人类的工作，没有用到人工智能。原本的希望是把亚历山德罗请到斯坦福待一年，打磨一下写作，然后在征求足够多的人的意见之后公布。现在看来，最好还是先把当前的草稿发出来。</p>
+<p>—— 拉维·瓦基尔，《匆忙的公告：亚历山德罗·马苏洛的广义黎曼猜想》</p>
+<p>标签：数学</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft.</p>
+<p>&amp;mdash; Ravi Vakil, Hurried Announcement: Alessandro Masullo GRH</p>
+<p>Tags: mathematics</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Stratechery] 2026.47：华盛顿失意</title>
+    <link>https://stratechery.com/2026/down-in-dc/</link>
+    <guid isPermaLink="false">overseas-f940ebc8ce1254af</guid>
+    <pubDate>Sat, 21 Nov 2026 03:09:57 +0800</pubDate>
+    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/down-in-dc/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>安德鲁犯了个致命错误——对奇才队抱了太大希望；在Sharp Text节目里，他琢磨着这一切到底是怎么搞砸的。（图片：Todd Olszewski/Getty Images）</p>
+<p>欢迎回到本周的Stratechery！</p>
+<p>提醒一下：每周五我们都会发送这份Stratechery内容包概览，标亮的链接对所有人免费。另外，你完全可以自己控制我们发给你的内容。如果你不想收到This Week in Stratechery的邮件（没有播客），请在投递设置里取消勾选。</p>
+<p>说到这里，以下是本周我们最喜欢的几篇。</p>
+<p>讣告与例外主义。在黄仁勋令人震惊地离职几天后，本在周一的文章里写了一篇综合讣告，悼念可能正在终结的美国多个时代。文章梳理了让黄仁勋伟大的那些决策、让他成为靶子的那些策略、他的离去对科技生态其余部分的影响，以及美国政府对科技公司——尤其是AI公司——看法的转变，而黄仁勋始终没能适应这种转变。周一的文章既全面又动人。——安德鲁·夏普</p>
+<p>关于智能体的争论。Stratechery的常客、广告专家埃里克·索弗特在数字广告格局的看法上常常和本一致，所以本周的Stratechery访谈很有意思：本坚信智能体商务有巨大潜力，而埃里克过去一年一直在（正确地）戳穿各种被炒作的智能体商务故事和趋势。两人周四各自陈述了观点，访谈前后还聊了Muse打算怎么变现、市场为何误读了谷歌最近的财报，以及ChatGPT在广告业务上的进展。——AS</p>
+<p>本入手了一台Duo。在满是英伟达观点和不祥基础设施故障的一周里，我惊喜地发现本不仅买了一台iPhone Duo，还很喜欢它。周二Update结尾有他的评测，接着周二Dithering里他和约翰·格鲁伯的讨论也别错过。本周Sharp Tech结尾我们又绕回来（Duo回来？）把这一切聊了个遍，包括一些上手测试、和iPhone Air的对比，以及对iPhone Pro的各种吐槽。——AS</p>
+<p>本文由以下赞助商呈现</p>
+<p>随着AI模型不断进步，你可能会以为市场会向少数几家提供商集中。但用户数据讲的是另一个故事。</p>
+<p>在OpenRouter每月消费至少100美元的客户中，过去一年里使用中的AI模型家族数量中位数翻了一倍，从三个增加到六个。</p>
+<p>即便AI模型能力越来越强，企业用的模型却越来越多，而不是越来越少。这让</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Andrew made the fatal mistake of getting his hopes up for the Wizards; on Sharp Text he wonders how it all went wrong. (Photo by Todd Olszewski/Getty Images)</p>
+<p>Welcome back to This Week in Stratechery!</p>
+<p>As a reminder, each week, every Friday, we&amp;#8217;re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone. Additionally, you have complete control over what we send to you. If you don&amp;#8217;t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your delivery settings.</p>
+<p>On that note, here were a few of our favorites this week.</p>
+<p>Obituaries and Exceptionalism. After several days to mull the shocking departure of Jensen Huang, Ben&amp;#8217;s article on Monday delivered an omnibus obituary for a variety of American eras that may now be ending. Tracing the decisions that made Huang great, the strategies that made him a target, the implications of his demise for the rest of the tech ecosystem, and a shift in the U.S. government&amp;#8217;s perspective on tech companies — and specifically AI companies — to which Huang never quite adapted, Monday&amp;#8217;s piece was both comprehensive and poignant. — Andrew Sharp</p>
+<p>Arguments About Agents. Recurring Stratechery guest and advertising expert Eric Seufert is often aligned with Ben in his view of the digital advertising landscape, which is why this week&amp;#8217;s Stratechery Interview was fun: Ben is a big believer in the potential upside in agentic commerce, while Eric has been (correctly) calling BS on a variety of hyped agentic commerce stories and trends over the past year. Both of them made their case Thursday, and it was sandwiched between thoughts on how Muse plans to monetize, why the market have misread Google&amp;#8217;s recent earnings report, and ChatGPT&amp;#8217;s progress building an ads business. — AS</p>
+<p>Ben Gets a Duo. In the middle of a heavy week of Nvidia takes and ominous infrastructure failures, I was delighted to find out that Ben not only purchased an iPhone Duo, but loved it. Come for his review at the end of Tuesday&amp;#8217;s Update, and then stay for his discussion with John Gruber on Tuesday&amp;#8217;s Dithering. We doubled back (Duo&amp;#8217;d back?) to discuss all of it at the end of this week&amp;#8217;s Sharp Tech, including some hands-on testing, comparisons to the iPhone Air, and a variety of shots fired at the iPhone Pro. — AS</p>
+<p>Presented by</p>
+<p>As AI models improve, you might expect the market will consolidate around a handful of p</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Project Syndicate] 新闻业不该沦为AI的免费饲料</title>
+    <link>https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
+    <guid isPermaLink="false">overseas-b769dd357de922ce</guid>
+    <pubDate>Sat, 21 Nov 2026 00:48:30 +0800</pubDate>
+    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>人工智能正在从根本上改变信息环境，新闻出版商面临一个危险：沦为大型科技公司的内容供应商，除此之外什么都不是。为了不落得这个下场，许多出版商正利用自己的档案库和专业积累来开发AI工具，让自己能按自己的规则运营和竞争。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>As AI fundamentally alters the information environment, news publishers risk becoming little more than content suppliers for Big Tech. To avoid that fate, many are drawing on their archives and expertise to develop AI tools that allow them to operate and compete on their own terms.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] Levent Alpöge 称与 Claude 合作证明黎曼猜想</title>
+    <link>https://simonwillison.net/2026/Nov/20/levent-alpoge/</link>
+    <guid isPermaLink="false">overseas-f27b1f34ce20932c</guid>
+    <pubDate>Sat, 21 Nov 2026 00:30:48 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/levent-alpoge/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>我相信，在与 Claude 的合作下，我发现了一个黎曼猜想的证明。事实上，这个方法很容易进一步推广，解决了所谓的广义黎曼猜想，而且我预计，假以时日，也能解决扩展黎曼猜想。Claude 和我还在没有假设的情况下形式化了论证。人们自然会觉得这是一个终点，对我来说是失去了一盏主要的指路明灯，但在进展过程中我所看到的一切让我如此惊叹，以至于我相信这是科学界迎来某种更伟大事物的曙光。[...]</p>
+<p>近几个月来，Claude 和我一起度过了愉快的时光，涉猎广泛，但这一次，Claude 在接近终点线时远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。</p>
+<p>—— Levent Alpöge, alpo.ge/remark.pdf</p>
+<p>标签：anthropic, claude, 生成式AI, 数学, AI, 大语言模型, levent-alpoge</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...]</p>
+<p>Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.</p>
+<p>&amp;mdash; Levent Alpöge, alpo.ge/remark.pdf</p>
+<p>Tags: anthropic, claude, generative-ai, mathematics, ai, llms, levent-alpoge</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Project Syndicate] 非洲经济治理：从现实出发，而非照搬旧路</title>
+    <link>https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
+    <guid isPermaLink="false">overseas-ea1e65db1b913203</guid>
+    <pubDate>Fri, 20 Nov 2026 23:41:02 +0800</pubDate>
+    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>非洲无法靠沿用那些当初制造出这些发展难题的知识、经济和创新体系，来克服自身的发展挑战。要设想并治理出新的前进道路，需要在思想上实现三次突破。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Africa cannot overcome its development challenges by applying the same knowledge, economic, and innovation systems that helped create them. Imagining and governing new ways forward will require three intellectual ruptures.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Project Syndicate] 让地球再次凉爽：气候多边主义的双轨新局</title>
+    <link>https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
+    <guid isPermaLink="false">overseas-05e1c1d1869045ce</guid>
+    <pubDate>Fri, 20 Nov 2026 22:46:57 +0800</pubDate>
+    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>气候多边主义正在演变为一个双轨体系：一边是围绕共同承诺展开的高层谈判，另一边是气候解决方案在现实世界中的落地实施，而这两条轨道正变得越来越相互支撑。只有让这种良性循环充分运转起来，我们才有望守住全球升温不超过1.5ºC的目标。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Climate multilateralism is evolving into a two-tiered system in which high-level negotiations toward shared commitments and the real-world implementation of climate solutions become more mutually supportive. Only by unleashing such virtuous cycles can we keep the 1.5ºC target for global warming within reach.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Stratechery] Sharp Tech视频首秀：黄仁勋不会回头，AI购物与iPhone双机时代</title>
+    <link>https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/</link>
+    <guid isPermaLink="false">overseas-10e3701825a17c31</guid>
+    <pubDate>Fri, 20 Nov 2026 19:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Sharp Tech首次推出视频版。你有三种方式收看：YouTube、Spotify，以及Stratechery本站。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] OpenAI 如何应对对抗性蒸馏：分层防御保护模型能力</title>
+    <link>https://openai.com/index/combatting-adversarial-distillation</link>
+    <guid isPermaLink="false">overseas-7ad44f990f0c53ef</guid>
+    <pubDate>Fri, 20 Nov 2026 18:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/combatting-adversarial-distillation">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>OpenAI 应对对抗性蒸馏（adversarial distillation）采用的是分层策略，把模型训练、安全防护、检测与执法结合起来，防止模型能力被提取。</p>
+<p>所谓对抗性蒸馏，是指有人试图通过大量调用模型输出，把模型的能力“蒸馏”到自己的模型里。OpenAI 的防御不是单点措施，而是一套组合拳：在训练阶段就考虑抗蒸馏能力，在部署时加上安全防护，同时持续检测可疑的提取行为，并在发现违规后采取执法行动。</p>
+<p>这套分层做法覆盖了从模型开发到实际使用的多个环节，目标是让能力提取变得更难、更容易被发现，也更有后果。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] Anthropic完成史上最大IPO，估值1.5万亿美元</title>
+    <link>https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/</link>
+    <guid isPermaLink="false">overseas-abadb4e0aaec88e9</guid>
+    <pubDate>Fri, 20 Nov 2026 15:12:24 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>正如我们在《上市前须知》播客里预告的那样，Anthropic把IPO发行价定在83美元，今天$ANT收盘报97.17美元，较发行价上涨17%（盘后回落5%，报92.60美元）。这次813亿美元的发行规模超过了SpaceX今年6月的IPO，成为史上最大IPO。</p>
+<p>达里奥和丹妮拉（达里奥的发言、创始人信）借这个机会表态：Anthropic会根据能否让系统保持安全、处于人类控制之下来决定训练和部署的节奏。</p>
+<p>他们的F类股票在多数股东事项上拥有50.1%的投票权。预计锁定期到期会给股价带来压力——未来一年约有价值一万亿美元的股票解禁，而Anthropic至少目前还得守住全球最强模型的位置。</p>
+<p>2026年11月18日至19日AI新闻。我们查看了12个subreddit和X上的544个账号。往期内容可在AINews存档中搜索。</p>
+<p>AI推特回顾</p>
+<p>Anthropic以$ANT为代码在纳斯达克上市，发行价83美元，开盘大涨34%，估值接近2万亿美元。</p>
+<p>上市：Anthropic敲响了纳斯达克开盘钟（@kimmonismus、@yacinelearning）。官方账号发布了一条仅限媒体的上市消息，互动量是当天最高的（@AnthropicAI）。</p>
+<p>开盘交易：$ANT开盘报111.50美元，比83美元的IPO发行价高出28.50美元（34.3%）（@TheRundownAI、@kimmonismus）。盘前指示价约110美元，涨约32%（@kimmonismus）。</p>
+<p>创纪录募资：813亿美元的募资额超过SpaceX的750亿美元（6月），成为史上最大IPO（@TheRundownAI）。</p>
+<p>净募资额：计入同步进行的私募配售，预计净募资额为1048亿美元。开盘时完全稀释估值约2万亿美元（@kimmonismus）。</p>
+<p>AMD投资：AMD同意在IPO同时向Anthropic投资25亿美元。同一天上午，AMD股价下跌，此前Hunterbrook报道称一家被美国列入黑名单的中国服务器厂商仍在出货较新的AMD固件（@kimmonismus，来源）。</p>
+<p>CEO声明：达里奥·阿莫代伊发布了IPO发言，作出强有力的安全承诺（详见下文）（@AnthropicAI）。</p>
+<p>员工财富：根据SEC文件和投资者说法，普通员工的身家可能超过4000万美元（@kimmonismus）。Anthropic的5300名创始人和员工现在的身家超过了美国最底层三分之一的家庭，约4500万户（@SteveRattner）。</p>
+<p>达里奥·阿莫代伊的IPO发言（官方立场）</p>
+<p>个人经历：达里奥和丹妮拉的父亲死于一种几年后就能治愈的疾病。达里奥提到CRISPR从发现到治疗走了几十年。</p>
+<p>核心论点：强大的AI与人类协作，“可能把一个世纪的科学和医学进步压缩到十年”。他强调目前只有早期成果。</p>
+<p>点明的风险：个人或民族国家的滥用、经济冲击、失控。列出的安全工作包括生物/网络安全防护、对齐训练和可解释性（“就像</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>As we previewed on our Know Before You IPO pod, Anthropic set its IPO price at $83 and today $ANT closed at $97.17, up 17% from the offering price (drifting -5% to $92.60 after the close). The $81.3B offering overtook SpaceX&#x27;s June IPO as the largest in history.</p>
+<p>Dario and Daniela (Dario’s remarks, Founders’ letter) used the occasion to say Anthropic would pace training and deployment based on whether it could keep its systems safe and under human control.</p>
+<p>Their Class F shares carry 50.1% of voting power on most shareholder matters. Expect the lockup expiries to weigh on the stock price as about a trillion dollars of shares free up over the next year, while Anthropic has to keep the world’s top model...for now.</p>
+<p>AI News for 11/18/2026–11/19/2026. We checked 12 subreddits and 544 accounts on X. Search past issues in the AINews archive.</p>
+<p>AI Twitter Recap</p>
+<p>Anthropic listed on Nasdaq under $ANT, priced at $83, and opened 34% higher, putting it near a $2T valuation.</p>
+<p>Listing: Anthropic rang the Nasdaq opening bell (@kimmonismus, @yacinelearning). The official account posted a media-only launch item that drew by far the day&#x27;s highest engagement (@AnthropicAI).</p>
+<p>Opening trade: $ANT opened at $111.50, which is $28.50 (34.3%) above the $83 IPO price (@TheRundownAI, @kimmonismus). Pre-open indications were up ~32% at ~$110 (@kimmonismus).</p>
+<p>Record raise: The $81.3B raised beats SpaceX&#x27;s $75B (June) as the largest IPO ever (@TheRundownAI).</p>
+<p>Net proceeds: Expected net proceeds are $104.8B including a concurrent private placement. Fully diluted valuation was ~$2T at the open (@kimmonismus).</p>
+<p>AMD investment: AMD agreed to invest $2.5B in Anthropic alongside the IPO. The same morning, AMD fell after a Hunterbrook report that a US-blacklisted Chinese server maker kept shipping newer AMD firmware (@kimmonismus, source).</p>
+<p>CEO statement: Dario Amodei published IPO remarks with a strong safety commitment (details below) (@AnthropicAI).</p>
+<p>Employee wealth: The average employee could be worth &amp;gt;$40M, per SEC filings and investors (@kimmonismus). Anthropic&#x27;s 5,300 founders and employees are now worth more than the bottom third of US households, about 45M families (@SteveRattner).</p>
+<p>Dario Amodei&#x27;s IPO remarks (official position)</p>
+<p>Personal framing: Dario and Daniela lost their father to a disease that became curable a few years later. Dario cited CRISPR&#x27;s decades-long path from discovery to treatment.</p>
+<p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] Token fraud is here and it’s BAD (YouTube)</title>
+    <link>https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/</link>
+    <guid isPermaLink="false">overseas-478ea25aeed3c997</guid>
+    <pubDate>Fri, 20 Nov 2026 10:49:57 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Token fraud is here and it’s BAD (YouTube)
+Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an idea into a spec&quot;. The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.</p>
+<p>In this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product&#x27;s free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent.</p>
+<p>I am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps.</p>
+<p>Apparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I&#x27;ve used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter.</p>
+<p>Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.</p>
+<p>Tags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Token fraud is here and it’s BAD (YouTube)
+Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an idea into a spec&quot;. The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.</p>
+<p>In this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product&#x27;s free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent.</p>
+<p>I am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps.</p>
+<p>Apparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I&#x27;ve used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter.</p>
+<p>Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.</p>
+<p>Tags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] Hebbia sees improvements in financial research with GPT-6 Astra</title>
+    <link>https://openai.com/business/customer-stories/hebbia</link>
+    <guid isPermaLink="false">overseas-8145fefb47ff1ca9</guid>
+    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/business/customer-stories/hebbia">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] Can AI help scientists identify promising drug candidates?</title>
+    <link>https://openai.com/index/introducing-medchembench</link>
+    <guid isPermaLink="false">overseas-c1a2af93db54bfcf</guid>
+    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/introducing-medchembench">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO</title>
+    <link>https://latent.space/p/linear-scaling/</link>
+    <guid isPermaLink="false">overseas-af7ab104329c0da3</guid>
+    <pubDate>Fri, 20 Nov 2026 07:58:21 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/linear-scaling/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Open video on YouTube ↗</p>
+<p>Linear was founded to build a better issue tracker. Seven years and $134 million in funding later, its CEO Karri Saarinen published a post titled &quot;Issue tracking is dead.&quot; In this episode, we chat with Cristina Cordova, COO of Linear, about how the company navigated that and how its go-to-market changed along the way.</p>
+<p>Cristina spent seven and a half years at Stripe, led platform and partnerships at Notion, and was a partner at First Round before joining Linear in 2023. Linear&#x27;s founders built it after living with legacy issue trackers at Coinbase, Airbnb and Uber, and it spread self-serve through startups like Vercel and Ramp.</p>
+<p>When she joined, Linear had about 40 people and one salesperson. Since then it has shipped an MCP server, a platform for building agents into Linear, integrations with Codex, Cursor and GitHub Copilot, and its own Linear Agent. Agents created 3% of Linear&#x27;s work a year ago. Now it&#x27;s more than half. Linear passed $100 million in ARR this year with more than 40,000 paying customers and 177% net revenue retention, and in August employees sold $99 million in stock at a $2.5 billion valuation.</p>
+<p>We talk about why she stopped chasing enterprise deals three weeks after joining, why Linear has never hired a single SDR, why it won&#x27;t let an LLM answer support tickets on its own, and what the AI budgets behind $100M-in-months ARR mean for everyone else.</p>
+<p>Half the work on Linear is now created by agents</p>
+<p>Linear shipped its MCP server in May 2025, and Cristina says it was basically the first in its category. A year and a half later, more than half the issues created in Linear come from agents.</p>
+<p>That doesn&#x27;t mean Linear wants to be a database with an MCP server on top. Cristina thinks SaaS companies settling for that are making a big mistake. If the agent workflows inside your product aren&#x27;t better than the ones outside it, nobody has a reason to open your app.</p>
+<p>So she watches two lines: agent usage and app usage. If agent usage climbs and app usage doesn&#x27;t, you&#x27;re becoming a commodity. At Linear, both are up and to the right, because people still come back to the app to see and coordinate the work.</p>
+<p>Jump to the MCP discussion →</p>
+<p>&quot;Issue tracking is dead&quot;</p>
+<p>When Karri published &quot;Issue tracking is dead&quot; in March, most of Linear&#x27;s customers agreed with him. Then they asked the obvious question: so what am I buying? Linear&#x27;s answer is a product development system built around agent orchestration, where humans stop doing the manual work of filing, labeling, assigning and closing issues.</p>
+<p>Customers had been pushing it there. Most of the frontier AI labs run on Linear and wanted it to move faster. Pre-AI companies like Ramp and Coinbase were building their own internal agents and needed an API to plug them into Linear.</p>
+<p>Cristina says Linear is lucky it&#x27;s small enough to cannibalize itself. Google has a much harder problem: put an AI answer above every search result, and fewer people look at the ads.</p>
+<p>Jump to the &quot;issue tracking is dead&quot; discussion →</p>
+<p>The AI budget behind $100M in months</p>
+<p>The thing speeding up purchases right now, Cristina says, is AI budget. Companies carved out money for AI tools that didn&#x27;t exist before, and any product that fits inside it skips the usual fight for spend. At some companies that budget is very high.</p>
+<p>It&#x27;s already starting to change. Buyers are signing one-year deals and paid pilots, not three-year contracts, because nobody knows what they&#x27;ll want in two</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Open video on YouTube ↗</p>
+<p>Linear was founded to build a better issue tracker. Seven years and $134 million in funding later, its CEO Karri Saarinen published a post titled &quot;Issue tracking is dead.&quot; In this episode, we chat with Cristina Cordova, COO of Linear, about how the company navigated that and how its go-to-market changed along the way.</p>
+<p>Cristina spent seven and a half years at Stripe, led platform and partnerships at Notion, and was a partner at First Round before joining Linear in 2023. Linear&#x27;s founders built it after living with legacy issue trackers at Coinbase, Airbnb and Uber, and it spread self-serve through startups like Vercel and Ramp.</p>
+<p>When she joined, Linear had about 40 people and one salesperson. Since then it has shipped an MCP server, a platform for building agents into Linear, integrations with Codex, Cursor and GitHub Copilot, and its own Linear Agent. Agents created 3% of Linear&#x27;s work a year ago. Now it&#x27;s more than half. Linear passed $100 million in ARR this year with more than 40,000 paying customers and 177% net revenue retention, and in August employees sold $99 million in stock at a $2.5 billion valuation.</p>
+<p>We talk about why she stopped chasing enterprise deals three weeks after joining, why Linear has never hired a single SDR, why it won&#x27;t let an LLM answer support tickets on its own, and what the AI budgets behind $100M-in-months ARR mean for everyone else.</p>
+<p>Half the work on Linear is now created by agents</p>
+<p>Linear shipped its MCP server in May 2025, and Cristina says it was basically the first in its category. A year and a half later, more than half the issues created in Linear come from agents.</p>
+<p>That doesn&#x27;t mean Linear wants to be a database with an MCP server on top. Cristina thinks SaaS companies settling for that are making a big mistake. If the agent workflows inside your product aren&#x27;t better than the ones outside it, nobody has a reason to open your app.</p>
+<p>So she watches two lines: agent usage and app usage. If agent usage climbs and app usage doesn&#x27;t, you&#x27;re becoming a commodity. At Linear, both are up and to the right, because people still come back to the app to see and coordinate the work.</p>
+<p>Jump to the MCP discussion →</p>
+<p>&quot;Issue tracking is dead&quot;</p>
+<p>When Karri published &quot;Issue tracking is dead&quot; in March, most of Linear&#x27;s customers agreed with him. Then they asked the obvious question: so what am I buying? Linear&#x27;s answer is a product development system built around agent orchestration, where humans st</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Ben&#x27;s Bites] My wife thinks AI is a person</title>
+    <link>https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person</link>
+    <guid isPermaLink="false">overseas-94224c12f01a2255</guid>
+    <pubDate>Thu, 19 Nov 2026 22:08:21 +0800</pubDate>
+    <description><![CDATA[<p><code>Ben&#x27;s Bites</code> · <a href="https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>The other day my wife was chatting with AI.</p>
+<p>P.s. The full interactive version of this post is here.
+So let&amp;#8217;s overlook the actual impossibilities and find out.
+Before we do the maths, people have been trying versions of this for 256 years.</p>
+<p>Nearly all of them shut down or got caught. None of them came close to today&amp;#8217;s scale.
+So what would it actually take?
+Let&amp;#8217;s be generous. Assume everyone types at world-record speed, 200 words a minute, non-stop. Everyone is happy to wait 10 minutes for a reply. And it&amp;#8217;s a remote company spread across every time zone, so someone is always awake.
+The average ChatGPT user sends about 4 messages a day, and a reply is roughly 500 words now. With over a billion people using the big AI chatbots, that&amp;#8217;s about 6 billion messages every day.</p>
+<p>10.4 million people typing at world-record speed, round the clock, with no sleep, no lunch, and no days off.
+Okay, let&amp;#8217;s run it like a real company instead. Which means it needs a CEO. Me.</p>
+<p>11.8 billion internal messages a day, just to keep the place running. Oh, and we still have to answer the 6 billion messages people actually sent us.
+All in, you&amp;#8217;d need 77.4 million staff just to keep 10.4 million people typing at any given moment.
+If you want to check my maths: a 40-hour week, time off from a 2025 survey of UK call centres, 12.1 people per manager (the US average), and 2 HR people per 100 staff (SHRM). People quit at the US rate, earn the US median for customer service, and get 153 chat messages a day, like the average Microsoft Teams user. The biggest Zoom call holds 1 million.
+More people won&amp;#8217;t work. But what about a guessing game from 1950, played by a mathematician called Claude Shannon? Yes, Claude.
+He picked a line from a book, hid it from his wife Betty, and got her to guess it one letter at a time.</p>
+<p>Betty didn&amp;#8217;t know the sentence, she just knew the patterns of English.
+My wife does this to me every day. She&amp;#8217;s had years of practice.
+So what if we replaced Betty with a computer?</p>
+<p>For more than 60 years, the answer was no. Giving machines more to read barely helped, because they could only see the last couple of words. Try guessing what comes after &amp;#8220;speak fluent&amp;#8230;&amp;#8221; with no other clues.
+In 2017, eight people at Google let it see every word at once and weigh the ones that matter, like France. They called that attention, and the machine a transformer. It&amp;#8217;s the T in ChatGPT.
+Suddenly, giving it more to read actually worked. More text, bigger brain, better guesses.
+Writing a reply is the same thing. It reads what you said and guesses the next word, or piece of a word (called a token), sticks it on the end, looks back at everything again, and guesses the next one.
+It&amp;#8217;s read websites, books, forums, fan wikis, and code. A top model trains on more than 32 trillion tokens. Reading that non-stop would take you about 190,000 years.
+It doesn&amp;#8217;t store those pages to look up later like a search engine. It just keeps the patterns.
+So I explained all of that to my wife.</p>
+<p>Nobody is sat there typing. Just millions of us, over years, answering all at once.</p>
+<p>Ben&amp;#8217;s Bites is brought to you by LuminosAI
+You vibe-coded an agent in an hour and you&amp;#8217;re ready to launch. One last thing &amp;#8211; did you tell legal? LuminosAI makes that part fast and easy. Tell us what your agent does and get a customized test in seconds. No code, no waiting, and nothing to connect. Start testing your first</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>The other day my wife was chatting with AI.</p>
+<p>P.s. The full interactive version of this post is here.
+So let&amp;#8217;s overlook the actual impossibilities and find out.
+Before we do the maths, people have been trying versions of this for 256 years.</p>
+<p>Nearly all of them shut down or got caught. None of them came close to today&amp;#8217;s scale.
+So what would it actually take?
+Let&amp;#8217;s be generous. Assume everyone types at world-record speed, 200 words a minute, non-stop. Everyone is happy to wait 10 minutes for a reply. And it&amp;#8217;s a remote company spread across every time zone, so someone is always awake.
+The average ChatGPT user sends about 4 messages a day, and a reply is roughly 500 words now. With over a billion people using the big AI chatbots, that&amp;#8217;s about 6 billion messages every day.</p>
+<p>10.4 million people typing at world-record speed, round the clock, with no sleep, no lunch, and no days off.
+Okay, let&amp;#8217;s run it like a real company instead. Which means it needs a CEO. Me.</p>
+<p>11.8 billion internal messages a day, just to keep the place running. Oh, and we still have to answer the 6 billion messages people actually sent us.
+All in, you&amp;#8217;d need 77.4 million staff just to keep 10.4 million people typing at any given moment.
+If you want to check my maths: a 40-hour week, time off from a 2025 survey of UK call centres, 12.1 people per manager (the US average), and 2 HR people per 100 staff (SHRM). People quit at the US rate, earn the US median for customer service, and get 153 chat messages a day, like the average Microsoft Teams user. The biggest Zoom call holds 1 million.
+More people won&amp;#8217;t work. But what about a guessing game from 1950, played by a mathematician called Claude Shannon? Yes, Claude.
+He picked a line from a book, hid it from his wife Betty, and got her to guess it one letter at a time.</p>
+<p>Betty didn&amp;#8217;t know the sentence, she just knew the patterns of English.
+My wife does this to me every day. She&amp;#8217;s had years of practice.
+So what if we replaced Betty with a computer?</p>
+<p>For more than 60 years, the answer was no. Giving machines more to read barely helped, because they could only see the last couple of words. Try guessing what comes after &amp;#8220;speak fluent&amp;#8230;&amp;#8221; with no other clues.
+In 2017, eight people at Google let it see every word at once and weigh the ones that matter, like France. They called that attention, and the machine a transformer. It&amp;#8217;s the T in ChatGPT.
+Suddenly, giving it more to rea</p></blockquote>]]></description>
+  </item>
+</channel>
+</rss>

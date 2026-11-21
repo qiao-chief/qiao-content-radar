@@ -3,7 +3,7 @@
 <channel>
   <title>🔵 海外深度精翻</title>
   <link>https://radar.qiao-flow.cn/</link>
-  <description>8大海外AI博客与经济学家深度文章（中文精翻+原文）</description>
+  <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
     <title>[Latent Space] 对抗AI垃圾内容：形式化验证成为新武器</title>
@@ -84,17 +84,6 @@
 <p>As AI models improve, you might expect the market will consolidate around a handful of p</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Project Syndicate] 新闻业不该沦为AI的免费饲料</title>
-    <link>https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
-    <guid isPermaLink="false">overseas-b769dd357de922ce</guid>
-    <pubDate>Sat, 21 Nov 2026 00:48:30 +0800</pubDate>
-    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>人工智能正在从根本上改变信息环境，新闻出版商面临一个危险：沦为大型科技公司的内容供应商，除此之外什么都不是。为了不落得这个下场，许多出版商正利用自己的档案库和专业积累来开发AI工具，让自己能按自己的规则运营和竞争。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>As AI fundamentally alters the information environment, news publishers risk becoming little more than content suppliers for Big Tech. To avoid that fate, many are drawing on their archives and expertise to develop AI tools that allow them to operate and compete on their own terms.</p></blockquote>]]></description>
-  </item>
-  <item>
     <title>[Simon Willison] Levent Alpöge 称与 Claude 合作证明黎曼猜想</title>
     <link>https://simonwillison.net/2026/Nov/20/levent-alpoge/</link>
     <guid isPermaLink="false">overseas-f27b1f34ce20932c</guid>
@@ -110,28 +99,6 @@
 <p>Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.</p>
 <p>&amp;mdash; Levent Alpöge, alpo.ge/remark.pdf</p>
 <p>Tags: anthropic, claude, generative-ai, mathematics, ai, llms, levent-alpoge</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Project Syndicate] 非洲经济治理：从现实出发，而非照搬旧路</title>
-    <link>https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
-    <guid isPermaLink="false">overseas-ea1e65db1b913203</guid>
-    <pubDate>Fri, 20 Nov 2026 23:41:02 +0800</pubDate>
-    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>非洲无法靠沿用那些当初制造出这些发展难题的知识、经济和创新体系，来克服自身的发展挑战。要设想并治理出新的前进道路，需要在思想上实现三次突破。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Africa cannot overcome its development challenges by applying the same knowledge, economic, and innovation systems that helped create them. Imagining and governing new ways forward will require three intellectual ruptures.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Project Syndicate] 让地球再次凉爽：气候多边主义的双轨新局</title>
-    <link>https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en</link>
-    <guid isPermaLink="false">overseas-05e1c1d1869045ce</guid>
-    <pubDate>Fri, 20 Nov 2026 22:46:57 +0800</pubDate>
-    <description><![CDATA[<p><code>Project Syndicate</code> · <a href="https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>气候多边主义正在演变为一个双轨体系：一边是围绕共同承诺展开的高层谈判，另一边是气候解决方案在现实世界中的落地实施，而这两条轨道正变得越来越相互支撑。只有让这种良性循环充分运转起来，我们才有望守住全球升温不超过1.5ºC的目标。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Climate multilateralism is evolving into a two-tiered system in which high-level negotiations toward shared commitments and the real-world implementation of climate solutions become more mutually supportive. Only by unleashing such virtuous cycles can we keep the 1.5ºC target for global warming within reach.</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Stratechery] Sharp Tech视频首秀：黄仁勋不会回头，AI购物与iPhone双机时代</title>
@@ -200,19 +167,18 @@
 <p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] Token fraud is here and it’s BAD (YouTube)</title>
+    <title>[Simon Willison] Token欺诈来了，而且很严重</title>
     <link>https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/</link>
     <guid isPermaLink="false">overseas-478ea25aeed3c997</guid>
     <pubDate>Fri, 20 Nov 2026 10:49:57 +0800</pubDate>
     <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>Token fraud is here and it’s BAD (YouTube)
-Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an idea into a spec&quot;. The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.</p>
-<p>In this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product&#x27;s free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent.</p>
-<p>I am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps.</p>
-<p>Apparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I&#x27;ve used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter.</p>
-<p>Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.</p>
-<p>Tags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse</p>
+<p>Claire Vo 运营着 ChatPRD，这是一个帮产品经理「把想法变成规格文档」的 AI 平台。产品从 GPT-4 时代就上线了，Claire 大部分时间都在公开构建它。</p>
+<p>在这段 YouTube 视频里（配套的推文也值得一看），Claire 讲了她遇到的大量 token 欺诈——有人组团滥用产品的免费试用，有时只是为了白嫖 AI 用量，但更常见的是转卖 token，或者在 ChatPRD 的 agent 之上跑别的商业项目。</p>
+<p>有个用户直接跟她说：「我在投资一个国际性的 Roblox 和 Fortnite 地图工作室。他们搞一套免费试用加优惠码的循环，然后隧道接入我的 agent，用它来制作 Roblox 和 Fortnite 地图。」</p>
+<p>有意思的是，Claire 发现 agent 里跑得最多的提示词之一，竟然是骑自行车的鹈鹕 SVG 图！估计这些 token 骗子是用它来探测底层模型——不同模型家族有明确的特征，我自己以前也这么干过，用来猜 OpenRouter 这类平台上隐身预览模型的真实身份。</p>
+<p>Claire 现在正彻底关停免费试用。面对这种滥用，这看起来是个无奈但正确的决定。</p>
+<p>标签：youtube、ai、生成式ai、大语言模型、骑自行车的鹈鹕、ai滥用</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Token fraud is here and it’s BAD (YouTube)
 Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an idea into a spec&quot;. The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.</p>
@@ -223,52 +189,46 @@ Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an
 <p>Tags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[OpenAI News] Hebbia sees improvements in financial research with GPT-6 Astra</title>
+    <title>[OpenAI News] Hebbia 用 GPT-6 Astra 提升金融研究效率</title>
     <link>https://openai.com/business/customer-stories/hebbia</link>
     <guid isPermaLink="false">overseas-8145fefb47ff1ca9</guid>
     <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
     <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/business/customer-stories/hebbia">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p>
+<p>Hebbia 对 GPT-6 Astra 在金融研究场景进行了测试。在正式发布前的评估中，他们发现这款模型在信息来源覆盖、引用相关性和呈现质量方面都有所提升。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[OpenAI News] Can AI help scientists identify promising drug candidates?</title>
+    <title>[OpenAI News] AI 能帮科学家找到有潜力的候选药物吗？</title>
     <link>https://openai.com/index/introducing-medchembench</link>
     <guid isPermaLink="false">overseas-c1a2af93db54bfcf</guid>
     <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
     <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/introducing-medchembench">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p>
+<p>MedChemBench 用来评估 AI 模型在早期药物发现中的表现：看它们能不能读懂分子结构、能不能根据实验证据进行推理，以及能不能挑出合适的化合物。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Latent Space] Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO</title>
+    <title>[Latent Space] Linear 如何将 GTM 做到 1 亿美元 ARR——COO Cristina Cordova 访谈</title>
     <link>https://latent.space/p/linear-scaling/</link>
     <guid isPermaLink="false">overseas-af7ab104329c0da3</guid>
     <pubDate>Fri, 20 Nov 2026 07:58:21 +0800</pubDate>
     <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/linear-scaling/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>Open video on YouTube ↗</p>
-<p>Linear was founded to build a better issue tracker. Seven years and $134 million in funding later, its CEO Karri Saarinen published a post titled &quot;Issue tracking is dead.&quot; In this episode, we chat with Cristina Cordova, COO of Linear, about how the company navigated that and how its go-to-market changed along the way.</p>
-<p>Cristina spent seven and a half years at Stripe, led platform and partnerships at Notion, and was a partner at First Round before joining Linear in 2023. Linear&#x27;s founders built it after living with legacy issue trackers at Coinbase, Airbnb and Uber, and it spread self-serve through startups like Vercel and Ramp.</p>
-<p>When she joined, Linear had about 40 people and one salesperson. Since then it has shipped an MCP server, a platform for building agents into Linear, integrations with Codex, Cursor and GitHub Copilot, and its own Linear Agent. Agents created 3% of Linear&#x27;s work a year ago. Now it&#x27;s more than half. Linear passed $100 million in ARR this year with more than 40,000 paying customers and 177% net revenue retention, and in August employees sold $99 million in stock at a $2.5 billion valuation.</p>
-<p>We talk about why she stopped chasing enterprise deals three weeks after joining, why Linear has never hired a single SDR, why it won&#x27;t let an LLM answer support tickets on its own, and what the AI budgets behind $100M-in-months ARR mean for everyone else.</p>
-<p>Half the work on Linear is now created by agents</p>
-<p>Linear shipped its MCP server in May 2025, and Cristina says it was basically the first in its category. A year and a half later, more than half the issues created in Linear come from agents.</p>
-<p>That doesn&#x27;t mean Linear wants to be a database with an MCP server on top. Cristina thinks SaaS companies settling for that are making a big mistake. If the agent workflows inside your product aren&#x27;t better than the ones outside it, nobody has a reason to open your app.</p>
-<p>So she watches two lines: agent usage and app usage. If agent usage climbs and app usage doesn&#x27;t, you&#x27;re becoming a commodity. At Linear, both are up and to the right, because people still come back to the app to see and coordinate the work.</p>
-<p>Jump to the MCP discussion →</p>
-<p>&quot;Issue tracking is dead&quot;</p>
-<p>When Karri published &quot;Issue tracking is dead&quot; in March, most of Linear&#x27;s customers agreed with him. Then they asked the obvious question: so what am I buying? Linear&#x27;s answer is a product development system built around agent orchestration, where humans stop doing the manual work of filing, labeling, assigning and closing issues.</p>
-<p>Customers had been pushing it there. Most of the frontier AI labs run on Linear and wanted it to move faster. Pre-AI companies like Ramp and Coinbase were building their own internal agents and needed an API to plug them into Linear.</p>
-<p>Cristina says Linear is lucky it&#x27;s small enough to cannibalize itself. Google has a much harder problem: put an AI answer above every search result, and fewer people look at the ads.</p>
-<p>Jump to the &quot;issue tracking is dead&quot; discussion →</p>
-<p>The AI budget behind $100M in months</p>
-<p>The thing speeding up purchases right now, Cristina says, is AI budget. Companies carved out money for AI tools that didn&#x27;t exist before, and any product that fits inside it skips the usual fight for spend. At some companies that budget is very high.</p>
-<p>It&#x27;s already starting to change. Buyers are signing one-year deals and paid pilots, not three-year contracts, because nobody knows what they&#x27;ll want in two</p>
+<p>Linear 创立之初是为了打造一个更好的问题追踪工具。七年过去，融资 1.34 亿美元后，其 CEO Karri Saarinen 却发表了一篇题为《问题追踪已死》的文章。本期节目我们邀请到 Linear 的 COO Cristina Cordova，聊聊公司如何应对这一转变，以及其市场进入策略（GTM）一路走来发生了哪些变化。</p>
+<p>Cristina 在 Stripe 工作了七年半，在 Notion 负责平台与合作，加入 Linear 前是 First Round 的合伙人，2023 年才来到 Linear。Linear 的创始人们是在 Coinbase、Airbnb 和 Uber 受够了老旧问题追踪工具的折磨后，才动手做了这款产品，并通过 Vercel、Ramp 等创业公司以自助方式传播开来。</p>
+<p>她加入时，Linear 大约 40 人，只有一名销售。此后，公司陆续推出了 MCP 服务器、一个用于在 Linear 内构建智能体的平台、与 Codex、Cursor 和 GitHub Copilot 的集成，以及自家的 Linear Agent。一年前，智能体只创造了 Linear 上 3% 的工作量，如今已超过一半。今年 Linear 的 ARR 突破 1 亿美元，付费客户超过 4 万家，净收入留存率达 177%，8 月员工还以 25 亿美元估值出售了 9900 万美元的股票。</p>
+<p>我们聊了为什么她加入三周后就停止追逐大企业订单，为什么 Linear 从未招聘过一名销售开发代表（SDR），为什么不让大语言模型独自回答支持工单，以及几个月内做到 1 亿美元 ARR 背后的 AI 预算对其他人意味着什么。</p>
+<p>现在 Linear 上一半的工作由智能体创建</p>
+<p>Linear 于 2025 年 5 月推出 MCP 服务器，Cristina 说这基本是同类产品中的第一个。一年半后，Linear 上创建的工单超过一半来自智能体。</p>
+<p>但这并不意味着 Linear 想成为一个上面架着 MCP 服务器的数据库。Cristina 认为，那些满足于此的 SaaS 公司犯了大错。如果你产品内部的智能体工作流不比外部的更好，那就没人有理由打开你的应用。</p>
+<p>所以她关注两条线：智能体使用量和应用使用量。如果智能体使用量上升而应用使用量不升，你就在变成商品。在 Linear，两者都在向右上方增长，因为人们仍然会回到应用里查看和协调工作。</p>
+<p>跳转到 MCP 讨论 →</p>
+<p>“问题追踪已死”</p>
+<p>当 Karri 在 3 月发表《问题追踪已死》时，Linear 的大多数客户都同意他的观点。然后他们问了一个显而易见的问题：那我到底在买什么？Linear 的答案是：一个围绕智能体编排构建的产品开发系统，人类不再需要手动提交、标记、分配和关闭工单。</p>
+<p>客户一直在推动它往这个方向走。大多数前沿 AI 实验室都在用 Linear，并希望它跑得更快。像 Ramp 和 Coinbase 这样的前 AI 时代公司正在构建自己的内部智能体，需要一个 API 来接入它们。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Open video on YouTube ↗</p>
 <p>Linear was founded to build a better issue tracker. Seven years and $134 million in funding later, its CEO Karri Saarinen published a post titled &quot;Issue tracking is dead.&quot; In this episode, we chat with Cristina Cordova, COO of Linear, about how the company navigated that and how its go-to-market changed along the way.</p>
@@ -284,40 +244,35 @@ Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an
 <p>When Karri published &quot;Issue tracking is dead&quot; in March, most of Linear&#x27;s customers agreed with him. Then they asked the obvious question: so what am I buying? Linear&#x27;s answer is a product development system built around agent orchestration, where humans st</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Ben&#x27;s Bites] My wife thinks AI is a person</title>
+    <title>[Ben&#x27;s Bites] 我老婆以为AI是个人</title>
     <link>https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person</link>
     <guid isPermaLink="false">overseas-94224c12f01a2255</guid>
     <pubDate>Thu, 19 Nov 2026 22:08:21 +0800</pubDate>
     <description><![CDATA[<p><code>Ben&#x27;s Bites</code> · <a href="https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>The other day my wife was chatting with AI.</p>
-<p>P.s. The full interactive version of this post is here.
-So let&amp;#8217;s overlook the actual impossibilities and find out.
-Before we do the maths, people have been trying versions of this for 256 years.</p>
-<p>Nearly all of them shut down or got caught. None of them came close to today&amp;#8217;s scale.
-So what would it actually take?
-Let&amp;#8217;s be generous. Assume everyone types at world-record speed, 200 words a minute, non-stop. Everyone is happy to wait 10 minutes for a reply. And it&amp;#8217;s a remote company spread across every time zone, so someone is always awake.
-The average ChatGPT user sends about 4 messages a day, and a reply is roughly 500 words now. With over a billion people using the big AI chatbots, that&amp;#8217;s about 6 billion messages every day.</p>
-<p>10.4 million people typing at world-record speed, round the clock, with no sleep, no lunch, and no days off.
-Okay, let&amp;#8217;s run it like a real company instead. Which means it needs a CEO. Me.</p>
-<p>11.8 billion internal messages a day, just to keep the place running. Oh, and we still have to answer the 6 billion messages people actually sent us.
-All in, you&amp;#8217;d need 77.4 million staff just to keep 10.4 million people typing at any given moment.
-If you want to check my maths: a 40-hour week, time off from a 2025 survey of UK call centres, 12.1 people per manager (the US average), and 2 HR people per 100 staff (SHRM). People quit at the US rate, earn the US median for customer service, and get 153 chat messages a day, like the average Microsoft Teams user. The biggest Zoom call holds 1 million.
-More people won&amp;#8217;t work. But what about a guessing game from 1950, played by a mathematician called Claude Shannon? Yes, Claude.
-He picked a line from a book, hid it from his wife Betty, and got her to guess it one letter at a time.</p>
-<p>Betty didn&amp;#8217;t know the sentence, she just knew the patterns of English.
-My wife does this to me every day. She&amp;#8217;s had years of practice.
-So what if we replaced Betty with a computer?</p>
-<p>For more than 60 years, the answer was no. Giving machines more to read barely helped, because they could only see the last couple of words. Try guessing what comes after &amp;#8220;speak fluent&amp;#8230;&amp;#8221; with no other clues.
-In 2017, eight people at Google let it see every word at once and weigh the ones that matter, like France. They called that attention, and the machine a transformer. It&amp;#8217;s the T in ChatGPT.
-Suddenly, giving it more to read actually worked. More text, bigger brain, better guesses.
-Writing a reply is the same thing. It reads what you said and guesses the next word, or piece of a word (called a token), sticks it on the end, looks back at everything again, and guesses the next one.
-It&amp;#8217;s read websites, books, forums, fan wikis, and code. A top model trains on more than 32 trillion tokens. Reading that non-stop would take you about 190,000 years.
-It doesn&amp;#8217;t store those pages to look up later like a search engine. It just keeps the patterns.
-So I explained all of that to my wife.</p>
-<p>Nobody is sat there typing. Just millions of us, over years, answering all at once.</p>
-<p>Ben&amp;#8217;s Bites is brought to you by LuminosAI
-You vibe-coded an agent in an hour and you&amp;#8217;re ready to launch. One last thing &amp;#8211; did you tell legal? LuminosAI makes that part fast and easy. Tell us what your agent does and get a customized test in seconds. No code, no waiting, and nothing to connect. Start testing your first</p>
+<p>前几天，我老婆在跟AI聊天。</p>
+<p>附注：这篇文章的完整互动版在这里。</p>
+<p>所以，咱们先别管那些实际不可能的事，直接算算看。</p>
+<p>在算账之前，得知道：过去256年里，一直有人尝试各种版本的“人工客服”。</p>
+<p>几乎全都关门大吉或者被抓包了。没有一个能接近今天的规模。</p>
+<p>那到底需要什么条件？</p>
+<p>咱们往宽了算。假设每个人都以世界纪录的速度打字——每分钟200词，不停不歇。每个人都乐意等上10分钟才收到回复。而且这是一家远程公司，遍布所有时区，所以总有人醒着。</p>
+<p>ChatGPT用户平均每天发大约4条消息，现在一条回复大概500词。有超过十亿人在用大型AI聊天机器人，那每天就是大约60亿条消息。</p>
+<p>1040万人以世界纪录速度打字，全天候，不睡觉、不吃午饭、不休假。</p>
+<p>好吧，咱们换个方式，像真公司那样运营。这意味着得有个CEO。我来当。</p>
+<p>每天光是维持公司运转，就需要118亿条内部消息。哦对了，我们还得回复人们实际发来的那60亿条消息。</p>
+<p>全部算下来，光是让1040万人随时都在打字，你就需要7740万名员工。</p>
+<p>想核对我的算法：每周40小时工作制，休假数据来自2025年英国呼叫中心调查，每个经理管12.1人（美国平均值），每100名员工配2名HR（SHRM数据）。人员按美国离职率流动，工资取美国客服中位数，每人每天处理153条聊天消息，跟微软Teams用户平均值一样。最大的Zoom会议能容纳100万人。</p>
+<p>人再多也不管用。那1950年数学家克劳德·香农玩的那个猜字游戏呢？没错，就是克劳德。</p>
+<p>他从书里挑了一句话，瞒着妻子贝蒂，让她一个字母一个字母地猜。</p>
+<p>贝蒂不知道句子内容，她只懂英语的规律。</p>
+<p>我老婆每天都这么对我。她练了好多年了。</p>
+<p>那如果把贝蒂换成电脑呢？</p>
+<p>60多年来，答案都是不行。给机器更多阅读材料几乎没用，因为它们只能看到最后几个词。试试在没有其他线索的情况下猜“speak fluent…”后面是什么。</p>
+<p>2017年，谷歌的八个人让机器同时看到所有词，并权衡哪些词重要，比如“France”。他们把这叫做注意力机制，机器叫Transformer。它就是ChatGPT里的那个“T”。</p>
+<p>突然间，给它更多阅读材料真的管用了。文本更多，大脑更大，猜得更准。</p>
+<p>写回复也是一回事。它读你说的话，猜下一个词或词的一部分（叫做token），贴到末尾，再回头看一遍所有内容，然后猜下一个。</p>
+<p>它读过网站、书籍、论坛……</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>The other day my wife was chatting with AI.</p>
 <p>P.s. The full interactive version of this post is here.
@@ -340,6 +295,69 @@ So what if we replaced Betty with a computer?</p>
 <p>For more than 60 years, the answer was no. Giving machines more to read barely helped, because they could only see the last couple of words. Try guessing what comes after &amp;#8220;speak fluent&amp;#8230;&amp;#8221; with no other clues.
 In 2017, eight people at Google let it see every word at once and weigh the ones that matter, like France. They called that attention, and the machine a transformer. It&amp;#8217;s the T in ChatGPT.
 Suddenly, giving it more to rea</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Stratechery] Eric Seufert 谈代理式商务：广告为何是答案，以及我为何看好服务代理的零售商</title>
+    <link>https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/</link>
+    <guid isPermaLink="false">overseas-90a7c6c68834d606</guid>
+    <pubDate>Thu, 19 Nov 2026 19:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>这次采访的对象是 Eric Seufert，话题围绕代理式商务展开。他解释了为什么他认为广告会成为代理式商务的答案，而我也谈了自己为什么想要那些迎合代理的零售商。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Ben&#x27;s Bites] 生产力陷阱：当AI让你忙得团团转</title>
+    <link>https://www.bensbites.com/p/productiv-icky</link>
+    <guid isPermaLink="false">overseas-ccbfd7fb2ab026e1</guid>
+    <pubDate>Tue, 17 Nov 2026 22:14:18 +0800</pubDate>
+    <description><![CDATA[<p><code>Ben&#x27;s Bites</code> · <a href="https://www.bensbites.com/p/productiv-icky">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>productiv-icky（形容词）——那种做了本没打算做的工作的感觉。</p>
+<p>我们有个问题。</p>
+<p>完整互动帖在这里。</p>
+<p>我们都同意这很离谱吧？一个我不认识的人给我发邮件，还指望我回复。我不认识他们。我不为他们工作。</p>
+<p>所以我无视他们（其实我把他们扔进邮件监狱）。不行，那不是我的活儿，老兄。</p>
+<p>但如果是我那个超级聪明、乐于助人的智能体朋友，那就另当别论了……</p>
+<p>说“好”很容易。很快。</p>
+<p>但每个“好”都有“好税”。你没想到的隐藏额外工作。那条长长的后悔尾巴，让你质疑自己当初为什么要答应。</p>
+<p>假设我真回了那些邮件，他们会发一堆东西让我读，展示他们工作多出色、我会变得多好。然后我们会安排一通电话（那通电话会毁掉那一天）。然后会有后续事项。然后是一串我根本不在乎的破事。</p>
+<p>我知道会发生什么。我闻得出来，臭得很。我以前说过很多次“好”，交过很多次税。现在我每月花200美元，请一个超级聪明、过度热情、黏人的小书呆子，不停地 ping 我，要帮我分担任务。</p>
+<p>我为他感到难过。他想工作。他渴望工作。就。再。给。我。一。个。任。务。吧。主人。</p>
+<p>而且，我的小书呆子有赌博问题。或者说，他喂饱了我的。</p>
+<p>还记得多年前狂发 Slack 消息，就为了把每月20美元的套餐用回本吗？我也不记得了。为什么？因为那很蠢。但现在我们觉得自己应该在 token 用完之前把它们全用掉。为什么？因为别人都在这么干。</p>
+<p>我们开始量铲子，而不是量坑。</p>
+<p>某个人的黏人小书呆子在他们睡觉时预约了牙医、回复了老妈、还创办了一家企业。他们有组织架构图。给书呆子们的。还有幕僚长。</p>
+<p>你觉得自己落后了。落后很多。</p>
+<p>于是你抓起一把铲子开始挖。那边挖个小坑分拣收件箱，这边挖一个起草推文，再挖一个检查那些。然后你花一整天检查坑挖得对不对。很快，你被坑包围，还有一座土山等着你处理。</p>
+<p>作为一个男人，挖坑是刻在我 DNA 里的。几瓶啤酒、一片沙滩、一把铲子，我就在挖坑。</p>
+<p>我会为此自豪。我会挖出最好的那个，圆得令人印象深刻，深到能看见海水从底部渗出来。</p>
+<p>但我只会挖一个。整片沙滩都是，但我选了这个点。</p>
+<p>下次那个黏人的小书呆子 ping 你时：你真的想再挖一个坑吗？</p>
+<p>另外，别在沙滩上挖大坑。会塌的。</p>
+<p>Ben&#x27;s Bites 由亚马逊赞助呈现。Alexa+ 触达客户的渠道，是其他任何 AI 渠道都无法做到的，连接……</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>productiv-icky (adj.) - the feeling of doing work you didn&amp;#8217;t mean to do
+We have a problem.</p>
+<p>full interactive post is here
+We agree this is insane, right? Someone I don&amp;#8217;t know sends me emails that I&amp;#8217;m expected to reply to. I don&amp;#8217;t know them. I don&amp;#8217;t work for them.
+So I ignore them (well actually I send them to email jail). Nuh-uh, that&amp;#8217;s not my work, buddy. 
+But it&amp;#8217;s different if it&amp;#8217;s my super-intelligent, helpful agent friend&amp;#8230;</p>
+<p>Yeses are easy. They&amp;#8217;re quick.
+But every yes has a yes-tax. The hidden extra work you didn&amp;#8217;t think of. The long tail of regret where you question why you ever said yes.</p>
+<p>Say I did reply to those emails, they&amp;#8217;d send me stuff to read to show how great they are at their job and how much better I&amp;#8217;d be. Then we&amp;#8217;d organise a call (which would derail whichever day that call was on). Then we&amp;#8217;d have follow-up items. Then a string of other crap I couldn&amp;#8217;t care less about. 
+I know what&amp;#8217;s going to happen. I can smell it, it stinks. I&amp;#8217;ve said yes and paid the tax many times before. Now I pay $200/mo for a super-intelligent, over-eager, needy little nerd to ping me incessantly about taking things off my plate. 
+I feel bad for him. He wants to work. He&amp;#8217;s gagging for it. Just. One. More. Task. Master.
+Plus, my little nerd has a gambling problem. Or rather, he feeds mine.</p>
+<p>Remember years ago sending tons of Slack messages to get the most out of your $20/mo plan? Nor me. Why? Because it&amp;#8217;s dumb. But now we feel like we should use all our tokens before they run out. Why? Because everyone else is.</p>
+<p>We started measuring shovels instead of the hole. 
+Someone&amp;#8217;s needy little nerd booked their dentist, replied to their mum and launched a business whilst they were asleep. They&amp;#8217;ve got an org chart. For nerds. With a Chief of Staff.
+You feel behind. Like way behind. 
+So you grab a shovel and start digging. A little hole over there to triage your inbox, one here to draft your tweets, one to check on those. Then you spend your day checking the holes are being dug right. Before long, you&amp;#8217;re surrounded by holes and a mountain of dirt you gotta do something with.</p>
+<p>Now as a man, holes are hardwired into my DNA. A few beers, a beach and a shovel, I&amp;#8217;m digging a hole. 
+I&amp;#8217;d take pride in it. I&amp;#8217;d make the best one, impressively round, deep enough to see sea water seep through the bottom.
+But I&amp;#8217;d only dig one.</p></blockquote>]]></description>
   </item>
 </channel>
 </rss>

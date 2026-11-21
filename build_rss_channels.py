@@ -147,7 +147,7 @@ def _paragraphs_to_html(text: str) -> str:
 
 
 def build_overseas_channel(cache: dict[str, dict]) -> None:
-    feeds = radar.OVERSEAS_RSS + radar.MACRO_RSS[:2]
+    feeds = radar.OVERSEAS_RSS
     raw_items = _fetch_full_rss_items(feeds, since_hours=120, per_feed=3)[:15]
     out_items = []
     new_trans = 0
@@ -172,7 +172,65 @@ def build_overseas_channel(cache: dict[str, dict]) -> None:
             "pubDate": format_datetime(it["dt"].astimezone(CST)),
             "html": full_html,
         })
-    _write_xml("feed-overseas.xml", "🔵 海外深度精翻", "8大海外AI博客与经济学家深度文章（中文精翻+原文）", out_items)
+    _write_xml("feed-overseas.xml", "🔵 海外深度精翻", "8大海外AI博客深度文章（中文精翻+原文）", out_items)
+
+
+def build_macro_channel(cache: dict[str, dict]) -> None:
+    now = datetime.now(CST)
+    day_key = now.strftime("%Y-%m-%d")
+    out_items = []
+
+    # 1. 每日股债金汇盘面卡片置顶
+    metrics = radar.fetch_macro_metrics()
+    if metrics:
+        rows_html = []
+        for m in metrics:
+            chg = m["change"]
+            arrow = "🔴 ▲" if chg.startswith("+") else "🟢 ▼"
+            rows_html.append(
+                f"<tr><td><strong>{html_escape(m['label'])}</strong></td>"
+                f"<td><code>{html_escape(m['value'])}</code></td>"
+                f"<td>{arrow} {html_escape(chg)}</td></tr>"
+            )
+        table_html = (
+            "<h2>📊 今日股·债·金·汇核心盘面</h2>\n"
+            "<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead>"
+            f"<tbody>{''.join(rows_html)}</tbody></table>\n"
+            "<blockquote><p>关注核心锚点：10Y美债收益率决定全球流动性松紧；人民币汇率反映外资流向压力；沪深300与10年国债ETF反映国内股债跷跷板。</p></blockquote>"
+        )
+        out_items.append({
+            "title": f"📊 今日股·债·金·汇盘面快照（{now:%-m月%-d日}）",
+            "link": f"https://radar.qiao-flow.cn/#macro-{day_key}",
+            "guid": f"macro-metrics-{day_key}",
+            "pubDate": format_datetime(now),
+            "html": table_html,
+        })
+
+    # 2. 全球经济学家/宏观分析师深度评论独立成篇
+    raw_items = _fetch_full_rss_items(radar.MACRO_RSS, since_hours=120, per_feed=4)[:12]
+    new_trans = 0
+    for it in raw_items:
+        ckey = "macro:" + it["link"]
+        if ckey not in cache and new_trans < 10:
+            tr = _translate_article(it["title"], it["source"], it["body"])
+            cache[ckey] = tr
+            new_trans += 1
+        tr = cache.get(ckey) or {"zh_title": it["title"], "zh_body": it["body"]}
+        zh_html = _paragraphs_to_html(tr["zh_body"])
+        en_html = _paragraphs_to_html(it["body"][:2500])
+        full_html = (
+            f"<p><code>{html_escape(it['source'])}</code> · <a href=\"{html_escape(it['link'])}\">查看网页原文 ↗</a></p>\n"
+            f"<h2>经济学家观点精翻</h2>\n{zh_html}\n"
+            f"<hr/><h2>英文原文（Original）</h2>\n<blockquote>{en_html}</blockquote>"
+        )
+        out_items.append({
+            "title": f"[{it['source']}] {tr['zh_title']}",
+            "link": it["link"],
+            "guid": "macro-" + hashlib.sha256(it["link"].encode()).hexdigest()[:16],
+            "pubDate": format_datetime(it["dt"].astimezone(CST)),
+            "html": full_html,
+        })
+    _write_xml("feed-macro.xml", "🟢 财经宏观与盘面", "股债金汇核心盘面 + 全球经济学家深度评论（中文精翻+原文）", out_items)
 
 
 def build_x_channel(cache: dict[str, dict]) -> None:
@@ -263,6 +321,7 @@ def main() -> None:
     build_overseas_channel(cache)
     build_x_channel(cache)
     build_bloggers_channel(fs)
+    build_macro_channel(cache)
     _save_cache(cache)
 
 

@@ -86,5 +86,77 @@
   "x:https://x.com/amasad/status/2123535544718418191": {
     "zh_title": "一条提示词，打造你自己的 Muse 式个人智能体",
     "zh_body": "只需一条提示词，就能搭建属于你自己的、类似 Muse 的个人智能体。https://t.co/24iScdeQvb"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/": {
+    "zh_title": "Token欺诈来了，而且很严重",
+    "zh_body": "Claire Vo 运营着 ChatPRD，这是一个帮产品经理「把想法变成规格文档」的 AI 平台。产品从 GPT-4 时代就上线了，Claire 大部分时间都在公开构建它。\n\n在这段 YouTube 视频里（配套的推文也值得一看），Claire 讲了她遇到的大量 token 欺诈——有人组团滥用产品的免费试用，有时只是为了白嫖 AI 用量，但更常见的是转卖 token，或者在 ChatPRD 的 agent 之上跑别的商业项目。\n\n有个用户直接跟她说：「我在投资一个国际性的 Roblox 和 Fortnite 地图工作室。他们搞一套免费试用加优惠码的循环，然后隧道接入我的 agent，用它来制作 Roblox 和 Fortnite 地图。」\n\n有意思的是，Claire 发现 agent 里跑得最多的提示词之一，竟然是骑自行车的鹈鹕 SVG 图！估计这些 token 骗子是用它来探测底层模型——不同模型家族有明确的特征，我自己以前也这么干过，用来猜 OpenRouter 这类平台上隐身预览模型的真实身份。\n\nClaire 现在正彻底关停免费试用。面对这种滥用，这看起来是个无奈但正确的决定。\n\n标签：youtube、ai、生成式ai、大语言模型、骑自行车的鹈鹕、ai滥用"
+  },
+  "overseas:https://openai.com/business/customer-stories/hebbia": {
+    "zh_title": "Hebbia 用 GPT-6 Astra 提升金融研究效率",
+    "zh_body": "Hebbia 对 GPT-6 Astra 在金融研究场景进行了测试。在正式发布前的评估中，他们发现这款模型在信息来源覆盖、引用相关性和呈现质量方面都有所提升。"
+  },
+  "overseas:https://openai.com/index/introducing-medchembench": {
+    "zh_title": "AI 能帮科学家找到有潜力的候选药物吗？",
+    "zh_body": "MedChemBench 用来评估 AI 模型在早期药物发现中的表现：看它们能不能读懂分子结构、能不能根据实验证据进行推理，以及能不能挑出合适的化合物。"
+  },
+  "overseas:https://latent.space/p/linear-scaling/": {
+    "zh_title": "Linear 如何将 GTM 做到 1 亿美元 ARR——COO Cristina Cordova 访谈",
+    "zh_body": "Linear 创立之初是为了打造一个更好的问题追踪工具。七年过去，融资 1.34 亿美元后，其 CEO Karri Saarinen 却发表了一篇题为《问题追踪已死》的文章。本期节目我们邀请到 Linear 的 COO Cristina Cordova，聊聊公司如何应对这一转变，以及其市场进入策略（GTM）一路走来发生了哪些变化。\n\nCristina 在 Stripe 工作了七年半，在 Notion 负责平台与合作，加入 Linear 前是 First Round 的合伙人，2023 年才来到 Linear。Linear 的创始人们是在 Coinbase、Airbnb 和 Uber 受够了老旧问题追踪工具的折磨后，才动手做了这款产品，并通过 Vercel、Ramp 等创业公司以自助方式传播开来。\n\n她加入时，Linear 大约 40 人，只有一名销售。此后，公司陆续推出了 MCP 服务器、一个用于在 Linear 内构建智能体的平台、与 Codex、Cursor 和 GitHub Copilot 的集成，以及自家的 Linear Agent。一年前，智能体只创造了 Linear 上 3% 的工作量，如今已超过一半。今年 Linear 的 ARR 突破 1 亿美元，付费客户超过 4 万家，净收入留存率达 177%，8 月员工还以 25 亿美元估值出售了 9900 万美元的股票。\n\n我们聊了为什么她加入三周后就停止追逐大企业订单，为什么 Linear 从未招聘过一名销售开发代表（SDR），为什么不让大语言模型独自回答支持工单，以及几个月内做到 1 亿美元 ARR 背后的 AI 预算对其他人意味着什么。\n\n现在 Linear 上一半的工作由智能体创建\n\nLinear 于 2025 年 5 月推出 MCP 服务器，Cristina 说这基本是同类产品中的第一个。一年半后，Linear 上创建的工单超过一半来自智能体。\n\n但这并不意味着 Linear 想成为一个上面架着 MCP 服务器的数据库。Cristina 认为，那些满足于此的 SaaS 公司犯了大错。如果你产品内部的智能体工作流不比外部的更好，那就没人有理由打开你的应用。\n\n所以她关注两条线：智能体使用量和应用使用量。如果智能体使用量上升而应用使用量不升，你就在变成商品。在 Linear，两者都在向右上方增长，因为人们仍然会回到应用里查看和协调工作。\n\n跳转到 MCP 讨论 →\n\n“问题追踪已死”\n\n当 Karri 在 3 月发表《问题追踪已死》时，Linear 的大多数客户都同意他的观点。然后他们问了一个显而易见的问题：那我到底在买什么？Linear 的答案是：一个围绕智能体编排构建的产品开发系统，人类不再需要手动提交、标记、分配和关闭工单。\n\n客户一直在推动它往这个方向走。大多数前沿 AI 实验室都在用 Linear，并希望它跑得更快。像 Ramp 和 Coinbase 这样的前 AI 时代公司正在构建自己的内部智能体，需要一个 API 来接入它们。"
+  },
+  "overseas:https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person": {
+    "zh_title": "我老婆以为AI是个人",
+    "zh_body": "前几天，我老婆在跟AI聊天。\n\n附注：这篇文章的完整互动版在这里。\n\n所以，咱们先别管那些实际不可能的事，直接算算看。\n\n在算账之前，得知道：过去256年里，一直有人尝试各种版本的“人工客服”。\n\n几乎全都关门大吉或者被抓包了。没有一个能接近今天的规模。\n\n那到底需要什么条件？\n\n咱们往宽了算。假设每个人都以世界纪录的速度打字——每分钟200词，不停不歇。每个人都乐意等上10分钟才收到回复。而且这是一家远程公司，遍布所有时区，所以总有人醒着。\n\nChatGPT用户平均每天发大约4条消息，现在一条回复大概500词。有超过十亿人在用大型AI聊天机器人，那每天就是大约60亿条消息。\n\n1040万人以世界纪录速度打字，全天候，不睡觉、不吃午饭、不休假。\n\n好吧，咱们换个方式，像真公司那样运营。这意味着得有个CEO。我来当。\n\n每天光是维持公司运转，就需要118亿条内部消息。哦对了，我们还得回复人们实际发来的那60亿条消息。\n\n全部算下来，光是让1040万人随时都在打字，你就需要7740万名员工。\n\n想核对我的算法：每周40小时工作制，休假数据来自2025年英国呼叫中心调查，每个经理管12.1人（美国平均值），每100名员工配2名HR（SHRM数据）。人员按美国离职率流动，工资取美国客服中位数，每人每天处理153条聊天消息，跟微软Teams用户平均值一样。最大的Zoom会议能容纳100万人。\n\n人再多也不管用。那1950年数学家克劳德·香农玩的那个猜字游戏呢？没错，就是克劳德。\n\n他从书里挑了一句话，瞒着妻子贝蒂，让她一个字母一个字母地猜。\n\n贝蒂不知道句子内容，她只懂英语的规律。\n\n我老婆每天都这么对我。她练了好多年了。\n\n那如果把贝蒂换成电脑呢？\n\n60多年来，答案都是不行。给机器更多阅读材料几乎没用，因为它们只能看到最后几个词。试试在没有其他线索的情况下猜“speak fluent…”后面是什么。\n\n2017年，谷歌的八个人让机器同时看到所有词，并权衡哪些词重要，比如“France”。他们把这叫做注意力机制，机器叫Transformer。它就是ChatGPT里的那个“T”。\n\n突然间，给它更多阅读材料真的管用了。文本更多，大脑更大，猜得更准。\n\n写回复也是一回事。它读你说的话，猜下一个词或词的一部分（叫做token），贴到末尾，再回头看一遍所有内容，然后猜下一个。\n\n它读过网站、书籍、论坛……"
+  },
+  "overseas:https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/": {
+    "zh_title": "Eric Seufert 谈代理式商务：广告为何是答案，以及我为何看好服务代理的零售商",
+    "zh_body": "这次采访的对象是 Eric Seufert，话题围绕代理式商务展开。他解释了为什么他认为广告会成为代理式商务的答案，而我也谈了自己为什么想要那些迎合代理的零售商。"
+  },
+  "overseas:https://www.bensbites.com/p/productiv-icky": {
+    "zh_title": "生产力陷阱：当AI让你忙得团团转",
+    "zh_body": "productiv-icky（形容词）——那种做了本没打算做的工作的感觉。\n\n我们有个问题。\n\n完整互动帖在这里。\n\n我们都同意这很离谱吧？一个我不认识的人给我发邮件，还指望我回复。我不认识他们。我不为他们工作。\n\n所以我无视他们（其实我把他们扔进邮件监狱）。不行，那不是我的活儿，老兄。\n\n但如果是我那个超级聪明、乐于助人的智能体朋友，那就另当别论了……\n\n说“好”很容易。很快。\n\n但每个“好”都有“好税”。你没想到的隐藏额外工作。那条长长的后悔尾巴，让你质疑自己当初为什么要答应。\n\n假设我真回了那些邮件，他们会发一堆东西让我读，展示他们工作多出色、我会变得多好。然后我们会安排一通电话（那通电话会毁掉那一天）。然后会有后续事项。然后是一串我根本不在乎的破事。\n\n我知道会发生什么。我闻得出来，臭得很。我以前说过很多次“好”，交过很多次税。现在我每月花200美元，请一个超级聪明、过度热情、黏人的小书呆子，不停地 ping 我，要帮我分担任务。\n\n我为他感到难过。他想工作。他渴望工作。就。再。给。我。一。个。任。务。吧。主人。\n\n而且，我的小书呆子有赌博问题。或者说，他喂饱了我的。\n\n还记得多年前狂发 Slack 消息，就为了把每月20美元的套餐用回本吗？我也不记得了。为什么？因为那很蠢。但现在我们觉得自己应该在 token 用完之前把它们全用掉。为什么？因为别人都在这么干。\n\n我们开始量铲子，而不是量坑。\n\n某个人的黏人小书呆子在他们睡觉时预约了牙医、回复了老妈、还创办了一家企业。他们有组织架构图。给书呆子们的。还有幕僚长。\n\n你觉得自己落后了。落后很多。\n\n于是你抓起一把铲子开始挖。那边挖个小坑分拣收件箱，这边挖一个起草推文，再挖一个检查那些。然后你花一整天检查坑挖得对不对。很快，你被坑包围，还有一座土山等着你处理。\n\n作为一个男人，挖坑是刻在我 DNA 里的。几瓶啤酒、一片沙滩、一把铲子，我就在挖坑。\n\n我会为此自豪。我会挖出最好的那个，圆得令人印象深刻，深到能看见海水从底部渗出来。\n\n但我只会挖一个。整片沙滩都是，但我选了这个点。\n\n下次那个黏人的小书呆子 ping 你时：你真的想再挖一个坑吗？\n\n另外，别在沙滩上挖大坑。会塌的。\n\nBen's Bites 由亚马逊赞助呈现。Alexa+ 触达客户的渠道，是其他任何 AI 渠道都无法做到的，连接……"
+  },
+  "x:https://x.com/amasad/status/2123535362568134894": {
+    "zh_title": "与AI代理签合同：值得借鉴的新范式",
+    "zh_body": "跟你的AI代理签一份合同，这种模式我相信会有很多人来抄我们的作业。https://t.co/ye6WQLu6Xq"
+  },
+  "x:https://x.com/joshwoodward/status/2123534862569324703": {
+    "zh_title": "Mac 版 Gemini 应用现在能替你操作电脑了，这是用户呼声最高的功能！",
+    "zh_body": "Mac 版 Gemini 应用现在可以帮你在电脑上执行任务了，这是用户呼声最高的功能之一！"
+  },
+  "x:https://x.com/trq212/status/2123524052195463568": {
+    "zh_title": "软件既是艺术也是工具，AI 既是工业革命也是文艺复兴",
+    "zh_body": "软件既是艺术，也是实用工具。AI 既是工业革命，也是文艺复兴。\n\n工厂适合批量生产实用工具，而在 AIE Code 上，我聊了聊我们怎样才能做出更好的艺术。https://t.co/KrETTn6hA3"
+  },
+  "macro:https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "新闻业不该沦为AI的免费饲料",
+    "zh_body": "人工智能正在从根本上改变信息环境，新闻出版商面临一个危险：沦为大科技公司的内容供应商，除此之外什么都不是。为了避免这种命运，许多出版商正利用自己的档案库和专业积累来开发AI工具，让自己能按自己的规则运营和竞争。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "非洲经济治理：立足现实，寻求三大思想突破",
+    "zh_body": "非洲无法依靠那些曾助长其发展挑战的旧有知识、经济和创新体系来克服这些挑战。要设想并治理新的前进道路，需要在思想上实现三大突破。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "让地球再次凉爽：气候多边主义的两层新格局",
+    "zh_body": "气候多边主义正在演变成一个两层体系：一层是围绕共同承诺展开的高级别谈判，另一层是气候解决方案在现实世界中的落地实施，而这两层正变得越来越相互支撑。只有让这种良性循环真正运转起来，我们才有可能把全球升温控制在1.5ºC以内的目标继续留在可及范围内。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/after-midterm-defeat-trump-is-likely-to-double-down-on-his-worst-policies-and-impulses-by-ruth-ben-ghiat-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "美国跛脚鸭独裁者的末路狂奔",
+    "zh_body": "独裁者一旦遭遇挫败，往往会变本加厉——对内加紧镇压，对外更加肆无忌惮。中期选举历史性惨败后，美国总统特朗普还剩两年任期，而他似乎正走在这条路上。"
+  },
+  "macro:https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html": {
+    "zh_title": "日本核心通胀飙升至年内最高，能源补贴到期推高物价",
+    "zh_body": "日本核心通胀率已升至今年以来的最高水平，原因是能源补贴到期推高了消费者价格。\n\n这一核心通胀数据剔除了食品价格，但仍低于路透社调查的经济学家所预期的2.3%。"
+  },
+  "macro:https://www.cnbc.com/2026/11/18/nvidia-us-ai-chip-export-controls-data-centers-.html": {
+    "zh_title": "美国新规卡住东南亚数据中心，中国需求驱动的扩张面临风险",
+    "zh_body": "美国出台的新规要求东南亚的数据中心在采购先进AI芯片时必须获得美方批准，这可能会拖慢该地区数据中心的建设步伐——而这一轮建设热潮很大程度上正是靠中国需求撑起来的。"
+  },
+  "macro:https://www.cnbc.com/2026/11/18/uk-inflation-cpi-fuel-prices.html": {
+    "zh_title": "柴油价格创纪录，英国通胀升至一年新高3.6%",
+    "zh_body": "柴油价格创下历史新高，将英国通胀率推升至一年来的最高水平。\n\n这使得英国的年通胀率达到了3.6%，为一年来的最高点。"
+  },
+  "macro:https://www.cnbc.com/2026/11/18/japan-exports-october-imports-chips.html": {
+    "zh_title": "日本10月出口大涨20.5%，芯片出货强劲超预期",
+    "zh_body": "日本10月出口同比增长20.5%，超出市场预期，主要受芯片出货强劲带动。\n\n其中，半导体出货量同比激增近50%。"
   }
 }

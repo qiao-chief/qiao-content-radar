@@ -503,20 +503,21 @@ def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[s
 
     # 1. 海外一手洞察
     if hot_rows:
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🌍 海外一手洞察**"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🔵 海外一手洞察**　<font color='grey'>外网原汁原味 · 中文精华精翻</font>"}})
+        elements.append({"tag": "hr"})
         sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
         for idx, hr in enumerate(sorted_hots[:6], 1):
             src = str(hr.get("来源", "")).replace("海外·", "")
             title = hr.get("选题", "")
             core = hr.get("一句话核心内容", "")
             pub_t = _fmt_ts(hr.get("发现时间"))
-            meta = f"{pub_t} ｜ {src}" if pub_t else src
+            meta = f"<font color='blue'>{src}</font>　<font color='grey'>{pub_t}</font>" if pub_t else f"<font color='blue'>{src}</font>"
             url = _extract_url(hr.get("原文链接"))
             link_md = f"　[阅读原文 ↗]({url})" if url else ""
 
-            block = f"<font color='grey'>{meta}</font>\n**{idx}. {title}**{link_md}"
+            block = f"{meta}\n**{idx}. {title}**{link_md}"
             if core:
-                block += f"\n{core}"
+                block += f"\n<font color='grey'>{core}</font>"
             elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
             if idx < min(len(sorted_hots), 6):
                 elements.append({"tag": "hr"})
@@ -529,24 +530,26 @@ def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[s
     if valid_rows:
         if elements:
             elements.append({"tag": "hr"})
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**📱 关注博主更新（得到大脑）**"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟠 关注博主动态**　<font color='grey'>得到大脑自动转写</font>"}})
+        elements.append({"tag": "hr"})
         sorted_rows = sorted(
             valid_rows,
             key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
         )
         for idx, r in enumerate(sorted_rows[:5], 1):
-            mark = "🔥 " if r.get("推荐等级") == "强烈推荐" else ""
+            is_strong = r.get("推荐等级") == "强烈推荐"
+            mark = "<font color='red'>🔥 强烈推荐</font>　" if is_strong else ""
             blogger = r.get("博主", "")
             title = (r.get("标题") or "")[:36]
             rec = r.get("选题推荐") or r.get("AI摘要") or ""
             pub_t = _fmt_ts(r.get("发布时间"))
-            meta = f"{pub_t} ｜ {blogger}" if pub_t else blogger
+            meta = f"{mark}<font color='orange'>{blogger}</font>　<font color='grey'>{pub_t}</font>" if pub_t else f"{mark}<font color='orange'>{blogger}</font>"
             url = _extract_url(r.get("链接"))
             link_md = f"　[看视频 ↗]({url})" if url else ""
 
-            block = f"<font color='grey'>{meta}</font>\n**{idx}. {mark}{title}**{link_md}"
+            block = f"{meta}\n**{idx}. {title}**{link_md}"
             if rec:
-                block += f"\n{rec[:140]}"
+                block += f"\n<font color='grey'>{rec[:140]}</font>"
             elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
             if idx < min(len(sorted_rows), 5):
                 elements.append({"tag": "hr"})
@@ -557,13 +560,13 @@ def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[s
         "actions": [
             {
                 "tag": "button",
-                "text": {"tag": "plain_text", "content": "📂 打开订阅总表"},
+                "text": {"tag": "plain_text", "content": "📂 订阅总表（看文字稿）"},
                 "type": "default",
                 "url": f"{BASE_URL}?table={sub_tid}",
             },
             {
                 "tag": "button",
-                "text": {"tag": "plain_text", "content": "🌍 打开海外热点表"},
+                "text": {"tag": "plain_text", "content": "🌍 海外热点档案库"},
                 "type": "primary",
                 "url": f"{BASE_URL}?table={hot_tid}",
             },

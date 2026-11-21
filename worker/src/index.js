@@ -20,7 +20,7 @@ const GITHUB_REPO = "qiao-chief/qiao-content-radar";
 
 // Cron 表达式（UTC）→ 要触发的 workflow 文件。北京时间 = UTC + 8
 const SCHEDULES = {
-  "13 1 * * *": "radar.yml",   // 北京时间 09:13
+  "28 0 * * *": "radar.yml",   // 北京时间 08:28（约 08:30 送达）
   "19 10 * * *": "radar.yml",  // 北京时间 18:19
   "30 11 * * *": "digest.yml", // 北京时间 19:30
 };

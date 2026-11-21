@@ -1,8 +1,8 @@
 name: 内容雷达
 
 on:
-  # 定时由 Cloudflare Worker（radar-capture）触发，见 worker/src/index.js 的 SCHEDULES。
-  # GitHub 自带的 schedule 不可靠（实测会丢、会晚几个小时），所以不在这里排定时。
+  schedule:
+    - cron: "28 0 * * *"   # 北京时间 08:28 兜底触发（主触发仍为 Cloudflare Worker）
   workflow_dispatch:
     inputs:
       dry_run:

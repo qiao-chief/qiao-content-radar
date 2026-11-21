@@ -825,10 +825,36 @@ def _brief_to_html(
     macro_opinions: list[dict] | None,
     x_builders: list[dict] | None,
 ) -> str:
-    parts: list[str] = []
+    parts: list[str] = ['<div style="font-family: -apple-system, BlinkMacSystemFont, \'PingFang SC\', sans-serif; line-height: 1.65; color: #1f2329;">']
+
+    def sec_header(emoji: str, title: str, subtitle: str, color: str, bg: str) -> str:
+        return (
+            f'<div style="margin: 24px 0 14px 0; padding: 8px 12px; border-left: 4px solid {color}; '
+            f'background: {bg}; border-radius: 0 6px 6px 0;">'
+            f'<span style="font-size: 16px; font-weight: 700; color: #1f2329;">{emoji} {title}</span>'
+            f'<span style="font-size: 12px; color: #646a73; margin-left: 10px;">{subtitle}</span></div>'
+        )
+
+    def item_card(idx: int, tag_text: str, tag_color: str, tag_bg: str, time_str: str, title: str, url: str, btn_text: str, body: str) -> str:
+        link_btn = (
+            f'<a href="{url}" style="font-size: 12px; color: {tag_color}; text-decoration: none; '
+            f'padding: 2px 8px; border: 1px solid {tag_color}; border-radius: 10px; margin-left: auto;">{btn_text} ↗</a>'
+        ) if url else ""
+        time_html = f'<span style="font-size: 12px; color: #8f959e; margin-left: 8px;">{time_str}</span>' if time_str else ""
+        return (
+            '<div style="margin-bottom: 14px; padding: 12px 14px; background: rgba(0,0,0,0.02); '
+            'border: 1px solid rgba(0,0,0,0.06); border-radius: 8px;">'
+            '<div style="display: flex; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">'
+            f'<span style="font-size: 11px; font-weight: 600; color: {tag_color}; background: {tag_bg}; '
+            f'padding: 1px 7px; border-radius: 4px;">{tag_text}</span>{time_html}{link_btn}'
+            '</div>'
+            f'<div style="font-size: 15px; font-weight: 600; color: #1f2329; margin-bottom: 6px;">{idx}. {title}</div>'
+            f'<div style="font-size: 13.5px; color: #4e5969; line-height: 1.6;">{body}</div>'
+            '</div>'
+        )
 
     if hot_rows:
-        parts.append("<h2>🔵 海外深度洞察</h2>")
+        parts.append(sec_header("🔵", "海外深度洞察", "8 大博客 · 中文精华精翻", "#1677ff", "rgba(22,119,255,0.06)"))
         sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
         for idx, hr in enumerate(sorted_hots[:3], 1):
             src = html_escape(str(hr.get("来源", "")).replace("海外·", ""))
@@ -836,26 +862,24 @@ def _brief_to_html(
             core = html_escape(hr.get("一句话核心内容", ""))
             pub_t = _fmt_ts(hr.get("发现时间"))
             url = html_escape(_extract_url(hr.get("原文链接")))
-            link_html = f' <a href="{url}">[阅读原文]</a>' if url else ""
-            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({src} {pub_t})</small>{link_html}<br/>{core}</p>")
+            parts.append(item_card(idx, src, "#1677ff", "rgba(22,119,255,0.1)", pub_t, title, url, "阅读原文", core))
 
     if x_builders:
-        parts.append("<hr/><h2>🔴 硅谷一线实操（X）</h2>")
+        parts.append(sec_header("🔴", "硅谷一线实操（X）", "产品掌门人实时剧透", "#e5484d", "rgba(229,72,77,0.06)"))
         for idx, xb in enumerate(x_builders[:3], 1):
             author = html_escape(xb.get("author", ""))
             title = html_escape(xb.get("title", ""))
             summary = html_escape(xb.get("summary", ""))
             created = html_escape(str(xb.get("created") or "")[:10])
             url = html_escape(xb.get("url", ""))
-            link_html = f' <a href="{url}">[看推文]</a>' if url else ""
-            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({author} {created})</small>{link_html}<br/>{summary}</p>")
+            parts.append(item_card(idx, author, "#e5484d", "rgba(229,72,77,0.1)", created, title, url, "看推文", summary))
 
     valid_rows = [
         r for r in rows
         if r.get("转写状态") != "未转写" and "仅有标题" not in (r.get("选题推荐") or "")
     ]
     if valid_rows:
-        parts.append("<hr/><h2>🟡 国内博主风向（得到大脑）</h2>")
+        parts.append(sec_header("🟡", "国内博主风向（得到大脑）", "精选视频与干货提炼", "#d48806", "rgba(212,136,6,0.07)"))
         sorted_rows = sorted(
             valid_rows,
             key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
@@ -866,25 +890,35 @@ def _brief_to_html(
             rec = html_escape((r.get("选题推荐") or r.get("AI摘要") or "")[:160])
             pub_t = _fmt_ts(r.get("发布时间"))
             url = html_escape(_extract_url(r.get("链接")))
-            link_html = f' <a href="{url}">[看视频]</a>' if url else ""
-            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({blogger} {pub_t})</small>{link_html}<br/>{rec}</p>")
+            parts.append(item_card(idx, blogger, "#b36a00", "rgba(212,136,6,0.12)", pub_t, title, url, "看视频", rec))
 
     if macro_metrics or macro_opinions:
-        parts.append("<hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>")
+        parts.append(sec_header("🟢", "股·债·金·汇盘面与专家视点", "四大资产风向 · 宏观拆解", "#0b8235", "rgba(11,130,53,0.06)"))
         if macro_metrics:
-            parts.append("<ul>" + "".join(
-                f"<li><strong>{html_escape(m['label'])}</strong>: {html_escape(m['value'])} ({html_escape(m['change'])})</li>"
-                for m in macro_metrics
-            ) + "</ul>")
+            parts.append('<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px;">')
+            for m in macro_metrics:
+                chg = m["change"]
+                c_hex = "#cf1322" if chg.startswith("+") else "#0b8235"
+                c_bg = "rgba(207,19,34,0.08)" if chg.startswith("+") else "rgba(11,130,53,0.08)"
+                parts.append(
+                    '<div style="padding: 10px 12px; background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.06); border-radius: 8px;">'
+                    f'<div style="font-size: 11.5px; color: #646a73; margin-bottom: 3px;">{html_escape(m["label"])}</div>'
+                    '<div style="display: flex; align-items: baseline; gap: 6px;">'
+                    f'<span style="font-size: 15px; font-weight: 700; color: #1f2329;">{html_escape(m["value"])}</span>'
+                    f'<span style="font-size: 12px; font-weight: 600; color: {c_hex}; background: {c_bg}; padding: 1px 5px; border-radius: 4px;">{html_escape(chg)}</span>'
+                    '</div></div>'
+                )
+            parts.append('</div>')
         if macro_opinions:
             for idx, op in enumerate(macro_opinions, 1):
                 src = html_escape(op.get("source", ""))
                 title = html_escape(op.get("title", ""))
                 summary = html_escape(op.get("summary", ""))
+                pub_t = html_escape(str(op.get("publishedAt") or "")[:10])
                 url = html_escape(op.get("url", ""))
-                link_html = f' <a href="{url}">[看原文]</a>' if url else ""
-                parts.append(f"<p><strong>{idx}. {title}</strong> <small>({src})</small>{link_html}<br/>{summary}</p>")
+                parts.append(item_card(idx, src, "#0b8235", "rgba(11,130,53,0.1)", pub_t, title, url, "看原文", summary))
 
+    parts.append('</div>')
     return "\n".join(parts)
 
 

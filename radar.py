@@ -18,7 +18,9 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from email.utils import parsedate_to_datetime
+from email.utils import format_datetime, parsedate_to_datetime
+from html import escape as html_escape
+from pathlib import Path
 
 CST = timezone(timedelta(hours=8))
 BASE_TOKEN = "UoUlb5rcca4QN1s8e5UcY7OVn8f"
@@ -816,6 +818,135 @@ def run_url() -> str:
     return f"{os.environ.get('GITHUB_SERVER_URL')}/{os.environ.get('GITHUB_REPOSITORY')}/actions/runs/{run_id}" if run_id else "本机运行"
 
 
+def _brief_to_html(
+    rows: list[dict],
+    hot_rows: list[dict],
+    macro_metrics: list[dict] | None,
+    macro_opinions: list[dict] | None,
+    x_builders: list[dict] | None,
+) -> str:
+    parts: list[str] = []
+
+    if hot_rows:
+        parts.append("<h2>🔵 海外深度洞察</h2>")
+        sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
+        for idx, hr in enumerate(sorted_hots[:3], 1):
+            src = html_escape(str(hr.get("来源", "")).replace("海外·", ""))
+            title = html_escape(hr.get("选题", ""))
+            core = html_escape(hr.get("一句话核心内容", ""))
+            pub_t = _fmt_ts(hr.get("发现时间"))
+            url = html_escape(_extract_url(hr.get("原文链接")))
+            link_html = f' <a href="{url}">[阅读原文]</a>' if url else ""
+            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({src} {pub_t})</small>{link_html}<br/>{core}</p>")
+
+    if x_builders:
+        parts.append("<hr/><h2>🔴 硅谷一线实操（X）</h2>")
+        for idx, xb in enumerate(x_builders[:3], 1):
+            author = html_escape(xb.get("author", ""))
+            title = html_escape(xb.get("title", ""))
+            summary = html_escape(xb.get("summary", ""))
+            created = html_escape(str(xb.get("created") or "")[:10])
+            url = html_escape(xb.get("url", ""))
+            link_html = f' <a href="{url}">[看推文]</a>' if url else ""
+            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({author} {created})</small>{link_html}<br/>{summary}</p>")
+
+    valid_rows = [
+        r for r in rows
+        if r.get("转写状态") != "未转写" and "仅有标题" not in (r.get("选题推荐") or "")
+    ]
+    if valid_rows:
+        parts.append("<hr/><h2>🟡 国内博主风向（得到大脑）</h2>")
+        sorted_rows = sorted(
+            valid_rows,
+            key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
+        )
+        for idx, r in enumerate(sorted_rows[:4], 1):
+            blogger = html_escape(r.get("博主", ""))
+            title = html_escape((r.get("标题") or "")[:40])
+            rec = html_escape((r.get("选题推荐") or r.get("AI摘要") or "")[:160])
+            pub_t = _fmt_ts(r.get("发布时间"))
+            url = html_escape(_extract_url(r.get("链接")))
+            link_html = f' <a href="{url}">[看视频]</a>' if url else ""
+            parts.append(f"<p><strong>{idx}. {title}</strong> <small>({blogger} {pub_t})</small>{link_html}<br/>{rec}</p>")
+
+    if macro_metrics or macro_opinions:
+        parts.append("<hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>")
+        if macro_metrics:
+            parts.append("<ul>" + "".join(
+                f"<li><strong>{html_escape(m['label'])}</strong>: {html_escape(m['value'])} ({html_escape(m['change'])})</li>"
+                for m in macro_metrics
+            ) + "</ul>")
+        if macro_opinions:
+            for idx, op in enumerate(macro_opinions, 1):
+                src = html_escape(op.get("source", ""))
+                title = html_escape(op.get("title", ""))
+                summary = html_escape(op.get("summary", ""))
+                url = html_escape(op.get("url", ""))
+                link_html = f' <a href="{url}">[看原文]</a>' if url else ""
+                parts.append(f"<p><strong>{idx}. {title}</strong> <small>({src})</small>{link_html}<br/>{summary}</p>")
+
+    return "\n".join(parts)
+
+
+def write_rss_feed(
+    now: datetime,
+    rows: list[dict],
+    hot_rows: list[dict],
+    macro_metrics: list[dict] | None,
+    macro_opinions: list[dict] | None,
+    x_builders: list[dict] | None,
+) -> None:
+    """将每日高管早报输出为标准 RSS 2.0（docs/feed.xml），保留近 14 天历史供 Obsidian Qiaomu RSS 订阅。"""
+    docs_dir = Path(__file__).resolve().parent / "docs"
+    docs_dir.mkdir(exist_ok=True)
+    hist_file = docs_dir / "brief_history.json"
+    history: list[dict] = []
+    if hist_file.exists():
+        try:
+            history = json.loads(hist_file.read_text(encoding="utf-8"))
+        except Exception:
+            history = []
+
+    day_key = now.strftime("%Y-%m-%d")
+    item_html = _brief_to_html(rows, hot_rows, macro_metrics, macro_opinions, x_builders)
+    new_entry = {
+        "day": day_key,
+        "title": f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}",
+        "link": f"https://radar.qiao-flow.cn/#brief-{day_key}",
+        "pubDate": format_datetime(now),
+        "html": item_html,
+    }
+    history = [new_entry] + [h for h in history if h.get("day") != day_key]
+    history = history[:14]
+    hist_file.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    items_xml = []
+    for h in history:
+        items_xml.append(
+            f"  <item>\n"
+            f"    <title>{html_escape(h['title'])}</title>\n"
+            f"    <link>{html_escape(h['link'])}</link>\n"
+            f"    <guid isPermaLink=\"false\">qiao-brief-{h['day']}</guid>\n"
+            f"    <pubDate>{html_escape(h['pubDate'])}</pubDate>\n"
+            f"    <description><![CDATA[{h['html']}]]></description>\n"
+            f"  </item>"
+        )
+
+    rss_xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n'
+        '<channel>\n'
+        '  <title>☀️ 乔帮主高管早报</title>\n'
+        '  <link>https://radar.qiao-flow.cn/</link>\n'
+        '  <description>海外深度洞察 · 硅谷 X 一线 · 国内博主风向 · 股债金汇与专家视点</description>\n'
+        '  <language>zh-CN</language>\n'
+        + "\n".join(items_xml) +
+        '\n</channel>\n</rss>\n'
+    )
+    (docs_dir / "feed.xml").write_text(rss_xml, encoding="utf-8")
+    log(f"已生成 RSS 早报源 docs/feed.xml（共 {len(history)} 天）")
+
+
 def run(fs: Feishu) -> None:
     now = datetime.now(CST)
     sub_tid = fs.ensure_table(SUB_TABLE, SUB_FIELDS)
@@ -854,6 +985,7 @@ def run(fs: Feishu) -> None:
         x_builders = fetch_follow_builders_x()
         elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid, macro_metrics, macro_opinions, x_builders)
         fs.send_card(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", elements)
+        write_rss_feed(now, rows, hot_rows, macro_metrics, macro_opinions, x_builders)
     else:
         log("本次无新增内容且无警告，跳过发信")
     log("完成")

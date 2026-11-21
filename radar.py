@@ -162,6 +162,19 @@ class Feishu:
                                               "content": json.dumps(content, ensure_ascii=False)},
                   params={"receive_id_type": "open_id"})
 
+    def send_card(self, title: str, elements: list[dict], template: str = "indigo") -> None:
+        card = {
+            "config": {"wide_screen_mode": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": title},
+                "template": template,
+            },
+            "elements": elements,
+        }
+        self.call("POST", "/im/v1/messages", {"receive_id": NOTIFY_OPEN_ID, "msg_type": "interactive",
+                                              "content": json.dumps(card, ensure_ascii=False)},
+                  params={"receive_id_type": "open_id"})
+
 
 # ---------- 得到大脑 ----------
 
@@ -389,8 +402,8 @@ def pick_hot(items: list[dict], recent_topics: list[str]) -> list[dict]:
     prompt = f"""下面是今天的海内外 AI 精选资讯与一手文章（包含海外英文一手源和国内热点）。挑出最值得关注的，最多 8 条（**优先挑选「海外·xxx」的一手深度文章，每条英文内容必须翻译成自然地道的简体中文**）；同一件事只挑一条；纯跑分、纯融资新闻，除非对非技术受众有实用角度，否则不挑。
 这些话题最近 3 天已经推荐过，同一件事不要再挑：{json.dumps(recent_topics, ensure_ascii=False)}
 每条给出：
-- 选题：中文标题，不超过 22 字
-- 一句话核心内容：中文，不超过 60 字，讲清发生了什么或核心洞察
+- 选题：中文标题，不超过 24 字
+- 一句话核心内容：中文精华摘要（80~120字），用两三句大白话讲清文章背景、核心观点/做法及关键数据，让读者不点原文也能吸收八成干货
 - 选题理由：从「目标受众关注」「有价值利他」「热点话题」里选 1 到 3 个
 - 切入角度：中文，不超过 45 字，**客观说清这条料对受众最有用的那个点**，不是"乔帮主可以怎么讲"。
   严禁替任何人设计角度、编造身份或经历，禁止出现「乔帮主」「以HR身份」「用自己的经历」这类字样。
@@ -485,6 +498,83 @@ def _extract_url(val: object) -> str:
     return ""
 
 
+def build_card_elements(rows: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> list[dict]:
+    elements: list[dict] = []
+
+    # 1. 海外一手洞察
+    if hot_rows:
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🌍 海外一手洞察**"}})
+        sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
+        for idx, hr in enumerate(sorted_hots[:6], 1):
+            src = str(hr.get("来源", "")).replace("海外·", "")
+            title = hr.get("选题", "")
+            core = hr.get("一句话核心内容", "")
+            pub_t = _fmt_ts(hr.get("发现时间"))
+            meta = f"{pub_t} ｜ {src}" if pub_t else src
+            url = _extract_url(hr.get("原文链接"))
+            link_md = f"　[阅读原文 ↗]({url})" if url else ""
+
+            block = f"<font color='grey'>{meta}</font>\n**{idx}. {title}**{link_md}"
+            if core:
+                block += f"\n{core}"
+            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
+            if idx < min(len(sorted_hots), 6):
+                elements.append({"tag": "hr"})
+
+    # 2. 关注博主更新（得到大脑）
+    valid_rows = [
+        r for r in rows
+        if r.get("转写状态") != "未转写" and "仅有标题" not in (r.get("选题推荐") or "")
+    ]
+    if valid_rows:
+        if elements:
+            elements.append({"tag": "hr"})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**📱 关注博主更新（得到大脑）**"}})
+        sorted_rows = sorted(
+            valid_rows,
+            key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
+        )
+        for idx, r in enumerate(sorted_rows[:5], 1):
+            mark = "🔥 " if r.get("推荐等级") == "强烈推荐" else ""
+            blogger = r.get("博主", "")
+            title = (r.get("标题") or "")[:36]
+            rec = r.get("选题推荐") or r.get("AI摘要") or ""
+            pub_t = _fmt_ts(r.get("发布时间"))
+            meta = f"{pub_t} ｜ {blogger}" if pub_t else blogger
+            url = _extract_url(r.get("链接"))
+            link_md = f"　[看视频 ↗]({url})" if url else ""
+
+            block = f"<font color='grey'>{meta}</font>\n**{idx}. {mark}{title}**{link_md}"
+            if rec:
+                block += f"\n{rec[:140]}"
+            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
+            if idx < min(len(sorted_rows), 5):
+                elements.append({"tag": "hr"})
+
+    elements.append({"tag": "hr"})
+    elements.append({
+        "tag": "action",
+        "actions": [
+            {
+                "tag": "button",
+                "text": {"tag": "plain_text", "content": "📂 打开订阅总表"},
+                "type": "default",
+                "url": f"{BASE_URL}?table={sub_tid}",
+            },
+            {
+                "tag": "button",
+                "text": {"tag": "plain_text", "content": "🌍 打开海外热点表"},
+                "type": "primary",
+                "url": f"{BASE_URL}?table={hot_tid}",
+            },
+        ],
+    })
+    if warnings:
+        warn_text = "\n".join(f"⚠️ {w}" for w in warnings)
+        elements.append({"tag": "note", "elements": [{"tag": "plain_text", "content": warn_text}]})
+    return elements
+
+
 def build_message(rows: list[dict], hots: list[dict], hot_rows: list[dict], warnings: list[str], sub_tid: str, hot_tid: str) -> str:
     lines: list[str] = []
 
@@ -576,7 +666,8 @@ def run(fs: Feishu) -> None:
     fs.create_records(sub_tid, rows)
     fs.create_records(hot_tid, hot_rows)
     if rows or hot_rows or warnings:
-        fs.send(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", build_message(rows, hots, hot_rows, warnings, sub_tid, hot_tid))
+        elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid)
+        fs.send_card(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", elements)
     else:
         log("本次无新增内容且无警告，跳过发信")
     log("完成")

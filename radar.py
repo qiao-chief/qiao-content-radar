@@ -369,14 +369,18 @@ def fetch_overseas_rss(since_hours: int = 72) -> list[dict]:
 
 
 def fetch_macro_metrics() -> list[dict]:
-    """抓取 3 个核心资金锚点：10年期美债收益率、离岸人民币汇率、上证指数。"""
+    """抓取股、债、金、汇核心盘面：上证/沪深300/国债ETF/美债/国内黄金ETF/国际金价/离岸人民币。"""
     targets = [
-        ("^TNX", "10Y美债", "%"),
-        ("CNH=X", "离岸人民币", ""),
-        ("000001.SS", "上证指数", ""),
+        ("000001.SS", "上证", 2, "", "股市"),
+        ("000300.SS", "沪深300", 2, "", "股市"),
+        ("511260.SS", "10年国债ETF", 2, "", "债市"),
+        ("^TNX", "10Y美债", 2, "%", "债市"),
+        ("518880.SS", "国内黄金ETF", 3, "", "金汇"),
+        ("GC=F", "国际金价", 1, "$", "金汇"),
+        ("CNH=X", "人民币", 4, "", "金汇"),
     ]
     out: list[dict] = []
-    for sym, label, unit in targets:
+    for sym, label, dec, unit, group in targets:
         try:
             url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(sym)}?interval=1d&range=2d"
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -388,10 +392,10 @@ def fetch_macro_metrics() -> list[dict]:
             if price is not None:
                 diff_pct = ((price - prev) / prev * 100) if prev else 0.0
                 sign = "+" if diff_pct >= 0 else ""
-                val_str = f"{price:.2f}{unit}" if unit == "%" else (f"{price:.4f}" if sym == "CNH=X" else f"{price:.2f}")
-                out.append({"label": label, "value": val_str, "change": f"{sign}{diff_pct:.2f}%"})
+                val_str = f"{unit}{price:.{dec}f}" if unit == "$" else f"{price:.{dec}f}{unit}"
+                out.append({"group": group, "label": label, "value": val_str, "change": f"{sign}{diff_pct:.2f}%"})
         except Exception as e:
-            log(f"宏观指标获取跳过（{label}）：{e}")
+            log(f"盘面指标获取跳过（{label}）：{e}")
     return out
 
 
@@ -632,14 +636,25 @@ def build_card_elements(
             if idx < min(len(sorted_rows), 5):
                 elements.append({"tag": "hr"})
 
-    # 3. 宏观资金风向与经济学家视点
+    # 3. 股·债·金·汇全景盘面与经济学家视点
     if macro_metrics or macro_opinions:
         if elements:
             elements.append({"tag": "hr"})
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟢 财经风向与专家视点**　<font color='grey'>全球流动性 · 宏观专家拆解</font>"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟢 股·债·金·汇盘面与专家视点**　<font color='grey'>四大资产风向 · 宏观拆解</font>"}})
         if macro_metrics:
-            metrics_str = " ｜ ".join(f"**{m['label']}** `{m['value']}` ({m['change']})" for m in macro_metrics)
-            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": metrics_str}})
+            lines_m: list[str] = []
+            for grp in ("股市", "债市", "金汇"):
+                grp_items = [m for m in macro_metrics if m.get("group") == grp]
+                if not grp_items:
+                    continue
+                parts = []
+                for m in grp_items:
+                    chg = m["change"]
+                    color = "red" if chg.startswith("+") else "green"
+                    parts.append(f"{m['label']} **{m['value']}** <font color='{color}'>{chg}</font>")
+                lines_m.append(f"**[{grp}]** " + " ｜ ".join(parts))
+            if lines_m:
+                elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(lines_m)}})
         if macro_opinions:
             elements.append({"tag": "hr"})
             for idx, op in enumerate(macro_opinions, 1):

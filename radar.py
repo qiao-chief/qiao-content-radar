@@ -640,21 +640,20 @@ def build_card_elements(
     if macro_metrics or macro_opinions:
         if elements:
             elements.append({"tag": "hr"})
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟢 股·债·金·汇盘面与专家视点**　<font color='grey'>四大资产风向 · 宏观拆解</font>"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟢 股·债·金·汇盘面与专家视点**"}})
         if macro_metrics:
-            lines_m: list[str] = []
-            for grp in ("股市", "债市", "金汇"):
-                grp_items = [m for m in macro_metrics if m.get("group") == grp]
-                if not grp_items:
-                    continue
-                parts = []
-                for m in grp_items:
-                    chg = m["change"]
-                    color = "red" if chg.startswith("+") else "green"
-                    parts.append(f"{m['label']} **{m['value']}** <font color='{color}'>{chg}</font>")
-                lines_m.append(f"**[{grp}]** " + " ｜ ".join(parts))
-            if lines_m:
-                elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(lines_m)}})
+            fields_list = []
+            for m in macro_metrics:
+                chg = m["change"]
+                color = "red" if chg.startswith("+") else "green"
+                fields_list.append({
+                    "is_short": True,
+                    "text": {
+                        "tag": "lark_md",
+                        "content": f"<font color='grey'>{m['label']}</font>\n**{m['value']}**　<font color='{color}'>{chg}</font>",
+                    },
+                })
+            elements.append({"tag": "div", "fields": fields_list})
         if macro_opinions:
             elements.append({"tag": "hr"})
             for idx, op in enumerate(macro_opinions, 1):

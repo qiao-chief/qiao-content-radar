@@ -42,6 +42,7 @@ MACRO_RSS = [
     ("Calculated Risk", "https://www.calculatedriskblog.com/feeds/posts/default"),
     ("CNBC Economy", "https://www.cnbc.com/id/20910258/device/rss/rss.html"),
 ]
+FOLLOW_BUILDERS_X_URL = "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json"
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL") or "deepseek-v4-flash"
 WINDOW_DAYS = int(os.environ.get("RADAR_WINDOW_DAYS") or 3)
@@ -399,6 +400,56 @@ def fetch_macro_metrics() -> list[dict]:
     return out
 
 
+def fetch_follow_builders_x() -> list[dict]:
+    """从张咋啦 follow-builders 拉取 X 上 14 位 AI 掌门人推文并由 DeepSeek 精选 3 条中文精华。"""
+    try:
+        req = urllib.request.Request(FOLLOW_BUILDERS_X_URL, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode())
+    except Exception as e:
+        log(f"Follow Builders X 抓取跳过：{e}")
+        return []
+
+    raw_tweets: list[dict] = []
+    for builder in data.get("x") or []:
+        name = builder.get("name") or builder.get("handle") or ""
+        handle = builder.get("handle") or ""
+        for tw in builder.get("tweets") or []:
+            text = (tw.get("text") or "").strip()
+            url = tw.get("url") or (f"https://x.com/{handle}/status/{tw.get('id')}" if tw.get("id") and handle else "")
+            created = tw.get("createdAt") or tw.get("date") or ""
+            if text and len(text) > 25:
+                raw_tweets.append({"idx": len(raw_tweets), "author": name, "handle": handle, "text": text[:400], "url": url, "created": created})
+
+    if not raw_tweets:
+        return []
+
+    prompt = f"""你是给非技术背景的知识工作者挑选硅谷一线 AI 动态的编辑。
+下面是一线 AI 产品掌门人（Claude Code 工程师、Google Labs、YC、Replit、Vercel CEO 等）最近的 Twitter/X 推文。
+请挑出最具有「新工具发布、工作流技巧、一线实操剧透」价值的 **3 条**：
+- 标题：中文，不超过 22 字，点出发布了什么或什么新玩法
+- 摘要：中文大白话（70~100字），讲清具体能干嘛、有什么用，禁止泛泛而谈
+输出格式：{{"items": [{{"idx": 0, "标题": "...", "摘要": "..."}}]}}
+推文列表：{json.dumps([{"idx": t["idx"], "作者": t["author"], "内容": t["text"]} for t in raw_tweets[:30]], ensure_ascii=False)}"""
+    try:
+        picks = []
+        for p in deepseek(prompt).get("items", [])[:3]:
+            idx = p.get("idx")
+            if isinstance(idx, int) and 0 <= idx < len(raw_tweets):
+                tw = raw_tweets[idx]
+                picks.append({
+                    "author": tw["author"],
+                    "title": p.get("标题") or tw["text"][:22],
+                    "summary": p.get("摘要") or "",
+                    "url": tw["url"],
+                    "created": tw["created"],
+                })
+        return picks
+    except Exception as e:
+        log(f"Follow Builders X 精选跳过：{e}")
+        return []
+
+
 def fetch_macro_opinions(since_hours: int = 72) -> list[dict]:
     """抓取全球经济学家/宏观分析师评论并请 DeepSeek 挑出 2 条翻译提炼。"""
     items = _fetch_rss_list(MACRO_RSS, "", since_hours)
@@ -580,15 +631,16 @@ def build_card_elements(
     hot_tid: str,
     macro_metrics: list[dict] | None = None,
     macro_opinions: list[dict] | None = None,
+    x_builders: list[dict] | None = None,
 ) -> list[dict]:
     elements: list[dict] = []
 
-    # 1. 海外一手洞察
+    # 1. 🔵 海外深度洞察
     if hot_rows:
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🔵 海外一手洞察**　<font color='grey'>外网原汁原味 · 中文精华精翻</font>"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🔵 海外深度洞察**　<font color='grey'>8 大博客 · 中文精华精翻</font>"}})
         elements.append({"tag": "hr"})
         sorted_hots = sorted(hot_rows, key=lambda h: 0 if str(h.get("来源", "")).startswith("海外·") else 1)
-        for idx, hr in enumerate(sorted_hots[:6], 1):
+        for idx, hr in enumerate(sorted_hots[:3], 1):
             src = str(hr.get("来源", "")).replace("海外·", "")
             title = hr.get("选题", "")
             core = hr.get("一句话核心内容", "")
@@ -601,10 +653,26 @@ def build_card_elements(
             if core:
                 block += f"\n<font color='grey'>{core}</font>"
             elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
-            if idx < min(len(sorted_hots), 6):
+            if idx < min(len(sorted_hots), 3):
                 elements.append({"tag": "hr"})
 
-    # 2. 关注博主更新（得到大脑）
+    # 2. 🔴 硅谷一线实操（X / Follow Builders）
+    if x_builders:
+        if elements:
+            elements.append({"tag": "hr"})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🔴 硅谷一线实操（X）**　<font color='grey'>产品掌门人实时剧透</font>"}})
+        elements.append({"tag": "hr"})
+        for idx, xb in enumerate(x_builders[:3], 1):
+            created = str(xb.get("created") or "")[:10]
+            meta = f"<font color='red'>{xb['author']}</font>　<font color='grey'>{created}</font>" if created else f"<font color='red'>{xb['author']}</font>"
+            url = xb.get("url") or ""
+            link_md = f"　[看推文 ↗]({url})" if url else ""
+            block = f"{meta}\n**{idx}. {xb['title']}**{link_md}\n<font color='grey'>{xb['summary']}</font>"
+            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
+            if idx < min(len(x_builders), 3):
+                elements.append({"tag": "hr"})
+
+    # 3. 🟡 国内博主风向（得到大脑）
     valid_rows = [
         r for r in rows
         if r.get("转写状态") != "未转写" and "仅有标题" not in (r.get("选题推荐") or "")
@@ -612,13 +680,13 @@ def build_card_elements(
     if valid_rows:
         if elements:
             elements.append({"tag": "hr"})
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟠 关注博主动态**　<font color='grey'>得到大脑自动转写</font>"}})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": "**🟡 国内博主风向**　<font color='grey'>得到大脑自动转写</font>"}})
         elements.append({"tag": "hr"})
         sorted_rows = sorted(
             valid_rows,
             key=lambda r: (0 if r.get("推荐等级") == "强烈推荐" else 1, -int(float(r.get("发布时间") or 0))),
         )
-        for idx, r in enumerate(sorted_rows[:5], 1):
+        for idx, r in enumerate(sorted_rows[:4], 1):
             is_strong = r.get("推荐等级") == "强烈推荐"
             mark = "<font color='red'>🔥 强烈推荐</font>　" if is_strong else ""
             blogger = r.get("博主", "")
@@ -633,7 +701,7 @@ def build_card_elements(
             if rec:
                 block += f"\n<font color='grey'>{rec[:140]}</font>"
             elements.append({"tag": "div", "text": {"tag": "lark_md", "content": block}})
-            if idx < min(len(sorted_rows), 5):
+            if idx < min(len(sorted_rows), 4):
                 elements.append({"tag": "hr"})
 
     # 3. 股·债·金·汇全景盘面与经济学家视点
@@ -783,7 +851,8 @@ def run(fs: Feishu) -> None:
     if rows or hot_rows or warnings:
         macro_metrics = fetch_macro_metrics()
         macro_opinions = fetch_macro_opinions()
-        elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid, macro_metrics, macro_opinions)
+        x_builders = fetch_follow_builders_x()
+        elements = build_card_elements(rows, hot_rows, warnings, sub_tid, hot_tid, macro_metrics, macro_opinions, x_builders)
         fs.send_card(f"☀️ 乔帮主高管早报 · {now:%-m月%-d日}", elements)
     else:
         log("本次无新增内容且无警告，跳过发信")

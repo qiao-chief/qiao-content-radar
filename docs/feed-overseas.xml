@@ -199,26 +199,24 @@ Try CodeAF!</p>
 <p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] Token欺诈来了，而且很严重</title>
-    <link>https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/</link>
-    <guid isPermaLink="false">overseas-478ea25aeed3c997</guid>
-    <pubDate>Fri, 20 Nov 2026 10:49:57 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/">查看网页原文 ↗</a></p>
+    <title>[Simon Willison] llm-gemini 0.38.1 小版本更新：补上 xhigh 推理档位</title>
+    <link>https://simonwillison.net/2026/Nov/20/llm-gemini/</link>
+    <guid isPermaLink="false">overseas-8b57b72566ad3c58</guid>
+    <pubDate>Fri, 20 Nov 2026 11:01:57 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/llm-gemini/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>Claire Vo 运营着 ChatPRD，这是一个帮产品经理「把想法变成规格文档」的 AI 平台。产品从 GPT-4 时代就上线了，Claire 大部分时间都在公开构建它。</p>
-<p>在这段 YouTube 视频里（配套的推文也值得一看），Claire 讲了她遇到的大量 token 欺诈——有人组团滥用产品的免费试用，有时只是为了白嫖 AI 用量，但更常见的是转卖 token，或者在 ChatPRD 的 agent 之上跑别的商业项目。</p>
-<p>有个用户直接跟她说：「我在投资一个国际性的 Roblox 和 Fortnite 地图工作室。他们搞一套免费试用加优惠码的循环，然后隧道接入我的 agent，用它来制作 Roblox 和 Fortnite 地图。」</p>
-<p>有意思的是，Claire 发现 agent 里跑得最多的提示词之一，竟然是骑自行车的鹈鹕 SVG 图！估计这些 token 骗子是用它来探测底层模型——不同模型家族有明确的特征，我自己以前也这么干过，用来猜 OpenRouter 这类平台上隐身预览模型的真实身份。</p>
-<p>Claire 现在正彻底关停免费试用。面对这种滥用，这看起来是个无奈但正确的决定。</p>
-<p>标签：youtube、ai、生成式ai、大语言模型、骑自行车的鹈鹕、ai滥用</p>
+<p>版本发布：llm-gemini 0.38.1</p>
+<p>Gemini 4 Carbon 只支持低、中、高三档推理级别，但 Gemini 4 Hydrogen 和 Gemini 4 Neon 都多出一个 xhigh 档。</p>
+<p>我之前把这个模型加进 llm-gemini 插件时漏掉了这一点，现在这个补丁版本修好了。</p>
+<p>Hydrogen 的 xhigh 设置差别很大。我更新了 Gemini 4 的对比表格——注意看，Hydrogen 在 high 档下用了 5,311 个输出 token，花了 3.99 美分；但同一个模型在 xhigh 档下用了 31,477 个输出 token，花了 23.61 美分，画出来的鹈鹕跟 Gemini 4 Neon 不相上下。</p>
+<p>标签：gemini、llm、llm-reasoning、骑自行车的鹈鹕、ai、llms、google、生成式 AI</p>
 <hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Token fraud is here and it’s BAD (YouTube)
-Claire Vo runs ChatPRD, an AI platform that helps product managers &quot;turn an idea into a spec&quot;. The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.</p>
-<p>In this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product&#x27;s free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent.</p>
-<p>I am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps.</p>
-<p>Apparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I&#x27;ve used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter.</p>
-<p>Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.</p>
-<p>Tags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse</p></blockquote>]]></description>
+<blockquote><p>Release: llm-gemini 0.38.1
+        
+Gemini 4 Carbon only supports low, medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level.</p>
+<p>I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release.</p>
+<p>The xhigh setting for Hydrogen makes a significant difference. I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 output tokens, cost 23.61 cents, and produced a pelican that&#x27;s competitive with Gemini 4 Neon:</p>
+<p>Tags: gemini, llm, llm-reasoning, pelican-riding-a-bicycle, ai, llms, google, generative-ai</p></blockquote>]]></description>
   </item>
   <item>
     <title>[OpenAI News] Hebbia 用 GPT-6 Astra 提升金融研究效率</title>

@@ -210,5 +210,25 @@
   "x:https://x.com/petergyang/status/2123879309463228445": {
     "zh_title": "Antigravity 手机遥控小技巧：把网页加到主屏幕",
     "zh_body": "给正在用 @antigravity 玩 Neon 的朋友们，分享一个快速小技巧：\n\n1. 打开 https://t.co/GRhlnGkO1i\n2. 点“查看更多”，再点分享按钮\n3. 点“添加到主屏幕”\n\n这样你就能在手机上像遥控器一样，跟 Antigravity 里所有的对话线程聊天了。\n\n虽然 Antigravity 还没有手机 App，但我觉得它的遥控功能其实比 Claude 的更好用，因为所有线程默认都能直接访问。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/20/llm-gemini/": {
+    "zh_title": "llm-gemini 0.38.1 小版本更新：补上 xhigh 推理档位",
+    "zh_body": "版本发布：llm-gemini 0.38.1\n\nGemini 4 Carbon 只支持低、中、高三档推理级别，但 Gemini 4 Hydrogen 和 Gemini 4 Neon 都多出一个 xhigh 档。\n\n我之前把这个模型加进 llm-gemini 插件时漏掉了这一点，现在这个补丁版本修好了。\n\nHydrogen 的 xhigh 设置差别很大。我更新了 Gemini 4 的对比表格——注意看，Hydrogen 在 high 档下用了 5,311 个输出 token，花了 3.99 美分；但同一个模型在 xhigh 档下用了 31,477 个输出 token，花了 23.61 美分，画出来的鹈鹕跟 Gemini 4 Neon 不相上下。\n\n标签：gemini、llm、llm-reasoning、骑自行车的鹈鹕、ai、llms、google、生成式 AI"
+  },
+  "x:https://x.com/rauchg/status/2123879031049449791": {
+    "zh_title": "从「Hello World」到可交付产品：@eve 的进化之路",
+    "zh_body": "当初我第一次试用 @eve 的内部预发布版时，拿一个「个人购物助手」agent 当我的「hello world」。它能跑起来，但很多基础设施还缺着。\n\n现在不一样了：@agentcardhq 已经有了，模型更强了，iMessage 和 WhatsApp 的 eve 通道也成熟了，性能大幅提升——而且没有牺牲持久性和加密。\n\n结果是，你可以在我们这套开放智能栈上，交付一个 Muse / Instinct 级别、完全由你掌控的平台。体验非常舒服。我强烈建议你试试：拿这个模板跑起来，改成你自己的。"
+  },
+  "x:https://x.com/amasad/status/2123877625915375950": {
+    "zh_title": "太惊艳了",
+    "zh_body": "太惊艳了 https://t.co/ctwhrva2lY"
+  },
+  "x:https://x.com/amasad/status/2123874539218010491": {
+    "zh_title": "AI与人类同时给出黎曼猜想证明，优雅度对比值得期待",
+    "zh_body": "两份独立的黎曼猜想证明几乎同时问世，一份来自AI，一份来自人类。假设两者都正确，那就有意思了——尤其值得比一比谁更优雅。https://t.co/rp4thKnxg7"
+  },
+  "macro:https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html": {
+    "zh_title": "科技故障频发，催生新“末日经济”",
+    "zh_body": "最近接连发生的科技故障，让一些人对AI网络攻击和美国电网安全感到担忧。正因如此，“末日经济”正在升温。"
   }
 }

@@ -75,10 +75,6 @@
     "zh_title": "公司的起点，是那个帮你把公司搭起来的智能体",
     "zh_body": "一家公司的起点，就是那个帮你把公司建起来的智能体。https://t.co/JAeoreokGR"
   },
-  "x:https://x.com/swyx/status/2123552457649492023": {
-    "zh_title": "fuuuuuuck",
-    "zh_body": "fuuuuuuck\n\nhttps://t.co/y1lntMSVtd"
-  },
   "x:https://x.com/petergyang/status/2123540875733315815": {
     "zh_title": "Gemini 4 Neon 好评如潮，我做了个对比视频",
     "zh_body": "Gemini 4 Neon 最近好评如潮，所以我做了个新视频，把它和我日常干活最爱用的 Opus 5.5 放在一起比了比。\n\n几点感受：\n\n1. 从我的测试看，Opus 在 3D 和设计上还是更强，但 Neon 在写作和「性格」上已经不相上下、甚至更好，这已经很了不起了。\n\n2. @Google 的 Gemini 4 一共有 3 个模型，但实际上我觉得 99% 的任务我都会用 Neon。它比 Carbon 快得多，效果却一样好。\n\n3. 每月 100 美元的 Gemini Ultra 订阅挺划算。你能拿到 Gemini 4、YouTube Premium 家庭版（我最爱的订阅，没有之一，YouTube 和 Music 都免广告）、20 TB 存储空间放照片和文件，还有更多。\n\n📌 想看我在 5 个使用场景里实测 Neon 对 Opus，点这里：https://t.co/irRiNDdqgY"
@@ -159,76 +155,64 @@
     "zh_title": "日本10月出口大涨20.5%，芯片出货强劲超预期",
     "zh_body": "日本10月出口同比增长20.5%，超出市场预期，主要受芯片出货强劲带动。\n\n其中，半导体出货量同比激增近50%。"
   },
-  "overseas:https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/": {
-    "zh_title": "黎曼猜想被证明……两次独立证明？",
-    "zh_body": "在几小时内（时间线），两位数学家分别宣称独立证明了黎曼猜想——数学界最著名的未解难题（《科学美国人》报道）。\n\nAnthropic 的 Levent Alpöge 首先用 Claude 驱动生成了一份证明，以 Lean 代码形式发布（1.3GB，约相当于 25 万页），而非完整论文。Elliot Glazer 确认形式化陈述是广义黎曼猜想（GRH），并认为 Lean 出 bug 的概率远低于 1%。所以，如果它能在没有额外公理的情况下编译通过，那很可能就是正确的，而且永远不会有任何人完整读过它……\n\n……这促使 Alessandro Masullo 发布了他 940 页、100% 由人类完成、仍在进行中的证明——他已经研究了 12 年（据 Kevin Hartnett 说，还经过了秘密的人工审查和修订）。\n\n这是前沿数学突破三部曲中的第三部，前两部是纳维-斯托克斯方程的解和准黎曼界，但事情似乎还没完。OpenAI 九月份的纳维-斯托克斯声明仍是前车之鉴：批评者认为其 Lean 证明与自然语言结果不符。两项 AI 宣称的千禧年大奖难题成果都需要数年时间来验证。\n\n除了这个数学界最著名问题的惊人成就之外，人们无法忽视其中的反差：AI 写的证明可能是正确的，但无法理解；另一个证明可能在技术上有误，但可以理解。\n\n由 Agentfield.AI 赞助\n开源模型已经就绪。大多数编程工具还没准备好。在 DeepSWE 上，CodeAF 在同一个开源模型上排名十强第一，领先于 Claude Code，且每次修复成本最低。\n试试 CodeAF！\n\n正如 Levent 雄辩地指出：“在接近终点线时，Claude 远远超过了我。不，Claude 在终点线附近飞翔、舞蹈、闪耀。”\n\n这也与我们播客和本通讯中讨论过的其他 AI 主题相关：\n\n垃圾内容（Slop）的本质：Levent 说：“我在还没有掌握其数学周围一大片领域之前，就向世界呈现了一个完整的论证。显然，试图发布一些庞大且不可读的‘垃圾’是不合适的，所以我决定只呈现 Lean。” 《反垃圾宣言》的关键原则之一是你应该理解你所发布的东西（“垃圾就是当我们投入的精力少于我们要求消费者花在理解上的精力时。”）。然而，这一大堆 Lean 代码是可验证正确的，并且在人类历史上具有难以置信的重要性。我们是否应该仅仅因为我们没有理解其中的每一个细节，就将其发布推迟十年？\n\n弱到强对齐：使用智能体的典型体验是强到弱——我们作为通用智能，指导不那么聪明的 AI 去做我们擅长的事情。我们也常常期望 AI 自动化大多数"
-  },
   "x:https://x.com/adityaag/status/2124019178843894078": {
     "zh_title": "我们一边攻克黎曼猜想，一边用一粒药丸击溃胰腺癌",
-    "zh_body": "我们正在攻克黎曼猜想，同时也在用一粒药丸击溃胰腺癌。\n\n不过嘛，咱们还是接着争论“AI 交易”到底好不好吧，哈哈。"
+    "zh_body": "我们正在攻克黎曼猜想，同时也在用一粒药丸击溃胰腺癌。\n\n但当然啦，咱们还是来争论一下“AI 交易”到底好不好吧，哈哈。"
   },
   "x:https://x.com/thsottiaux/status/2123997735326232775": {
-    "zh_title": "我们不小心做了个太好玩的东西，现在全员摸鱼",
-    "zh_body": "我们最近瞎折腾了一下，无意中搞出了一个内部体验，好玩得有点过头了。结果现在大家全在玩，没人干活了。我们可能再也回不去了。"
+    "zh_title": "我们瞎折腾，不小心造出个太好玩的东西，现在全公司都在玩",
+    "zh_body": "我们最近瞎折腾了一下，不小心搞出了一个内部体验，好玩得有点过头了。结果现在大家光顾着玩，正经活儿都不干了。这局面，我们怕是收不回来了。"
   },
   "x:https://x.com/thenanyu/status/2123983081577267264": {
-    "zh_title": "日常高频操作的大幅性能与体验提升",
-    "zh_body": "针对你每天要做几十到几百次的操作，带来了大幅的性能提升和使用体验改善。https://t.co/R5MfrV54gs"
+    "zh_title": "高频操作性能与体验大升级：每天几十上百次的动作更顺了",
+    "zh_body": "针对你每天要做几十到上百次的操作，我们在性能和体验上做了大幅优化。https://t.co/R5MfrV54gs"
   },
   "x:https://x.com/realmadhuguru/status/2123972492645777629": {
-    "zh_title": "11月底去金奈，想认识当地最有趣的AI人",
-    "zh_body": "金奈有哪些最值得一见的AI圈朋友？我11月底到12月第一周会在金奈。\n\n关于我：目前在Meta做AI产品；此前在谷歌负责Gemini、Veo和Nano Banana模型的产品工作。\n\n行程很紧，但应该能挤出几场见面。"
+    "zh_title": "11月底到12月初去金奈，该见哪些有意思的AI人？",
+    "zh_body": "11月底到12月第一周我会在金奈，想问问：当地有哪些值得一见的AI圈有意思的人？\n\n关于我：目前在Meta做AI产品；此前在谷歌，负责过Gemini、Veo和Nano Banana模型的产品工作。\n\n行程比较紧，但应该能挤出几场会面。"
   },
   "x:https://x.com/petergyang/status/2123944322190254340": {
-    "zh_title": "下载还剩3小时，先聊聊这游戏评分怎么回事",
-    "zh_body": "还得再等3小时才能下载完开玩，不过这用户评分是怎么回事啊🤔 https://t.co/BgAKoYCGC9"
+    "zh_title": "游戏还要下3小时，先聊聊用户评分怎么回事",
+    "zh_body": "还得再等3个小时才能下载完开玩，不过这个用户评分是怎么回事啊🤔 https://t.co/BgAKoYCGC9"
   },
   "x:https://x.com/joshwoodward/status/2123943608516792480": {
     "zh_title": "再次感谢 @UFO2002616 的灵感启发！",
     "zh_body": "再次感谢 @UFO2002616 带来的灵感！\n\nhttps://t.co/V5BHwpoy9b"
   },
   "x:https://x.com/joshwoodward/status/2123943606906138868": {
-    "zh_title": "这周上线的东西真不少！顺手把网友的点子做进了产品",
-    "zh_body": "呼，这周上线的东西可真不少！放假前那个周五下午，我们几个人拿 Gemini Neon 玩得挺开心，看到 @UFO2002616 发的那条帖子实在太喜欢了，干脆直接做出来扔进了生产环境！\n\n在网页版上长按模型选择器，就能体验一下 🙂 https://t.co/9cT7TekxBs"
+    "zh_title": "Gemini Neon 上线：长按模型选择器即可体验",
+    "zh_body": "呼，这一周发版真是够忙的！放假前那个周五下午，我们几个人拿 Gemini Neon 玩得挺开心，看到 @UFO2002616 发的那条帖子实在太喜欢了，干脆直接把它做出来、扔进了生产环境！\n\n在网页版上长按模型选择器，就能体验一下 🙂 https://t.co/9cT7TekxBs"
   },
   "x:https://x.com/petergyang/status/2123941250902667762": {
     "zh_title": "突发：黄仁勋曾想给一只明显吃素的松鼠递牛腩",
     "zh_body": "突发：@JensenHuang 曾试图把牛腩递给一只一看就是素食主义者的松鼠 https://t.co/VoMGaNDGSh"
   },
   "x:https://x.com/trq212/status/2123909358828539965": {
-    "zh_title": "我把它叫作主场",
-    "zh_body": "我把它叫作主场。"
+    "zh_title": "我把它叫作主场优势",
+    "zh_body": "我把它叫作“主场优势”。"
   },
   "x:https://x.com/trq212/status/2123909357071159327": {
     "zh_title": "我好像摸清这游戏的玩法循环了！",
-    "zh_body": "我好像摸清这游戏的玩法循环了！\n\n这是一款体育动漫游戏，只不过这里的“体育”是元素御术。\n\n你和你的小队一起参加锦标赛，比赛间隙他们各有各的故事线，你可以深入其中，就像《质量效应》或《龙腾世纪》那样。"
+    "zh_body": "我好像摸清这游戏的玩法循环了！\n\n这是一款体育动漫风格的游戏，只不过这里的“体育”是元素操控。\n\n你和你的小队一起参加锦标赛，比赛间隙他们各自还有自己的故事线可以深入，就像《质量效应》或《龙腾世纪》那样。"
   },
   "x:https://x.com/trq212/status/2123895040821071959": {
     "zh_title": "我现在更反对交接了",
     "zh_body": "我现在更反对交接了。"
   },
   "x:https://x.com/petergyang/status/2123879309463228445": {
-    "zh_title": "Antigravity 手机遥控小技巧：把网页加到主屏幕",
-    "zh_body": "给正在用 @antigravity 玩 Neon 的朋友们，分享一个快速小技巧：\n\n1. 打开 https://t.co/GRhlnGkO1i\n2. 点“查看更多”，再点分享按钮\n3. 点“添加到主屏幕”\n\n这样你就能在手机上像遥控器一样，跟 Antigravity 里所有的对话线程聊天了。\n\n虽然 Antigravity 还没有手机 App，但我觉得它的遥控功能其实比 Claude 的更好用，因为所有线程默认都能直接访问。"
-  },
-  "overseas:https://simonwillison.net/2026/Nov/20/llm-gemini/": {
-    "zh_title": "llm-gemini 0.38.1 小版本更新：补上 xhigh 推理档位",
-    "zh_body": "版本发布：llm-gemini 0.38.1\n\nGemini 4 Carbon 只支持低、中、高三档推理级别，但 Gemini 4 Hydrogen 和 Gemini 4 Neon 都多出一个 xhigh 档。\n\n我之前把这个模型加进 llm-gemini 插件时漏掉了这一点，现在这个补丁版本修好了。\n\nHydrogen 的 xhigh 设置差别很大。我更新了 Gemini 4 的对比表格——注意看，Hydrogen 在 high 档下用了 5,311 个输出 token，花了 3.99 美分；但同一个模型在 xhigh 档下用了 31,477 个输出 token，花了 23.61 美分，画出来的鹈鹕跟 Gemini 4 Neon 不相上下。\n\n标签：gemini、llm、llm-reasoning、骑自行车的鹈鹕、ai、llms、google、生成式 AI"
+    "zh_title": "Antigravity远程控制小技巧：手机也能聊",
+    "zh_body": "给那些正在用 @antigravity 玩 Neon 的朋友们一个小提示：\n\n1. 打开 https://t.co/GRhlnGkO1i\n2. 点“查看更多”，然后点分享按钮\n3. 点“添加到主屏幕”\n\n这样你就能在手机上通过远程控制，跟所有 Antigravity 的对话线程聊天了。\n\n虽然 Antigravity 还没有手机应用（暂时），但我觉得它的远程控制其实比 Claude 的更好用，因为所有对话线程默认都能用。"
   },
   "x:https://x.com/rauchg/status/2123879031049449791": {
-    "zh_title": "从「Hello World」到可交付产品：@eve 的进化之路",
-    "zh_body": "当初我第一次试用 @eve 的内部预发布版时，拿一个「个人购物助手」agent 当我的「hello world」。它能跑起来，但很多基础设施还缺着。\n\n现在不一样了：@agentcardhq 已经有了，模型更强了，iMessage 和 WhatsApp 的 eve 通道也成熟了，性能大幅提升——而且没有牺牲持久性和加密。\n\n结果是，你可以在我们这套开放智能栈上，交付一个 Muse / Instinct 级别、完全由你掌控的平台。体验非常舒服。我强烈建议你试试：拿这个模板跑起来，改成你自己的。"
+    "zh_title": "从Hello World到可交付产品：用开放智能栈打造你自己的私人购物Agent",
+    "zh_body": "我第一次试用 @eve 的内部预发布版本时，拿一个私人购物助手 agent 当我的「hello world」。它能跑起来，但很多基础设施还缺着。\n\n现在不一样了：@agentcardhq 已经有了，模型更强了，iMessage 和 WhatsApp 的 eve 通道也成熟了，性能大幅提升——而且没有在持久性和加密上做妥协。\n\n结果就是，你可以基于我们的开放智能栈，交付一个 Muse / Instinct 这个水准的平台，而且完全由你自己掌控。体验非常愉悦。我强烈建议你试试：拿这个模板跑起来，改成你自己的东西。"
   },
   "x:https://x.com/amasad/status/2123877625915375950": {
     "zh_title": "太惊艳了",
     "zh_body": "太惊艳了 https://t.co/ctwhrva2lY"
   },
   "x:https://x.com/amasad/status/2123874539218010491": {
-    "zh_title": "AI与人类同时给出黎曼猜想证明，优雅度对比值得期待",
-    "zh_body": "两份独立的黎曼猜想证明几乎同时问世，一份来自AI，一份来自人类。假设两者都正确，那就有意思了——尤其值得比一比谁更优雅。https://t.co/rp4thKnxg7"
-  },
-  "macro:https://www.cnbc.com/2026/11/21/emergency-prep-spending-tech-outages.html": {
-    "zh_title": "科技故障频发，催生新“末日经济”",
-    "zh_body": "最近接连发生的科技故障，让一些人对AI网络攻击和美国电网安全感到担忧。正因如此，“末日经济”正在升温。"
+    "zh_title": "AI与人类同时给出黎曼猜想证明，优雅程度对比值得期待",
+    "zh_body": "两份独立的黎曼猜想证明同时问世，一份出自AI，一份出自人类。假设两者都正确，那么对比它们的差异会很有意思，尤其是在优雅程度上。https://t.co/rp4thKnxg7"
   }
 }

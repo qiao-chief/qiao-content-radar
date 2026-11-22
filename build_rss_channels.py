@@ -103,15 +103,11 @@ def _translate_article(title: str, source: str, body: str) -> dict:
 原标题：{title}
 正文：
 {body[:2800]}"""
-    try:
-        res = radar.deepseek(prompt)
-        return {
-            "zh_title": res.get("zh_title") or title,
-            "zh_body": res.get("zh_body") or body,
-        }
-    except Exception as e:
-        radar.log(f"[RSS翻译] 失败({title[:20]}): {e}")
-        return {"zh_title": title, "zh_body": body}
+    res = radar.deepseek(prompt)
+    return {
+        "zh_title": res.get("zh_title") or title,
+        "zh_body": res.get("zh_body") or body,
+    }
 
 
 def _write_xml(filename: str, ch_title: str, ch_desc: str, items: list[dict]) -> None:
@@ -154,9 +150,13 @@ def build_overseas_channel(cache: dict[str, dict]) -> None:
     for it in raw_items:
         ckey = "overseas:" + it["link"]
         if ckey not in cache and new_trans < 10:
-            tr = _translate_article(it["title"], it["source"], it["body"])
-            cache[ckey] = tr
-            new_trans += 1
+            try:
+                tr = _translate_article(it["title"], it["source"], it["body"])
+            except Exception as e:
+                radar.log(f"[RSS翻译] 失败({it['title'][:20]}): {e}")
+            else:
+                cache[ckey] = tr
+                new_trans += 1
         tr = cache.get(ckey) or {"zh_title": it["title"], "zh_body": it["body"]}
         zh_html = _paragraphs_to_html(tr["zh_body"])
         en_html = _paragraphs_to_html(it["body"][:2500])
@@ -212,9 +212,13 @@ def build_macro_channel(cache: dict[str, dict]) -> None:
     for it in raw_items:
         ckey = "macro:" + it["link"]
         if ckey not in cache and new_trans < 10:
-            tr = _translate_article(it["title"], it["source"], it["body"])
-            cache[ckey] = tr
-            new_trans += 1
+            try:
+                tr = _translate_article(it["title"], it["source"], it["body"])
+            except Exception as e:
+                radar.log(f"[RSS翻译] 失败({it['title'][:20]}): {e}")
+            else:
+                cache[ckey] = tr
+                new_trans += 1
         tr = cache.get(ckey) or {"zh_title": it["title"], "zh_body": it["body"]}
         zh_html = _paragraphs_to_html(tr["zh_body"])
         en_html = _paragraphs_to_html(it["body"][:2500])
@@ -261,9 +265,13 @@ def build_x_channel(cache: dict[str, dict]) -> None:
     for tw in raw_tweets:
         ckey = "x:" + tw["url"]
         if ckey not in cache and new_trans < 12:
-            tr = _translate_article(tw["text"][:60], f"X @{tw['handle']}", tw["text"])
-            cache[ckey] = tr
-            new_trans += 1
+            try:
+                tr = _translate_article(tw["text"][:60], f"X @{tw['handle']}", tw["text"])
+            except Exception as e:
+                radar.log(f"[RSS翻译] 失败(X @{tw['handle']}): {e}")
+            else:
+                cache[ckey] = tr
+                new_trans += 1
         tr = cache.get(ckey) or {"zh_title": tw["text"][:30], "zh_body": tw["text"]}
         full_html = (
             f"<p><code>@{html_escape(tw['handle'])}</code> · <a href=\"{html_escape(tw['url'])}\">查看 X 原推文 ↗</a></p>\n"

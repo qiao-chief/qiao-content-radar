@@ -9,35 +9,38 @@
     <title>☀️ 乔帮主高管早报 · 11月22日</title>
     <link>https://radar.qiao-flow.cn/#brief-2026-11-22</link>
     <guid isPermaLink="false">qiao-brief-2026-11-22</guid>
-    <pubDate>Sun, 22 Nov 2026 08:29:20 +0800</pubDate>
-    <description><![CDATA[<h2>🔵 海外深度洞察</h2>
-<h3>1. OpenAI 怎么防别人蒸馏它的模型</h3>
-<p><code>OpenAI News</code> · 11-20 18:00 · <a href="https://openai.com/index/combatting-adversarial-distillation">阅读原文 ↗</a></p>
-<blockquote><p>OpenAI 介绍对抗蒸馏的分层做法：模型训练、安全防护、检测与执法四层配合，防止能力被系统性提取。对使用 AI 的企业来说，这提示模型能力本身也是需要保护的资产。</p></blockquote>
-<h3>2. PostgreSQL 19 因 AI 报漏洞而推迟发布</h3>
-<p><code>Simon Willison</code> · 11-20 04:43 · <a href="https://simonwillison.net/2026/Nov/19/postgresql-19/">阅读原文 ↗</a></p>
-<blockquote><p>PostgreSQL 19 今年比往年晚两个月发布，主因是团队要处理一批由 AI 报告的安全漏洞。AI 让漏洞发现变快，也让开源维护者的审核负担骤增，这是 AI 进入软件生产链后的真实副作用。</p></blockquote>
-<h3>3. 数学界对 AI 证明的谨慎态度</h3>
-<p><code>Simon Willison</code> · 11-21 03:21 · <a href="https://simonwillison.net/2026/Nov/20/ravi-vakil/">阅读原文 ↗</a></p>
-<blockquote><p>有数学家提出广义黎曼猜想的证明，同行已跟进数月并给出大量反馈，目前看进展不错，且整个过程完全由人完成、没有 AI 参与。这条与 AI 证明的说法形成对照，说明数学界认的是长期复核而非宣布。</p></blockquote>
-<hr/><h2>🔴 硅谷一线实操（X）</h2>
-<h3>1. 手机遥控 Antigravity 线程的小技巧</h3>
-<p><code>Peter Yang</code> · 2026-11-20 · <a href="https://x.com/petergyang/status/2123879309463228445">看推文 ↗</a></p>
-<blockquote><p>Peter Yang 分享：把 Antigravity 网页加到手机主屏幕，就能像遥控器一样在手机上跟所有对话线程交互。Antigravity 还没出手机 App，但这样用比 Claude 的远程控制还顺手，适合出门在外想继续推进任务的人。</p></blockquote>
-<h3>2. Gemini 网页版长按模型选择器有彩蛋</h3>
-<p><code>Josh Woodward</code> · 2026-11-21 · <a href="https://x.com/joshwoodward/status/2123943606906138868">看推文 ↗</a></p>
-<blockquote><p>Google Labs 的 Josh Woodward 说，团队周五下午玩 Gemini Neon 玩嗨了，直接把一个用户创意做进产品上线。现在在网页版长按模型选择器就能体验，属于随手可试的小功能，适合想摸清新玩法的人先上手。</p></blockquote>
-<h3>3. Aaron Levie：别再手把手教 Agent 了</h3>
-<p><code>Aaron Levie</code> · 2026-11-20 · <a href="https://x.com/levie/status/2123686350410912145">看推文 ↗</a></p>
-<blockquote><p>Box CEO 观察：今年模型能力明显跳了一级，与其精确告诉 Agent 每一步怎么做，不如直接把你自己都说不清的问题丢给它。一年前不写清楚需求几乎必失败，现在 Agent 往往能给出更好的方案，工作方式要跟着变。</p></blockquote>
+    <pubDate>Sun, 22 Nov 2026 15:17:23 +0800</pubDate>
+    <description><![CDATA[<hr/><h2>🔴 硅谷一线实操（X）</h2>
+<h3>1. ChatGPT手机端把Codex钉到底栏</h3>
+<p><code>Peter Yang</code> · 2026-11-21 · <a href="https://x.com/petergyang/status/2124217176655843483">看推文 ↗</a></p>
+<blockquote><p>新版 ChatGPT 手机 App 界面变干净了，但 Codex 对话被藏了起来。长按最右侧标签，就能把 Codex 固定到底部导航栏，随时切回代码任务。经常在手机上跟进 AI 写代码进度的人，这个隐藏操作值得先学会。</p></blockquote>
+<h3>2. Replit把内部AI应用开源了</h3>
+<p><code>Amjad Masad</code> · 2026-11-21 · <a href="https://x.com/amasad/status/2124277564596519355">看推文 ↗</a></p>
+<blockquote><p>Replit 团队用自家 Missions 功能做出来的应用 Amuse 已开源，代码公开可看可改。想研究别人怎么把 AI 应用真正做出来的人，可以直接拿它当参考样板，比看教程更接近真实项目。</p></blockquote>
+<h3>3. 高中生用GitHub协调AI代理集群</h3>
+<p><code>Amjad Masad</code> · 2026-11-22 · <a href="https://x.com/amasad/status/2124345037408686228">看推文 ↗</a></p>
+<blockquote><p>一个高中生正把 GTA6 重新编译到 PC 上跑，更值得看的是他用 GitHub issue 给多个 AI 代理分派任务、协调进度。这给非技术管理者一个提示：多代理协作可以借用现成的项目管理工具来组织。</p></blockquote>
+<hr/><h2>🟡 国内博主风向（得到大脑）</h2>
+<h3>1. AI重新定义影视行业，技术还是核心壁垒吗？</h3>
+<p><code>清华姜学长</code> · 11-21 20:51 · <a href="https://www.iesdouyin.com/share/video/7710606493745253686/">看视频 ↗</a></p>
+<blockquote><p>AI短剧近九成公司亏钱，赚钱的是平台、卖课和算力方，中小制作门槛最低最不赚钱。</p></blockquote>
+<h3>2. 先做一版，再补知识</h3>
+<p><code>姜胡说</code> · 11-21 20:46 · <a href="https://www.iesdouyin.com/share/video/7710605300000825471/">看视频 ↗</a></p>
+<blockquote><p>判断是否真知道一个知识的标准是它有没有改变你的生活，只学不做结果为零。</p></blockquote>
+<h3>3. 本月GitHub九大新神级项目，白嫖87家大模型</h3>
+<p><code>FredTalk</code> · 11-21 10:01 · <a href="https://www.iesdouyin.com/share/video/7710439121986014514/">看视频 ↗</a></p>
+<blockquote><p>GitHub月榜项目盘点：聚合87家免费大模型接口，另有Claude游戏工作室等工具。</p></blockquote>
+<h3>4. 试试把AI变革放在历史长河中来看</h3>
+<p><code>晓辉博士</code> · 11-21 08:55 · <a href="https://www.iesdouyin.com/share/video/7710422023167610152/">看视频 ↗</a></p>
+<blockquote><p>把AI变革放进历史长河看：8小时工作制和稳定升学就业只是工业革命以来几百年的短暂状态。</p></blockquote>
 <hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>
-<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead><tbody><tr><td><strong>上证</strong></td><td><code>3533.79</code></td><td>🟢 ▼ -1.22%</td></tr><tr><td><strong>沪深300</strong></td><td><code>3954.57</code></td><td>🟢 ▼ -0.76%</td></tr><tr><td><strong>10年国债ETF</strong></td><td><code>136.02</code></td><td>🟢 ▼ -0.04%</td></tr><tr><td><strong>10Y美债</strong></td><td><code>4.91%</code></td><td>🟢 ▼ -2.77%</td></tr><tr><td><strong>国内黄金ETF</strong></td><td><code>7.282</code></td><td>🟢 ▼ -4.34%</td></tr><tr><td><strong>国际金价</strong></td><td><code>$3515.4</code></td><td>🟢 ▼ -4.62%</td></tr><tr><td><strong>人民币</strong></td><td><code>6.6736</code></td><td>🟢 ▼ -0.25%</td></tr></tbody></table>
-<h3>1. 中国反制升级：稀土与制造业成新筹码</h3>
-<p><code>Project Syndicate</code> · 2026-11-19 · <a href="https://www.project-syndicate.org/commentary/china-export-control-regime-threatens-to-upend-global-trade-by-brahma-chellaney-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">看原文 ↗</a></p>
-<blockquote><p>专家指出，中国正像美国一样把市场和技术优势当武器，用稀土、关键工业原料和专用设备对他国施压。这意味着中美博弈从关税延伸到供应链卡脖子，全球资金会更看重资源与制造安全，中国相关板块波动加大，出海企业要提前备好替代方案。</p></blockquote>
-<h3>2. 美联储主席盯上AI：利率与就业要重估</h3>
+<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead><tbody><tr><td><strong>上证</strong></td><td><code>3533.79</code></td><td>🟢 ▼ -1.22%</td></tr><tr><td><strong>沪深300</strong></td><td><code>3954.57</code></td><td>🟢 ▼ -0.76%</td></tr><tr><td><strong>10年国债ETF</strong></td><td><code>136.02</code></td><td>🟢 ▼ -0.04%</td></tr><tr><td><strong>10Y美债</strong></td><td><code>4.91%</code></td><td>🟢 ▼ -2.77%</td></tr><tr><td><strong>国内黄金ETF</strong></td><td><code>7.282</code></td><td>🟢 ▼ -4.34%</td></tr><tr><td><strong>国际金价</strong></td><td><code>$3515.4</code></td><td>🔴 ▲ +0.00%</td></tr><tr><td><strong>人民币</strong></td><td><code>6.6736</code></td><td>🟢 ▼ -0.25%</td></tr></tbody></table>
+<h3>1. 美联储新主席押注AI革命，利率怎么走</h3>
 <p><code>CNBC Economy</code> · 2026-11-20 · <a href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html">看原文 ↗</a></p>
-<blockquote><p>专家分析，美联储主席认为AI正走到转折点，但AI对就业和通胀的影响还看不清，这直接关系到未来降息节奏。对投资者来说，利率路径多了一层AI变量，美元和美股波动会加大；中国资金流向也要看美联储怎么给AI定价，别只盯传统经济数据。</p></blockquote>]]></description>
+<blockquote><p>专家指出，美联储新主席沃什认为AI正处在转折点，但他必须回答两个难题：AI到底会抢走多少工作、又该如何影响利率决策。对国内投资者来说，这意味着美联储降息节奏可能比市场预期更慢，美元短期仍有支撑，A股和人民币资产要留意外部资金回流美国的风险。</p></blockquote>
+<h3>2. 中国开打贸易反制牌，全球资金要重排</h3>
+<p><code>Project Syndicate</code> · 2026-11-19 · <a href="https://www.project-syndicate.org/commentary/china-export-control-regime-threatens-to-upend-global-trade-by-brahma-chellaney-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">看原文 ↗</a></p>
+<blockquote><p>专家认为，中国正像美国一样把贸易武器化，用关键矿产、工业原料和专用设备的垄断地位去施压和惩罚别国。这会加剧全球供应链割裂，推高各国通胀，也让资金更倾向于流向被认为安全的市场。对国内投资者而言，要关注出口链和资源品的波动，以及外资对中国资产的重新定价。</p></blockquote>]]></description>
   </item>
   <item>
     <title>☀️ 乔帮主高管早报 · 11月21日</title>

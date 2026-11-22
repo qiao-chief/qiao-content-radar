@@ -6,6 +6,66 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] Muru：AI辅助的Rust服务器，为Python应用提供开发与生产最佳工具</title>
+    <link>https://simonwillison.net/2026/Nov/21/muru/</link>
+    <guid isPermaLink="false">overseas-dc9b4a0c426ddc42</guid>
+    <pubDate>Sun, 22 Nov 2026 07:56:28 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/21/muru/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Graham Dumpleton在20年前启动了mod_wsgi项目，从那以后，他一直在思考在生产环境中服务Python Web应用的理想方式。</p>
+<p>Muru是他新推出的、AI辅助的Rust服务器，旨在为开发和 production 环境中运行ASGI和WSGI Python应用提供尽可能好的工具。</p>
+<p>就像他在wrapture项目中所做的那样，他在开发过程中一直极其详细地记录这个项目的进展——这已成为他开发流程的一部分。</p>
+<p>以下是他在过去三周内发布的全部内容：</p>
+<p>2026-11-04 — mod_wsgi二十年，以及接下来会怎样</p>
+<p>2026-11-05 — Muru初探</p>
+<p>2026-11-07 — Muru：深入worker内部</p>
+<p>2026-11-08 — Muru：如何协同工作</p>
+<p>2026-11-09 — Muru：一次导入，多次fork</p>
+<p>2026-11-10 — Muru：开发环境中的HTTPS</p>
+<p>2026-11-11 — Muru：WSGI与ASGI共存</p>
+<p>2026-11-11 — 把AI当作一种生活方式</p>
+<p>2026-11-12 — Muru：发布，而非重启</p>
+<p>2026-11-13 — Muru：无需服务网格的金丝雀发布</p>
+<p>2026-11-14 — Muru：容器中的好租户</p>
+<p>2026-11-15 — Muru：与Kubernetes协作，而非绕开它</p>
+<p>2026-11-16 — Muru：根据worker报告进行扩展</p>
+<p>2026-11-17 — Muru：缩容到零</p>
+<p>2026-11-18 — Muru：按计划叠加</p>
+<p>2026-11-19 — Muru：感知与响应</p>
+<p>2026-11-20 — Muru：每页一个工具栏</p>
+<p>2026-11-21 — Muru：工具栏中的追踪</p>
+<p>那篇关于“把AI当作一种生活方式”的文章尤其值得一读：</p>
+<p>表面上AI可能完成了大量工作，但判断什么还不够好仍然由我负责，而mod_wsgi二十年来犯过的错误对此很有帮助。我愿意付出艰苦努力，不断打磨Muru，直到它成为我信任、你也信任的东西。</p>
+<p>标签：graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Muru
+Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.</p>
+<p>Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production.</p>
+<p>As he did with wrapture, he&#x27;s been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process.</p>
+<p>Here&#x27;s everything he&#x27;s published so far, all in the last three weeks:</p>
+<p>2026-11-04 — Twenty years of mod_wsgi, and what comes next</p>
+<p>2026-11-05 — A first look at Muru</p>
+<p>2026-11-07 — Muru: looking inside the workers</p>
+<p>2026-11-08 — Muru: how it fits together</p>
+<p>2026-11-09 — Muru: import once, fork many</p>
+<p>2026-11-10 — Muru: HTTPS in development</p>
+<p>2026-11-11 — Muru: WSGI and ASGI together</p>
+<p>2026-11-11 — AI as a lifestyle choice</p>
+<p>2026-11-12 — Muru: releases, not restarts</p>
+<p>2026-11-13 — Muru: canaries without a service mesh</p>
+<p>2026-11-14 — Muru: a better tenant in a container</p>
+<p>2026-11-15 — Muru: working with Kubernetes, not around it</p>
+<p>2026-11-16 — Muru: scaling from what the workers report</p>
+<p>2026-11-17 — Muru: scaling to zero</p>
+<p>2026-11-18 — Muru: overlays on a schedule</p>
+<p>2026-11-19 — Muru: noticing and responding</p>
+<p>2026-11-20 — Muru: a toolbar on every page</p>
+<p>2026-11-21 — Muru: tracing in the toolbar</p>
+<p>That post about AI as a lifestyle choice is particularly worth a read:</p>
+<p>The AI may be doing a lot of the work on the surface, but deciding what isn&#x27;t good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too.</p>
+<p>Tags: graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Latent Space] 黎曼猜想被证明……两次独立证明？</title>
     <link>https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/</link>
     <guid isPermaLink="false">overseas-5c282b7409adeedb</guid>
@@ -13,17 +73,17 @@
     <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
 <p>在几小时内（时间线），两位数学家分别宣称独立证明了黎曼猜想——数学界最著名的未解难题（《科学美国人》报道）。</p>
-<p>Anthropic 的 Levent Alpöge 首先用 Claude 驱动生成了一份证明，以 Lean 代码形式发布（1.3GB，约相当于 25 万页），而非完整论文。Elliot Glazer 确认形式化陈述是广义黎曼猜想（GRH），并认为 Lean 出 bug 的概率远低于 1%。所以，如果它能在没有额外公理的情况下编译通过，那很可能就是正确的，而且永远不会有任何人完整读过它……</p>
-<p>……这促使 Alessandro Masullo 发布了他 940 页、100% 由人类完成、仍在进行中的证明——他已经研究了 12 年（据 Kevin Hartnett 说，还经过了秘密的人工审查和修订）。</p>
+<p>Anthropic 的 Levent Alpöge 首先发布了一份由 Claude 驱动的证明，以 Lean 代码形式呈现（1.3GB，约相当于25万页），而非完整论文。Elliot Glazer 确认形式化陈述是广义黎曼猜想（GRH），并认为 Lean 出 bug 的概率远低于1%。因此，如果编译完成且没有额外公理，它大概率是正确的，而人类永远没人能读完它……</p>
+<p>……这促使 Alessandro Masullo 发布了他940页、100%由人类完成、仍在进行中的证明——他为此已经研究了12年（据 Kevin Hartnett 说，该证明一直在秘密人工评审和修订中）。</p>
 <p>这是前沿数学突破三部曲中的第三部，前两部是纳维-斯托克斯方程的解和准黎曼界，但事情似乎还没完。OpenAI 九月份的纳维-斯托克斯声明仍是前车之鉴：批评者认为其 Lean 证明与自然语言结果不符。两项 AI 宣称的千禧年大奖难题成果都需要数年时间来验证。</p>
-<p>除了这个数学界最著名问题的惊人成就之外，人们无法忽视其中的反差：AI 写的证明可能是正确的，但无法理解；另一个证明可能在技术上有误，但可以理解。</p>
+<p>除了这个数学界最著名问题的惊人成就外，人们无法忽视一个对比：AI 写出的解可能正确但难以理解，而另一个解可能技术上不正确但可以理解。</p>
 <p>由 Agentfield.AI 赞助
-开源模型已经就绪。大多数编程工具还没准备好。在 DeepSWE 上，CodeAF 在同一个开源模型上排名十强第一，领先于 Claude Code，且每次修复成本最低。
+开源模型已就绪。大多数编码工具还没准备好。在 DeepSWE 上，CodeAF 在相同开源模型下于十款工具中排名第一，领先于 Claude Code，且每次修复成本最低。
 试试 CodeAF！</p>
-<p>正如 Levent 雄辩地指出：“在接近终点线时，Claude 远远超过了我。不，Claude 在终点线附近飞翔、舞蹈、闪耀。”</p>
+<p>正如 Levent 雄辩地指出：“在接近终点线时，Claude 远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。”</p>
 <p>这也与我们播客和本通讯中讨论过的其他 AI 主题相关：</p>
-<p>垃圾内容（Slop）的本质：Levent 说：“我在还没有掌握其数学周围一大片领域之前，就向世界呈现了一个完整的论证。显然，试图发布一些庞大且不可读的‘垃圾’是不合适的，所以我决定只呈现 Lean。” 《反垃圾宣言》的关键原则之一是你应该理解你所发布的东西（“垃圾就是当我们投入的精力少于我们要求消费者花在理解上的精力时。”）。然而，这一大堆 Lean 代码是可验证正确的，并且在人类历史上具有难以置信的重要性。我们是否应该仅仅因为我们没有理解其中的每一个细节，就将其发布推迟十年？</p>
-<p>弱到强对齐：使用智能体的典型体验是强到弱——我们作为通用智能，指导不那么聪明的 AI 去做我们擅长的事情。我们也常常期望 AI 自动化大多数</p>
+<p>Slop 的本质：Levent 说：“我在尚未掌握其数学领域一大片周边知识的情况下，就向世界呈现了一个完整论证。显然，试图发布某种庞大不可读的‘slop’是不合适的，所以我决定只呈现 Lean。” 《No Slop 宣言》的核心原则之一是你应该理解你所交付的东西（“Slop 就是我们在生产某物时投入的精力少于我们要求消费者花在理解它上的精力。”）。然而，这一大堆 Lean 代码可验证正确，且在人类历史上意义重大。我们是否应该仅仅因为我们没有理解它的每一部分，就将其发布推迟十年？</p>
+<p>弱到强对齐：使用智能体的典型体验是强到弱——我们作为通用智能，指导不那么聪明的 AI 去做我们擅长的事情。我们也常常期望 AI 自动化大多数……</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Within a few hours of each other (timeline), two mathematicians claimed independent proofs of the Riemann Hypothesis, the most famous open problem in mathematics (Scientific American).</p>
 <p>Levent Alpöge of Anthropic first made his Claude-driven proof in a note released with Lean code (1.3GB worth, ~250,000 page equivalent) rather than a full paper. Elliot Glazer confirms that the formalized statement is GRH and puts the chance of a Lean bug well under 1%. So if it finishes compiling with no extra axioms, it is probably correct, and no human will ever have read all of it…</p>
@@ -197,26 +257,6 @@ Try CodeAF!</p>
 <p>Dario Amodei&#x27;s IPO remarks (official position)</p>
 <p>Personal framing: Dario and Daniela lost their father to a disease that became curable a few years later. Dario cited CRISPR&#x27;s decades-long path from discovery to treatment.</p>
 <p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] llm-gemini 0.38.1 小版本更新：补上 xhigh 推理档位</title>
-    <link>https://simonwillison.net/2026/Nov/20/llm-gemini/</link>
-    <guid isPermaLink="false">overseas-8b57b72566ad3c58</guid>
-    <pubDate>Fri, 20 Nov 2026 11:01:57 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/llm-gemini/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>版本发布：llm-gemini 0.38.1</p>
-<p>Gemini 4 Carbon 只支持低、中、高三档推理级别，但 Gemini 4 Hydrogen 和 Gemini 4 Neon 都多出一个 xhigh 档。</p>
-<p>我之前把这个模型加进 llm-gemini 插件时漏掉了这一点，现在这个补丁版本修好了。</p>
-<p>Hydrogen 的 xhigh 设置差别很大。我更新了 Gemini 4 的对比表格——注意看，Hydrogen 在 high 档下用了 5,311 个输出 token，花了 3.99 美分；但同一个模型在 xhigh 档下用了 31,477 个输出 token，花了 23.61 美分，画出来的鹈鹕跟 Gemini 4 Neon 不相上下。</p>
-<p>标签：gemini、llm、llm-reasoning、骑自行车的鹈鹕、ai、llms、google、生成式 AI</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Release: llm-gemini 0.38.1
-        
-Gemini 4 Carbon only supports low, medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level.</p>
-<p>I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release.</p>
-<p>The xhigh setting for Hydrogen makes a significant difference. I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 output tokens, cost 23.61 cents, and produced a pelican that&#x27;s competitive with Gemini 4 Neon:</p>
-<p>Tags: gemini, llm, llm-reasoning, pelican-riding-a-bicycle, ai, llms, google, generative-ai</p></blockquote>]]></description>
   </item>
   <item>
     <title>[OpenAI News] Hebbia 用 GPT-6 Astra 提升金融研究效率</title>

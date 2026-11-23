@@ -6,6 +6,40 @@
   <description>海外深度洞察 · 硅谷 X 一线 · 国内博主风向 · 股债金汇与专家视点</description>
   <language>zh-CN</language>
   <item>
+    <title>☀️ 乔帮主高管早报 · 11月23日</title>
+    <link>https://radar.qiao-flow.cn/#brief-2026-11-23</link>
+    <guid isPermaLink="false">qiao-brief-2026-11-23</guid>
+    <pubDate>Mon, 23 Nov 2026 08:29:14 +0800</pubDate>
+    <description><![CDATA[<h2>🔵 海外深度洞察</h2>
+<h3>1. 困惑度能当模型的通用体检指标吗</h3>
+<p><code>OpenAI News</code> · 11-22 08:00 · <a href="https://openai.com/index/perplexity-and-intelligence">阅读原文 ↗</a></p>
+<blockquote><p>OpenAI 撰文提议把困惑度（交叉熵损失）确立为跨模型开发者比较和安全评估的共享指标，并公开了内部预训练测量数据。困惑度衡量的是模型对文本的“意外程度”，数值越低说明预测越准。文章解释它如何度量模型进步，以及为什么值得作为行业共同语言。</p></blockquote>
+<h3>2. AI 辅助写出的 Python 生产级服务器</h3>
+<p><code>Simon Willison</code> · 11-22 07:56 · <a href="https://simonwillison.net/2026/Nov/21/muru/">阅读原文 ↗</a></p>
+<blockquote><p>mod_wsgi 作者 Graham Dumpleton 在思考 Python 生产部署二十年后，推出新项目 Muru——一个 AI 辅助开发的 Rust 服务器，目标是给 Python Web 应用提供最好的生产运行工具。文章介绍它的设计取向和要解决的问题。</p></blockquote>
+<h3>3. 让 AI 做一个下拉框样式对照页</h3>
+<p><code>Simon Willison</code> · 11-23 03:45 · <a href="https://simonwillison.net/2026/Nov/22/select-styling/">阅读原文 ↗</a></p>
+<blockquote><p>Simon Willison 受不了 HTML 下拉框在不同浏览器里长得不一样、在 Chrome 里尤其难看，于是让 Claude 做了一个页面，集中展示各种下拉框样式方案，方便对比挑选。这是一个小而具体的 AI 辅助开发案例：有明确痛点，直接让模型产出可用的东西。</p></blockquote>
+<hr/><h2>🔴 硅谷一线实操（X）</h2>
+<h3>1. ChatGPT 手机端把 Codex 钉到底栏</h3>
+<p><code>Peter Yang</code> · 2026-11-21 · <a href="https://x.com/petergyang/status/2124217176655843483">看推文 ↗</a></p>
+<blockquote><p>新版 ChatGPT 手机 App 界面很干净，但 Codex 对话线程默认藏起来了。长按最右边那个标签页，就能把 Codex 固定到底部导航栏，随时点开继续写代码任务。这个入口藏得很深，官方自己都说不够明显，经常用 Codex 的人建议先设好。</p></blockquote>
+<h3>2. YC 掌门人实测：桌面手机云端通吃</h3>
+<p><code>Garry Tan</code> · 2026-11-21 · <a href="https://x.com/garrytan/status/2124151626286170609">看推文 ↗</a></p>
+<blockquote><p>Garry Tan 说自己约一半的工作都交给这个工具，桌面、手机、云端体验打通，是他目前用过最顺的一款。对非技术管理者来说，这意味着不用死守电脑，在手机上也能推进任务、盯进度，把 AI 真正带进日常办公现场。</p></blockquote>
+<h3>3. 高中生用 GitHub 调度 AI 智能体协作</h3>
+<p><code>Amjad Masad</code> · 2026-11-22 · <a href="https://x.com/amasad/status/2124345037408686228">看推文 ↗</a></p>
+<blockquote><p>Replit 的 Amjad Masad 提到，一个高中生正把 GTA6 重新编译到 PC 上，更有意思的是他用 GitHub issue 给多个 AI 智能体分工派活、协调任务。这给非技术团队一个启发：用现成的任务清单工具就能组织多个 AI 并行干活，不必写代码。</p></blockquote>
+<hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>
+<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead><tbody><tr><td><strong>上证</strong></td><td><code>3533.79</code></td><td>🟢 ▼ -1.22%</td></tr><tr><td><strong>沪深300</strong></td><td><code>3954.57</code></td><td>🟢 ▼ -0.76%</td></tr><tr><td><strong>10年国债ETF</strong></td><td><code>136.02</code></td><td>🟢 ▼ -0.04%</td></tr><tr><td><strong>10Y美债</strong></td><td><code>4.91%</code></td><td>🟢 ▼ -2.77%</td></tr><tr><td><strong>国内黄金ETF</strong></td><td><code>7.282</code></td><td>🟢 ▼ -4.34%</td></tr><tr><td><strong>国际金价</strong></td><td><code>$3573.4</code></td><td>🔴 ▲ +1.65%</td></tr><tr><td><strong>人民币</strong></td><td><code>6.6735</code></td><td>🟢 ▼ -0.00%</td></tr></tbody></table>
+<h3>1. 美联储主席押注AI革命，利率怎么走</h3>
+<p><code>CNBC Economy</code> · 2026-11-20 · <a href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html">看原文 ↗</a></p>
+<blockquote><p>专家指出，美联储主席认为AI正走到关键转折点，但AI对就业和通胀的影响还说不清，这直接决定利率松紧。对国内投资者来说，美国利率路径不明，美元和全球资金流向就容易反复，A股和港股也会跟着震荡，别急着单边下注。</p></blockquote>
+<h3>2. AI若放任不管，只会加剧贫富分化</h3>
+<p><code>Project Syndicate</code> · 2026-11-20 · <a href="https://www.project-syndicate.org/onpoint/adam-smith-market-power-of-technology-big-tech-monopolies-by-mordecai-kurz-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">看原文 ↗</a></p>
+<blockquote><p>专家借亚当·斯密的盲点提醒：技术创新容易让市场被少数巨头垄断。AI若完全交给市场，财富会更集中，社会分化更深，进而影响消费和税收，也会波及中国相关产业链和资金偏好。对投资者来说，要留意监管收紧和巨头格局变化带来的资产波动。</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>☀️ 乔帮主高管早报 · 11月22日</title>
     <link>https://radar.qiao-flow.cn/#brief-2026-11-22</link>
     <guid isPermaLink="false">qiao-brief-2026-11-22</guid>

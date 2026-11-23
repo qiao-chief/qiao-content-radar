@@ -286,5 +286,13 @@
   "x:https://x.com/mattturck/status/2124239403107459490": {
     "zh_title": "不懂黎曼猜想，也能兴奋发推聊AI破解它",
     "zh_body": "发推的艺术：当你压根不知道黎曼猜想是什么，却依然能兴奋地大谈AI如何破解了它。\n\n说白了就是——你连黎曼猜想的门朝哪开都不清楚，但照样能在推特上激情澎湃地宣布：AI把它给解决了。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/22/select-styling/": {
+    "zh_title": "Select 样式标本：统一下拉框外观的 CSS 方案",
+    "zh_body": "工具：Select 样式标本\n\n我受够了 HTML 的 <select> 下拉框在不同浏览器里默认长得不一样，而且（我觉得）在 Chrome 里特别丑：\n\n所以我让 Claude Fable 5.2 给我生成了这个页面，展示所有能给下拉框加样式的方法：\n\n“做一个 HTML 页面，展示 select 下拉框所有能加样式的方式，我打算在每个桌面和移动浏览器里截图。”\n\n经过一番实验，我决定我最喜欢的 select 下拉框 CSS 是这样的：\n\nselect {\n  appearance: none;\n  color: #1f2933;\n  padding: 0.5em 2.25em 0.5em 0.75em;\n  border: 1px solid #c4cbd3;\n  border-radius: 6px;\n  background: #fff url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\") no-repeat right 0.75em center / 0.75em;\n}\n\n这是它在三个浏览器里的样子：\n\n标签：工具、CSS、HTML"
+  },
+  "overseas:https://openai.com/index/perplexity-and-intelligence": {
+    "zh_title": "Perplexity 与智能：如何衡量 AI 模型的进步",
+    "zh_body": "Perplexity 如何衡量 AI 模型的进步，以及为什么它能帮助开发者建立一套共同的方法来评估新兴能力。"
   }
 }

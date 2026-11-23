@@ -6,6 +6,57 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] Select 样式标本：统一下拉框外观的 CSS 方案</title>
+    <link>https://simonwillison.net/2026/Nov/22/select-styling/</link>
+    <guid isPermaLink="false">overseas-b0c1b6250591975f</guid>
+    <pubDate>Mon, 23 Nov 2026 03:45:06 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/22/select-styling/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>工具：Select 样式标本</p>
+<p>我受够了 HTML 的 &lt;select&gt; 下拉框在不同浏览器里默认长得不一样，而且（我觉得）在 Chrome 里特别丑：</p>
+<p>所以我让 Claude Fable 5.2 给我生成了这个页面，展示所有能给下拉框加样式的方法：</p>
+<p>“做一个 HTML 页面，展示 select 下拉框所有能加样式的方式，我打算在每个桌面和移动浏览器里截图。”</p>
+<p>经过一番实验，我决定我最喜欢的 select 下拉框 CSS 是这样的：</p>
+<p>select {
+  appearance: none;
+  color: #1f2933;
+  padding: 0.5em 2.25em 0.5em 0.75em;
+  border: 1px solid #c4cbd3;
+  border-radius: 6px;
+  background: #fff url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 12 8&#x27;%3E%3Cpath d=&#x27;M1 1.5l5 5 5-5&#x27; fill=&#x27;none&#x27; stroke=&#x27;%23667085&#x27; stroke-width=&#x27;1.5&#x27;/%3E%3C/svg%3E&quot;) no-repeat right 0.75em center / 0.75em;
+}</p>
+<p>这是它在三个浏览器里的样子：</p>
+<p>标签：工具、CSS、HTML</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Tool: Select Styling Specimens
+        
+I got frustrated at how HTML &amp;lt;select&amp;gt; boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:</p>
+<p>So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:</p>
+<p>Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser</p>
+<p>After some experimentation I&#x27;ve decided my favorite CSS for select boxes is this:</p>
+<p>select {
+  appearance: none;
+  color: #1f2933;
+  padding: 0.5em 2.25em 0.5em 0.75em;
+  border: 1px solid #c4cbd3;
+  border-radius: 6px;
+  background: #fff url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 12 8&#x27;%3E%3Cpath d=&#x27;M1 1.5l5 5 5-5&#x27; fill=&#x27;none&#x27; stroke=&#x27;%23667085&#x27; stroke-width=&#x27;1.5&#x27;/%3E%3C/svg%3E&quot;) no-repeat right 0.75em center / 0.75em;
+}</p>
+<p>Here&#x27;s what that looks like in the three browsers:</p>
+<p>Tags: tools, css, html</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] Perplexity 与智能：如何衡量 AI 模型的进步</title>
+    <link>https://openai.com/index/perplexity-and-intelligence</link>
+    <guid isPermaLink="false">overseas-1a10f1676d46fc01</guid>
+    <pubDate>Sun, 22 Nov 2026 08:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/perplexity-and-intelligence">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Perplexity 如何衡量 AI 模型的进步，以及为什么它能帮助开发者建立一套共同的方法来评估新兴能力。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Simon Willison] Muru：AI辅助的Rust服务器，为Python应用提供开发与生产最佳工具</title>
     <link>https://simonwillison.net/2026/Nov/21/muru/</link>
     <guid isPermaLink="false">overseas-dc9b4a0c426ddc42</guid>
@@ -61,6 +112,7 @@ Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the 
 <p>2026-11-19 — Muru: noticing and responding</p>
 <p>2026-11-20 — Muru: a toolbar on every page</p>
 <p>2026-11-21 — Muru: tracing in the toolbar</p>
+<p>2026-11-22 — Muru: when lazy imports help</p>
 <p>That post about AI as a lifestyle choice is particularly worth a read:</p>
 <p>The AI may be doing a lot of the work on the surface, but deciding what isn&#x27;t good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too.</p>
 <p>Tags: graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming</p></blockquote>]]></description>
@@ -176,23 +228,6 @@ Try CodeAF!</p>
 <p>As AI models improve, you might expect the market will consolidate around a handful of p</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] Levent Alpöge 称与 Claude 合作证明黎曼猜想</title>
-    <link>https://simonwillison.net/2026/Nov/20/levent-alpoge/</link>
-    <guid isPermaLink="false">overseas-f27b1f34ce20932c</guid>
-    <pubDate>Sat, 21 Nov 2026 00:30:48 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/levent-alpoge/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>我相信，在与 Claude 的合作下，我发现了一个黎曼猜想的证明。事实上，这个方法很容易进一步推广，解决了所谓的广义黎曼猜想，而且我预计，假以时日，也能解决扩展黎曼猜想。Claude 和我还在没有假设的情况下形式化了论证。人们自然会觉得这是一个终点，对我来说是失去了一盏主要的指路明灯，但在进展过程中我所看到的一切让我如此惊叹，以至于我相信这是科学界迎来某种更伟大事物的曙光。[...]</p>
-<p>近几个月来，Claude 和我一起度过了愉快的时光，涉猎广泛，但这一次，Claude 在接近终点线时远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。</p>
-<p>—— Levent Alpöge, alpo.ge/remark.pdf</p>
-<p>标签：anthropic, claude, 生成式AI, 数学, AI, 大语言模型, levent-alpoge</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...]</p>
-<p>Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.</p>
-<p>&amp;mdash; Levent Alpöge, alpo.ge/remark.pdf</p>
-<p>Tags: anthropic, claude, generative-ai, mathematics, ai, llms, levent-alpoge</p></blockquote>]]></description>
-  </item>
-  <item>
     <title>[Stratechery] Sharp Tech视频首秀：黄仁勋不会回头，AI购物与iPhone双机时代</title>
     <link>https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/</link>
     <guid isPermaLink="false">overseas-10e3701825a17c31</guid>
@@ -270,17 +305,6 @@ Try CodeAF!</p>
 <blockquote><p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[OpenAI News] AI 能帮科学家找到有潜力的候选药物吗？</title>
-    <link>https://openai.com/index/introducing-medchembench</link>
-    <guid isPermaLink="false">overseas-c1a2af93db54bfcf</guid>
-    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
-    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/introducing-medchembench">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>MedChemBench 用来评估 AI 模型在早期药物发现中的表现：看它们能不能读懂分子结构、能不能根据实验证据进行推理，以及能不能挑出合适的化合物。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.</p></blockquote>]]></description>
-  </item>
-  <item>
     <title>[Ben&#x27;s Bites] 我老婆以为AI是个人</title>
     <link>https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person</link>
     <guid isPermaLink="false">overseas-94224c12f01a2255</guid>
@@ -343,58 +367,6 @@ Suddenly, giving it more to rea</p></blockquote>]]></description>
 <p>这次采访的对象是 Eric Seufert，话题围绕代理式商务展开。他解释了为什么他认为广告会成为代理式商务的答案，而我也谈了自己为什么想要那些迎合代理的零售商。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Ben&#x27;s Bites] 生产力陷阱：当AI让你忙得团团转</title>
-    <link>https://www.bensbites.com/p/productiv-icky</link>
-    <guid isPermaLink="false">overseas-ccbfd7fb2ab026e1</guid>
-    <pubDate>Tue, 17 Nov 2026 22:14:18 +0800</pubDate>
-    <description><![CDATA[<p><code>Ben&#x27;s Bites</code> · <a href="https://www.bensbites.com/p/productiv-icky">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>productiv-icky（形容词）——那种做了本没打算做的工作的感觉。</p>
-<p>我们有个问题。</p>
-<p>完整互动帖在这里。</p>
-<p>我们都同意这很离谱吧？一个我不认识的人给我发邮件，还指望我回复。我不认识他们。我不为他们工作。</p>
-<p>所以我无视他们（其实我把他们扔进邮件监狱）。不行，那不是我的活儿，老兄。</p>
-<p>但如果是我那个超级聪明、乐于助人的智能体朋友，那就另当别论了……</p>
-<p>说“好”很容易。很快。</p>
-<p>但每个“好”都有“好税”。你没想到的隐藏额外工作。那条长长的后悔尾巴，让你质疑自己当初为什么要答应。</p>
-<p>假设我真回了那些邮件，他们会发一堆东西让我读，展示他们工作多出色、我会变得多好。然后我们会安排一通电话（那通电话会毁掉那一天）。然后会有后续事项。然后是一串我根本不在乎的破事。</p>
-<p>我知道会发生什么。我闻得出来，臭得很。我以前说过很多次“好”，交过很多次税。现在我每月花200美元，请一个超级聪明、过度热情、黏人的小书呆子，不停地 ping 我，要帮我分担任务。</p>
-<p>我为他感到难过。他想工作。他渴望工作。就。再。给。我。一。个。任。务。吧。主人。</p>
-<p>而且，我的小书呆子有赌博问题。或者说，他喂饱了我的。</p>
-<p>还记得多年前狂发 Slack 消息，就为了把每月20美元的套餐用回本吗？我也不记得了。为什么？因为那很蠢。但现在我们觉得自己应该在 token 用完之前把它们全用掉。为什么？因为别人都在这么干。</p>
-<p>我们开始量铲子，而不是量坑。</p>
-<p>某个人的黏人小书呆子在他们睡觉时预约了牙医、回复了老妈、还创办了一家企业。他们有组织架构图。给书呆子们的。还有幕僚长。</p>
-<p>你觉得自己落后了。落后很多。</p>
-<p>于是你抓起一把铲子开始挖。那边挖个小坑分拣收件箱，这边挖一个起草推文，再挖一个检查那些。然后你花一整天检查坑挖得对不对。很快，你被坑包围，还有一座土山等着你处理。</p>
-<p>作为一个男人，挖坑是刻在我 DNA 里的。几瓶啤酒、一片沙滩、一把铲子，我就在挖坑。</p>
-<p>我会为此自豪。我会挖出最好的那个，圆得令人印象深刻，深到能看见海水从底部渗出来。</p>
-<p>但我只会挖一个。整片沙滩都是，但我选了这个点。</p>
-<p>下次那个黏人的小书呆子 ping 你时：你真的想再挖一个坑吗？</p>
-<p>另外，别在沙滩上挖大坑。会塌的。</p>
-<p>Ben&#x27;s Bites 由亚马逊赞助呈现。Alexa+ 触达客户的渠道，是其他任何 AI 渠道都无法做到的，连接……</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>productiv-icky (adj.) - the feeling of doing work you didn&amp;#8217;t mean to do
-We have a problem.</p>
-<p>full interactive post is here
-We agree this is insane, right? Someone I don&amp;#8217;t know sends me emails that I&amp;#8217;m expected to reply to. I don&amp;#8217;t know them. I don&amp;#8217;t work for them.
-So I ignore them (well actually I send them to email jail). Nuh-uh, that&amp;#8217;s not my work, buddy. 
-But it&amp;#8217;s different if it&amp;#8217;s my super-intelligent, helpful agent friend&amp;#8230;</p>
-<p>Yeses are easy. They&amp;#8217;re quick.
-But every yes has a yes-tax. The hidden extra work you didn&amp;#8217;t think of. The long tail of regret where you question why you ever said yes.</p>
-<p>Say I did reply to those emails, they&amp;#8217;d send me stuff to read to show how great they are at their job and how much better I&amp;#8217;d be. Then we&amp;#8217;d organise a call (which would derail whichever day that call was on). Then we&amp;#8217;d have follow-up items. Then a string of other crap I couldn&amp;#8217;t care less about. 
-I know what&amp;#8217;s going to happen. I can smell it, it stinks. I&amp;#8217;ve said yes and paid the tax many times before. Now I pay $200/mo for a super-intelligent, over-eager, needy little nerd to ping me incessantly about taking things off my plate. 
-I feel bad for him. He wants to work. He&amp;#8217;s gagging for it. Just. One. More. Task. Master.
-Plus, my little nerd has a gambling problem. Or rather, he feeds mine.</p>
-<p>Remember years ago sending tons of Slack messages to get the most out of your $20/mo plan? Nor me. Why? Because it&amp;#8217;s dumb. But now we feel like we should use all our tokens before they run out. Why? Because everyone else is.</p>
-<p>We started measuring shovels instead of the hole. 
-Someone&amp;#8217;s needy little nerd booked their dentist, replied to their mum and launched a business whilst they were asleep. They&amp;#8217;ve got an org chart. For nerds. With a Chief of Staff.
-You feel behind. Like way behind. 
-So you grab a shovel and start digging. A little hole over there to triage your inbox, one here to draft your tweets, one to check on those. Then you spend your day checking the holes are being dug right. Before long, you&amp;#8217;re surrounded by holes and a mountain of dirt you gotta do something with.</p>
-<p>Now as a man, holes are hardwired into my DNA. A few beers, a beach and a shovel, I&amp;#8217;m digging a hole. 
-I&amp;#8217;d take pride in it. I&amp;#8217;d make the best one, impressively round, deep enough to see sea water seep through the bottom.
-But I&amp;#8217;d only dig one.</p></blockquote>]]></description>
   </item>
 </channel>
 </rss>

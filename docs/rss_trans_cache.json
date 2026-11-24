@@ -354,5 +354,49 @@
   "x:https://x.com/nikunj/status/2124585398362128469": {
     "zh_title": "已上榜 🫡 感谢特斯拉的朋友（不@了，免得被消息淹没）",
     "zh_body": "现在已经在名单上了 🫡——多谢那位特斯拉的朋友（就不@他了，免得消息炸锅）。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/23/glm-54/": {
+    "zh_title": "GLM-5.4：迈向通用编码，首个循环Transformer模型",
+    "zh_body": "GLM-5.4 现已上线，来自中国 AI 实验室 Z.ai。这是他们首个采用循环 Transformer 架构的模型，官方描述如下：\n\n在标准 Transformer 中，每一层在前向传播时只运行一次。而在循环 Transformer 中，一组共享权重的层会运行多次迭代，不断精炼上一轮传递的隐藏状态。这样我们就能在不增加参数量的情况下，获得更深的网络。\n\n这是我过去一周内第二次看到循环 Transformer 的提及——第一次是 11 月 20 日 Thinking Machines Lab 的 Inkling 2 Mini，他们表示：\n\nInkling 2 Mini 是一个循环 Transformer，对每个 token 都会将模型的中间层运行三次。这让模型能够进行更多推理，用更少的 token 就能得出正确答案，尤其是在依赖推理质量的智能体编码等任务上。\n\nGLM 5.4 目前（还？）没有开放权重。我通过 Z.ai 的 API 试用了它，为此不得不订阅他们的 Coding Plan，因为 5.4 目前无法通过常规 API 访问。\n\n结果发现，编码计划和常规 API 共享同一个兼容 OpenAI 的 Responses API（地址为 https://api.z.ai/api/v1），编码计划的 API 密钥在这个接口上也能用，并且让我访问到了新模型。\n\n我写了一个 llm-glm 插件，然后发现 Tommy Hughes 的 llm-zai 已经存在了！我发布自己的插件纯粹是因为 llm-zai 还不支持新模型，但等那个插件跟上后，我大概率会停用自己的。\n\n下面是 GLM-5.4 在低、高、最高三档下的鹈鹕图。这是最高档的那张：\n\n我意识到自己从没跑过 GLM-5.3 的鹈鹕图，所以这里补上相同努力档位的图。它们看起来质量与 5.4 相似。\n\n有意思的是，GLM 5.1 和 GLM 5.2 生成的鹈鹕图与其他模型截然不同。5.3 和 5.4 的鹈鹕图则更接近我从 OpenAI 或 Anthropic 模型得到的结果——前几代有自己独特的风格。\n\n我做了一张对比网格图，把四代 GLM 鹈鹕图放在一起。5.2 到 5.3 之间的风格转变相当明显。\n\n标签：ai, generative-ai, llms, llm, pelican-riding-a-bicycle, llm-release, ai-in-china, glm"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/23/ladybird/": {
+    "zh_title": "Ladybird 首个 alpha 版发布：2026 年新浏览器，自研核心组件",
+    "zh_body": "Ladybird 是一个雄心勃勃到令人惊叹的项目：在 2026 年，它要做一个新浏览器，而且大部分关键组件都是自己实现的——HTML 解析、CSS 引擎、布局、JavaScript，甚至 WebAssembly。它仍然用了少数外部组件，比如 HarfBuzz 处理文字排版、Skia 做 2D 图形、ffmpeg 处理视频，以及 SQLite 用来做那些 SQLite 擅长的事。其余的一切都属于 Ladybird，或者来自 Ladybird 更野心勃勃的前身项目 SerenityOS 的代码。\n\n今天早上，Ladybird 项目发布了首个 alpha 版，这意味着你现在可以安装这个浏览器了（在 macOS 或 Linux 上），不用再自己编译！\n\n我今天一直在试用它，印象非常深刻。它感觉很快，界面轻量且直观，我尝试加载的大多数网站都能正常工作。它看起来是这样的（展示的是我的视频压缩工具）：\n\n这是我在一个窗口打开六个标签页、在另一个窗口再打开一个标签页后的进程树（由这个脚本生成，感谢 Claude）：\n\nLadybird (72925)  [240 MB]\n└── Hub (72926)  [61 MB]\n    ├── RequestServer (72927)  [29 MB]\n    ├── ProcessReaper (72928)  [1 MB]\n    ├── Compositor (72930)  [123 MB]\n    ├── RequestServer (72953)  [36 MB]\n    ├── WebContent (72984)  [819 MB]\n    ├── MediaServer (73006)  [118 MB]\n    ├── VideoDecoderServer (73007)  [20 MB]\n    ├── WebContent (73052)  [144 MB]\n    ├── WebContent (73057)  [73 MB]\n    ├── WebContent (73073)  [166 MB]\n    ├── WebContent (73094)  [70 MB]\n    ├── WebContent (73112)  [116 MB]\n    ├── RequestServer (73113)  [27 MB]\n    └── WebContent (73185)  [60 MB]\n\nLadybird 在不同的进程中运行不同的标签页，这是大多数浏览器都采用的隔离机制（嗯，严格来说 Chrome 用的是每个站点一个进程）。\n\n我拿 Ladybird 试了几个我比较高级的工具示例——比如上面展示的视频压缩器，它运行的是编译成 WebAssembly 的 ffmpeg。我还用它自己的截图，通过我的图片缩放工具调整了大小。它也能愉快地运行我的 Pyodide REPL（编译成 WebAssembly 的 Python）。\n\n唯一没成功的是 Datasette Lite，它在一个由 service worker 和 web worker 组成的复杂安排中运行 Pyodide。尝试启动 Datasette Lite 时显示了这样的错误：\n\nundefined is not a function (evaluated from 'navigator.serviceWorker.startMessages')\n\n我为此提交了一个 issue，然后在源代码中发现了一个 FIXME 注释。\n\n十月大爆发\n\n这个项目今年大量使用了编码智能体。2026 年 2 月 23 日，Andreas Kling 发表了《Ladybird 采用 Rust，在 AI 的帮助下》，描述了他们在两周内使用 Claude Code 和 Codex 将 LibJS JavaScript 引擎的部分代码从 C++ 移植到 25,000 行 Rust 的过程。\n\n这是 Ladybird 的 GitHub 贡献图，在……"
+  },
+  "overseas:https://openai.com/index/introducing-shirudo": {
+    "zh_title": "OpenAI与思科推出Shirudo：Linux开源运行时",
+    "zh_body": "OpenAI 和思科联合推出了 Shirudo，这是一个面向 Linux 的开源运行时。它能帮助团队在推送补丁的过程中，保护正在运行的系统。"
+  },
+  "overseas:https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/": {
+    "zh_title": "亚马逊财报：芯片之问与智能体布局",
+    "zh_body": "亚马逊正在证明自己与其他算力提供商不一样，尽管他们也释放出愿意牺牲利润来服务前沿需求的信号。"
+  },
+  "overseas:https://openai.com/business/learn/connected-intelligence-for-in-house-legal": {
+    "zh_title": "OpenAI 谈内部法务的互联智能",
+    "zh_body": "OpenAI 的 Stacey Wang 和 Craig Bruney、LECG 的 Mary O'Carroll，以及 Cooley 律所的 Richard Segal 一起聊了聊：AI 如何帮助内部法务团队打通业务背景、搭建可复用的工作流程，并让外部律师的价值发挥得更多。"
+  },
+  "overseas:https://openai.com/business/customer-stories/richpanel-ai-customer-support": {
+    "zh_title": "Richpanel 借助 AI 30 天自动化 50% 客服工作",
+    "zh_body": "Richpanel 用 GPT-6 Astra 和 GPT-6.1 Sol 为自家的 AI 客服代理配备工具和流程，而对话部分则交给 GPT-6 Luna 来处理。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/23/datasette-charts/": {
+    "zh_title": "datasette-charts 0.1a0 发布：用 AI 让数据可视化更智能",
+    "zh_body": "发布：datasette-charts 0.1a0\n\n这个问题我想了一年多，但直到周日我才终于启动 Claude Fable 5.2 来构建一个初始原型。原型进展非常顺利，现在它已经是一个完整的插件了。\n\n你可以在 Datasette Lite 里试用它。它看起来是这样的：\n\n这个新的图表插件可以针对 Datasette 中的任何表或任意 SQL 查询工作。它定义了几种不同的图表类型（使用了内置的 D3、Observable Plot 和 topojson-client），每种类型都有一套启发式规则，用来判断它们何时可能适合特定的行集。\n\n顶部的那些建议缩略图是由数据驱动的实际可视化，选择一个就会调出完整的图表以及修改工具。你也可以从头手动构建图表。\n\n和其他 Datasette 可视化插件一样，你图表的当前状态会保存在 URL 的 #fragment 中——所以你可以收藏图表或与他人分享。\n\n最重要的功能是图表会考虑所有行。以前的图表插件如 datasette-vega 只会显示当前结果页的图表，通常最多 100 行。\n\n新插件会将每个图表编译成一个 SQL 查询，使用 GROUP BY、时间分桶和窗口函数对整个结果集（可能数百万行）进行聚合。每个查询返回的结果限制在 5,000 行以内，适合在图表上显示。插件使用采样来帮助为大表建议图表，而无需评估完整的结果集。\n\n我对这个插件的初始版本非常满意。它仍然是一个 alpha 版本，但它是迄今为止最接近我梦想的版本——让 Datasette 在尽可能少的用户指导下帮助可视化数据。\n\n\n\n标签：coding-agents, generative-ai, projects, ai, llms, datasette, visualization, claude-mythos-fable"
+  },
+  "macro:https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-trump-bessent-china.html": {
+    "zh_title": "贝森特对黄仁勋态度急转，暴露了特朗普对华政策的什么？",
+    "zh_body": "财政部长斯科特·贝森特一度成为对英伟达采取更强硬立场的新面孔——直到他突然改口。\n\n（原文正文仅提供导语，以下为基于导语的完整翻译）\n\n财政部长斯科特·贝森特原本正在成为对英伟达持更强硬立场的新代表人物——但随后他改变了方向。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/emerging-economies-must-identify-achilles-heel-goods-trade-by-nick-leung-et-al-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "新兴经济体贸易的致命软肋",
+    "zh_body": "新研究显示，2024年全球商品进口中有23%至少面临三重脆弱性中的两重：产品关键性、供应集中度和地缘政治距离。鉴于问题范围广泛，对于财政空间有限的新兴经济体而言，早期诊断和有针对性的行动尤为重要。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/high-costs-of-the-emerging-agentic-ai-oligopoly-by-max-von-thun-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "AI智能体或让科技巨头更强大",
+    "zh_body": "智能体AI的兴起，可能让少数几家大型科技公司对我们的个人生活拥有前所未有的掌控力。除非立法者和监管机构现在就采取行动，否则这些数字守门人可能操纵消费者、大幅强化企业监控，并威胁我们的个人权利和公民自由。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/ai-bubble-why-fallout-will-be-severe-by-desmond-lachman-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "AI泡沫若破裂，后果将很严重",
+    "zh_body": "标普500指数跟随以科技股为主的纳斯达克指数进入回调区间，与此同时Anthropic却以创纪录的规模完成首次公开募股——眼下正是把AI股票估值与以往资产价格泡沫做比较的好时机。回顾上世纪90年代末互联网泡沫的兴衰，足以让人忧心忡忡。"
   }
 }

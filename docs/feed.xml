@@ -6,6 +6,40 @@
   <description>海外深度洞察 · 硅谷 X 一线 · 国内博主风向 · 股债金汇与专家视点</description>
   <language>zh-CN</language>
   <item>
+    <title>☀️ 乔帮主高管早报 · 11月24日</title>
+    <link>https://radar.qiao-flow.cn/#brief-2026-11-24</link>
+    <guid isPermaLink="false">qiao-brief-2026-11-24</guid>
+    <pubDate>Tue, 24 Nov 2026 08:29:16 +0800</pubDate>
+    <description><![CDATA[<h2>🔵 海外深度洞察</h2>
+<h3>1. 智谱 GLM-5.4：循环架构主打泛编程</h3>
+<p><code>Simon Willison</code> · 11-24 07:40 · <a href="https://simonwillison.net/2026/Nov/23/glm-54/">阅读原文 ↗</a></p>
+<blockquote><p>中国团队智谱发布旗舰模型 GLM-5.4，是首个采用 Loop Transformer 架构的模型：28 层共享权重循环执行两轮，在参数量不变的情况下获得更深推理，官方称智能水平达到 2 到 3 万亿参数级模型的效果，并主打泛编程能力。</p></blockquote>
+<h3>2. OpenAI 谈企业法务怎么用 AI 串起上下文</h3>
+<p><code>OpenAI News</code> · 11-23 16:00 · <a href="https://openai.com/business/learn/connected-intelligence-for-in-house-legal">阅读原文 ↗</a></p>
+<blockquote><p>OpenAI 组织了一场对谈，参与者包括 OpenAI 的 Stacey Wang、Craig Bruney，法务运营社区的 Mary O&#x27;Carroll 和律所 Cooley 的 Richard Segal，讨论企业法务团队如何用 AI 把业务背景串起来、搭建可复用的工作流，并从外部律所获得更多价值。</p></blockquote>
+<h3>3. Anthropic 访谈 58 家企业：AI 落地真相</h3>
+<p><code>AIHOT</code> · 11-23 00:00 · <a href="https://www.anthropic.com/research/working-with-ai">阅读原文 ↗</a></p>
+<blockquote><p>Anthropic 研究团队面对面访谈了 58 家企业客户共 66 次，发现多数 AI 应用的价值来自扩大产出，而不是削减成本；直接因 AI 裁员的案例很少，但约三分之二的公司因此减少了招聘，九家削减了外包和离岸承包商。高价值场景往往需要更深度的组织重组，比如拓宽岗位职责、把员工转向 AI 做不了的瓶颈任务。</p></blockquote>
+<hr/><h2>🔴 硅谷一线实操（X）</h2>
+<h3>1. Replit CEO：让AI项目变稳的秘诀是Postgres</h3>
+<p><code>Nan Yu</code> · 2026-11-22 · <a href="https://x.com/thenanyu/status/2124592238974156861">看推文 ↗</a></p>
+<blockquote><p>Replit CEO 说，用AI写代码做出来的项目，想让它更稳定、性能更好、以后更容易扩展，最管用的一招就是让AI用Postgres数据库。对不懂代码的人来说，这意味着不用纠结选什么技术，直接告诉AI用Postgres就行。</p></blockquote>
+<h3>2. 微软Copilot高管：AI代理成了软件的新用户</h3>
+<p><code>Peter Yang</code> · 2026-11-23 · <a href="https://x.com/petergyang/status/2124669298191090033">看推文 ↗</a></p>
+<blockquote><p>微软Copilot高管说，以后用软件的主力会变成AI代理，它们只看性能、价格和可靠性，不在乎界面好不好看。比如人搜索要10条链接，代理能直接吃1000条结果。做产品的人得重新想：软件是给机器用还是给人用。</p></blockquote>
+<h3>3. Box CEO：多代理协作的编排架构要变了</h3>
+<p><code>Aaron Levie</code> · 2026-11-23 · <a href="https://x.com/levie/status/2124658150771188157">看推文 ↗</a></p>
+<blockquote><p>Box CEO 说，当AI代理开始干长周期的项目、还成群并行干活时，怎么调度它们、怎么让它们共享知识、怎么跟人对齐进度，这套架构都得重新设计。这是接下来最大的变化之一，做管理的人要提前理解这种协作方式。</p></blockquote>
+<hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>
+<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead><tbody><tr><td><strong>上证</strong></td><td><code>3538.95</code></td><td>🔴 ▲ +0.15%</td></tr><tr><td><strong>沪深300</strong></td><td><code>3958.29</code></td><td>🔴 ▲ +0.09%</td></tr><tr><td><strong>10年国债ETF</strong></td><td><code>135.95</code></td><td>🟢 ▼ -0.05%</td></tr><tr><td><strong>10Y美债</strong></td><td><code>4.92%</code></td><td>🔴 ▲ +0.12%</td></tr><tr><td><strong>国内黄金ETF</strong></td><td><code>7.396</code></td><td>🔴 ▲ +1.57%</td></tr><tr><td><strong>国际金价</strong></td><td><code>$3634.9</code></td><td>🟢 ▼ -0.45%</td></tr><tr><td><strong>人民币</strong></td><td><code>6.6664</code></td><td>🔴 ▲ +0.00%</td></tr></tbody></table>
+<h3>1. AI泡沫若破，冲击远超想象</h3>
+<p><code>Project Syndicate</code> · 2026-11-23 · <a href="https://www.project-syndicate.org/commentary/ai-bubble-why-fallout-will-be-severe-by-desmond-lachman-2026-11?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=main&amp;utm_content=en">看原文 ↗</a></p>
+<blockquote><p>专家把当前AI股票估值和2000年互联网泡沫对比，认为美股科技板块已进入调整区，一旦泡沫破裂，财富缩水和避险情绪会迅速传导。对国内投资者来说，要警惕外资回流美国避险、A股和港股科技板块跟着震荡，别盲目追高AI概念。</p></blockquote>
+<h3>2. 美财长对华芯片态度急转弯</h3>
+<p><code>CNBC Economy</code> · 2026-11-23 · <a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-trump-bessent-china.html">看原文 ↗</a></p>
+<blockquote><p>美财长贝森特原本要对英伟达对华出口强硬，结果突然改口。这说明美国内部对华科技管制有分歧，政策摇摆会直接影响芯片供应链和资金流向。对中国企业来说，不能押注美国放松，要提前准备供应链替代方案。</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>☀️ 乔帮主高管早报 · 11月23日</title>
     <link>https://radar.qiao-flow.cn/#brief-2026-11-23</link>
     <guid isPermaLink="false">qiao-brief-2026-11-23</guid>

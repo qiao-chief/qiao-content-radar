@@ -6,116 +6,179 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
-    <title>[Simon Willison] Select 样式标本：统一下拉框外观的 CSS 方案</title>
-    <link>https://simonwillison.net/2026/Nov/22/select-styling/</link>
-    <guid isPermaLink="false">overseas-b0c1b6250591975f</guid>
-    <pubDate>Mon, 23 Nov 2026 03:45:06 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/22/select-styling/">查看网页原文 ↗</a></p>
+    <title>[Simon Willison] GLM-5.4：迈向通用编码，首个循环Transformer模型</title>
+    <link>https://simonwillison.net/2026/Nov/23/glm-54/</link>
+    <guid isPermaLink="false">overseas-2f3ef0ead000ffc6</guid>
+    <pubDate>Tue, 24 Nov 2026 07:40:49 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/23/glm-54/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>工具：Select 样式标本</p>
-<p>我受够了 HTML 的 &lt;select&gt; 下拉框在不同浏览器里默认长得不一样，而且（我觉得）在 Chrome 里特别丑：</p>
-<p>所以我让 Claude Fable 5.2 给我生成了这个页面，展示所有能给下拉框加样式的方法：</p>
-<p>“做一个 HTML 页面，展示 select 下拉框所有能加样式的方式，我打算在每个桌面和移动浏览器里截图。”</p>
-<p>经过一番实验，我决定我最喜欢的 select 下拉框 CSS 是这样的：</p>
-<p>select {
-  appearance: none;
-  color: #1f2933;
-  padding: 0.5em 2.25em 0.5em 0.75em;
-  border: 1px solid #c4cbd3;
-  border-radius: 6px;
-  background: #fff url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 12 8&#x27;%3E%3Cpath d=&#x27;M1 1.5l5 5 5-5&#x27; fill=&#x27;none&#x27; stroke=&#x27;%23667085&#x27; stroke-width=&#x27;1.5&#x27;/%3E%3C/svg%3E&quot;) no-repeat right 0.75em center / 0.75em;
-}</p>
-<p>这是它在三个浏览器里的样子：</p>
-<p>标签：工具、CSS、HTML</p>
+<p>GLM-5.4 现已上线，来自中国 AI 实验室 Z.ai。这是他们首个采用循环 Transformer 架构的模型，官方描述如下：</p>
+<p>在标准 Transformer 中，每一层在前向传播时只运行一次。而在循环 Transformer 中，一组共享权重的层会运行多次迭代，不断精炼上一轮传递的隐藏状态。这样我们就能在不增加参数量的情况下，获得更深的网络。</p>
+<p>这是我过去一周内第二次看到循环 Transformer 的提及——第一次是 11 月 20 日 Thinking Machines Lab 的 Inkling 2 Mini，他们表示：</p>
+<p>Inkling 2 Mini 是一个循环 Transformer，对每个 token 都会将模型的中间层运行三次。这让模型能够进行更多推理，用更少的 token 就能得出正确答案，尤其是在依赖推理质量的智能体编码等任务上。</p>
+<p>GLM 5.4 目前（还？）没有开放权重。我通过 Z.ai 的 API 试用了它，为此不得不订阅他们的 Coding Plan，因为 5.4 目前无法通过常规 API 访问。</p>
+<p>结果发现，编码计划和常规 API 共享同一个兼容 OpenAI 的 Responses API（地址为 https://api.z.ai/api/v1），编码计划的 API 密钥在这个接口上也能用，并且让我访问到了新模型。</p>
+<p>我写了一个 llm-glm 插件，然后发现 Tommy Hughes 的 llm-zai 已经存在了！我发布自己的插件纯粹是因为 llm-zai 还不支持新模型，但等那个插件跟上后，我大概率会停用自己的。</p>
+<p>下面是 GLM-5.4 在低、高、最高三档下的鹈鹕图。这是最高档的那张：</p>
+<p>我意识到自己从没跑过 GLM-5.3 的鹈鹕图，所以这里补上相同努力档位的图。它们看起来质量与 5.4 相似。</p>
+<p>有意思的是，GLM 5.1 和 GLM 5.2 生成的鹈鹕图与其他模型截然不同。5.3 和 5.4 的鹈鹕图则更接近我从 OpenAI 或 Anthropic 模型得到的结果——前几代有自己独特的风格。</p>
+<p>我做了一张对比网格图，把四代 GLM 鹈鹕图放在一起。5.2 到 5.3 之间的风格转变相当明显。</p>
+<p>标签：ai, generative-ai, llms, llm, pelican-riding-a-bicycle, llm-release, ai-in-china, glm</p>
 <hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Tool: Select Styling Specimens
+<blockquote><p>GLM-5.4: Toward Generalized Coding with Our First Loop Transformer
+GLM 5.4 is now available from Chinese AI lab Z.ai. It&#x27;s their first model to use a looped transformer architecture, which they describe like this:</p>
+<p>In a standard Transformer, each layer runs once per forward pass. In a Loop Transformer, a group of weight-shared layers runs for multiple iterations, refining the hidden states from the previous pass. This gives us a deeper network without increasing the parameter count.</p>
+<p>This is the second mention of looped transformers I&#x27;ve seen in the past week - the first was Inkling 2 Mini from Thinking Machines Lab on November 20th, who said:</p>
+<p>Inkling 2 Mini is a looped transformer, running the middle layers of the model three times for every token. This allows the model to apply more reasoning and reach the right answer with fewer tokens, especially on tasks such as agentic coding that depend on reasoning quality.</p>
+<p>GLM 5.4 is not (yet?) available as open weights. I tried it out using the Z.ai API, for which I had to sign up for their Coding Plan subscription because 5.4 cannot currently be accessed through the regular API.</p>
+<p>It turns out both coding plan and regular API share the same OpenAI-compatible Responses API (at https://api.z.ai/api/v1), and the API key for the coding plan worked with that and gave me access to the new model.</p>
+<p>I built a llm-glm plugin, then realized that llm-zai by Tommy Hughes already exists! I&#x27;ve shipped mine purely because llm-zai doesn&#x27;t yet support the new model, but I&#x27;ll likely retire mine once that plugin catches up.</p>
+<p>Here are pelicans for GLM-5.4 on low, high, and max. This is the max one:</p>
+<p>I realized I never ran pelicans for GLM-5.3, so here those are for the same effort levels. They look similar in quality to 5.4.</p>
+<p>It&#x27;s interesting how GLM 5.1 and GLM 5.2 produced radically different pelicans from other models. The pelicans for 5.3 and 5.4 are much more comparable to those I get from OpenAI or Anthropic models - the previous generations had their own distinctive look.</p>
+<p>I made a comparison grid showing the four generations of GLM pelicans all in one place. The style transition between 5.2 and 5.3 is pretty stark.</p>
+<p>Tags: ai, generative-ai, llms, llm, pelican-riding-a-bicycle, llm-release, ai-in-china, glm</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] Ladybird 首个 alpha 版发布：2026 年新浏览器，自研核心组件</title>
+    <link>https://simonwillison.net/2026/Nov/23/ladybird/</link>
+    <guid isPermaLink="false">overseas-e59fe8be067f4ab6</guid>
+    <pubDate>Tue, 24 Nov 2026 05:46:35 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/23/ladybird/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Ladybird 是一个雄心勃勃到令人惊叹的项目：在 2026 年，它要做一个新浏览器，而且大部分关键组件都是自己实现的——HTML 解析、CSS 引擎、布局、JavaScript，甚至 WebAssembly。它仍然用了少数外部组件，比如 HarfBuzz 处理文字排版、Skia 做 2D 图形、ffmpeg 处理视频，以及 SQLite 用来做那些 SQLite 擅长的事。其余的一切都属于 Ladybird，或者来自 Ladybird 更野心勃勃的前身项目 SerenityOS 的代码。</p>
+<p>今天早上，Ladybird 项目发布了首个 alpha 版，这意味着你现在可以安装这个浏览器了（在 macOS 或 Linux 上），不用再自己编译！</p>
+<p>我今天一直在试用它，印象非常深刻。它感觉很快，界面轻量且直观，我尝试加载的大多数网站都能正常工作。它看起来是这样的（展示的是我的视频压缩工具）：</p>
+<p>这是我在一个窗口打开六个标签页、在另一个窗口再打开一个标签页后的进程树（由这个脚本生成，感谢 Claude）：</p>
+<p>Ladybird (72925)  [240 MB]
+└── Hub (72926)  [61 MB]
+    ├── RequestServer (72927)  [29 MB]
+    ├── ProcessReaper (72928)  [1 MB]
+    ├── Compositor (72930)  [123 MB]
+    ├── RequestServer (72953)  [36 MB]
+    ├── WebContent (72984)  [819 MB]
+    ├── MediaServer (73006)  [118 MB]
+    ├── VideoDecoderServer (73007)  [20 MB]
+    ├── WebContent (73052)  [144 MB]
+    ├── WebContent (73057)  [73 MB]
+    ├── WebContent (73073)  [166 MB]
+    ├── WebContent (73094)  [70 MB]
+    ├── WebContent (73112)  [116 MB]
+    ├── RequestServer (73113)  [27 MB]
+    └── WebContent (73185)  [60 MB]</p>
+<p>Ladybird 在不同的进程中运行不同的标签页，这是大多数浏览器都采用的隔离机制（嗯，严格来说 Chrome 用的是每个站点一个进程）。</p>
+<p>我拿 Ladybird 试了几个我比较高级的工具示例——比如上面展示的视频压缩器，它运行的是编译成 WebAssembly 的 ffmpeg。我还用它自己的截图，通过我的图片缩放工具调整了大小。它也能愉快地运行我的 Pyodide REPL（编译成 WebAssembly 的 Python）。</p>
+<p>唯一没成功的是 Datasette Lite，它在一个由 service worker 和 web worker 组成的复杂安排中运行 Pyodide。尝试启动 Datasette Lite 时显示了这样的错误：</p>
+<p>undefined is not a function (evaluated from &#x27;navigator.serviceWorker.startMessages&#x27;)</p>
+<p>我为此提交了一个 issue，然后在源代码中发现了一个 FIXME 注释。</p>
+<p>十月大爆发</p>
+<p>这个项目今年大量使用了编码智能体。2026 年 2 月 23 日，Andreas Kling 发表了《Ladybird 采用 Rust，在 AI 的帮助下》，描述了他们在两周内使用 Claude Code 和 Codex 将 LibJS JavaScript 引擎的部分代码从 C++ 移植到 25,000 行 Rust 的过程。</p>
+<p>这是 Ladybird 的 GitHub 贡献图，在……</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components - things like HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite for the things you do with SQLite. Everything else is part of Ladybird, or code brought in from Ladybird&#x27;s even more ambitious predecessor project SerenityOS.</p>
+<p>This morning the Ladybird project released their first alpha, which means you can now install the browser (on macOS or Linux) without having to compile it yourself!</p>
+<p>I&#x27;ve been trying it out today, and it&#x27;s very impressive. It feels fast, the UI is lightweight and intuitive, and most of the websites I&#x27;ve tried to load in it have worked as they should. It looks like this (showing my video-compressor tool):</p>
+<p>Here&#x27;s the process tree after I opened six tabs in one window and another tab in a second window (generated by this script, thanks Claude):</p>
+<p>Ladybird (72925)  [240 MB]
+└── Hub (72926)  [61 MB]
+    ├── RequestServer (72927)  [29 MB]
+    ├── ProcessReaper (72928)  [1 MB]
+    ├── Compositor (72930)  [123 MB]
+    ├── RequestServer (72953)  [36 MB]
+    ├── WebContent (72984)  [819 MB]
+    ├── MediaServer (73006)  [118 MB]
+    ├── VideoDecoderServer (73007)  [20 MB]
+    ├── WebContent (73052)  [144 MB]
+    ├── WebContent (73057)  [73 MB]
+    ├── WebContent (73073)  [166 MB]
+    ├── WebContent (73094)  [70 MB]
+    ├── WebContent (73112)  [116 MB]
+    ├── RequestServer (73113)  [27 MB]
+    └── WebContent (73185)  [60 MB]</p>
+<p>Ladybird runs different tabs in different processes, an isolation mechanism used by most browsers (well, technically Chrome uses a process-per-site).</p>
+<p>I tried Ladybird against several of my more advanced tool examples - like the video-compressor shown above, which runs ffmpeg compiled to WebAssembly. I had it resize its own screenshot using my image-resize tool. It happily runs my Pyodide REPL (Python compiled to WebAssembly) too.</p>
+<p>The one thing I tried that didn&#x27;t work was Datasette Lite, which runs Pyodide in a complicated arrangement of service workers and web workers. Attempting to start Datasette Lite displays this error:</p>
+<p>undefined is not a function (evaluated from &#x27;navigator.serviceWorker.startMessages&#x27;)</p>
+<p>I filed an issue about this, then found a FIXME annotation in the source code.</p>
+<p>The October explosion</p>
+<p>The project has been leaning heavily into coding agent</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] OpenAI与思科推出Shirudo：Linux开源运行时</title>
+    <link>https://openai.com/index/introducing-shirudo</link>
+    <guid isPermaLink="false">overseas-b0689cf87ab570a4</guid>
+    <pubDate>Tue, 24 Nov 2026 05:20:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/introducing-shirudo">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>OpenAI 和思科联合推出了 Shirudo，这是一个面向 Linux 的开源运行时。它能帮助团队在推送补丁的过程中，保护正在运行的系统。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Stratechery] 亚马逊财报：芯片之问与智能体布局</title>
+    <link>https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/</link>
+    <guid isPermaLink="false">overseas-8633e0599a69a86d</guid>
+    <pubDate>Mon, 23 Nov 2026 19:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>亚马逊正在证明自己与其他算力提供商不一样，尽管他们也释放出愿意牺牲利润来服务前沿需求的信号。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Amazon makes the case they are not like other compute providers, even as they signal the willingness to give up margin to serve the frontier.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] OpenAI 谈内部法务的互联智能</title>
+    <link>https://openai.com/business/learn/connected-intelligence-for-in-house-legal</link>
+    <guid isPermaLink="false">overseas-10878202550bbbf9</guid>
+    <pubDate>Mon, 23 Nov 2026 16:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/business/learn/connected-intelligence-for-in-house-legal">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>OpenAI 的 Stacey Wang 和 Craig Bruney、LECG 的 Mary O&#x27;Carroll，以及 Cooley 律所的 Richard Segal 一起聊了聊：AI 如何帮助内部法务团队打通业务背景、搭建可复用的工作流程，并让外部律师的价值发挥得更多。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[OpenAI News] Richpanel 借助 AI 30 天自动化 50% 客服工作</title>
+    <link>https://openai.com/business/customer-stories/richpanel-ai-customer-support</link>
+    <guid isPermaLink="false">overseas-1259b534687dd8b3</guid>
+    <pubDate>Mon, 23 Nov 2026 16:00:00 +0800</pubDate>
+    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/business/customer-stories/richpanel-ai-customer-support">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Richpanel 用 GPT-6 Astra 和 GPT-6.1 Sol 为自家的 AI 客服代理配备工具和流程，而对话部分则交给 GPT-6 Luna 来处理。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] datasette-charts 0.1a0 发布：用 AI 让数据可视化更智能</title>
+    <link>https://simonwillison.net/2026/Nov/23/datasette-charts/</link>
+    <guid isPermaLink="false">overseas-d26bd4b314a87a65</guid>
+    <pubDate>Mon, 23 Nov 2026 08:37:20 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/23/datasette-charts/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>发布：datasette-charts 0.1a0</p>
+<p>这个问题我想了一年多，但直到周日我才终于启动 Claude Fable 5.2 来构建一个初始原型。原型进展非常顺利，现在它已经是一个完整的插件了。</p>
+<p>你可以在 Datasette Lite 里试用它。它看起来是这样的：</p>
+<p>这个新的图表插件可以针对 Datasette 中的任何表或任意 SQL 查询工作。它定义了几种不同的图表类型（使用了内置的 D3、Observable Plot 和 topojson-client），每种类型都有一套启发式规则，用来判断它们何时可能适合特定的行集。</p>
+<p>顶部的那些建议缩略图是由数据驱动的实际可视化，选择一个就会调出完整的图表以及修改工具。你也可以从头手动构建图表。</p>
+<p>和其他 Datasette 可视化插件一样，你图表的当前状态会保存在 URL 的 #fragment 中——所以你可以收藏图表或与他人分享。</p>
+<p>最重要的功能是图表会考虑所有行。以前的图表插件如 datasette-vega 只会显示当前结果页的图表，通常最多 100 行。</p>
+<p>新插件会将每个图表编译成一个 SQL 查询，使用 GROUP BY、时间分桶和窗口函数对整个结果集（可能数百万行）进行聚合。每个查询返回的结果限制在 5,000 行以内，适合在图表上显示。插件使用采样来帮助为大表建议图表，而无需评估完整的结果集。</p>
+<p>我对这个插件的初始版本非常满意。它仍然是一个 alpha 版本，但它是迄今为止最接近我梦想的版本——让 Datasette 在尽可能少的用户指导下帮助可视化数据。</p>
+<p>标签：coding-agents, generative-ai, projects, ai, llms, datasette, visualization, claude-mythos-fable</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-charts 0.1a0
         
-I got frustrated at how HTML &amp;lt;select&amp;gt; boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:</p>
-<p>So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:</p>
-<p>Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser</p>
-<p>After some experimentation I&#x27;ve decided my favorite CSS for select boxes is this:</p>
-<p>select {
-  appearance: none;
-  color: #1f2933;
-  padding: 0.5em 2.25em 0.5em 0.75em;
-  border: 1px solid #c4cbd3;
-  border-radius: 6px;
-  background: #fff url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 12 8&#x27;%3E%3Cpath d=&#x27;M1 1.5l5 5 5-5&#x27; fill=&#x27;none&#x27; stroke=&#x27;%23667085&#x27; stroke-width=&#x27;1.5&#x27;/%3E%3C/svg%3E&quot;) no-repeat right 0.75em center / 0.75em;
-}</p>
-<p>Here&#x27;s what that looks like in the three browsers:</p>
-<p>Tags: tools, css, html</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[OpenAI News] Perplexity 与智能：如何衡量 AI 模型的进步</title>
-    <link>https://openai.com/index/perplexity-and-intelligence</link>
-    <guid isPermaLink="false">overseas-1a10f1676d46fc01</guid>
-    <pubDate>Sun, 22 Nov 2026 08:00:00 +0800</pubDate>
-    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/perplexity-and-intelligence">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Perplexity 如何衡量 AI 模型的进步，以及为什么它能帮助开发者建立一套共同的方法来评估新兴能力。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] Muru：AI辅助的Rust服务器，为Python应用提供开发与生产最佳工具</title>
-    <link>https://simonwillison.net/2026/Nov/21/muru/</link>
-    <guid isPermaLink="false">overseas-dc9b4a0c426ddc42</guid>
-    <pubDate>Sun, 22 Nov 2026 07:56:28 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/21/muru/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Graham Dumpleton在20年前启动了mod_wsgi项目，从那以后，他一直在思考在生产环境中服务Python Web应用的理想方式。</p>
-<p>Muru是他新推出的、AI辅助的Rust服务器，旨在为开发和 production 环境中运行ASGI和WSGI Python应用提供尽可能好的工具。</p>
-<p>就像他在wrapture项目中所做的那样，他在开发过程中一直极其详细地记录这个项目的进展——这已成为他开发流程的一部分。</p>
-<p>以下是他在过去三周内发布的全部内容：</p>
-<p>2026-11-04 — mod_wsgi二十年，以及接下来会怎样</p>
-<p>2026-11-05 — Muru初探</p>
-<p>2026-11-07 — Muru：深入worker内部</p>
-<p>2026-11-08 — Muru：如何协同工作</p>
-<p>2026-11-09 — Muru：一次导入，多次fork</p>
-<p>2026-11-10 — Muru：开发环境中的HTTPS</p>
-<p>2026-11-11 — Muru：WSGI与ASGI共存</p>
-<p>2026-11-11 — 把AI当作一种生活方式</p>
-<p>2026-11-12 — Muru：发布，而非重启</p>
-<p>2026-11-13 — Muru：无需服务网格的金丝雀发布</p>
-<p>2026-11-14 — Muru：容器中的好租户</p>
-<p>2026-11-15 — Muru：与Kubernetes协作，而非绕开它</p>
-<p>2026-11-16 — Muru：根据worker报告进行扩展</p>
-<p>2026-11-17 — Muru：缩容到零</p>
-<p>2026-11-18 — Muru：按计划叠加</p>
-<p>2026-11-19 — Muru：感知与响应</p>
-<p>2026-11-20 — Muru：每页一个工具栏</p>
-<p>2026-11-21 — Muru：工具栏中的追踪</p>
-<p>那篇关于“把AI当作一种生活方式”的文章尤其值得一读：</p>
-<p>表面上AI可能完成了大量工作，但判断什么还不够好仍然由我负责，而mod_wsgi二十年来犯过的错误对此很有帮助。我愿意付出艰苦努力，不断打磨Muru，直到它成为我信任、你也信任的东西。</p>
-<p>标签：graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Muru
-Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.</p>
-<p>Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production.</p>
-<p>As he did with wrapture, he&#x27;s been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process.</p>
-<p>Here&#x27;s everything he&#x27;s published so far, all in the last three weeks:</p>
-<p>2026-11-04 — Twenty years of mod_wsgi, and what comes next</p>
-<p>2026-11-05 — A first look at Muru</p>
-<p>2026-11-07 — Muru: looking inside the workers</p>
-<p>2026-11-08 — Muru: how it fits together</p>
-<p>2026-11-09 — Muru: import once, fork many</p>
-<p>2026-11-10 — Muru: HTTPS in development</p>
-<p>2026-11-11 — Muru: WSGI and ASGI together</p>
-<p>2026-11-11 — AI as a lifestyle choice</p>
-<p>2026-11-12 — Muru: releases, not restarts</p>
-<p>2026-11-13 — Muru: canaries without a service mesh</p>
-<p>2026-11-14 — Muru: a better tenant in a container</p>
-<p>2026-11-15 — Muru: working with Kubernetes, not around it</p>
-<p>2026-11-16 — Muru: scaling from what the workers report</p>
-<p>2026-11-17 — Muru: scaling to zero</p>
-<p>2026-11-18 — Muru: overlays on a schedule</p>
-<p>2026-11-19 — Muru: noticing and responding</p>
-<p>2026-11-20 — Muru: a toolbar on every page</p>
-<p>2026-11-21 — Muru: tracing in the toolbar</p>
-<p>2026-11-22 — Muru: when lazy imports help</p>
-<p>That post about AI as a lifestyle choice is particularly worth a read:</p>
-<p>The AI may be doing a lot of the work on the surface, but deciding what isn&#x27;t good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too.</p>
-<p>Tags: graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming</p></blockquote>]]></description>
+I&#x27;ve been thinking about this problem for over a year now, but on Sunday I finally fired up Claude Fable 5.2 to build an initial prototype. The prototype went so well that this is now a full plugin.</p>
+<p>You can try it out in Datasette Lite here. It looks like this:</p>
+<p>The new charts plugin works against any table or arbitrary SQL query in Datasette. It defines several different chart types (using vendored D3, Observable Plot, and topojson-client), each with a set of heuristics for identifying when they might be a good match for a specific set of rows.</p>
+<p>Those suggestion thumbnails at the top are actual visualizations driven by the data, and selecting one pulls up the full chart along with tools for modifying it. You can also manually construct a chart from scratch.</p>
+<p>As with other Datasette visualization plugins, the current state of your chart is persisted in a #fragment in the URL - so you can bookmark charts or share them with others.</p>
+<p>The most important feature is that the charts take all rows into account. Previous charting plugins like datasette-vega would only show charts for the current page of results, generally up to 100 rows.</p>
+<p>The new plugin compiles each chart to a SQL query that aggregates across the entire result set (potentially millions of rows) using GROUP BY, time bucketing, and window functions. Each query returns a result capped at 5,000 rows, suitable for display on the chart. The plugin uses sampling to help suggest charts for larger tables without evaluating the full result set.</p>
+<p>I&#x27;m really happy with this initial release of the plugin. It&#x27;s still very much an alpha, but it&#x27;s the closest I&#x27;ve got to the dream of Datasette helping visualize data with as little required direction from the user as possible.
+    
+    
+        
+Tags: coding-agents, generative-ai, projects, ai, llms, datasette, visualization, claude-mythos-fable</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Latent Space] 黎曼猜想被证明……两次独立证明？</title>
@@ -184,21 +247,6 @@ Try CodeAF!</p>
 <p>&amp;amp;Truth builds on Lean, an open-source programming language and p</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] 拉维·瓦基尔谈马苏洛的广义黎曼猜想证明</title>
-    <link>https://simonwillison.net/2026/Nov/20/ravi-vakil/</link>
-    <guid isPermaLink="false">overseas-cf3b0c6c1cbc2369</guid>
-    <pubDate>Sat, 21 Nov 2026 03:21:49 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/20/ravi-vakil/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>亚历山德罗·马苏洛提出了一个广义黎曼猜想的证明，布莱恩·康拉德已经仔细研究了几个月，给出了大量反馈，目前正在被采纳，而且到目前为止看起来不错。这完全是人类的工作，没有用到人工智能。原本的希望是把亚历山德罗请到斯坦福待一年，打磨一下写作，然后在征求足够多的人的意见之后公布。现在看来，最好还是先把当前的草稿发出来。</p>
-<p>—— 拉维·瓦基尔，《匆忙的公告：亚历山德罗·马苏洛的广义黎曼猜想》</p>
-<p>标签：数学</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft.</p>
-<p>&amp;mdash; Ravi Vakil, Hurried Announcement: Alessandro Masullo GRH</p>
-<p>Tags: mathematics</p></blockquote>]]></description>
-  </item>
-  <item>
     <title>[Stratechery] 2026.47：华盛顿失意</title>
     <link>https://stratechery.com/2026/down-in-dc/</link>
     <guid isPermaLink="false">overseas-f940ebc8ce1254af</guid>
@@ -237,19 +285,6 @@ Try CodeAF!</p>
 <p>Sharp Tech首次推出视频版。你有三种方式收看：YouTube、Spotify，以及Stratechery本站。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[OpenAI News] OpenAI 如何应对对抗性蒸馏：分层防御保护模型能力</title>
-    <link>https://openai.com/index/combatting-adversarial-distillation</link>
-    <guid isPermaLink="false">overseas-7ad44f990f0c53ef</guid>
-    <pubDate>Fri, 20 Nov 2026 18:00:00 +0800</pubDate>
-    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/index/combatting-adversarial-distillation">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>OpenAI 应对对抗性蒸馏（adversarial distillation）采用的是分层策略，把模型训练、安全防护、检测与执法结合起来，防止模型能力被提取。</p>
-<p>所谓对抗性蒸馏，是指有人试图通过大量调用模型输出，把模型的能力“蒸馏”到自己的模型里。OpenAI 的防御不是单点措施，而是一套组合拳：在训练阶段就考虑抗蒸馏能力，在部署时加上安全防护，同时持续检测可疑的提取行为，并在发现违规后采取执法行动。</p>
-<p>这套分层做法覆盖了从模型开发到实际使用的多个环节，目标是让能力提取变得更难、更容易被发现，也更有后果。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Latent Space] Anthropic完成史上最大IPO，估值1.5万亿美元</title>
@@ -292,17 +327,6 @@ Try CodeAF!</p>
 <p>Dario Amodei&#x27;s IPO remarks (official position)</p>
 <p>Personal framing: Dario and Daniela lost their father to a disease that became curable a few years later. Dario cited CRISPR&#x27;s decades-long path from discovery to treatment.</p>
 <p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[OpenAI News] Hebbia 用 GPT-6 Astra 提升金融研究效率</title>
-    <link>https://openai.com/business/customer-stories/hebbia</link>
-    <guid isPermaLink="false">overseas-8145fefb47ff1ca9</guid>
-    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
-    <description><![CDATA[<p><code>OpenAI News</code> · <a href="https://openai.com/business/customer-stories/hebbia">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Hebbia 对 GPT-6 Astra 在金融研究场景进行了测试。在正式发布前的评估中，他们发现这款模型在信息来源覆盖、引用相关性和呈现质量方面都有所提升。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 我老婆以为AI是个人</title>
@@ -356,17 +380,6 @@ So what if we replaced Betty with a computer?</p>
 <p>For more than 60 years, the answer was no. Giving machines more to read barely helped, because they could only see the last couple of words. Try guessing what comes after &amp;#8220;speak fluent&amp;#8230;&amp;#8221; with no other clues.
 In 2017, eight people at Google let it see every word at once and weigh the ones that matter, like France. They called that attention, and the machine a transformer. It&amp;#8217;s the T in ChatGPT.
 Suddenly, giving it more to rea</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Stratechery] Eric Seufert 谈代理式商务：广告为何是答案，以及我为何看好服务代理的零售商</title>
-    <link>https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/</link>
-    <guid isPermaLink="false">overseas-90a7c6c68834d606</guid>
-    <pubDate>Thu, 19 Nov 2026 19:00:00 +0800</pubDate>
-    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>这次采访的对象是 Eric Seufert，话题围绕代理式商务展开。他解释了为什么他认为广告会成为代理式商务的答案，而我也谈了自己为什么想要那些迎合代理的零售商。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.</p></blockquote>]]></description>
   </item>
 </channel>
 </rss>

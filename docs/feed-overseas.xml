@@ -6,6 +6,91 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] datasette-charts 0.2a0 发布：图表插件接入 Datasette Agent</title>
+    <link>https://simonwillison.net/2026/Nov/24/datasette-charts/</link>
+    <guid isPermaLink="false">overseas-bfe39e5b176c7b57</guid>
+    <pubDate>Tue, 24 Nov 2026 12:24:29 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/24/datasette-charts/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>发布：datasette-charts 0.2a0</p>
+<p>我昨天刚介绍了这个给 Datasette 用的新图表插件。今天它就和 Datasette Agent 打通了——现在你可以直接在聊天里要一张图，它会用同一套底层的图表推荐和生成工具帮你做出来。</p>
+<p>下面是一段演示视频，录制于 agent.datasette.io，你可以用 GitHub 登录，自己上手试试这个插件：</p>
+<p>下载视频（MP4）</p>
+<p>我给 Datasette Agent 的提示词是「用 #stats 把 sqlite-utils 的下载量随时间的变化画成图表」——输入「#stats」会弹出一个表格搜索框。它在聊天里直接给我显示了一张图，我点「在图表构建器中打开」，图表就和表格页面一起在侧边面板里打开了。我在表格页面把图表切换成「datasette」的数据，然后问 agent「这张图显示的是什么？」，它注意到我在面板里换了内容，就给我描述了新的 Datasette 图表。</p>
+<p>这里是视频中那段对话的 Markdown 导出。</p>
+<p>标签：datasette-agent、datasette、可视化</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-charts 0.2a0
+        
+I introduced this new charting plugin for Datasette yesterday. Today it&#x27;s gained integration with Datasette Agent, so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools.</p>
+<p>Here&#x27;s a demo video, recorded on agent.datasette.io  where you can sign in with GitHub to try the plugin yourself:</p>
+<p>Download the video (MP4)
+  
+  
+    I prompt Datasette Agent to &quot;Use #stats to show sqlite-utils downloads over time as a chart&quot; - where typing &quot;#stats&quot; opens a table search box. It shows me a chart inline in the chat, and when I click &quot;Open in the chart builder&quot; it opens the chart in a panel along with the table page. I use the table page to switch to a chart of &quot;datasette&quot;, then when I ask the agent &quot;what does the chart show?&quot; it notices that I changed the content in the panel and describes the new Datasette chart to me.</p>
+<p>Here&#x27;s a Markdown export of the chat from the video.
+    
+    
+        
+Tags: datasette-agent, datasette, visualization</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] 黄仁勋回归！OpenAI 亮出预训练曲线，微软加入</title>
+    <link>https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/</link>
+    <guid isPermaLink="false">overseas-89be47622d1f2155</guid>
+    <pubDate>Tue, 24 Nov 2026 12:14:16 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>恭喜 Sierra 估值达到去年的三倍，达到 100 亿美元；也恭喜 Z.ai 发布 GLM 5.4，这是他们首个循环 Transformer，紧随上周 Thinking Machine 小得多的 Inkling Mini 2 之后。不过，所有这些都被今天的两大头条盖过了……</p>
+<p>黄仁勋回来了。在宣布辞职十一天后，英伟达宣布他回归担任 CEO、总裁兼董事会成员。</p>
+<p>在 X 上查看帖子 ↗</p>
+<p>董事会周日与黄仁勋又开了几次会后一致投票通过，并表示收到了美国高级官员的意见（也就是财政部长和总统打电话接入董事会会议）。Colette Kress 继续担任 CFO，独立董事的调查仍在继续，黄仁勋的参议院听证会仍将在 8 天后举行。英伟达还成立了一个董事会委员会，负责国家安全和出口管制。</p>
+<p>正如 Matt Levine 指出的，董事会这次解雇又重新聘用，还有政府参与，现在调查人员被置于一个结果某种程度上已经预先确定的位置，因为两者都表明他们不需要等待任何进一步的证据出现。</p>
+<p>OpenAI 公布了其预训练损失曲线。在《困惑度与智能》一文中，首席科学家 Jakub Pachocki 绘制了从 GPT-3.5 开始的基础模型对数困惑度（基于他们内部的留出编码数据集……这有值得注意的注意事项）：</p>
+<p>在 X 上查看帖子 ↗</p>
+<p>可以把它理解为模型在留出数据集上对下一个 token 有多惊讶。越低越好。GPT-3.5 大约在 0.99，GPT-4 大约在 0.91。当 OpenAI 让一个大约 0.76 的模型（GPT6 Astra）去解决开放数学问题时，数百个前沿数学问题开始迅速被攻克。Pachocki 推测，能力的下一次跃升可能会在 0.68–0.70 左右出现。</p>
+<p>这一切都关乎前沿节奏的把控。Pachocki 提议，实验室应就开发的第一个限制达成一致，并阐明什么条件能让他们跨越它，比如思维链监控的继任者。微软的 Mustafa Suleyman 给出了第一个支持，联署并加入，在 OpenAI 的评估集上运行 MAI-2 Base，报告结果为 0.819。我们需要至少再有几个顶级实验室加入这一努力，它才能作为真正的自我监管限制形成势头，最值得注意的是 Anthropic。</p>
+<p>由 Backblaze B2 赞助</p>
+<p>如果你的数据增长快于计划，你需要能随业务增长的存储，以太比特级吞吐量为闪存和 GPU 提供数据，并且不收取出口费用。
+Backblaze B2 提供容量层存储已有二十年，管理超过 6 EB 数据，受到领先的新云、实验室和生成式 AI 公司的信赖。
+增长不应让你烦恼。无论你在构建什么，我们都有空间。
+试试看！
+咨询与费用</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Congrats to Sierra on tripling last year’s $10B valuation, and to Z.ai for releasing GLM 5.4, their first looped transformer following Thinking Machine’s much smaller Inkling Mini 2 from last week. However all these are outshone by today’s twin title stories…</p>
+<p>Jensen Huang is back. Eleven days after announcing his resignation, Nvidia announced his return as CEO, president and member of the Board of Directors.</p>
+<p>View post on X ↗</p>
+<p>The board voted unanimously after more meetings with Jensen on Sunday and said it received input from senior U.S. officials (aka the Treasury Secretary and the President dialing into the board meeting). Colette Kress remains CFO, the independent directors’ investigation continues, and Jensen’s Senate hearing is still due in 8 days. Nvidia also formed a board committee for national security and export control.</p>
+<p>As Matt Levine points out, with the firing AND the rehiring by this board with involvement from the government, the investigators are now being put in a position of having had the outcome somewhat predetermined for them, because both have demonstrated that they did not need to wait for any further evidence to come to light.</p>
+<p>OpenAI put its pretraining loss curve on the record. In Perplexity and Intelligence, Chief scientist Jakub Pachocki plotted base-model log-perplexity back to GPT-3.5 (on their internal held-out coding dataset… which has notable caveats):</p>
+<p>View post on X ↗</p>
+<p>Think of it as how surprised the model is by the next token on a held-out dataset. Lower is better. GPT-3.5 was around 0.99 and GPT-4 around 0.91. When OpenAI put a model around 0.76 (GPT6 Astra) to work on open math problems, hundreds of frontier math problems started falling quickly. Pachocki extrapolates that another jump in capabilities could come around 0.68–0.70.</p>
+<p>This is all in context of pacing the frontier. Pachocki proposes that labs agree on a first limit to development and spell out what would let them cross it, such as a successor to chain-of-thought monitoring. Microsoft’s Mustafa Suleyman gave the first win by cosigning and joining in, running MAI-2 Base on OpenAI’s evaluation set and reporting 0.819. We’d need at least a couple more top labs to join this effort for it to gather steam as a real self-regulatory limit, most notably of course, Anthropic.</p>
+<p>Sponsored by Backblaze B2</p>
+<p>If your data is growing faster than planned, you need storage that grows with your business, feeds flash and GPUs with terabit-scale throughput, and doe</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] datasette-agent 0.7a1 发布</title>
+    <link>https://simonwillison.net/2026/Nov/24/datasette-agent/</link>
+    <guid isPermaLink="false">overseas-cde2e4331c947b3b</guid>
+    <pubDate>Tue, 24 Nov 2026 11:45:57 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/24/datasette-agent/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>发布：datasette-agent 0.7a1</p>
+<p>对 Datasette Agent 做了一点小改进：聊天会话现在可以打开一个 iframe 侧边面板，这个面板还能跳转到不同页面。这一版改进了通过片段哈希（fragment hash）进行导航的能力，从而能与其他 Datasette 插件更深度地集成——当用户与插件交互并改变状态时，这些插件会更新片段哈希。</p>
+<p>我做这个改动，是为了修复更令人兴奋的 datasette-charts 0.2a0 版本中的一些 bug。</p>
+<p>标签：datasette-agent、datasette</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-agent 0.7a1
+        
+I small improvement to Datasette Agent: chat sessions can open an iframe side panel, and that panel can then navigate to different pages. This version improves navigation by fragment hashes, for deeper integration with other Datasette plugins that update fragment hashes when the user interacts with the plugin in a way that changes state.</p>
+<p>I built this in order to fix some bugs with the much more exciting datasette-charts 0.2a0 release.
+    
+    
+        
+Tags: datasette-agent, datasette</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Simon Willison] GLM-5.4：迈向通用编码，首个循环Transformer模型</title>
     <link>https://simonwillison.net/2026/Nov/23/glm-54/</link>
     <guid isPermaLink="false">overseas-2f3ef0ead000ffc6</guid>
@@ -38,70 +123,6 @@ GLM 5.4 is now available from Chinese AI lab Z.ai. It&#x27;s their first model t
 <p>It&#x27;s interesting how GLM 5.1 and GLM 5.2 produced radically different pelicans from other models. The pelicans for 5.3 and 5.4 are much more comparable to those I get from OpenAI or Anthropic models - the previous generations had their own distinctive look.</p>
 <p>I made a comparison grid showing the four generations of GLM pelicans all in one place. The style transition between 5.2 and 5.3 is pretty stark.</p>
 <p>Tags: ai, generative-ai, llms, llm, pelican-riding-a-bicycle, llm-release, ai-in-china, glm</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] Ladybird 首个 alpha 版发布：2026 年新浏览器，自研核心组件</title>
-    <link>https://simonwillison.net/2026/Nov/23/ladybird/</link>
-    <guid isPermaLink="false">overseas-e59fe8be067f4ab6</guid>
-    <pubDate>Tue, 24 Nov 2026 05:46:35 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/23/ladybird/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Ladybird 是一个雄心勃勃到令人惊叹的项目：在 2026 年，它要做一个新浏览器，而且大部分关键组件都是自己实现的——HTML 解析、CSS 引擎、布局、JavaScript，甚至 WebAssembly。它仍然用了少数外部组件，比如 HarfBuzz 处理文字排版、Skia 做 2D 图形、ffmpeg 处理视频，以及 SQLite 用来做那些 SQLite 擅长的事。其余的一切都属于 Ladybird，或者来自 Ladybird 更野心勃勃的前身项目 SerenityOS 的代码。</p>
-<p>今天早上，Ladybird 项目发布了首个 alpha 版，这意味着你现在可以安装这个浏览器了（在 macOS 或 Linux 上），不用再自己编译！</p>
-<p>我今天一直在试用它，印象非常深刻。它感觉很快，界面轻量且直观，我尝试加载的大多数网站都能正常工作。它看起来是这样的（展示的是我的视频压缩工具）：</p>
-<p>这是我在一个窗口打开六个标签页、在另一个窗口再打开一个标签页后的进程树（由这个脚本生成，感谢 Claude）：</p>
-<p>Ladybird (72925)  [240 MB]
-└── Hub (72926)  [61 MB]
-    ├── RequestServer (72927)  [29 MB]
-    ├── ProcessReaper (72928)  [1 MB]
-    ├── Compositor (72930)  [123 MB]
-    ├── RequestServer (72953)  [36 MB]
-    ├── WebContent (72984)  [819 MB]
-    ├── MediaServer (73006)  [118 MB]
-    ├── VideoDecoderServer (73007)  [20 MB]
-    ├── WebContent (73052)  [144 MB]
-    ├── WebContent (73057)  [73 MB]
-    ├── WebContent (73073)  [166 MB]
-    ├── WebContent (73094)  [70 MB]
-    ├── WebContent (73112)  [116 MB]
-    ├── RequestServer (73113)  [27 MB]
-    └── WebContent (73185)  [60 MB]</p>
-<p>Ladybird 在不同的进程中运行不同的标签页，这是大多数浏览器都采用的隔离机制（嗯，严格来说 Chrome 用的是每个站点一个进程）。</p>
-<p>我拿 Ladybird 试了几个我比较高级的工具示例——比如上面展示的视频压缩器，它运行的是编译成 WebAssembly 的 ffmpeg。我还用它自己的截图，通过我的图片缩放工具调整了大小。它也能愉快地运行我的 Pyodide REPL（编译成 WebAssembly 的 Python）。</p>
-<p>唯一没成功的是 Datasette Lite，它在一个由 service worker 和 web worker 组成的复杂安排中运行 Pyodide。尝试启动 Datasette Lite 时显示了这样的错误：</p>
-<p>undefined is not a function (evaluated from &#x27;navigator.serviceWorker.startMessages&#x27;)</p>
-<p>我为此提交了一个 issue，然后在源代码中发现了一个 FIXME 注释。</p>
-<p>十月大爆发</p>
-<p>这个项目今年大量使用了编码智能体。2026 年 2 月 23 日，Andreas Kling 发表了《Ladybird 采用 Rust，在 AI 的帮助下》，描述了他们在两周内使用 Claude Code 和 Codex 将 LibJS JavaScript 引擎的部分代码从 C++ 移植到 25,000 行 Rust 的过程。</p>
-<p>这是 Ladybird 的 GitHub 贡献图，在……</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components - things like HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite for the things you do with SQLite. Everything else is part of Ladybird, or code brought in from Ladybird&#x27;s even more ambitious predecessor project SerenityOS.</p>
-<p>This morning the Ladybird project released their first alpha, which means you can now install the browser (on macOS or Linux) without having to compile it yourself!</p>
-<p>I&#x27;ve been trying it out today, and it&#x27;s very impressive. It feels fast, the UI is lightweight and intuitive, and most of the websites I&#x27;ve tried to load in it have worked as they should. It looks like this (showing my video-compressor tool):</p>
-<p>Here&#x27;s the process tree after I opened six tabs in one window and another tab in a second window (generated by this script, thanks Claude):</p>
-<p>Ladybird (72925)  [240 MB]
-└── Hub (72926)  [61 MB]
-    ├── RequestServer (72927)  [29 MB]
-    ├── ProcessReaper (72928)  [1 MB]
-    ├── Compositor (72930)  [123 MB]
-    ├── RequestServer (72953)  [36 MB]
-    ├── WebContent (72984)  [819 MB]
-    ├── MediaServer (73006)  [118 MB]
-    ├── VideoDecoderServer (73007)  [20 MB]
-    ├── WebContent (73052)  [144 MB]
-    ├── WebContent (73057)  [73 MB]
-    ├── WebContent (73073)  [166 MB]
-    ├── WebContent (73094)  [70 MB]
-    ├── WebContent (73112)  [116 MB]
-    ├── RequestServer (73113)  [27 MB]
-    └── WebContent (73185)  [60 MB]</p>
-<p>Ladybird runs different tabs in different processes, an isolation mechanism used by most browsers (well, technically Chrome uses a process-per-site).</p>
-<p>I tried Ladybird against several of my more advanced tool examples - like the video-compressor shown above, which runs ffmpeg compiled to WebAssembly. I had it resize its own screenshot using my image-resize tool. It happily runs my Pyodide REPL (Python compiled to WebAssembly) too.</p>
-<p>The one thing I tried that didn&#x27;t work was Datasette Lite, which runs Pyodide in a complicated arrangement of service workers and web workers. Attempting to start Datasette Lite displays this error:</p>
-<p>undefined is not a function (evaluated from &#x27;navigator.serviceWorker.startMessages&#x27;)</p>
-<p>I filed an issue about this, then found a FIXME annotation in the source code.</p>
-<p>The October explosion</p>
-<p>The project has been leaning heavily into coding agent</p></blockquote>]]></description>
   </item>
   <item>
     <title>[OpenAI News] OpenAI与思科推出Shirudo：Linux开源运行时</title>
@@ -146,39 +167,6 @@ GLM 5.4 is now available from Chinese AI lab Z.ai. It&#x27;s their first model t
 <p>Richpanel 用 GPT-6 Astra 和 GPT-6.1 Sol 为自家的 AI 客服代理配备工具和流程，而对话部分则交给 GPT-6 Luna 来处理。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] datasette-charts 0.1a0 发布：用 AI 让数据可视化更智能</title>
-    <link>https://simonwillison.net/2026/Nov/23/datasette-charts/</link>
-    <guid isPermaLink="false">overseas-d26bd4b314a87a65</guid>
-    <pubDate>Mon, 23 Nov 2026 08:37:20 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/23/datasette-charts/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>发布：datasette-charts 0.1a0</p>
-<p>这个问题我想了一年多，但直到周日我才终于启动 Claude Fable 5.2 来构建一个初始原型。原型进展非常顺利，现在它已经是一个完整的插件了。</p>
-<p>你可以在 Datasette Lite 里试用它。它看起来是这样的：</p>
-<p>这个新的图表插件可以针对 Datasette 中的任何表或任意 SQL 查询工作。它定义了几种不同的图表类型（使用了内置的 D3、Observable Plot 和 topojson-client），每种类型都有一套启发式规则，用来判断它们何时可能适合特定的行集。</p>
-<p>顶部的那些建议缩略图是由数据驱动的实际可视化，选择一个就会调出完整的图表以及修改工具。你也可以从头手动构建图表。</p>
-<p>和其他 Datasette 可视化插件一样，你图表的当前状态会保存在 URL 的 #fragment 中——所以你可以收藏图表或与他人分享。</p>
-<p>最重要的功能是图表会考虑所有行。以前的图表插件如 datasette-vega 只会显示当前结果页的图表，通常最多 100 行。</p>
-<p>新插件会将每个图表编译成一个 SQL 查询，使用 GROUP BY、时间分桶和窗口函数对整个结果集（可能数百万行）进行聚合。每个查询返回的结果限制在 5,000 行以内，适合在图表上显示。插件使用采样来帮助为大表建议图表，而无需评估完整的结果集。</p>
-<p>我对这个插件的初始版本非常满意。它仍然是一个 alpha 版本，但它是迄今为止最接近我梦想的版本——让 Datasette 在尽可能少的用户指导下帮助可视化数据。</p>
-<p>标签：coding-agents, generative-ai, projects, ai, llms, datasette, visualization, claude-mythos-fable</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Release: datasette-charts 0.1a0
-        
-I&#x27;ve been thinking about this problem for over a year now, but on Sunday I finally fired up Claude Fable 5.2 to build an initial prototype. The prototype went so well that this is now a full plugin.</p>
-<p>You can try it out in Datasette Lite here. It looks like this:</p>
-<p>The new charts plugin works against any table or arbitrary SQL query in Datasette. It defines several different chart types (using vendored D3, Observable Plot, and topojson-client), each with a set of heuristics for identifying when they might be a good match for a specific set of rows.</p>
-<p>Those suggestion thumbnails at the top are actual visualizations driven by the data, and selecting one pulls up the full chart along with tools for modifying it. You can also manually construct a chart from scratch.</p>
-<p>As with other Datasette visualization plugins, the current state of your chart is persisted in a #fragment in the URL - so you can bookmark charts or share them with others.</p>
-<p>The most important feature is that the charts take all rows into account. Previous charting plugins like datasette-vega would only show charts for the current page of results, generally up to 100 rows.</p>
-<p>The new plugin compiles each chart to a SQL query that aggregates across the entire result set (potentially millions of rows) using GROUP BY, time bucketing, and window functions. Each query returns a result capped at 5,000 rows, suitable for display on the chart. The plugin uses sampling to help suggest charts for larger tables without evaluating the full result set.</p>
-<p>I&#x27;m really happy with this initial release of the plugin. It&#x27;s still very much an alpha, but it&#x27;s the closest I&#x27;ve got to the dream of Datasette helping visualize data with as little required direction from the user as possible.
-    
-    
-        
-Tags: coding-agents, generative-ai, projects, ai, llms, datasette, visualization, claude-mythos-fable</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Latent Space] 黎曼猜想被证明……两次独立证明？</title>
@@ -285,48 +273,6 @@ Try CodeAF!</p>
 <p>Sharp Tech首次推出视频版。你有三种方式收看：YouTube、Spotify，以及Stratechery本站。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] Anthropic完成史上最大IPO，估值1.5万亿美元</title>
-    <link>https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/</link>
-    <guid isPermaLink="false">overseas-abadb4e0aaec88e9</guid>
-    <pubDate>Fri, 20 Nov 2026 15:12:24 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>正如我们在《上市前须知》播客里预告的那样，Anthropic把IPO发行价定在83美元，今天$ANT收盘报97.17美元，较发行价上涨17%（盘后回落5%，报92.60美元）。这次813亿美元的发行规模超过了SpaceX今年6月的IPO，成为史上最大IPO。</p>
-<p>达里奥和丹妮拉（达里奥的发言、创始人信）借这个机会表态：Anthropic会根据能否让系统保持安全、处于人类控制之下来决定训练和部署的节奏。</p>
-<p>他们的F类股票在多数股东事项上拥有50.1%的投票权。预计锁定期到期会给股价带来压力——未来一年约有价值一万亿美元的股票解禁，而Anthropic至少目前还得守住全球最强模型的位置。</p>
-<p>2026年11月18日至19日AI新闻。我们查看了12个subreddit和X上的544个账号。往期内容可在AINews存档中搜索。</p>
-<p>AI推特回顾</p>
-<p>Anthropic以$ANT为代码在纳斯达克上市，发行价83美元，开盘大涨34%，估值接近2万亿美元。</p>
-<p>上市：Anthropic敲响了纳斯达克开盘钟（@kimmonismus、@yacinelearning）。官方账号发布了一条仅限媒体的上市消息，互动量是当天最高的（@AnthropicAI）。</p>
-<p>开盘交易：$ANT开盘报111.50美元，比83美元的IPO发行价高出28.50美元（34.3%）（@TheRundownAI、@kimmonismus）。盘前指示价约110美元，涨约32%（@kimmonismus）。</p>
-<p>创纪录募资：813亿美元的募资额超过SpaceX的750亿美元（6月），成为史上最大IPO（@TheRundownAI）。</p>
-<p>净募资额：计入同步进行的私募配售，预计净募资额为1048亿美元。开盘时完全稀释估值约2万亿美元（@kimmonismus）。</p>
-<p>AMD投资：AMD同意在IPO同时向Anthropic投资25亿美元。同一天上午，AMD股价下跌，此前Hunterbrook报道称一家被美国列入黑名单的中国服务器厂商仍在出货较新的AMD固件（@kimmonismus，来源）。</p>
-<p>CEO声明：达里奥·阿莫代伊发布了IPO发言，作出强有力的安全承诺（详见下文）（@AnthropicAI）。</p>
-<p>员工财富：根据SEC文件和投资者说法，普通员工的身家可能超过4000万美元（@kimmonismus）。Anthropic的5300名创始人和员工现在的身家超过了美国最底层三分之一的家庭，约4500万户（@SteveRattner）。</p>
-<p>达里奥·阿莫代伊的IPO发言（官方立场）</p>
-<p>个人经历：达里奥和丹妮拉的父亲死于一种几年后就能治愈的疾病。达里奥提到CRISPR从发现到治疗走了几十年。</p>
-<p>核心论点：强大的AI与人类协作，“可能把一个世纪的科学和医学进步压缩到十年”。他强调目前只有早期成果。</p>
-<p>点明的风险：个人或民族国家的滥用、经济冲击、失控。列出的安全工作包括生物/网络安全防护、对齐训练和可解释性（“就像</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>As we previewed on our Know Before You IPO pod, Anthropic set its IPO price at $83 and today $ANT closed at $97.17, up 17% from the offering price (drifting -5% to $92.60 after the close). The $81.3B offering overtook SpaceX&#x27;s June IPO as the largest in history.</p>
-<p>Dario and Daniela (Dario’s remarks, Founders’ letter) used the occasion to say Anthropic would pace training and deployment based on whether it could keep its systems safe and under human control.</p>
-<p>Their Class F shares carry 50.1% of voting power on most shareholder matters. Expect the lockup expiries to weigh on the stock price as about a trillion dollars of shares free up over the next year, while Anthropic has to keep the world’s top model...for now.</p>
-<p>AI News for 11/18/2026–11/19/2026. We checked 12 subreddits and 544 accounts on X. Search past issues in the AINews archive.</p>
-<p>AI Twitter Recap</p>
-<p>Anthropic listed on Nasdaq under $ANT, priced at $83, and opened 34% higher, putting it near a $2T valuation.</p>
-<p>Listing: Anthropic rang the Nasdaq opening bell (@kimmonismus, @yacinelearning). The official account posted a media-only launch item that drew by far the day&#x27;s highest engagement (@AnthropicAI).</p>
-<p>Opening trade: $ANT opened at $111.50, which is $28.50 (34.3%) above the $83 IPO price (@TheRundownAI, @kimmonismus). Pre-open indications were up ~32% at ~$110 (@kimmonismus).</p>
-<p>Record raise: The $81.3B raised beats SpaceX&#x27;s $75B (June) as the largest IPO ever (@TheRundownAI).</p>
-<p>Net proceeds: Expected net proceeds are $104.8B including a concurrent private placement. Fully diluted valuation was ~$2T at the open (@kimmonismus).</p>
-<p>AMD investment: AMD agreed to invest $2.5B in Anthropic alongside the IPO. The same morning, AMD fell after a Hunterbrook report that a US-blacklisted Chinese server maker kept shipping newer AMD firmware (@kimmonismus, source).</p>
-<p>CEO statement: Dario Amodei published IPO remarks with a strong safety commitment (details below) (@AnthropicAI).</p>
-<p>Employee wealth: The average employee could be worth &amp;gt;$40M, per SEC filings and investors (@kimmonismus). Anthropic&#x27;s 5,300 founders and employees are now worth more than the bottom third of US households, about 45M families (@SteveRattner).</p>
-<p>Dario Amodei&#x27;s IPO remarks (official position)</p>
-<p>Personal framing: Dario and Daniela lost their father to a disease that became curable a few years later. Dario cited CRISPR&#x27;s decades-long path from discovery to treatment.</p>
-<p>Core thesis: Powerful AI working with humans &quot;could compress a cent</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 我老婆以为AI是个人</title>

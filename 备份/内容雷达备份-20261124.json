@@ -25586,6 +25586,287 @@
       },
       "last_modified_time": 1795393793000,
       "record_id": "reczz28cvCYbh54b"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "Anthropic 研究团队面对面访谈了 58 家企业客户共 66 次，发现多数 AI 应用的价值来自扩大产出，而不是削减成本；直接因 AI 裁员的案例很少，但约三分之二的公司因此减少了招聘，九家削减了外包和离岸承包商。高价值场景往往需要更深度的组织重组，比如拓宽岗位职责、把员工转向 AI 做不了的瓶颈任务。",
+        "入表时间": 1795480191000,
+        "切入角度": "用一手访谈数据说明企业用 AI 的真实收益来自扩产而非裁员，帮管理者判断该把 AI 放在哪个环节。",
+        "原文链接": {
+          "link": "https://www.anthropic.com/research/working-with-ai",
+          "text": "Anthropic：Research（发表成果 · 网页）"
+        },
+        "发现时间": 1795363200000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Anthropic 访谈 58 家企业：AI 落地真相",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他",
+          "热点话题"
+        ]
+      },
+      "id": "reczz28dJjdxbE9W",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxbE9W"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "Claude 官方把「连接器」和「技能」合并为统一的「插件」，让用户用同一种方式给 Claude 接工具或教新技能。插件已在 Free、Pro、Max、Ultra 套餐上线，Team 和 Enterprise 即将支持，官方插件市场已有超过一万个插件可浏览。",
+        "入表时间": 1795480191000,
+        "切入角度": "解释插件统一后，非技术用户挑选和组合 AI 能力的门槛降低了多少，以及该从哪类插件入手。",
+        "原文链接": {
+          "link": "https://x.com/claudeai/status/2124970294523945328",
+          "text": "X：Claude (@claudeai)"
+        },
+        "发现时间": 1795467372000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Claude 把连接器和技能合并成插件",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28dJjdxblRD",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxblRD"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "Figma agent 正式对所有付费计划开放到 FigJam 白板和 Figma Slides，支持连接器和附件，能把设计文件、会议记录、研究笔记等材料自动整理到白板上，或直接生成演示文稿初稿。",
+        "入表时间": 1795480191000,
+        "切入角度": "对不画图的知识工作者来说，这是把零散会议材料变成白板结构和汇报初稿的现成入口。",
+        "原文链接": {
+          "link": "https://www.figma.com/blog/introducing-figma-agent-in-figjam-and-slides/",
+          "text": "Figma AI / Agent / Make"
+        },
+        "发现时间": 1795467240000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Figma 智能体开放到白板和演示文稿",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28dJjdxcJmC",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxcJmC"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "Anthropic 发布 Claude Ship 测试版，由已正式可用的 Code Review 加上 PR Steward、Claude Approvals 两个测试智能体组成，能审查代码提交、推送修复，并按团队写进仓库的策略文件判断能否合并。",
+        "入表时间": 1795480191000,
+        "切入角度": "值得关注的是「把团队规则写成文件交给 AI 执行」这个思路，非技术管理者也能借此理解 AI 如何嵌入流程。",
+        "原文链接": {
+          "link": "https://claude.com/blog/introducing-claude-ship",
+          "text": "Claude：Blog（网页）"
+        },
+        "发现时间": 1795392000000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "Claude Ship 测试版：自动审 PR 并决定合并",
+        "选题理由": [
+          "目标受众关注",
+          "热点话题"
+        ]
+      },
+      "id": "reczz28dJjdxZLgR",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxZLgR"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "中国团队智谱发布旗舰模型 GLM-5.4，是首个采用 Loop Transformer 架构的模型：28 层共享权重循环执行两轮，在参数量不变的情况下获得更深推理，官方称智能水平达到 2 到 3 万亿参数级模型的效果，并主打泛编程能力。",
+        "入表时间": 1795480191000,
+        "切入角度": "用「同样大小的模型多转两圈就更聪明」讲清架构思路，帮读者判断国产模型进展对选型的影响。",
+        "原文链接": {
+          "link": "https://simonwillison.net/2026/Nov/23/glm-54/",
+          "text": "海外·Simon Willison"
+        },
+        "发现时间": 1795477249000,
+        "来源": "海外·Simon Willison",
+        "状态": "待判断",
+        "选题": "智谱 GLM-5.4：循环架构主打泛编程",
+        "选题理由": [
+          "目标受众关注",
+          "热点话题"
+        ]
+      },
+      "id": "reczz28dJjdxZtDG",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxZtDG"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "Google 在搜索的 AI Mode 中扩展 Personal Intelligence，用户可选择安全连接 Google Wallet、Drive 和 Gemini 应用。Wallet 即日起开放，Drive 和 Gemini 应用将在未来数周跟进，意味着搜索开始读取个人数据来回答问题。",
+        "入表时间": 1795480191000,
+        "切入角度": "重点在「AI 搜索开始接入个人数据」这一趋势，以及普通用户该不该开、开了能省哪些步骤。",
+        "原文链接": {
+          "link": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+          "text": "Google Blog：AI（RSS）"
+        },
+        "发现时间": 1795453200000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "谷歌搜索 AI 模式可连钱包和网盘",
+        "选题理由": [
+          "目标受众关注",
+          "热点话题"
+        ]
+      },
+      "id": "reczz28dJjdxZFuP",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxZFuP"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "英国 AI 安全研究所发布论文，测试不同攻击生成方式对监视器评估的影响。评估一个 OpenAI 前生产监视器时，同一监视器对不同攻击策略的漏报率从 0.2% 到 23% 不等，说明只看单一评测数字会高估安全性，需要配合权限限制、人工在环和沙箱等分层防护。",
+        "入表时间": 1795480191000,
+        "切入角度": "给正在评估 AI 安全工具的人一个提醒：漏报率随攻击方式大幅波动，别把单一评测分数当结论。",
+        "原文链接": {
+          "link": "https://www.aisi.gov.uk/blog/attack-policy-selection-can-make-monitor-evaluations-misleading",
+          "text": "英国 AI Security Institute：Blog（网页）"
+        },
+        "发现时间": 1795388400000,
+        "来源": "AIHOT",
+        "状态": "待判断",
+        "选题": "红队论文：AI 监视器的漏报率会失真",
+        "选题理由": [
+          "有价值利他",
+          "热点话题"
+        ]
+      },
+      "id": "reczz28dJjdxZt4Z",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxZt4Z"
+    },
+    {
+      "created_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "created_time": 1795480191000,
+      "fields": {
+        "一句话核心内容": "OpenAI 组织了一场对谈，参与者包括 OpenAI 的 Stacey Wang、Craig Bruney，法务运营社区的 Mary O'Carroll 和律所 Cooley 的 Richard Segal，讨论企业法务团队如何用 AI 把业务背景串起来、搭建可复用的工作流，并从外部律所获得更多价值。",
+        "入表时间": 1795480191000,
+        "切入角度": "对法务、合规这类知识密集岗位，可借鉴的是「把业务背景沉淀成可复用工作流」而非单次问答。",
+        "原文链接": {
+          "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+          "text": "海外·OpenAI News"
+        },
+        "发现时间": 1795420800000,
+        "来源": "海外·OpenAI News",
+        "状态": "待判断",
+        "选题": "OpenAI 谈企业法务怎么用 AI 串起上下文",
+        "选题理由": [
+          "目标受众关注",
+          "有价值利他"
+        ]
+      },
+      "id": "reczz28dJjdxaQpT",
+      "last_modified_by": {
+        "email": "",
+        "en_name": "小k",
+        "id": "ou_eab047af7c4973a73afd347e30fa5ff5",
+        "name": "小k"
+      },
+      "last_modified_time": 1795480191000,
+      "record_id": "reczz28dJjdxaQpT"
     }
   ],
   "乔松工作室": [

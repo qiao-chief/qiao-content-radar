@@ -6,6 +6,40 @@
   <description>海外深度洞察 · 硅谷 X 一线 · 国内博主风向 · 股债金汇与专家视点</description>
   <language>zh-CN</language>
   <item>
+    <title>☀️ 乔帮主高管早报 · 11月26日</title>
+    <link>https://radar.qiao-flow.cn/#brief-2026-11-26</link>
+    <guid isPermaLink="false">qiao-brief-2026-11-26</guid>
+    <pubDate>Thu, 26 Nov 2026 08:29:17 +0800</pubDate>
+    <description><![CDATA[<h2>🔵 海外深度洞察</h2>
+<h3>1. 把斯坦福人生设计课做成一个AI提示词</h3>
+<p><code>AIHOT</code> · 11-26 07:56 · <a href="https://mp.weixin.qq.com/s/d-MoIMsMdxtR9qw3dn-8sg">阅读原文 ↗</a></p>
+<blockquote><p>作者把斯坦福《人生意义设计课》的方法改编成多轮对话提示词，分四个阶段问6到9个问题，20到30分钟生成一份5000到7000字的个人意义设计手册，含意义地图、思维误区重构、价值观罗盘和可执行的意义时刻。全程有完整实测展示。</p></blockquote>
+<h3>2. AI智能体跑着跑着就忘了规矩，470次实验测出真相</h3>
+<p><code>AIHOT</code> · 11-26 00:19 · <a href="https://dev.to/googleai/how-context-drift-impacts-your-ai-agents-1iph">阅读原文 ↗</a></p>
+<blockquote><p>谷歌开发者用470个任务实测发现：模型在73%的运行中其实察觉到文件冲突，却0%会主动告诉用户；95%到100%的情况下，任务级技能文件会覆盖全局规则文件。文章区分了上下文腐烂和上下文漂移，并给出一个免费的MCP解法。</p></blockquote>
+<h3>3. Anthropic平台负责人谈2026年怎么用Claude写软件</h3>
+<p><code>AIHOT</code> · 11-26 01:31 · <a href="https://newsletter.pragmaticengineer.com/p/how-anthropic-builds-software-in">阅读原文 ↗</a></p>
+<blockquote><p>Pragmatic Engineer播客访谈Anthropic平台工程负责人Katelyn Lesse，她的团队负责Claude API、Claude Code和桌面版的基础设施。访谈围绕2026年团队如何用Claude构建软件展开，涉及工程组织、工具链和实际工作方式的变化。</p></blockquote>
+<hr/><h2>🔴 硅谷一线实操（X）</h2>
+<h3>1. MCP 服务器自带技能，Claude Code 开箱即用</h3>
+<p><code>Boris Cherny</code> · 2026-11-24 · <a href="https://x.com/bcherny/status/2125292098165612585">看推文 ↗</a></p>
+<blockquote><p>以前接一个 MCP 工具，还得自己研究怎么让 Claude Code 用对，经常卡在配置上。现在 MCP 服务器可以打包自己的「技能」一起发布，接上就知道怎么调用，不用看文档摸索。对非技术用户来说，装工具的门槛又低了一截。</p></blockquote>
+<h3>2. Gemini 配 Antigravity 多智能体实操课</h3>
+<p><code>Peter Yang</code> · 2026-11-24 · <a href="https://x.com/petergyang/status/2125246815884984398">看推文 ↗</a></p>
+<blockquote><p>Peter Yang 用了一周末，录了免费视频课讲 Gemini 加 Antigravity 怎么配合。亮点是用 /swarm 编排多个智能体，他一度同时跑 42 个；还有 /grill-me 会反过来追问你，帮你把需求想清楚。适合想试多智能体协作的人照着上手。</p></blockquote>
+<h3>3. Vercel 开源最小编码智能体内核 libfx</h3>
+<p><code>Guillermo Rauch</code> · 2026-11-24 · <a href="https://x.com/rauchg/status/2125320020666565096">看推文 ↗</a></p>
+<blockquote><p>Rauch 说新工具做成命令行，是因为它只是 libfx 的一层薄壳。目标是做最小最聪明的编码智能体内核，能嵌进浏览器、服务器、手机、桌面各种地方。对普通用户的意义是：以后 AI 写代码的能力会直接长在你常用的软件里，不用另开工具。</p></blockquote>
+<hr/><h2>🟢 股·债·金·汇盘面与专家视点</h2>
+<table><thead><tr><th>核心资产</th><th>最新报价</th><th>涨跌幅</th></tr></thead><tbody><tr><td><strong>上证</strong></td><td><code>3476.47</code></td><td>🟢 ▼ -2.03%</td></tr><tr><td><strong>沪深300</strong></td><td><code>3898.24</code></td><td>🟢 ▼ -1.65%</td></tr><tr><td><strong>10年国债ETF</strong></td><td><code>135.83</code></td><td>🟢 ▼ -0.15%</td></tr><tr><td><strong>10Y美债</strong></td><td><code>4.85%</code></td><td>🟢 ▼ -1.14%</td></tr><tr><td><strong>国内黄金ETF</strong></td><td><code>7.169</code></td><td>🟢 ▼ -3.00%</td></tr><tr><td><strong>国际金价</strong></td><td><code>$3608.9</code></td><td>🔴 ▲ +1.32%</td></tr><tr><td><strong>人民币</strong></td><td><code>6.6653</code></td><td>🟢 ▼ -0.00%</td></tr></tbody></table>
+<h3>1. 美联储偏爱通胀指标升至3.8%，加息压力回来了</h3>
+<p><code>CNBC Economy</code> · 2026-11-25 · <a href="https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html">看原文 ↗</a></p>
+<blockquote><p>美联储最看重的通胀指标10月涨到3.8%，说明物价压力没退，市场原先指望的降息可能要往后拖。对国内投资者来说，美元利率维持高位会继续吸走全球资金，人民币资产和新兴市场承压，A股和港股的外资流入节奏也会更反复，别急着押注宽松。</p></blockquote>
+<h3>2. 格林斯潘敢赌生产率，如今的美联储却得加息</h3>
+<p><code>CNBC Economy</code> · 2026-11-25 · <a href="https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html">看原文 ↗</a></p>
+<blockquote><p>专家对比两任美联储主席：当年格林斯潘相信互联网能提高效率，所以敢维持低利率；现在没人敢赌AI马上降通胀，反而可能被迫加息。逻辑是利率走向取决于生产率能否兑现。对中国意味着美元可能偏强、资金回流美国，出口和汇率压力值得留意。</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>☀️ 乔帮主高管早报 · 11月25日</title>
     <link>https://radar.qiao-flow.cn/#brief-2026-11-25</link>
     <guid isPermaLink="false">qiao-brief-2026-11-25</guid>

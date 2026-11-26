@@ -6,6 +6,113 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] 斯科特·阿伦森：AI 将揭开数学真理的新大陆</title>
+    <link>https://simonwillison.net/2026/Nov/25/scott-aaronson/</link>
+    <guid isPermaLink="false">overseas-2ada6bc927bcede3</guid>
+    <pubDate>Thu, 26 Nov 2026 07:26:32 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/25/scott-aaronson/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>现在已经很明显，我们得到的不会是针对这个或那个复杂性问题的零散答案，而是一整块全新的数学真理大陆——一片我们此前只能透过浓雾隐约瞥见的大陆。想象一下列文虎克第一次把显微镜对准池水，或者伽利略第一次把望远镜对准星空。这或许能让你大致体会到，我们如今对复杂性理论宇宙、以及其外整个数学真理宇宙的解析清晰度，已经提升了多少。</p>
+<p>——斯科特·阿伦森</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>It’s now obvious that we’ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that we’d previously only glimpsed through fog. Picture van Leeuwenhoek first training a microscope on pondwater, or Galileo first training his telescope on the stars. That might give you some idea of how our resolution into the complexity-theoretic universe, and the whole universe of mathematical truth beyond it, has now improved.</p>
+<p>&amp;mdash; Scott Aaronson</p>
+<p>Tags: mathematics, llms, ai, generative-ai</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] 革命与复兴：Thariq Shihipar 谈 AI 如何让软件既便宜又精致</title>
+    <link>https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai/</link>
+    <guid isPermaLink="false">overseas-b294701165e549f6</guid>
+    <pubDate>Thu, 26 Nov 2026 06:28:01 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>AI 能让软件便宜到可以批量生产上千个，同时还能给你更多时间，把一件事做到位。在 AI Engineer CODE 大会上，Thariq Shihipar 展示了这两种未来如何共存。在他的格斗游戏里，他修改了 /human 文件夹中一块石头的尺寸，然后立刻试了试投掷。他还做了一个可以切换模式的 Mac Dock，用了一阵子后意识到，自己更在意的是察觉到自己什么时候分心了。</p>
+<p>我们聊了聊 Thariq 对编程智能体改变了哪些看法，决策模型如何从设计师定义的动作中做选择，以及谁来决定哪些实验值得投入算力。Thariq 在我们录制之后宣布了他加入 OpenAI 的消息。</p>
+<p>赞助商：Atlassian 的 Jira。了解更多请访问 jira.dev。</p>
+<p>节目笔记</p>
+<p>Thariq 的 CODE 主题演讲和阅读版</p>
+<p>/human 石头投掷的现场演示</p>
+<p>最初的 Dock 演示，以及他为什么不再用了</p>
+<p>Thariq 早前在 Latent Space 上关于 Claude Code 的采访</p>
+<p>Thariq 的 OpenAI 公告</p>
+<p>章节
+00:00 冷开场
+00:23 介绍和 Thariq 加入 OpenAI
+03:03 赞助商——Atlassian 的 Jira
+03:22 智能体让 Thariq 惊讶的地方
+06:47 /human 文件夹
+09:07 软件作为手艺
+11:11 游戏平衡
+15:07 野心
+19:06 决策模型
+26:34 陆地/水域测试
+30:25 个人软件
+37:46 采用
+42:24 自动研究
+48:29 人们看得见的工作</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>AI can make software cheap enough to produce by the thousand and still give you more time to make one thing feel right. At AI Engineer CODE, Thariq Shihipar shows how those two futures can coexist. In his fighting game, he edits the size of a rock in the /human folder and immediately tries the throw. He also built a Mac Dock that switched modes, used it, and realized he cared more about noticing when he got distracted.    
+We get into what Thariq changed his mind about with coding agents, how a decision model can choose from actions a designer defines, and who gets to decide which experiments deserve the compute. Thariq announced his move to OpenAI after we recorded.    
+Sponsored by Jira by Atlassian. Learn more at jira.dev.    
+Show notes</p>
+<p>Thariq’s CODE keynote and reading edition</p>
+<p>The live /human rock-throw demo</p>
+<p>The original Dock demo and why he stopped using it</p>
+<p>Thariq’s earlier Latent Space interview on Claude Code</p>
+<p>Thariq’s OpenAI announcement
+    
+Chapters    
+00:00 Cold open
+00:23 Intro and Thariq’s move to OpenAI
+03:03 Sponsor — Jira by Atlassian
+03:22 Where agents surprised Thariq
+06:47 The /human folder
+09:07 Software as craft
+11:11 Game balance
+15:07 Ambition
+19:06 Decision models
+26:34 The land/water test
+30:25 Personal software
+37:46 Adoption
+42:24 Autoresearch
+48:29 Work people can see</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] 数学证明多到读不完：AI 研究进展速览</title>
+    <link>https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/</link>
+    <guid isPermaLink="false">overseas-24af4342e17d0d6d</guid>
+    <pubDate>Thu, 26 Nov 2026 06:23:41 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Scott Aaronson 在晚餐时还在努力消化两个关于 VP ≠ VNP 的证明。甜点还没上，OpenAI 的一篇论文就声称方阵乘法的指数 ω 恰好是 9/4。吃甜点时，又一篇论文声称给出了有限傅里叶变换的匹配上界和下界。下界才是最大的新闻。今年十月，OpenAI 找到了 ω 的上界，最多不超过 9/4。找到下界等于上界，就意味着 ω 只有一个可能的值，这对大多数人来说是个令人震惊的结果。</p>
+<p>我们绘制了今年迄今为止 64 项精选的 AI 辅助研究进展。十一月占了 20 项，包括来自 Google Cogentic 的六篇预印本。这条曲线跟随公开的发布，包括仍在评审中的证明。我们把两个 VP ≠ VNP 证明算作一项，十月的更快矩阵乘法算法和十一月的匹配下界各算一项。</p>
+<p>这些重大发布凸显了论文数量可能掩盖了多少东西。OpenAI 的目录列出了 375 个成果家族中的 730 篇手稿，包括后续跟进和配套论证。其修订日志还记录了十月的三次撤稿，原因是一篇论文中的符号错误影响到了另外两篇。Yupan Liu 证明了量子交互证明只需两条消息就足够，这个结果本身就已经很了不起了。Aaronson 说 Liu 用了 AI，他自己不得不提醒自己这个结果真的发生了。</p>
+<p>另一条大新闻是，今天的嘉宾 Thariq Shihipar 宣布他从 Anthropic 跳槽到 OpenAI，这是继 Cat Wu 之后近期第二起备受关注的 Ant→OAI 跳槽。我们深入探讨了他的两种 AI 哲学，以及 /humans 在何处、如何增添品味。</p>
+<p>2026 年 11 月 25 日的 AI 新闻。我们检查了 12 个 subreddit、544 个 Twitter 账号，没有进一步检查 Discord。AINews 的网站可以搜索所有过往期刊。提醒一下，AINews 现在是 Latent Space 的一个栏目。你可以选择订阅或退订邮件频率！</p>
+<p>AI 推特回顾</p>
+<p>AI 生成的数学成果：矩阵乘法指数、因式分解与 Lean 证明</p>
+<p>矩阵乘法指数：OpenAI 的模型声称找到了一个下界，与其十月的上界匹配，使得 ω 恰好为 9/4。此前人们不知道任何非平凡的下界（@SebastienBubeck；代码库）。</p>
+<p>机制：据报道，这个结果来自一个显式的超线性电路下界（@wjmzbmr1）。</p>
+<p>影响：Bubeck 指出，此前 Lee 等人的一个结果意味着线性规划可以在 n^{9/4} 时间内求解。他还说，线性规划现在可以在强多项式时间内求解，这是一个 Smale 问题（后续跟进）。</p>
+<p>专家反应：Omri Weinstein 称如果正确的话，这“简直超现实”，因为大多数专家预期 ω = 2（@WeinsteinOmri）。</p>
+<p>OpenAI 批量发布：在一个声称的 VP ≠ VNP 证明之后一天，九篇带有 Lean 证明的新论文出炉（摘要）。</p>
+<p>其他声称：傅里叶变换的复杂度为 n√log n（@lreyzin）。</p>
+<p>整数乘法：也是 n√log n，在……下是紧的</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>AINews by Latent Space</p>
+<p>Scott Aaronson was still trying to digest two proofs of VP ≠ VNP at dinner. Before dessert, an OpenAI paper claimed that the square matrix multiplication exponent ω is exactly 9/4. During dessert, another paper claimed matching upper and lower bounds for the finite Fourier transform. The lower bound is the biggest news. In October, OpenAI found an upper bound for ω down to at most 9/4. Finding the lower bound = upper bound leaves only one possible value, which is a shocking result for most.</p>
+<p>We plotted 64 selected AI-assisted research advances so far this year. November accounts for 20, including six preprints from Google’s Cogentic. The curve follows public releases, including proofs still under review. We count the two VP ≠ VNP proofs once and give October’s faster matrix multiplication algorithm and November’s matching lower bound an entry each.</p>
+<p>The big releases underline how much a paper count can hide. OpenAI’s catalogue lists 730 manuscripts across 375 result families, including follow-ups and companion arguments. Its revision log also records three October withdrawals after a sign error in one paper affected two others. Yupan Liu showed that two messages suffice for quantum interactive proofs, a result that would have been a big deal on its own. Aaronson says Liu used AI and that he had to remind himself the result had even happened.</p>
+<p>In other big news, today’s guest Thariq Shihipar announced his big move from Anthropic to OpenAI, the second high profile Ant→OAI move in recent times after Cat Wu. We dive into his two philosophies of AI and how and where /humans add taste.</p>
+<p>AI News for 11/25/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews&#x27; website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!</p>
+<p>AI Twitter Recap</p>
+<p>AI-Generated Math Results: Matmul Exponent, Factoring and Lean Proofs</p>
+<p>Matrix multiplication exponent: OpenAI&#x27;s model claims a lower bound matching its October upper bound, making ω exactly 9/4. Previously no nontrivial lower bound was known (@SebastienBubeck; repo).</p>
+<p>Mechanism: The result reportedly comes through an explicit superlinear circuit lower bound (@wjmzbmr1).</p>
+<p>Implications: Bubeck notes that a prior Lee et al. result implies LPs solvable in n^{9/4}. He also says LPs can now be solved in strongly polynomial time, a Smale problem (follow-up).</p>
+<p>Expert reaction: Omri Weinstein calls it &quot;trul</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Latent Space] Gemini 4 Neon 标志着 GDM 作为前沿实验室的全面回归</title>
     <link>https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/</link>
     <guid isPermaLink="false">overseas-bee434900b5ec6c4</guid>
@@ -321,70 +428,6 @@ $226.6B
 <blockquote><p>See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] datasette-charts 0.2a0 发布：图表插件接入 Datasette Agent</title>
-    <link>https://simonwillison.net/2026/Nov/24/datasette-charts/</link>
-    <guid isPermaLink="false">overseas-bfe39e5b176c7b57</guid>
-    <pubDate>Tue, 24 Nov 2026 12:24:29 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/24/datasette-charts/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>发布：datasette-charts 0.2a0</p>
-<p>我昨天刚介绍了这个给 Datasette 用的新图表插件。今天它就和 Datasette Agent 打通了——现在你可以直接在聊天里要一张图，它会用同一套底层的图表推荐和生成工具帮你做出来。</p>
-<p>下面是一段演示视频，录制于 agent.datasette.io，你可以用 GitHub 登录，自己上手试试这个插件：</p>
-<p>下载视频（MP4）</p>
-<p>我给 Datasette Agent 的提示词是「用 #stats 把 sqlite-utils 的下载量随时间的变化画成图表」——输入「#stats」会弹出一个表格搜索框。它在聊天里直接给我显示了一张图，我点「在图表构建器中打开」，图表就和表格页面一起在侧边面板里打开了。我在表格页面把图表切换成「datasette」的数据，然后问 agent「这张图显示的是什么？」，它注意到我在面板里换了内容，就给我描述了新的 Datasette 图表。</p>
-<p>这里是视频中那段对话的 Markdown 导出。</p>
-<p>标签：datasette-agent、datasette、可视化</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Release: datasette-charts 0.2a0
-        
-I introduced this new charting plugin for Datasette yesterday. Today it&#x27;s gained integration with Datasette Agent, so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools.</p>
-<p>Here&#x27;s a demo video, recorded on agent.datasette.io  where you can sign in with GitHub to try the plugin yourself:</p>
-<p>Download the video (MP4)
-  
-  
-    I prompt Datasette Agent to &quot;Use #stats to show sqlite-utils downloads over time as a chart&quot; - where typing &quot;#stats&quot; opens a table search box. It shows me a chart inline in the chat, and when I click &quot;Open in the chart builder&quot; it opens the chart in a panel along with the table page. I use the table page to switch to a chart of &quot;datasette&quot;, then when I ask the agent &quot;what does the chart show?&quot; it notices that I changed the content in the panel and describes the new Datasette chart to me.</p>
-<p>Here&#x27;s a Markdown export of the chat from the video.
-    
-    
-        
-Tags: datasette-agent, datasette, visualization</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] 黄仁勋回归！OpenAI 亮出预训练曲线，微软加入</title>
-    <link>https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/</link>
-    <guid isPermaLink="false">overseas-89be47622d1f2155</guid>
-    <pubDate>Tue, 24 Nov 2026 12:14:16 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>恭喜 Sierra 估值达到去年的三倍，达到 100 亿美元；也恭喜 Z.ai 发布 GLM 5.4，这是他们首个循环 Transformer，紧随上周 Thinking Machine 小得多的 Inkling Mini 2 之后。不过，所有这些都被今天的两大头条盖过了……</p>
-<p>黄仁勋回来了。在宣布辞职十一天后，英伟达宣布他回归担任 CEO、总裁兼董事会成员。</p>
-<p>在 X 上查看帖子 ↗</p>
-<p>董事会周日与黄仁勋又开了几次会后一致投票通过，并表示收到了美国高级官员的意见（也就是财政部长和总统打电话接入董事会会议）。Colette Kress 继续担任 CFO，独立董事的调查仍在继续，黄仁勋的参议院听证会仍将在 8 天后举行。英伟达还成立了一个董事会委员会，负责国家安全和出口管制。</p>
-<p>正如 Matt Levine 指出的，董事会这次解雇又重新聘用，还有政府参与，现在调查人员被置于一个结果某种程度上已经预先确定的位置，因为两者都表明他们不需要等待任何进一步的证据出现。</p>
-<p>OpenAI 公布了其预训练损失曲线。在《困惑度与智能》一文中，首席科学家 Jakub Pachocki 绘制了从 GPT-3.5 开始的基础模型对数困惑度（基于他们内部的留出编码数据集……这有值得注意的注意事项）：</p>
-<p>在 X 上查看帖子 ↗</p>
-<p>可以把它理解为模型在留出数据集上对下一个 token 有多惊讶。越低越好。GPT-3.5 大约在 0.99，GPT-4 大约在 0.91。当 OpenAI 让一个大约 0.76 的模型（GPT6 Astra）去解决开放数学问题时，数百个前沿数学问题开始迅速被攻克。Pachocki 推测，能力的下一次跃升可能会在 0.68–0.70 左右出现。</p>
-<p>这一切都关乎前沿节奏的把控。Pachocki 提议，实验室应就开发的第一个限制达成一致，并阐明什么条件能让他们跨越它，比如思维链监控的继任者。微软的 Mustafa Suleyman 给出了第一个支持，联署并加入，在 OpenAI 的评估集上运行 MAI-2 Base，报告结果为 0.819。我们需要至少再有几个顶级实验室加入这一努力，它才能作为真正的自我监管限制形成势头，最值得注意的是 Anthropic。</p>
-<p>由 Backblaze B2 赞助</p>
-<p>如果你的数据增长快于计划，你需要能随业务增长的存储，以太比特级吞吐量为闪存和 GPU 提供数据，并且不收取出口费用。
-Backblaze B2 提供容量层存储已有二十年，管理超过 6 EB 数据，受到领先的新云、实验室和生成式 AI 公司的信赖。
-增长不应让你烦恼。无论你在构建什么，我们都有空间。
-试试看！
-咨询与费用</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Congrats to Sierra on tripling last year’s $10B valuation, and to Z.ai for releasing GLM 5.4, their first looped transformer following Thinking Machine’s much smaller Inkling Mini 2 from last week. However all these are outshone by today’s twin title stories…</p>
-<p>Jensen Huang is back. Eleven days after announcing his resignation, Nvidia announced his return as CEO, president and member of the Board of Directors.</p>
-<p>View post on X ↗</p>
-<p>The board voted unanimously after more meetings with Jensen on Sunday and said it received input from senior U.S. officials (aka the Treasury Secretary and the President dialing into the board meeting). Colette Kress remains CFO, the independent directors’ investigation continues, and Jensen’s Senate hearing is still due in 8 days. Nvidia also formed a board committee for national security and export control.</p>
-<p>As Matt Levine points out, with the firing AND the rehiring by this board with involvement from the government, the investigators are now being put in a position of having had the outcome somewhat predetermined for them, because both have demonstrated that they did not need to wait for any further evidence to come to light.</p>
-<p>OpenAI put its pretraining loss curve on the record. In Perplexity and Intelligence, Chief scientist Jakub Pachocki plotted base-model log-perplexity back to GPT-3.5 (on their internal held-out coding dataset… which has notable caveats):</p>
-<p>View post on X ↗</p>
-<p>Think of it as how surprised the model is by the next token on a held-out dataset. Lower is better. GPT-3.5 was around 0.99 and GPT-4 around 0.91. When OpenAI put a model around 0.76 (GPT6 Astra) to work on open math problems, hundreds of frontier math problems started falling quickly. Pachocki extrapolates that another jump in capabilities could come around 0.68–0.70.</p>
-<p>This is all in context of pacing the frontier. Pachocki proposes that labs agree on a first limit to development and spell out what would let them cross it, such as a successor to chain-of-thought monitoring. Microsoft’s Mustafa Suleyman gave the first win by cosigning and joining in, running MAI-2 Base on OpenAI’s evaluation set and reporting 0.819. We’d need at least a couple more top labs to join this effort for it to gather steam as a real self-regulatory limit, most notably of course, Anthropic.</p>
-<p>Sponsored by Backblaze B2</p>
-<p>If your data is growing faster than planned, you need storage that grows with your business, feeds flash and GPUs with terabit-scale throughput, and doe</p></blockquote>]]></description>
-  </item>
-  <item>
     <title>[OpenAI News] Intentful如何用dots腾出更多时间搞增长</title>
     <link>https://openai.com/business/customer-stories/intentful-dots</link>
     <guid isPermaLink="false">overseas-7e14b56be6744308</guid>
@@ -405,67 +448,6 @@ Backblaze B2 提供容量层存储已有二十年，管理超过 6 EB 数据，�
 <p>亚马逊正在证明自己与其他算力提供商不一样，尽管他们也释放出愿意牺牲利润来服务前沿需求的信号。</p>
 <hr/><h2>英文原文（Original）</h2>
 <blockquote><p>Amazon makes the case they are not like other compute providers, even as they signal the willingness to give up margin to serve the frontier.</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] 黎曼猜想被证明……两次独立证明？</title>
-    <link>https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/</link>
-    <guid isPermaLink="false">overseas-5c282b7409adeedb</guid>
-    <pubDate>Sat, 21 Nov 2026 13:02:13 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>在几小时内（时间线），两位数学家分别宣称独立证明了黎曼猜想——数学界最著名的未解难题（《科学美国人》报道）。</p>
-<p>Anthropic 的 Levent Alpöge 首先发布了一份由 Claude 驱动的证明，以 Lean 代码形式呈现（1.3GB，约相当于25万页），而非完整论文。Elliot Glazer 确认形式化陈述是广义黎曼猜想（GRH），并认为 Lean 出 bug 的概率远低于1%。因此，如果编译完成且没有额外公理，它大概率是正确的，而人类永远没人能读完它……</p>
-<p>……这促使 Alessandro Masullo 发布了他940页、100%由人类完成、仍在进行中的证明——他为此已经研究了12年（据 Kevin Hartnett 说，该证明一直在秘密人工评审和修订中）。</p>
-<p>这是前沿数学突破三部曲中的第三部，前两部是纳维-斯托克斯方程的解和准黎曼界，但事情似乎还没完。OpenAI 九月份的纳维-斯托克斯声明仍是前车之鉴：批评者认为其 Lean 证明与自然语言结果不符。两项 AI 宣称的千禧年大奖难题成果都需要数年时间来验证。</p>
-<p>除了这个数学界最著名问题的惊人成就外，人们无法忽视一个对比：AI 写出的解可能正确但难以理解，而另一个解可能技术上不正确但可以理解。</p>
-<p>由 Agentfield.AI 赞助
-开源模型已就绪。大多数编码工具还没准备好。在 DeepSWE 上，CodeAF 在相同开源模型下于十款工具中排名第一，领先于 Claude Code，且每次修复成本最低。
-试试 CodeAF！</p>
-<p>正如 Levent 雄辩地指出：“在接近终点线时，Claude 远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。”</p>
-<p>这也与我们播客和本通讯中讨论过的其他 AI 主题相关：</p>
-<p>Slop 的本质：Levent 说：“我在尚未掌握其数学领域一大片周边知识的情况下，就向世界呈现了一个完整论证。显然，试图发布某种庞大不可读的‘slop’是不合适的，所以我决定只呈现 Lean。” 《No Slop 宣言》的核心原则之一是你应该理解你所交付的东西（“Slop 就是我们在生产某物时投入的精力少于我们要求消费者花在理解它上的精力。”）。然而，这一大堆 Lean 代码可验证正确，且在人类历史上意义重大。我们是否应该仅仅因为我们没有理解它的每一部分，就将其发布推迟十年？</p>
-<p>弱到强对齐：使用智能体的典型体验是强到弱——我们作为通用智能，指导不那么聪明的 AI 去做我们擅长的事情。我们也常常期望 AI 自动化大多数……</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Within a few hours of each other (timeline), two mathematicians claimed independent proofs of the Riemann Hypothesis, the most famous open problem in mathematics (Scientific American).</p>
-<p>Levent Alpöge of Anthropic first made his Claude-driven proof in a note released with Lean code (1.3GB worth, ~250,000 page equivalent) rather than a full paper. Elliot Glazer confirms that the formalized statement is GRH and puts the chance of a Lean bug well under 1%. So if it finishes compiling with no extra axioms, it is probably correct, and no human will ever have read all of it…</p>
-<p>…prompting Alessandro Masullo to release his 940 page, 100% human, work in progress proof he had been working on for the last 12 years (and had been undergoing secret manual review and revision per Kevin Hartnett).</p>
-<p>This is the third in the trilogy of frontier math breakthroughs, following from the Navier Stokes solutions and the Quasi-Riemann bounding, but it doesn’t feel over. OpenAI&#x27;s September Navier-Stokes claim is still the cautionary tale: critics argued that its Lean proof did not match the natural-language result. Both AI-claimed Millennium Prize results will take years to verify.</p>
-<p>Apart from the incredible accomplishment of the most famous problem in mathematics, one cannot miss the contrast that the AI-written solution is probably correct but incomprehensible, and the other solution is probably technically incorrect but understandable.</p>
-<p>Sponsored by Agentfield.AI
-Open models are ready. Most coding harnesses aren’t. On DeepSWE, CodeAF finished #1 of ten on the same open model, ahead of Claude Code, at the lowest cost per fix.
-Try CodeAF!</p>
-<p>As Levent eloquently put it: “Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.”</p>
-<p>This also ties into other AI themes we’ve covered on the podcast and on this newsletter:</p>
-<p>The nature of Slop: Levent says “I am presenting the world with a complete argument before having mastered a massive neighbourhood around its mathematics. It being obviously inappropriate to attempt to post some massive unreadable travesty of &quot;slop&quot;, I decided to only present Lean.” One of the key tenets of the No Slop Manifesto is that you should understand what you ship (“Slop is when we put less effort into producing something than we ask the consumer to spend understanding it.”). And yet, this giant pile of Lean is verifiably correct and is incredibly significant in human history. Should we have delayed</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Stratechery] 2026.47：华盛顿失意</title>
-    <link>https://stratechery.com/2026/down-in-dc/</link>
-    <guid isPermaLink="false">overseas-f940ebc8ce1254af</guid>
-    <pubDate>Sat, 21 Nov 2026 03:09:57 +0800</pubDate>
-    <description><![CDATA[<p><code>Stratechery</code> · <a href="https://stratechery.com/2026/down-in-dc/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>安德鲁犯了个致命错误——对奇才队抱了太大希望；在Sharp Text节目里，他琢磨着这一切到底是怎么搞砸的。（图片：Todd Olszewski/Getty Images）</p>
-<p>欢迎回到本周的Stratechery！</p>
-<p>提醒一下：每周五我们都会发送这份Stratechery内容包概览，标亮的链接对所有人免费。另外，你完全可以自己控制我们发给你的内容。如果你不想收到This Week in Stratechery的邮件（没有播客），请在投递设置里取消勾选。</p>
-<p>说到这里，以下是本周我们最喜欢的几篇。</p>
-<p>讣告与例外主义。在黄仁勋令人震惊地离职几天后，本在周一的文章里写了一篇综合讣告，悼念可能正在终结的美国多个时代。文章梳理了让黄仁勋伟大的那些决策、让他成为靶子的那些策略、他的离去对科技生态其余部分的影响，以及美国政府对科技公司——尤其是AI公司——看法的转变，而黄仁勋始终没能适应这种转变。周一的文章既全面又动人。——安德鲁·夏普</p>
-<p>关于智能体的争论。Stratechery的常客、广告专家埃里克·索弗特在数字广告格局的看法上常常和本一致，所以本周的Stratechery访谈很有意思：本坚信智能体商务有巨大潜力，而埃里克过去一年一直在（正确地）戳穿各种被炒作的智能体商务故事和趋势。两人周四各自陈述了观点，访谈前后还聊了Muse打算怎么变现、市场为何误读了谷歌最近的财报，以及ChatGPT在广告业务上的进展。——AS</p>
-<p>本入手了一台Duo。在满是英伟达观点和不祥基础设施故障的一周里，我惊喜地发现本不仅买了一台iPhone Duo，还很喜欢它。周二Update结尾有他的评测，接着周二Dithering里他和约翰·格鲁伯的讨论也别错过。本周Sharp Tech结尾我们又绕回来（Duo回来？）把这一切聊了个遍，包括一些上手测试、和iPhone Air的对比，以及对iPhone Pro的各种吐槽。——AS</p>
-<p>本文由以下赞助商呈现</p>
-<p>随着AI模型不断进步，你可能会以为市场会向少数几家提供商集中。但用户数据讲的是另一个故事。</p>
-<p>在OpenRouter每月消费至少100美元的客户中，过去一年里使用中的AI模型家族数量中位数翻了一倍，从三个增加到六个。</p>
-<p>即便AI模型能力越来越强，企业用的模型却越来越多，而不是越来越少。这让</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Andrew made the fatal mistake of getting his hopes up for the Wizards; on Sharp Text he wonders how it all went wrong. (Photo by Todd Olszewski/Getty Images)</p>
-<p>Welcome back to This Week in Stratechery!</p>
-<p>As a reminder, each week, every Friday, we&amp;#8217;re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone. Additionally, you have complete control over what we send to you. If you don&amp;#8217;t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your delivery settings.</p>
-<p>On that note, here were a few of our favorites this week.</p>
-<p>Obituaries and Exceptionalism. After several days to mull the shocking departure of Jensen Huang, Ben&amp;#8217;s article on Monday delivered an omnibus obituary for a variety of American eras that may now be ending. Tracing the decisions that made Huang great, the strategies that made him a target, the implications of his demise for the rest of the tech ecosystem, and a shift in the U.S. government&amp;#8217;s perspective on tech companies — and specifically AI companies — to which Huang never quite adapted, Monday&amp;#8217;s piece was both comprehensive and poignant. — Andrew Sharp</p>
-<p>Arguments About Agents. Recurring Stratechery guest and advertising expert Eric Seufert is often aligned with Ben in his view of the digital advertising landscape, which is why this week&amp;#8217;s Stratechery Interview was fun: Ben is a big believer in the potential upside in agentic commerce, while Eric has been (correctly) calling BS on a variety of hyped agentic commerce stories and trends over the past year. Both of them made their case Thursday, and it was sandwiched between thoughts on how Muse plans to monetize, why the market have misread Google&amp;#8217;s recent earnings report, and ChatGPT&amp;#8217;s progress building an ads business. — AS</p>
-<p>Ben Gets a Duo. In the middle of a heavy week of Nvidia takes and ominous infrastructure failures, I was delighted to find out that Ben not only purchased an iPhone Duo, but loved it. Come for his review at the end of Tuesday&amp;#8217;s Update, and then stay for his discussion with John Gruber on Tuesday&amp;#8217;s Dithering. We doubled back (Duo&amp;#8217;d back?) to discuss all of it at the end of this week&amp;#8217;s Sharp Tech, including some hands-on testing, comparisons to the iPhone Air, and a variety of shots fired at the iPhone Pro. — AS</p>
-<p>Presented by</p>
-<p>As AI models improve, you might expect the market will consolidate around a handful of p</p></blockquote>]]></description>
   </item>
 </channel>
 </rss>

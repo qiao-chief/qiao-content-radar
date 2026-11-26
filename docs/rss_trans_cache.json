@@ -598,5 +598,45 @@
   "macro:https://www.project-syndicate.org/commentary/overlooked-supply-chain-risks-undermine-national-security-by-fiona-e-murray-and-constanze-coelsch-foisner-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
     "zh_title": "绘制战略供应链风险地图",
     "zh_body": "如果为了打造有韧性的供应链需要付出额外成本，这笔钱该由谁来出？答案可以通过三步走的方式找到：先找出当前的薄弱环节，再让市场和公开招标为这些风险定价，最后只在市场定价失灵的地方，才让国家安全部门出手干预。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/25/scott-aaronson/": {
+    "zh_title": "斯科特·阿伦森：AI 将揭开数学真理的新大陆",
+    "zh_body": "现在已经很明显，我们得到的不会是针对这个或那个复杂性问题的零散答案，而是一整块全新的数学真理大陆——一片我们此前只能透过浓雾隐约瞥见的大陆。想象一下列文虎克第一次把显微镜对准池水，或者伽利略第一次把望远镜对准星空。这或许能让你大致体会到，我们如今对复杂性理论宇宙、以及其外整个数学真理宇宙的解析清晰度，已经提升了多少。\n\n——斯科特·阿伦森"
+  },
+  "overseas:https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai/": {
+    "zh_title": "革命与复兴：Thariq Shihipar 谈 AI 如何让软件既便宜又精致",
+    "zh_body": "AI 能让软件便宜到可以批量生产上千个，同时还能给你更多时间，把一件事做到位。在 AI Engineer CODE 大会上，Thariq Shihipar 展示了这两种未来如何共存。在他的格斗游戏里，他修改了 /human 文件夹中一块石头的尺寸，然后立刻试了试投掷。他还做了一个可以切换模式的 Mac Dock，用了一阵子后意识到，自己更在意的是察觉到自己什么时候分心了。\n\n我们聊了聊 Thariq 对编程智能体改变了哪些看法，决策模型如何从设计师定义的动作中做选择，以及谁来决定哪些实验值得投入算力。Thariq 在我们录制之后宣布了他加入 OpenAI 的消息。\n\n赞助商：Atlassian 的 Jira。了解更多请访问 jira.dev。\n\n节目笔记\n\nThariq 的 CODE 主题演讲和阅读版\n\n/human 石头投掷的现场演示\n\n最初的 Dock 演示，以及他为什么不再用了\n\nThariq 早前在 Latent Space 上关于 Claude Code 的采访\n\nThariq 的 OpenAI 公告\n\n章节\n00:00 冷开场\n00:23 介绍和 Thariq 加入 OpenAI\n03:03 赞助商——Atlassian 的 Jira\n03:22 智能体让 Thariq 惊讶的地方\n06:47 /human 文件夹\n09:07 软件作为手艺\n11:11 游戏平衡\n15:07 野心\n19:06 决策模型\n26:34 陆地/水域测试\n30:25 个人软件\n37:46 采用\n42:24 自动研究\n48:29 人们看得见的工作"
+  },
+  "overseas:https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/": {
+    "zh_title": "数学证明多到读不完：AI 研究进展速览",
+    "zh_body": "Scott Aaronson 在晚餐时还在努力消化两个关于 VP ≠ VNP 的证明。甜点还没上，OpenAI 的一篇论文就声称方阵乘法的指数 ω 恰好是 9/4。吃甜点时，又一篇论文声称给出了有限傅里叶变换的匹配上界和下界。下界才是最大的新闻。今年十月，OpenAI 找到了 ω 的上界，最多不超过 9/4。找到下界等于上界，就意味着 ω 只有一个可能的值，这对大多数人来说是个令人震惊的结果。\n\n我们绘制了今年迄今为止 64 项精选的 AI 辅助研究进展。十一月占了 20 项，包括来自 Google Cogentic 的六篇预印本。这条曲线跟随公开的发布，包括仍在评审中的证明。我们把两个 VP ≠ VNP 证明算作一项，十月的更快矩阵乘法算法和十一月的匹配下界各算一项。\n\n这些重大发布凸显了论文数量可能掩盖了多少东西。OpenAI 的目录列出了 375 个成果家族中的 730 篇手稿，包括后续跟进和配套论证。其修订日志还记录了十月的三次撤稿，原因是一篇论文中的符号错误影响到了另外两篇。Yupan Liu 证明了量子交互证明只需两条消息就足够，这个结果本身就已经很了不起了。Aaronson 说 Liu 用了 AI，他自己不得不提醒自己这个结果真的发生了。\n\n另一条大新闻是，今天的嘉宾 Thariq Shihipar 宣布他从 Anthropic 跳槽到 OpenAI，这是继 Cat Wu 之后近期第二起备受关注的 Ant→OAI 跳槽。我们深入探讨了他的两种 AI 哲学，以及 /humans 在何处、如何增添品味。\n\n2026 年 11 月 25 日的 AI 新闻。我们检查了 12 个 subreddit、544 个 Twitter 账号，没有进一步检查 Discord。AINews 的网站可以搜索所有过往期刊。提醒一下，AINews 现在是 Latent Space 的一个栏目。你可以选择订阅或退订邮件频率！\n\nAI 推特回顾\n\nAI 生成的数学成果：矩阵乘法指数、因式分解与 Lean 证明\n\n矩阵乘法指数：OpenAI 的模型声称找到了一个下界，与其十月的上界匹配，使得 ω 恰好为 9/4。此前人们不知道任何非平凡的下界（@SebastienBubeck；代码库）。\n\n机制：据报道，这个结果来自一个显式的超线性电路下界（@wjmzbmr1）。\n\n影响：Bubeck 指出，此前 Lee 等人的一个结果意味着线性规划可以在 n^{9/4} 时间内求解。他还说，线性规划现在可以在强多项式时间内求解，这是一个 Smale 问题（后续跟进）。\n\n专家反应：Omri Weinstein 称如果正确的话，这“简直超现实”，因为大多数专家预期 ω = 2（@WeinsteinOmri）。\n\nOpenAI 批量发布：在一个声称的 VP ≠ VNP 证明之后一天，九篇带有 Lean 证明的新论文出炉（摘要）。\n\n其他声称：傅里叶变换的复杂度为 n√log n（@lreyzin）。\n\n整数乘法：也是 n√log n，在……下是紧的"
+  },
+  "macro:https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html": {
+    "zh_title": "格林斯潘敢押注生产率，沃什为何必须加息？",
+    "zh_body": "艾伦·格林斯潘当年顶住压力坚持利率立场，是因为他相信互联网繁荣带来的生产率承诺。凯文·沃什为什么不能照做呢？"
+  },
+  "macro:https://www.project-syndicate.org/commentary/eu-cannot-select-envoy-for-peace-talks-with-russia-by-yanis-varoufakis-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "谁能在对俄和谈中代表欧洲？",
+    "zh_body": "欧盟在谈判中找不到一个能代表它的人，这反映的是结构性失败，而不是缺人才。正因如此，欧盟应当让位，把特使人选的决定权交给英国、法国和德国。"
+  },
+  "macro:https://www.cnbc.com/2026/11/25/holiday-inflation-thanksgiving-travel-food-gifts.html": {
+    "zh_title": "连玩具都涨价了：美国人如何缩减假日计划",
+    "zh_body": "2026年，美国消费者在食品、出行和礼物上的开销都在上涨。通胀叠加伊朗战事引发的能源冲击，正给假日预算带来压力。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/fossil-fuel-phase-out-doesnt-require-success-at-cop-by-gernot-wagner-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "化石燃料终局无需COP共识",
+    "zh_body": "尽管今年的联合国气候谈判未能取得成果，但毫无疑问，逐步淘汰化石燃料是正确的目标。唯一的问题是，一个“意愿联盟”能否运用政策手段，推动市场以比传统COP进程更快、更公平、更平稳的方式完成转型。"
+  },
+  "macro:https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html": {
+    "zh_title": "美联储青睐的通胀指标10月加速至3.8%，加大央行2027年政策压力",
+    "zh_body": "据道琼斯共识预期，10月个人消费支出价格指数预计将显示年通胀率为3.8%。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/nvidia-scandal-who-controls-americas-ai-chokepoint-by-carla-norrlof-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "谁掌控了美国AI的命门？",
+    "zh_body": "黄仁勋被赶下台又突然回归英伟达CEO之位，这出戏暴露了美国技术霸权核心的一个悖论。英伟达的AI芯片让美国有了拿捏中国的筹码，但英伟达所成就的这种地缘政治力量，反过来又让它有了拿捏美国的筹码。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/how-to-update-wto-aid-for-trade-to-support-continued-development-cooperation-by-arancha-gonzalez-laya-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "发展合作依然有生命力",
+    "zh_body": "过去20年里，世界贸易组织的“促贸援助”倡议帮助发展中经济体建设贸易所需的能力和基础设施，使这些国家在全球出口中所占的份额显著提升。但贸易格局正在快速变化，“促贸援助”也必须与时俱进。"
   }
 }

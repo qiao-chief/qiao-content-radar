@@ -6,6 +6,30 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] sqlite3_rsync：SQLite 数据库远程复制工具</title>
+    <link>https://simonwillison.net/2026/Nov/26/sqlite3-rsync/</link>
+    <guid isPermaLink="false">overseas-7de39f044da3622e</guid>
+    <pubDate>Thu, 26 Nov 2026 14:08:25 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/26/sqlite3-rsync/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>sqlite3_rsync 这个 SQLite 附加工具已经出现一段时间了——它是在 2024 年 10 月作为“实验性”功能随 SQLite 3.47.0 加入的，并在 2025 年 5 月的 SQLite 3.50.0 中得到增强。直到今天我才理解它最吸引人的一个特性。</p>
+<p>通常，如果你想获取 SQLite 数据库的快照副本，你需要使用备份 API 或 VACUUM INTO。这两种方式都需要足够的磁盘空间来创建数据库的完整副本，所以如果你在小实例上，并且已经使用了超过一半的可用磁盘，那就完全没辙了。</p>
+<p>sqlite3_rsync 可以通过 SSH 连接将数据库快照复制到另一台机器，而无需先在本地创建完整副本！</p>
+<p>它也适合同步数据库的现有副本，而无需通过网络重新传输整个数据库。它的工作方式与常规 rsync 类似：</p>
+<p>该协议的核心思想是，副本端将页面或页面组的加密哈希发送到源端。源端返回不同的页面内容，或者如果多页哈希不匹配，则请求更细粒度的哈希。如果源端和副本端开始时差异巨大，由于交换哈希的开销，总网络带宽可能超过整个数据库的大小，但超出的带宽不大——最多几个百分点。</p>
+<p>更新：哈哈！原来我在 2024 年 10 月该工具首次发布时就写过 sqlite_rsync 的这个应用。</p>
+<p>标签：备份，sqlite</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>sqlite3_rsync: Database Remote-Copy Tool For SQLite
+This additional SQLite tool has been around for a while now - it was added as &quot;experimental&quot; in SQLite 3.47.0 in October 2024 and enhanced in SQLite 3.50.0 in May 2025. It was only today that I understood one of its most attractive characteristics.</p>
+<p>Normally, if you want to grab a snapshot copy of a SQLite database, you need to use either the backup API or VACUUM INTO. In both cases you need enough disk space to create a duplicate copy of your database, so if you&#x27;re on a small instance and you already use more than half of the available disk you are plain out of luck.</p>
+<p>sqlite3_rsync can copy a snapshot of your database over an SSH connection to another machine, without first needing to create a full local copy!</p>
+<p>It&#x27;s also good for synchronizing an existing copy of a database without re-transmitting the entire thing over the network. It works in a similar way to regular rsync:</p>
+<p>The core idea behind the protocol is that the replica sends cryptographic hashes for pages or groups of pages over to the origin side. The origin sends back page content that differs, or requests finer-grain hashes if a multi-page hash does not match. If the origin and replica start out being vastly different, the total network bandwidth can exceed the size of the entire database, due to the overhead of exchanging hashes, but the excess bandwidth is not great - a few percent at most.</p>
+<p>Update: Hah! Turns out I wrote about this application of sqlite_rsync back in October 2024 when the tool was first released.</p>
+<p>Tags: backups, sqlite</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Simon Willison] 斯科特·阿伦森：AI 将揭开数学真理的新大陆</title>
     <link>https://simonwillison.net/2026/Nov/25/scott-aaronson/</link>
     <guid isPermaLink="false">overseas-2ada6bc927bcede3</guid>
@@ -113,6 +137,32 @@ Chapters
 <p>Expert reaction: Omri Weinstein calls it &quot;trul</p></blockquote>]]></description>
   </item>
   <item>
+    <title>[Simon Willison] datasette-charts 0.3a0 发布：新增图表标注功能</title>
+    <link>https://simonwillison.net/2026/Nov/25/datasette-charts/</link>
+    <guid isPermaLink="false">overseas-e0577f40419a647d</guid>
+    <pubDate>Thu, 26 Nov 2026 02:16:50 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/25/datasette-charts/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>datasette-charts 0.3a0 版本发布</p>
+<p>我给 datasette-charts 加上了图表标注功能！</p>
+<p>现在你可以先渲染出一张图表，然后用线条、阴影区域、文字标签，或者这三者的组合来给它做标注。</p>
+<p>带标注的图表长这样：</p>
+<p>这张图在 Datasette Lite 里也能看到，你可以在图表构建器界面里调整标注：</p>
+<p>如果你还安装了 Datasette Agent，这个智能体就能帮你生成带标注的图表。下面是我在 agent.datasette.io 演示站点上，用这个提示词得到的结果：</p>
+<p>展示一张图表，对比 Simon 打上 LLM 标签的内容和打上 Datasette 标签的内容，并加上标注</p>
+<p>标签：datasette、可视化、datasette-charts</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-charts 0.3a0
+        
+I added chart annotations to datasette-charts!</p>
+<p>You can now render a chart and then annotate it with lines, shaded areas, labels, or a combination of the three.</p>
+<p>A chart with annotations looks like this:</p>
+<p>Here&#x27;s that same chart in Datasette Lite, where you can tweak the annotations using the chart builder UI:</p>
+<p>If you also install Datasette Agent the agent can build annotated charts for you. Here&#x27;s what I got on the agent.datasette.io demo for this prompt:</p>
+<p>Show a chart comparing Simon&#x27;s tagged content about LLMs with his tagged content about Datasette, with annotations</p>
+<p>Tags: datasette, visualization, datasette-charts</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Latent Space] Gemini 4 Neon 标志着 GDM 作为前沿实验室的全面回归</title>
     <link>https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/</link>
     <guid isPermaLink="false">overseas-bee434900b5ec6c4</guid>
@@ -159,72 +209,6 @@ Chapters
 <p>Riemann proof clarifications: Levent Alpöge says the &quot;250,000+ pages&quot; claim was a joke. He released only the Lean code because he could not produce a readable writeup, and called it &quot;full of garbage obviously, but compiles&quot; (@kimmonismus, @simonw).</p>
 <p>Lineage claim: A Zhihu analysis traces Alpöge&#x27;s key method to a short OpenAI proof excluding Landau–Siegel zeros. This is an attributed inference (@ZhihuFrontier).</p>
 <p>GPT-6 protein design, wet-lab validated: OpenAI released a preprint showing GPT-6 models designing new protei</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] 十二个月，三个拐点：LLM 与编程智能体的能力跃迁</title>
-    <link>https://simonwillison.net/2026/Nov/24/llm-inflection-points/</link>
-    <guid isPermaLink="false">overseas-0b260d07579db847</guid>
-    <pubDate>Wed, 25 Nov 2026 07:02:07 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>几周前，我在 AI Engineer Code Summit 上做了一场主题演讲，核心观点是：过去十二个月里，大语言模型和编程智能体的能力出现了三个重要的拐点。</p>
-<p>这里是演讲视频。这篇文章里，我想把「拐点」这条主线单独拎出来，再往深里聊一聊。</p>
-<p>2025 年 11 月的编程智能体</p>
-<p>今天是 2026 年 11 月 24 日，正好是 Claude Opus 4.5 发布一周年。回头看，这是一款影响深远的模型。</p>
-<p>在 Opus 4.5 的发布公告里，Anthropic 是这么说的：</p>
-<p>测试者注意到，Claude Opus 4.5 能自己处理模糊地带、权衡取舍，不需要人手把手带着走。他们告诉我们，面对一个复杂的、跨多个系统的 bug，Opus 4.5 能自己把修复方案找出来。他们说，几周前对 Sonnet 4.5 来说几乎不可能完成的任务，现在够得着了。</p>
-<p>这话经得起检验。</p>
-<p>那时候 Claude Code 才 9 个月大，它是 2025 年 2 月 24 日跟 Claude 3.7 Sonnet 一起推出的。</p>
-<p>Opus 4.5 是我用 Claude Code 时，第一个「默认结果基本就是对的」的模型。在那之前，我没把 Claude Code 当日常主力工具用，因为觉得它不够可靠——我经常得纠正它，用起来不像明显的加速器。</p>
-<p>新的 Opus 改变了这一点。我日常遇到的大部分编程问题，Opus 都能做对。它显然比我自己从头解决要快。</p>
-<p>同样在 11 月，OpenAI 发布了 GPT-5.1 Instant、GPT-5.1 Thinking、GPT-5.1-Codex 和 GPT-5.1-Codex-Max。这些模型对它们的 Codex 编程智能体产生了类似的效果：在我很多编程任务上，它变得稳定可用了。</p>
-<p>时间点很巧，因为圣诞假期就在眼前。很多人，包括我自己，整个 12 月都在摆弄这些新工具，看看它们能干什么。到了 1 月，我们已经准备好拿它们干正经活了。</p>
-<p>6、7 月的 Fable 级模型</p>
-<p>我们第一次听到 Claude Fable 的风声是在 4 月，当时 Anthropic 宣布了 Claude Mythos，并说它因为网络安全能力太强、太危险，所以不发布。Mythos 不仅能找出安全漏洞，还能想出怎么利用这些漏洞。</p>
-<p>6 月，我们亲眼见识了这个模型有多强——Claude Fable 5 发布，它是被「拔了牙」的 Mythos：大部分问题都能解决，但会主动阻止你拿它做安全相关的工作。</p>
-<p>风光了三天之后……美国政府把它收走了。Fable 5 被列入出口管制，实际上等于禁掉了这个模型。直到 7 月 1 日我们才重新拿回来。</p>
-<p>对我来说，Fable 是一个拐点，因为它让我们认识了现在被我称为「Fable 级模型」的东西。我的定义是：</p>
-<p>在 J</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>I gave a keynote at the AI Engineer Code Summit a couple of weeks ago, constructed around the idea that there have been three significant inflection points in the abilities of LLMs and coding agents in the past twelve months.</p>
-<p>Here&#x27;s the video of the talk. In this post I&#x27;m going to pull out the major inflection point theme and interrogate it more deeply.</p>
-<p>Coding agents in November 2025</p>
-<p>Today, November 24th 2026, is the one year anniversary of the release of Claude Opus 4.5. With hindsight, this was a consequential model.</p>
-<p>In the Opus 4.5 announcement, Anthropic said:</p>
-<p>Testers noted that Claude Opus 4.5 handles ambiguity and reasons about tradeoffs without hand-holding. They told us that, when pointed at a complex, multi-system bug, Opus 4.5 figures out the fix. They said that tasks that were near-impossible for Sonnet 4.5 just a few weeks ago are now within reach.</p>
-<p>This held up.</p>
-<p>Claude Code was 9 months old at that point, having been introduced alongside Claude 3.7 Sonnet on February 24th, 2025.</p>
-<p>Opus 4.5 was the first model I had used with Claude Code where the default result was generally the right thing. I hadn&#x27;t been using Claude Code as a daily driver because it didn&#x27;t feel reliable enough - I had to correct it often enough that it didn&#x27;t feel like a clear accelerant.</p>
-<p>The new Opus changed that. For most of the coding problems I faced on a daily basis, Opus would get them right. It was clearly faster than working through the problems myself.</p>
-<p>Also in November, OpenAI released GPT-5.1 Instant, GPT-5.1 Thinking, GPT-5.1-Codex, and GPT-5.1-Codex-Max. These had a similar effect on their Codex coding agent: it became reliably useful for many of my coding tasks.</p>
-<p>The timing was convenient, because the December holidays were upon us. A lot of people, myself included, spent December tinkering with these new tools to see what they could do. By January we were ready to use them for our actual work.</p>
-<p>Fable class models in June/July</p>
-<p>We got our first hint of Claude Fable in April, when Anthropic announced Claude Mythos and said that it was too dangerous to release, due to its improved cybersecurity capabilities. Mythos was a model that could not just find security vulnerabilities, it could also figure out how to exploit them.</p>
-<p>In June we got to see how good that model was for ourselves, with the release of Claude Fable 5 - a defanged Mythos, that would solve most problems but would actively block you from using it for security work.</p>
-<p>After three glorious day</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] GPT 6.2 Astra 解开历史谜团</title>
-    <link>https://simonwillison.net/2026/Nov/24/astra-historical-mystery/</link>
-    <guid isPermaLink="false">overseas-2d9b2b8de4028adf</guid>
-    <pubDate>Wed, 25 Nov 2026 00:53:59 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/24/astra-historical-mystery/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>这里有一个有趣的案例研究，展示了如何使用 GPT-6.2 Astra 进行历史研究，来自历史学教授 Mark Humphries：</p>
-<p>只需极少的提示，GPT-6.2 Astra 就能自主识别出耶鲁大学拜内克图书馆所藏一本 1808 年匿名速写本的创作者。它完成这项任务的速度极快（仅用 22 分钟），使用的是公开可获取的一手和二手资料。为此，它在一份论文档案中发现了一个鲜为人知的来源，预测如果加以检验就能证明其假设，最终也确实得到了证实。不仅如此，这个新来源本身还是一项重大发现，将引起加拿大史和毛皮贸易史学家的浓厚兴趣。</p>
-<p>这里是数字化的速写本。</p>
-<p>Astra 找到了一篇日记中提到的夏博子爵的到访记录，日期比速写本中提到的附近河流的日期早五天，并推测夏博的旅行日记（只能从克利夫兰州立大学订购）可能证实这本速写本出自他手。</p>
-<p>历史学家是否也将迎来一轮“深蓝”时刻？Mark 认为影响会比较温和：</p>
-<p>但如果以数学领域的经验为鉴，我们也可以预料，明年春天或夏天的某个时候，我们将面临一种信心危机，因为我们难以理解如何应对能够做人类历史学家做不到的事情的智能体系统。平心而论，这场危机对我们来说几乎肯定不如对数学领域那么深刻。数学的问题当然在于，解决困难的数学问题就是全部的游戏。而历史学家则不断根据不断变化的当下重新解释过去；我们不追求单一的普遍真理。我们（至少在理想情况下）写的书和文章也更接近哲学和文学作品，而不是科学论文。因此，人性在某种程度上是生产历史文献的一个必要条件。</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>GPT 6.2 Astra Solves a Historical Mystery
-Here&#x27;s an interesting case-study in using GPT-6.2 Astra for historical research, from history professor Mark Humphries:</p>
-<p>With only minimal prompting, GPT-6.2 Astra was able to autonomously identify the creator of an anonymous 1808 sketchbook held at Yale’s Beinecke Library. It did so extremely quickly (in just 22 minutes), using publicly available primary and secondary sources. To do so, it discovered a little known source in a paper archive, predicted that it would prove its hypothesis if examined and, in the end, it did. Not only that, but this new source turns out to be a major find on its own that will be of significant interest to both Canadian and fur trade historians.</p>
-<p>Here&#x27;s the digitized sketchbook.</p>
-<p>Astra found a diary reference reference to a visit by the vicomte de Chabot dated five days before a date mentioned in the sketchbook at a nearby river, and suggested that Chabot&#x27;s journal of his travels (only available by order from Cleveland State University) might confirm that the sketchbook was his work.</p>
-<p>Are historians due for a round of Deep Blue? Mark thinks it will be mild:</p>
-<p>But if the experience of mathematics is any guide, we can also anticipate that sometime next spring or summer we’ll face a sort of crisis of confidence as we struggle to understand how to respond to agentic systems that can do things human historians cannot. To be fair, that crisis will almost certainly be less profound for us than it is for math. The problem in mathematics, of course, is that solving hard math problems was the whole game. Historians, on the other hand, constantly reinterpret the past in light of an evolving present; we don’t chase a single universal truth. We also (in the ideal at least) write books and articles that are closer to works of philosophy and literature than they are to scientific tracts. Humanity is thus something of a requirement for the production of historical literature.</p>
-<p>Tags: history, ai, generative-ai, llms, ai-assisted-search, deep-blue, gpt-6-astra</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 承诺恐惧症（应用版）</title>

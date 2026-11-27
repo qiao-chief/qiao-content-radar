@@ -6,6 +6,47 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Latent Space] Clay如何打造GTM智能体——AI负责人Jeff Barg访谈</title>
+    <link>https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/</link>
+    <guid isPermaLink="false">overseas-3063f177323d0010</guid>
+    <pubDate>Fri, 27 Nov 2026 07:02:48 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>Clay希望无论你使用它自家的智能体，还是把Claude Code指向Clay，都能得到大致相同的结果。目前Clay智能体与外部工具的使用量已经接近五五开。本期节目我们与Clay的AI负责人Jeff Barg聊了聊，构建任何智能体都能使用的GTM基础设施需要哪些条件。</p>
+<p>Jeff是在Clay收购Avenue时加入的，Avenue是他联合创办的运营告警初创公司。当时Clay大约有50人，Avenue有5人。AI已经是Clay思考产品的重要部分，但公司里没人专门做AI。此后，业务增长了约10倍，团队扩大到约600人。9月，Clay以71亿美元估值完成了1.15亿美元融资。</p>
+<p>按Jeff的粗略估算，如果用TypeSafe的Jev这样的分类器，把Clay数据库中全部4000万家公司与你的理想客户画像进行比对，成本大约为1500美元。大约一年来，模型在Clay的线索资格评估中一直表现优异。Jeff认为，将前沿模型用于编排和深度研究更有价值。我们还聊了为什么客户讨厌选模型、Clay计划如何替他们选，以及为什么团队仍然用基于BullMQ自建的系统运行智能体，而没有用Temporal或LangGraph。</p>
+<p>Jeff讲述了OpenAI在Clay的ChatGPT应用发布前两天取消发布时发生了什么。我们谈到了为什么客户一开始讨厌Workflows、智能体如何逐渐构建了大多数工作流，以及后训练何时能见效。我们还聊了为什么智能体仍然无法调试其他智能体，尽管Clay的智能体可以在一分钟左右统计出它的YC客户数量。</p>
+<p>Sculptor最初是一个工具循环，现在是一个编码智能体。</p>
+<p>当Jeff接任AI负责人时，只有一名工程师在做Clay所有的智能体工作。这名工程师很快离职去创办了自己的公司。Claude Code改变了Jeff想构建的东西。他的第一个发布产品是Sculptor，于2025年9月基于Sonnet 3.5时代的模型推出。它在一个循环中运行一组工具，团队花了大量时间调优系统提示词。它擅长添加列，但在预订十场合格会议方面表现糟糕。</p>
+<p>评估并没有发现多少问题。Clay用LLM来判断Sculptor调用了哪些工具。这忽略了人们实际使用它的方式，比如要求它分析一个表格，或者给它一个包含数百万行的企业表格。</p>
+<p>Jeff总结了三条经验。编码智能体非常擅长Bash和Python。Sculptor的工具太有限，仅靠串联它们做不了太多事。而且智能体看不到CRM数据或营销活动结果。于是Clay在Pi框架上把Sculptor重建为编码智能体。它在云沙箱中运行Clay CLI。一个名为Audiences的新数据层可以跨CRM和Gong匹配记录，这样智能体就能同时看到它们。</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Open video on YouTube ↗</p>
+<p>Clay wants you to get about the same results whether you use its own agent or point Claude Code at Clay. Usage is already split close to 50/50 between Clay’s agent and outside harnesses. In this episode, we chat with Jeff Barg, Head of AI at Clay, about what it takes to build go-to-market infrastructure that any agent can use.</p>
+<p>Jeff joined Clay when it acquired Avenue, the ops alerting startup he cofounded. At the time, Clay had about 50 people, and Avenue had five. AI was already a big part of how Clay thought about its product, but nobody there worked on AI. Since then, the business has grown roughly 10x, and the team is up to around 600 people. In September, Clay raised $115 million at a $7.1 billion valuation.</p>
+<p>By Jeff’s napkin math, it would cost about $1,500 to check all 40 million companies in Clay’s database against your ideal customer profile with a classifier like TypeSafe’s Jev. Models have been acing Clay’s lead-qualification evals for about a year now. Jeff sees more value in using frontier models for orchestration and deep research. We also talk about why customers hate picking a model, how Clay plans to pick one for them, and why the team still runs its agents on a system it built with BullMQ, without Temporal or LangGraph.</p>
+<p>Jeff tells us what happened when OpenAI called off Clay’s ChatGPT apps launch with two days to go. We get into why customers hated Workflows at first, how agents came to build most workflows, and when post-training pays off. We also talk about why agents still can’t debug other agents, even as Clay’s agent can count its YC customers in about a minute.</p>
+<p>Sculptor started as a tool loop. Now it&#x27;s a coding agent.</p>
+<p>When Jeff took over as Head of AI, one engineer was doing all of Clay’s agent work. He soon left to start his own company. Claude Code changed what Jeff wanted to build. His first launch was Sculptor, which shipped in September 2025 on models from the Sonnet 3.5 era. It ran a set of tools in a loop with a system prompt the team had spent a lot of time tuning. It was great at adding columns but terrible at booking ten qualified meetings.</p>
+<p>The evals didn’t catch much. Clay used an LLM to judge which tools Sculptor called. That missed things people actually did with it, like asking it to analyze a table or giving it an enterprise table with millions of rows.</p>
+<p>Jeff took away three lessons. Coding agents are really good at Bash and Python. Sculptor’s tools were too limited to do much</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] AI 正在抹去个人风格：从 YouTube 到邮件，处处是 Claude 的影子</title>
+    <link>https://simonwillison.net/2026/Nov/26/jack-despain-zhou/</link>
+    <guid isPermaLink="false">overseas-fcbb41954277a0a1</guid>
+    <pubDate>Thu, 26 Nov 2026 23:09:31 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/26/jack-despain-zhou/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>AI 已经带来的诸多影响之一，就是极大的“去个人化”。我打开一个 YouTube 视频，听到的是 Claude 的声音；我坐在会议现场，听到的也是 Claude 的声音；我打开邮箱，发现那些来自看似严肃的机构、有着看似严肃头衔的看似严肃的人发来的推介和文章——他们想发表东西，把自己的名声和我的名声绑在一起——而我看到的，还是 Claude。</p>
+<p>—— Jack Despain Zhou，《Spitting in the Face of Glaude》</p>
+<p>标签：ai-misuse, claude, generative-ai, ai, llms</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude. I sit in a conference presentation, and I hear Claude. I open my email inbox, and I find pitches and articles from ostensibly serious people with ostensibly serious credentials attached to ostensibly serious institutions who want to publish things attached to their reputations and mine, and I see Claude.</p>
+<p>&amp;mdash; Jack Despain Zhou, Spitting in the Face of Glaude</p>
+<p>Tags: ai-misuse, claude, generative-ai, ai, llms</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Simon Willison] sqlite3_rsync：SQLite 数据库远程复制工具</title>
     <link>https://simonwillison.net/2026/Nov/26/sqlite3-rsync/</link>
     <guid isPermaLink="false">overseas-7de39f044da3622e</guid>
@@ -30,18 +71,30 @@ This additional SQLite tool has been around for a while now - it was added as &q
 <p>Tags: backups, sqlite</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Simon Willison] 斯科特·阿伦森：AI 将揭开数学真理的新大陆</title>
-    <link>https://simonwillison.net/2026/Nov/25/scott-aaronson/</link>
-    <guid isPermaLink="false">overseas-2ada6bc927bcede3</guid>
-    <pubDate>Thu, 26 Nov 2026 07:26:32 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/25/scott-aaronson/">查看网页原文 ↗</a></p>
+    <title>[Simon Willison] 纽约时报警告摄影师：别因AI功能升级Photoshop</title>
+    <link>https://simonwillison.net/2026/Nov/26/hn-50651685/</link>
+    <guid isPermaLink="false">overseas-e7f1c23cf7eb3725</guid>
+    <pubDate>Thu, 26 Nov 2026 13:08:46 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/26/hn-50651685/">查看网页原文 ↗</a></p>
 <h2>中文精翻</h2>
-<p>现在已经很明显，我们得到的不会是针对这个或那个复杂性问题的零散答案，而是一整块全新的数学真理大陆——一片我们此前只能透过浓雾隐约瞥见的大陆。想象一下列文虎克第一次把显微镜对准池水，或者伽利略第一次把望远镜对准星空。这或许能让你大致体会到，我们如今对复杂性理论宇宙、以及其外整个数学真理宇宙的解析清晰度，已经提升了多少。</p>
-<p>——斯科特·阿伦森</p>
+<p>我对《纽约时报》警告摄影师不要因AI功能而升级Photoshop一事的评论——来自Hacker News。</p>
+<p>今年早些时候，我请了一位《纽约时报》的摄影师到我家给我拍照（说来奇怪，是为了一个关于Moltbook的报道）。期间我问，如果我衬衫上有个污渍，他们能不能修一下，对方说绝对不行——他们呈现照片的原始样貌，只做裁剪和调色，除此之外不做任何编辑。</p>
+<p>他确实花了不少时间，努力为想要的镜头找到最佳的自然光线。</p>
+<p>https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... 顶部的那张照片，拍的是我放在花园里的笔记本电脑，当时为了找到屏幕反光不太强的最佳位置，可是费了一番功夫。你也能看到我的屏幕有多脏！</p>
+<p>报纸的摄影是新闻摄影，他们对此非常认真。</p>
+<p>（幸好我衬衫上没有明显的污渍。）</p>
+<p>标签：摄影、纽约时报、Hacker News、新闻业</p>
 <hr/><h2>英文原文（Original）</h2>
-<blockquote><p>It’s now obvious that we’ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that we’d previously only glimpsed through fog. Picture van Leeuwenhoek first training a microscope on pondwater, or Galileo first training his telescope on the stars. That might give you some idea of how our resolution into the complexity-theoretic universe, and the whole universe of mathematical truth beyond it, has now improved.</p>
-<p>&amp;mdash; Scott Aaronson</p>
-<p>Tags: mathematics, llms, ai, generative-ai</p></blockquote>]]></description>
+<blockquote><p>My comment on The New York Times warns photographers not to update Photoshop over AI features &amp;mdash; Hacker News.
+I had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.</p>
+<p>He did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted.</p>
+<p>The photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... is my laptop, taken in my garden, after hunting around for the best spot that didn&#x27;t have too much glare on the screen. You can see how dirty my screen is, too!</p>
+<p>Photography for a newspaper is photo journalism, and they take it seriously.</p>
+<p>(Thankfully I did not have a visible stain on my shirt.)
+    
+    
+        
+Tags: photography, new-york-times, hacker-news, journalism</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Latent Space] 革命与复兴：Thariq Shihipar 谈 AI 如何让软件既便宜又精致</title>
@@ -135,80 +188,6 @@ Chapters
 <p>Mechanism: The result reportedly comes through an explicit superlinear circuit lower bound (@wjmzbmr1).</p>
 <p>Implications: Bubeck notes that a prior Lee et al. result implies LPs solvable in n^{9/4}. He also says LPs can now be solved in strongly polynomial time, a Smale problem (follow-up).</p>
 <p>Expert reaction: Omri Weinstein calls it &quot;trul</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] datasette-charts 0.3a0 发布：新增图表标注功能</title>
-    <link>https://simonwillison.net/2026/Nov/25/datasette-charts/</link>
-    <guid isPermaLink="false">overseas-e0577f40419a647d</guid>
-    <pubDate>Thu, 26 Nov 2026 02:16:50 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/25/datasette-charts/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>datasette-charts 0.3a0 版本发布</p>
-<p>我给 datasette-charts 加上了图表标注功能！</p>
-<p>现在你可以先渲染出一张图表，然后用线条、阴影区域、文字标签，或者这三者的组合来给它做标注。</p>
-<p>带标注的图表长这样：</p>
-<p>这张图在 Datasette Lite 里也能看到，你可以在图表构建器界面里调整标注：</p>
-<p>如果你还安装了 Datasette Agent，这个智能体就能帮你生成带标注的图表。下面是我在 agent.datasette.io 演示站点上，用这个提示词得到的结果：</p>
-<p>展示一张图表，对比 Simon 打上 LLM 标签的内容和打上 Datasette 标签的内容，并加上标注</p>
-<p>标签：datasette、可视化、datasette-charts</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Release: datasette-charts 0.3a0
-        
-I added chart annotations to datasette-charts!</p>
-<p>You can now render a chart and then annotate it with lines, shaded areas, labels, or a combination of the three.</p>
-<p>A chart with annotations looks like this:</p>
-<p>Here&#x27;s that same chart in Datasette Lite, where you can tweak the annotations using the chart builder UI:</p>
-<p>If you also install Datasette Agent the agent can build annotated charts for you. Here&#x27;s what I got on the agent.datasette.io demo for this prompt:</p>
-<p>Show a chart comparing Simon&#x27;s tagged content about LLMs with his tagged content about Datasette, with annotations</p>
-<p>Tags: datasette, visualization, datasette-charts</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] Gemini 4 Neon 标志着 GDM 作为前沿实验室的全面回归</title>
-    <link>https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/</link>
-    <guid isPermaLink="false">overseas-bee434900b5ec6c4</guid>
-    <pubDate>Wed, 25 Nov 2026 12:29:07 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>三个月前，在 Demis、Dean 等人离职后不久，加上 Gemini 3 模型进展令人失望，人们曾公开表示不再把 Google DeepMind 视为前沿实验室。而今天，道歉声四起，Neon 成了全城热议的话题！</p>
-<p>尽管我们把 Gemini 4 Argon（已停）、Carbon 和 Neon 作为头条故事（Hydrogen 差点入选），我们再次启用罕见的双头条选择，以突出 Neon 采用率异常强劲的突破趋势：</p>
-<p>如果这看起来像一场有组织的炒作活动，那很可能并非如此，主要是因为我们推荐的名字是买不到的，尤其是在临近结尾的时候。</p>
-<p>2026年11月23日至24日 AI 新闻。我们检查了12个 subreddit、544 个 Twitter 账号，没有进一步查看 Discord。AINews 网站允许你搜索所有过往期刊。提醒一下，AINews 现在是 Latent Space 的一个板块。你可以选择订阅或退订邮件频率！</p>
-<p>AI Twitter 回顾</p>
-<p>前沿模型作为研究引擎：VP ≠ VNP、蛋白质设计与948个内核漏洞</p>
-<p>VP ≠ VNP，由两个实验室发布：据称，Anthropic 的一个 GitHub 仓库包含一个由内部 Claude 研究模型给出的 VP ≠ VNP 证明。这是 P vs NP 的代数类比，由 Valiant 在1979年提出，意味着像永久式这样的多项式在每个域上都缺乏小电路（@kimmonismus，仓库链接）。</p>
-<p>OpenAI 的反击发布：OpenAI 随后发布了自己的证明，并称该证明是“于2026年11月6日获得的”。两家实验室均未指明模型或发布公告（@AndrewCurran_）。</p>
-<p>范围：该结果并不意味着 P ≠ NP，后者仍需要一般的布尔电路下界（@ZhihuFrontier）。</p>
-<p>猜测：Curran 认为两家实验室都握有未发布的结果，并重复了未经证实的密码学突破传言。请将此视为观点。</p>
-<p>黎曼证明澄清：Levent Alpöge 表示“25万+页”的说法是个玩笑。他只发布了 Lean 代码，因为他无法提供可读的书面报告，并称其“显然满是垃圾，但能编译”（@kimmonismus，@simonw）。</p>
-<p>lineage 声明：知乎上的一篇分析将 Alpöge 的关键方法追溯到 OpenAI 的一个简短证明，该证明排除了 Landau–Siegel 零点。这是归因推断（@ZhihuFrontier）。</p>
-<p>GPT-6 蛋白质设计，湿实验验证：OpenAI 发布了一篇预印本，显示 GPT-6 模型通过推理和代码设计新的蛋白质形状和序列，无需专门的生物模型（@OpenAI）。</p>
-<p>结果：107个重新测序的蛋白质中有14个显示出结合。182个重新设计的小抗体中有128个和272个抗体片段中有179个保留了结合（详情）。</p>
-<p>成本警告：在之前的一项 DNA 任务中，GPT-6.1 Sol</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>Three months ago, shortly after the Demis/Dean/etc departures, and with disappointing progress on Gemini 3 models, people had publicly given up on Google DeepMind as a frontier lab. Today, apologies are being issued, and Neon is the talk of the town!</p>
-<p>View post on X ↗</p>
-<p>Despite giving Gemini 4 Argon (RIP), Carbon and Neon the title story (with Hydrogen a near miss), we are exercising yet another rare double-feature choice to highlight the unusually strong breakout trend in Neon’s adoption:</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>View post on X ↗</p>
-<p>If this seems like a coordinated hype campaign, it very probably isn’t, mostly because the names we feature can’t be bought, especially coming up to the end.</p>
-<p>View post on X ↗</p>
-<p>AI News for 11/23/2026-11/24/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews&#x27; website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!</p>
-<p>AI Twitter Recap</p>
-<p>Frontier Models as Research Engines: VP ≠ VNP, Protein Design and 948 Kernel Bugs</p>
-<p>VP ≠ VNP, posted by two labs: An Anthropic GitHub repo reportedly contains a proof by an internal Claude research model that VP ≠ VNP. This is the algebraic analogue of P vs NP, posed by Valiant in 1979, and implies that polynomials such as the permanent lack small circuits over every field (@kimmonismus, repo pointer).</p>
-<p>OpenAI&#x27;s counter-release: OpenAI then posted its own proof and says it was &quot;obtained on November 6, 2026.&quot; Neither lab named a model or published an announcement (@AndrewCurran_).</p>
-<p>Scope: The result does not imply P ≠ NP, which still requires general Boolean circuit lower bounds (@ZhihuFrontier).</p>
-<p>Speculation: Curran argues that both labs are sitting on unreleased results and repeats unconfirmed rumors of cryptography breakthroughs. Treat this as opinion.</p>
-<p>Riemann proof clarifications: Levent Alpöge says the &quot;250,000+ pages&quot; claim was a joke. He released only the Lean code because he could not produce a readable writeup, and called it &quot;full of garbage obviously, but compiles&quot; (@kimmonismus, @simonw).</p>
-<p>Lineage claim: A Zhihu analysis traces Alpöge&#x27;s key method to a short OpenAI proof excluding Landau–Siegel zeros. This is an attributed inference (@ZhihuFrontier).</p>
-<p>GPT-6 protein design, wet-lab validated: OpenAI released a preprint showing GPT-6 models designing new protei</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 承诺恐惧症（应用版）</title>

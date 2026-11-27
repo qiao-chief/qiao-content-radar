@@ -710,5 +710,29 @@
   "x:https://x.com/rauchg/status/2125685667833520237": {
     "zh_title": "工作流再提速10倍：延迟大降，无需改代码",
     "zh_body": "我们又把工作流提速了10倍。不过说实话，工作流本来就已经够快了！\n\n对于harness的持久性（@eve、libfx、pi、opencode……）来说，这可是件大事，因为它把轮次之间的延迟压到了极低。\n\n升级到 𝚠𝚘𝚛𝚔𝚏𝚕𝚘𝚠@𝚕𝚊𝚝𝚎𝚜𝚝 即可，不用改任何代码。https://t.co/GmvGi7Ryh9"
+  },
+  "overseas:https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/": {
+    "zh_title": "Clay如何打造GTM智能体——AI负责人Jeff Barg访谈",
+    "zh_body": "Clay希望无论你使用它自家的智能体，还是把Claude Code指向Clay，都能得到大致相同的结果。目前Clay智能体与外部工具的使用量已经接近五五开。本期节目我们与Clay的AI负责人Jeff Barg聊了聊，构建任何智能体都能使用的GTM基础设施需要哪些条件。\n\nJeff是在Clay收购Avenue时加入的，Avenue是他联合创办的运营告警初创公司。当时Clay大约有50人，Avenue有5人。AI已经是Clay思考产品的重要部分，但公司里没人专门做AI。此后，业务增长了约10倍，团队扩大到约600人。9月，Clay以71亿美元估值完成了1.15亿美元融资。\n\n按Jeff的粗略估算，如果用TypeSafe的Jev这样的分类器，把Clay数据库中全部4000万家公司与你的理想客户画像进行比对，成本大约为1500美元。大约一年来，模型在Clay的线索资格评估中一直表现优异。Jeff认为，将前沿模型用于编排和深度研究更有价值。我们还聊了为什么客户讨厌选模型、Clay计划如何替他们选，以及为什么团队仍然用基于BullMQ自建的系统运行智能体，而没有用Temporal或LangGraph。\n\nJeff讲述了OpenAI在Clay的ChatGPT应用发布前两天取消发布时发生了什么。我们谈到了为什么客户一开始讨厌Workflows、智能体如何逐渐构建了大多数工作流，以及后训练何时能见效。我们还聊了为什么智能体仍然无法调试其他智能体，尽管Clay的智能体可以在一分钟左右统计出它的YC客户数量。\n\nSculptor最初是一个工具循环，现在是一个编码智能体。\n\n当Jeff接任AI负责人时，只有一名工程师在做Clay所有的智能体工作。这名工程师很快离职去创办了自己的公司。Claude Code改变了Jeff想构建的东西。他的第一个发布产品是Sculptor，于2025年9月基于Sonnet 3.5时代的模型推出。它在一个循环中运行一组工具，团队花了大量时间调优系统提示词。它擅长添加列，但在预订十场合格会议方面表现糟糕。\n\n评估并没有发现多少问题。Clay用LLM来判断Sculptor调用了哪些工具。这忽略了人们实际使用它的方式，比如要求它分析一个表格，或者给它一个包含数百万行的企业表格。\n\nJeff总结了三条经验。编码智能体非常擅长Bash和Python。Sculptor的工具太有限，仅靠串联它们做不了太多事。而且智能体看不到CRM数据或营销活动结果。于是Clay在Pi框架上把Sculptor重建为编码智能体。它在云沙箱中运行Clay CLI。一个名为Audiences的新数据层可以跨CRM和Gong匹配记录，这样智能体就能同时看到它们。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/26/jack-despain-zhou/": {
+    "zh_title": "AI 正在抹去个人风格：从 YouTube 到邮件，处处是 Claude 的影子",
+    "zh_body": "AI 已经带来的诸多影响之一，就是极大的“去个人化”。我打开一个 YouTube 视频，听到的是 Claude 的声音；我坐在会议现场，听到的也是 Claude 的声音；我打开邮箱，发现那些来自看似严肃的机构、有着看似严肃头衔的看似严肃的人发来的推介和文章——他们想发表东西，把自己的名声和我的名声绑在一起——而我看到的，还是 Claude。\n\n—— Jack Despain Zhou，《Spitting in the Face of Glaude》\n\n\n标签：ai-misuse, claude, generative-ai, ai, llms"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/26/hn-50651685/": {
+    "zh_title": "纽约时报警告摄影师：别因AI功能升级Photoshop",
+    "zh_body": "我对《纽约时报》警告摄影师不要因AI功能而升级Photoshop一事的评论——来自Hacker News。\n\n今年早些时候，我请了一位《纽约时报》的摄影师到我家给我拍照（说来奇怪，是为了一个关于Moltbook的报道）。期间我问，如果我衬衫上有个污渍，他们能不能修一下，对方说绝对不行——他们呈现照片的原始样貌，只做裁剪和调色，除此之外不做任何编辑。\n\n他确实花了不少时间，努力为想要的镜头找到最佳的自然光线。\n\nhttps://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... 顶部的那张照片，拍的是我放在花园里的笔记本电脑，当时为了找到屏幕反光不太强的最佳位置，可是费了一番功夫。你也能看到我的屏幕有多脏！\n\n报纸的摄影是新闻摄影，他们对此非常认真。\n\n（幸好我衬衫上没有明显的污渍。）\n\n\n\n标签：摄影、纽约时报、Hacker News、新闻业"
+  },
+  "macro:https://www.project-syndicate.org/commentary/congress-can-and-must-reassert-its-authority-over-us-tariff-policy-and-war-by-josh-waldman-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "美国国会如何回应民众诉求",
+    "zh_body": "美国普通家庭正在为特朗普总统的关税政策和伊朗战争买单——通过更高的物价和借贷成本。国会完全有能力制止这一切：收回关税政策制定权和对军事行动的主导权，并要求对未来战争的开支进行公开核算。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/rise-of-oligarchy-fueling-global-backlash-youth-protests-by-jayati-ghosh-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "反抗寡头：亿万富翁的权力威胁与民众觉醒",
+    "zh_body": "如今亿万富翁掌握的惊人权力，对民主和地球都构成了威胁。令人鼓舞的是，世界各地的人们因生活负担不起、就业前景恶化而感到沮丧，正开始发现他们能够掌握多大的政治权力。"
+  },
+  "macro:https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html": {
+    "zh_title": "西班牙的巴勃罗·埃尔南德斯·德科斯将执掌欧洲央行",
+    "zh_body": "德科斯已赢得所需支持，将于明年接替克里斯蒂娜·拉加德，带领欧洲央行进入一个政治不确定、增长起伏不定的时期。"
   }
 }

@@ -6,6 +6,95 @@
   <description>8大海外AI博客深度文章（中文精翻+原文）</description>
   <language>zh-CN</language>
   <item>
+    <title>[Simon Willison] datasette-charts 0.4a0 发布：图表插件钩子更顺手</title>
+    <link>https://simonwillison.net/2026/Nov/27/datasette-charts/</link>
+    <guid isPermaLink="false">overseas-bedee2e9acb0a56a</guid>
+    <pubDate>Sat, 28 Nov 2026 07:57:17 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/27/datasette-charts/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>发布：datasette-charts 0.4a0</p>
+<p>新的 datasette-charts 插件自带一个插件钩子，允许其他插件定义新的图表类型，但我之前一直没真正拿它做过什么。我让 Claude Opus 5.5 写了个实验性插件，专门试试这个钩子，结果发现设计上有一堆别扭的地方。这个版本把这些都修了，以后再做额外的图表插件应该会顺手得多。</p>
+<p>我还给这个插件做了个网站，地址是 charts.datasette.io。新网站里有一份给插件作者的教程，还有一个画廊，展示所有核心图表和标注，每一个都能点开，跳到 Datasette Lite 上的交互式演示。</p>
+<p>标签：datasette-charts、datasette、可视化、datasette-lite</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-charts 0.4a0
+        
+The new datasette-charts plugin has its own plugin hook to allow other plugins to define new chart types, but I hadn&#x27;t actually used it for anything yet. I had Claude Opus 5.5 build an experimental plugins just to try out the hook and it came up with a bunch of friction points in the design. This release addresses those, which should make building additional chart plugins a whole lot more ergonomic.</p>
+<p>I&#x27;ve also added a website for the plugin, at charts.datasette.io. The new website includes a tutorial for plugin authors, and a gallery showing all of the core charts and annotations, each one linking to an interactive demo on Datasette Lite.</p>
+<p>Tags: datasette-charts, datasette, visualization, datasette-lite</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Latent Space] AI训练数据市场内幕：G2i创始人Gabe Greenberg访谈</title>
+    <link>https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/</link>
+    <guid isPermaLink="false">overseas-63dc8adfd39e08f2</guid>
+    <pubDate>Sat, 28 Nov 2026 06:19:18 +0800</pubDate>
+    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>一家前沿实验室可以花更高的价钱获得独家训练数据，或者以折扣价购买其他实验室也能买到的数据。在AI Engineer CODE大会上，G2i创始人Gabe Greenberg告诉swyx，实验室如何做出这一决定，小规模试点订单如何转变为更大的合作，以及何时适合在内部建立数据运营团队。</p>
+<p>我们还讨论了实验室在购买什么。一个好的训练任务应该刚好超出现有模型的能力范围。Gabe解释了资深工程师如何设计任务、选择起始数据，并构建一个能对结果进行评分的验证器。</p>
+<p>感谢G2i联合组织AI Engineer CODE 2026并赞助本期节目。欢迎参加2027年4月26-27日在迈阿密举办的AI Engineer Miami。</p>
+<p>节目笔记</p>
+<p>G2i与资深工程师一起构建AI训练数据和强化学习环境。</p>
+<p>ORC是Gabe团队内部使用的多智能体编码平台。</p>
+<p>录制于旧金山AI Engineer CODE大会。</p>
+<p>章节
+0:00 训练任务应该有多难？
+0:15 G2i向前沿实验室出售什么
+2:42 从人工标注到专家工程
+5:19 从招聘工程师到构建训练数据
+6:46 任务、种子数据和验证器
+8:04 G2i如何筛选工程师从事智能体工作
+12:24 前沿实验室如何购买训练数据
+16:24 市场有多大？
+18:45 共享数据、独家性和内部团队
+22:16 实验室如何预算和定价训练数据
+24:54 原始公司数据的市场
+27:44 需求下一步走向何方
+30:30 G2i和ORC</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too. At AI Engineer CODE, G2i founder Gabe Greenberg tells swyx how labs make that decision, how small pilot orders turn into bigger engagements, and when it makes sense to build a data operation in-house.    
+We also get into what the labs are buying. A good training task should sit just ahead of what a model can do today. Gabe explains how senior engineers design the task, choose the starting data, and build a verifier that can score the result.    
+Thanks to G2i for co-organizing AI Engineer CODE 2026 and sponsoring this episode. Join us April 26–27 at AI Engineer Miami 2027.    
+Show notes</p>
+<p>G2i builds AI training data and reinforcement learning environments with senior engineers.</p>
+<p>ORC is the multi-agent coding platform Gabe’s team uses internally.</p>
+<p>Recorded at AI Engineer CODE in San Francisco.
+    
+Chapters    
+0:00 How hard should training tasks be?
+0:15 What G2i sells to frontier labs
+2:42 From human labels to expert engineering
+5:19 From recruiting engineers to building training data
+6:46 Tasks, seed data, and verifiers
+8:04 How G2i screens engineers for agentic work
+12:24 How frontier labs buy training data
+16:24 How big is the market?
+18:45 Shared data, exclusivity, and in-house teams
+22:16 How labs budget and price training data
+24:54 The market for raw company data
+27:44 Where demand goes next
+30:30 G2i and ORC</p></blockquote>]]></description>
+  </item>
+  <item>
+    <title>[Simon Willison] datasette-mcp 0.4 版本发布</title>
+    <link>https://simonwillison.net/2026/Nov/27/datasette-mcp/</link>
+    <guid isPermaLink="false">overseas-cb9c58904170486c</guid>
+    <pubDate>Fri, 27 Nov 2026 08:26:17 +0800</pubDate>
+    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/27/datasette-mcp/">查看网页原文 ↗</a></p>
+<h2>中文精翻</h2>
+<p>发布：datasette-mcp 0.4</p>
+<p>修复了与 Datasette 1.0a44 的兼容性问题。</p>
+<p>标签：model-context-protocol、datasette</p>
+<hr/><h2>英文原文（Original）</h2>
+<blockquote><p>Release: datasette-mcp 0.4
+        
+Fixed for compatibility with Datasette 1.0a44.
+    
+    
+        
+Tags: model-context-protocol, datasette</p></blockquote>]]></description>
+  </item>
+  <item>
     <title>[Latent Space] Clay如何打造GTM智能体——AI负责人Jeff Barg访谈</title>
     <link>https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/</link>
     <guid isPermaLink="false">overseas-3063f177323d0010</guid>
@@ -45,56 +134,6 @@
 <blockquote><p>Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude. I sit in a conference presentation, and I hear Claude. I open my email inbox, and I find pitches and articles from ostensibly serious people with ostensibly serious credentials attached to ostensibly serious institutions who want to publish things attached to their reputations and mine, and I see Claude.</p>
 <p>&amp;mdash; Jack Despain Zhou, Spitting in the Face of Glaude</p>
 <p>Tags: ai-misuse, claude, generative-ai, ai, llms</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] sqlite3_rsync：SQLite 数据库远程复制工具</title>
-    <link>https://simonwillison.net/2026/Nov/26/sqlite3-rsync/</link>
-    <guid isPermaLink="false">overseas-7de39f044da3622e</guid>
-    <pubDate>Thu, 26 Nov 2026 14:08:25 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/26/sqlite3-rsync/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>sqlite3_rsync 这个 SQLite 附加工具已经出现一段时间了——它是在 2024 年 10 月作为“实验性”功能随 SQLite 3.47.0 加入的，并在 2025 年 5 月的 SQLite 3.50.0 中得到增强。直到今天我才理解它最吸引人的一个特性。</p>
-<p>通常，如果你想获取 SQLite 数据库的快照副本，你需要使用备份 API 或 VACUUM INTO。这两种方式都需要足够的磁盘空间来创建数据库的完整副本，所以如果你在小实例上，并且已经使用了超过一半的可用磁盘，那就完全没辙了。</p>
-<p>sqlite3_rsync 可以通过 SSH 连接将数据库快照复制到另一台机器，而无需先在本地创建完整副本！</p>
-<p>它也适合同步数据库的现有副本，而无需通过网络重新传输整个数据库。它的工作方式与常规 rsync 类似：</p>
-<p>该协议的核心思想是，副本端将页面或页面组的加密哈希发送到源端。源端返回不同的页面内容，或者如果多页哈希不匹配，则请求更细粒度的哈希。如果源端和副本端开始时差异巨大，由于交换哈希的开销，总网络带宽可能超过整个数据库的大小，但超出的带宽不大——最多几个百分点。</p>
-<p>更新：哈哈！原来我在 2024 年 10 月该工具首次发布时就写过 sqlite_rsync 的这个应用。</p>
-<p>标签：备份，sqlite</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>sqlite3_rsync: Database Remote-Copy Tool For SQLite
-This additional SQLite tool has been around for a while now - it was added as &quot;experimental&quot; in SQLite 3.47.0 in October 2024 and enhanced in SQLite 3.50.0 in May 2025. It was only today that I understood one of its most attractive characteristics.</p>
-<p>Normally, if you want to grab a snapshot copy of a SQLite database, you need to use either the backup API or VACUUM INTO. In both cases you need enough disk space to create a duplicate copy of your database, so if you&#x27;re on a small instance and you already use more than half of the available disk you are plain out of luck.</p>
-<p>sqlite3_rsync can copy a snapshot of your database over an SSH connection to another machine, without first needing to create a full local copy!</p>
-<p>It&#x27;s also good for synchronizing an existing copy of a database without re-transmitting the entire thing over the network. It works in a similar way to regular rsync:</p>
-<p>The core idea behind the protocol is that the replica sends cryptographic hashes for pages or groups of pages over to the origin side. The origin sends back page content that differs, or requests finer-grain hashes if a multi-page hash does not match. If the origin and replica start out being vastly different, the total network bandwidth can exceed the size of the entire database, due to the overhead of exchanging hashes, but the excess bandwidth is not great - a few percent at most.</p>
-<p>Update: Hah! Turns out I wrote about this application of sqlite_rsync back in October 2024 when the tool was first released.</p>
-<p>Tags: backups, sqlite</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Simon Willison] 纽约时报警告摄影师：别因AI功能升级Photoshop</title>
-    <link>https://simonwillison.net/2026/Nov/26/hn-50651685/</link>
-    <guid isPermaLink="false">overseas-e7f1c23cf7eb3725</guid>
-    <pubDate>Thu, 26 Nov 2026 13:08:46 +0800</pubDate>
-    <description><![CDATA[<p><code>Simon Willison</code> · <a href="https://simonwillison.net/2026/Nov/26/hn-50651685/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>我对《纽约时报》警告摄影师不要因AI功能而升级Photoshop一事的评论——来自Hacker News。</p>
-<p>今年早些时候，我请了一位《纽约时报》的摄影师到我家给我拍照（说来奇怪，是为了一个关于Moltbook的报道）。期间我问，如果我衬衫上有个污渍，他们能不能修一下，对方说绝对不行——他们呈现照片的原始样貌，只做裁剪和调色，除此之外不做任何编辑。</p>
-<p>他确实花了不少时间，努力为想要的镜头找到最佳的自然光线。</p>
-<p>https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... 顶部的那张照片，拍的是我放在花园里的笔记本电脑，当时为了找到屏幕反光不太强的最佳位置，可是费了一番功夫。你也能看到我的屏幕有多脏！</p>
-<p>报纸的摄影是新闻摄影，他们对此非常认真。</p>
-<p>（幸好我衬衫上没有明显的污渍。）</p>
-<p>标签：摄影、纽约时报、Hacker News、新闻业</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>My comment on The New York Times warns photographers not to update Photoshop over AI features &amp;mdash; Hacker News.
-I had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.</p>
-<p>He did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted.</p>
-<p>The photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... is my laptop, taken in my garden, after hunting around for the best spot that didn&#x27;t have too much glare on the screen. You can see how dirty my screen is, too!</p>
-<p>Photography for a newspaper is photo journalism, and they take it seriously.</p>
-<p>(Thankfully I did not have a visible stain on my shirt.)
-    
-    
-        
-Tags: photography, new-york-times, hacker-news, journalism</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Latent Space] 革命与复兴：Thariq Shihipar 谈 AI 如何让软件既便宜又精致</title>
@@ -153,41 +192,6 @@ Chapters
 37:46 Adoption
 42:24 Autoresearch
 48:29 Work people can see</p></blockquote>]]></description>
-  </item>
-  <item>
-    <title>[Latent Space] 数学证明多到读不完：AI 研究进展速览</title>
-    <link>https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/</link>
-    <guid isPermaLink="false">overseas-24af4342e17d0d6d</guid>
-    <pubDate>Thu, 26 Nov 2026 06:23:41 +0800</pubDate>
-    <description><![CDATA[<p><code>Latent Space</code> · <a href="https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/">查看网页原文 ↗</a></p>
-<h2>中文精翻</h2>
-<p>Scott Aaronson 在晚餐时还在努力消化两个关于 VP ≠ VNP 的证明。甜点还没上，OpenAI 的一篇论文就声称方阵乘法的指数 ω 恰好是 9/4。吃甜点时，又一篇论文声称给出了有限傅里叶变换的匹配上界和下界。下界才是最大的新闻。今年十月，OpenAI 找到了 ω 的上界，最多不超过 9/4。找到下界等于上界，就意味着 ω 只有一个可能的值，这对大多数人来说是个令人震惊的结果。</p>
-<p>我们绘制了今年迄今为止 64 项精选的 AI 辅助研究进展。十一月占了 20 项，包括来自 Google Cogentic 的六篇预印本。这条曲线跟随公开的发布，包括仍在评审中的证明。我们把两个 VP ≠ VNP 证明算作一项，十月的更快矩阵乘法算法和十一月的匹配下界各算一项。</p>
-<p>这些重大发布凸显了论文数量可能掩盖了多少东西。OpenAI 的目录列出了 375 个成果家族中的 730 篇手稿，包括后续跟进和配套论证。其修订日志还记录了十月的三次撤稿，原因是一篇论文中的符号错误影响到了另外两篇。Yupan Liu 证明了量子交互证明只需两条消息就足够，这个结果本身就已经很了不起了。Aaronson 说 Liu 用了 AI，他自己不得不提醒自己这个结果真的发生了。</p>
-<p>另一条大新闻是，今天的嘉宾 Thariq Shihipar 宣布他从 Anthropic 跳槽到 OpenAI，这是继 Cat Wu 之后近期第二起备受关注的 Ant→OAI 跳槽。我们深入探讨了他的两种 AI 哲学，以及 /humans 在何处、如何增添品味。</p>
-<p>2026 年 11 月 25 日的 AI 新闻。我们检查了 12 个 subreddit、544 个 Twitter 账号，没有进一步检查 Discord。AINews 的网站可以搜索所有过往期刊。提醒一下，AINews 现在是 Latent Space 的一个栏目。你可以选择订阅或退订邮件频率！</p>
-<p>AI 推特回顾</p>
-<p>AI 生成的数学成果：矩阵乘法指数、因式分解与 Lean 证明</p>
-<p>矩阵乘法指数：OpenAI 的模型声称找到了一个下界，与其十月的上界匹配，使得 ω 恰好为 9/4。此前人们不知道任何非平凡的下界（@SebastienBubeck；代码库）。</p>
-<p>机制：据报道，这个结果来自一个显式的超线性电路下界（@wjmzbmr1）。</p>
-<p>影响：Bubeck 指出，此前 Lee 等人的一个结果意味着线性规划可以在 n^{9/4} 时间内求解。他还说，线性规划现在可以在强多项式时间内求解，这是一个 Smale 问题（后续跟进）。</p>
-<p>专家反应：Omri Weinstein 称如果正确的话，这“简直超现实”，因为大多数专家预期 ω = 2（@WeinsteinOmri）。</p>
-<p>OpenAI 批量发布：在一个声称的 VP ≠ VNP 证明之后一天，九篇带有 Lean 证明的新论文出炉（摘要）。</p>
-<p>其他声称：傅里叶变换的复杂度为 n√log n（@lreyzin）。</p>
-<p>整数乘法：也是 n√log n，在……下是紧的</p>
-<hr/><h2>英文原文（Original）</h2>
-<blockquote><p>AINews by Latent Space</p>
-<p>Scott Aaronson was still trying to digest two proofs of VP ≠ VNP at dinner. Before dessert, an OpenAI paper claimed that the square matrix multiplication exponent ω is exactly 9/4. During dessert, another paper claimed matching upper and lower bounds for the finite Fourier transform. The lower bound is the biggest news. In October, OpenAI found an upper bound for ω down to at most 9/4. Finding the lower bound = upper bound leaves only one possible value, which is a shocking result for most.</p>
-<p>We plotted 64 selected AI-assisted research advances so far this year. November accounts for 20, including six preprints from Google’s Cogentic. The curve follows public releases, including proofs still under review. We count the two VP ≠ VNP proofs once and give October’s faster matrix multiplication algorithm and November’s matching lower bound an entry each.</p>
-<p>The big releases underline how much a paper count can hide. OpenAI’s catalogue lists 730 manuscripts across 375 result families, including follow-ups and companion arguments. Its revision log also records three October withdrawals after a sign error in one paper affected two others. Yupan Liu showed that two messages suffice for quantum interactive proofs, a result that would have been a big deal on its own. Aaronson says Liu used AI and that he had to remind himself the result had even happened.</p>
-<p>In other big news, today’s guest Thariq Shihipar announced his big move from Anthropic to OpenAI, the second high profile Ant→OAI move in recent times after Cat Wu. We dive into his two philosophies of AI and how and where /humans add taste.</p>
-<p>AI News for 11/25/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews&#x27; website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!</p>
-<p>AI Twitter Recap</p>
-<p>AI-Generated Math Results: Matmul Exponent, Factoring and Lean Proofs</p>
-<p>Matrix multiplication exponent: OpenAI&#x27;s model claims a lower bound matching its October upper bound, making ω exactly 9/4. Previously no nontrivial lower bound was known (@SebastienBubeck; repo).</p>
-<p>Mechanism: The result reportedly comes through an explicit superlinear circuit lower bound (@wjmzbmr1).</p>
-<p>Implications: Bubeck notes that a prior Lee et al. result implies LPs solvable in n^{9/4}. He also says LPs can now be solved in strongly polynomial time, a Smale problem (follow-up).</p>
-<p>Expert reaction: Omri Weinstein calls it &quot;trul</p></blockquote>]]></description>
   </item>
   <item>
     <title>[Ben&#x27;s Bites] 承诺恐惧症（应用版）</title>

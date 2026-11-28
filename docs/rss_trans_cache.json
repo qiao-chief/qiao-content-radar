@@ -1,32 +1,4 @@
 {
-  "overseas:https://simonwillison.net/2026/Nov/20/ravi-vakil/": {
-    "zh_title": "拉维·瓦基尔谈马苏洛的广义黎曼猜想证明",
-    "zh_body": "亚历山德罗·马苏洛提出了一个广义黎曼猜想的证明，布莱恩·康拉德已经仔细研究了几个月，给出了大量反馈，目前正在被采纳，而且到目前为止看起来不错。这完全是人类的工作，没有用到人工智能。原本的希望是把亚历山德罗请到斯坦福待一年，打磨一下写作，然后在征求足够多的人的意见之后公布。现在看来，最好还是先把当前的草稿发出来。\n\n—— 拉维·瓦基尔，《匆忙的公告：亚历山德罗·马苏洛的广义黎曼猜想》\n\n标签：数学"
-  },
-  "overseas:https://stratechery.com/2026/down-in-dc/": {
-    "zh_title": "2026.47：华盛顿失意",
-    "zh_body": "安德鲁犯了个致命错误——对奇才队抱了太大希望；在Sharp Text节目里，他琢磨着这一切到底是怎么搞砸的。（图片：Todd Olszewski/Getty Images）\n\n欢迎回到本周的Stratechery！\n\n提醒一下：每周五我们都会发送这份Stratechery内容包概览，标亮的链接对所有人免费。另外，你完全可以自己控制我们发给你的内容。如果你不想收到This Week in Stratechery的邮件（没有播客），请在投递设置里取消勾选。\n\n说到这里，以下是本周我们最喜欢的几篇。\n\n讣告与例外主义。在黄仁勋令人震惊地离职几天后，本在周一的文章里写了一篇综合讣告，悼念可能正在终结的美国多个时代。文章梳理了让黄仁勋伟大的那些决策、让他成为靶子的那些策略、他的离去对科技生态其余部分的影响，以及美国政府对科技公司——尤其是AI公司——看法的转变，而黄仁勋始终没能适应这种转变。周一的文章既全面又动人。——安德鲁·夏普\n\n关于智能体的争论。Stratechery的常客、广告专家埃里克·索弗特在数字广告格局的看法上常常和本一致，所以本周的Stratechery访谈很有意思：本坚信智能体商务有巨大潜力，而埃里克过去一年一直在（正确地）戳穿各种被炒作的智能体商务故事和趋势。两人周四各自陈述了观点，访谈前后还聊了Muse打算怎么变现、市场为何误读了谷歌最近的财报，以及ChatGPT在广告业务上的进展。——AS\n\n本入手了一台Duo。在满是英伟达观点和不祥基础设施故障的一周里，我惊喜地发现本不仅买了一台iPhone Duo，还很喜欢它。周二Update结尾有他的评测，接着周二Dithering里他和约翰·格鲁伯的讨论也别错过。本周Sharp Tech结尾我们又绕回来（Duo回来？）把这一切聊了个遍，包括一些上手测试、和iPhone Air的对比，以及对iPhone Pro的各种吐槽。——AS\n\n本文由以下赞助商呈现\n\n随着AI模型不断进步，你可能会以为市场会向少数几家提供商集中。但用户数据讲的是另一个故事。\n\n在OpenRouter每月消费至少100美元的客户中，过去一年里使用中的AI模型家族数量中位数翻了一倍，从三个增加到六个。\n\n即便AI模型能力越来越强，企业用的模型却越来越多，而不是越来越少。这让"
-  },
-  "overseas:https://www.project-syndicate.org/commentary/ai-could-be-a-new-moneymaker-for-news-publishers-by-ryan-powell-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
-    "zh_title": "新闻业不该沦为AI的免费饲料",
-    "zh_body": "人工智能正在从根本上改变信息环境，新闻出版商面临一个危险：沦为大型科技公司的内容供应商，除此之外什么都不是。为了不落得这个下场，许多出版商正利用自己的档案库和专业积累来开发AI工具，让自己能按自己的规则运营和竞争。"
-  },
-  "overseas:https://simonwillison.net/2026/Nov/20/levent-alpoge/": {
-    "zh_title": "Levent Alpöge 称与 Claude 合作证明黎曼猜想",
-    "zh_body": "我相信，在与 Claude 的合作下，我发现了一个黎曼猜想的证明。事实上，这个方法很容易进一步推广，解决了所谓的广义黎曼猜想，而且我预计，假以时日，也能解决扩展黎曼猜想。Claude 和我还在没有假设的情况下形式化了论证。人们自然会觉得这是一个终点，对我来说是失去了一盏主要的指路明灯，但在进展过程中我所看到的一切让我如此惊叹，以至于我相信这是科学界迎来某种更伟大事物的曙光。[...]\n\n近几个月来，Claude 和我一起度过了愉快的时光，涉猎广泛，但这一次，Claude 在接近终点线时远远超过了我。不，Claude 在终点线附近飞翔、起舞、闪耀。\n\n—— Levent Alpöge, alpo.ge/remark.pdf\n\n标签：anthropic, claude, 生成式AI, 数学, AI, 大语言模型, levent-alpoge"
-  },
-  "overseas:https://www.project-syndicate.org/commentary/development-institutions-must-abandon-outdated-assumptions-about-africa-by-geci-karuri-sebina-and-stacey-leigh-joseph-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
-    "zh_title": "非洲经济治理：从现实出发，而非照搬旧路",
-    "zh_body": "非洲无法靠沿用那些当初制造出这些发展难题的知识、经济和创新体系，来克服自身的发展挑战。要设想并治理出新的前进道路，需要在思想上实现三次突破。"
-  },
-  "overseas:https://www.project-syndicate.org/commentary/global-climate-processes-emphasizing-implementation-not-a-moment-too-soon-by-andre-correa-do-lago-and-tulio-andrade-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
-    "zh_title": "让地球再次凉爽：气候多边主义的双轨新局",
-    "zh_body": "气候多边主义正在演变为一个双轨体系：一边是围绕共同承诺展开的高层谈判，另一边是气候解决方案在现实世界中的落地实施，而这两条轨道正变得越来越相互支撑。只有让这种良性循环充分运转起来，我们才有望守住全球升温不超过1.5ºC的目标。"
-  },
-  "overseas:https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/": {
-    "zh_title": "Sharp Tech视频首秀：黄仁勋不会回头，AI购物与iPhone双机时代",
-    "zh_body": "Sharp Tech首次推出视频版。你有三种方式收看：YouTube、Spotify，以及Stratechery本站。"
-  },
   "overseas:https://openai.com/index/combatting-adversarial-distillation": {
     "zh_title": "OpenAI 如何应对对抗性蒸馏：分层防御保护模型能力",
     "zh_body": "OpenAI 应对对抗性蒸馏（adversarial distillation）采用的是分层策略，把模型训练、安全防护、检测与执法结合起来，防止模型能力被提取。\n\n所谓对抗性蒸馏，是指有人试图通过大量调用模型输出，把模型的能力“蒸馏”到自己的模型里。OpenAI 的防御不是单点措施，而是一套组合拳：在训练阶段就考虑抗蒸馏能力，在部署时加上安全防护，同时持续检测可疑的提取行为，并在发现违规后采取执法行动。\n\n这套分层做法覆盖了从模型开发到实际使用的多个环节，目标是让能力提取变得更难、更容易被发现，也更有后果。"
@@ -798,5 +770,33 @@
   "macro:https://www.project-syndicate.org/onpoint/what-explains-ai-missing-productivity-boom-by-michael-spence-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
     "zh_title": "全球AI变革：格局仍在演变",
     "zh_body": "打造更强大AI模型的竞赛正愈演愈烈，但迄今为止，人们所期待的生产力激增却几乎没有出现。这一局面能否改变，取决于雇主多快采用AI，以及政府能否在鼓励使用AI的同时，妥善应对失业风险和公众反弹。"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/27/datasette-charts/": {
+    "zh_title": "datasette-charts 0.4a0 发布：图表插件钩子更顺手",
+    "zh_body": "发布：datasette-charts 0.4a0\n\n新的 datasette-charts 插件自带一个插件钩子，允许其他插件定义新的图表类型，但我之前一直没真正拿它做过什么。我让 Claude Opus 5.5 写了个实验性插件，专门试试这个钩子，结果发现设计上有一堆别扭的地方。这个版本把这些都修了，以后再做额外的图表插件应该会顺手得多。\n\n我还给这个插件做了个网站，地址是 charts.datasette.io。新网站里有一份给插件作者的教程，还有一个画廊，展示所有核心图表和标注，每一个都能点开，跳到 Datasette Lite 上的交互式演示。\n\n标签：datasette-charts、datasette、可视化、datasette-lite"
+  },
+  "overseas:https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/": {
+    "zh_title": "AI训练数据市场内幕：G2i创始人Gabe Greenberg访谈",
+    "zh_body": "一家前沿实验室可以花更高的价钱获得独家训练数据，或者以折扣价购买其他实验室也能买到的数据。在AI Engineer CODE大会上，G2i创始人Gabe Greenberg告诉swyx，实验室如何做出这一决定，小规模试点订单如何转变为更大的合作，以及何时适合在内部建立数据运营团队。\n\n我们还讨论了实验室在购买什么。一个好的训练任务应该刚好超出现有模型的能力范围。Gabe解释了资深工程师如何设计任务、选择起始数据，并构建一个能对结果进行评分的验证器。\n\n感谢G2i联合组织AI Engineer CODE 2026并赞助本期节目。欢迎参加2027年4月26-27日在迈阿密举办的AI Engineer Miami。\n\n节目笔记\n\nG2i与资深工程师一起构建AI训练数据和强化学习环境。\n\nORC是Gabe团队内部使用的多智能体编码平台。\n\n录制于旧金山AI Engineer CODE大会。\n\n章节\n0:00 训练任务应该有多难？\n0:15 G2i向前沿实验室出售什么\n2:42 从人工标注到专家工程\n5:19 从招聘工程师到构建训练数据\n6:46 任务、种子数据和验证器\n8:04 G2i如何筛选工程师从事智能体工作\n12:24 前沿实验室如何购买训练数据\n16:24 市场有多大？\n18:45 共享数据、独家性和内部团队\n22:16 实验室如何预算和定价训练数据\n24:54 原始公司数据的市场\n27:44 需求下一步走向何方\n30:30 G2i和ORC"
+  },
+  "overseas:https://simonwillison.net/2026/Nov/27/datasette-mcp/": {
+    "zh_title": "datasette-mcp 0.4 版本发布",
+    "zh_body": "发布：datasette-mcp 0.4\n\n修复了与 Datasette 1.0a44 的兼容性问题。\n\n标签：model-context-protocol、datasette"
+  },
+  "macro:https://www.project-syndicate.org/commentary/fixing-broken-food-system-requires-social-not-technological-innovation-by-andrea-borghini-et-al-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "重新想象食品创新：低科技的社会实践同样关键",
+    "zh_body": "围绕食品的一些最重要的创新，并不是高科技的科学突破，而是低科技的社会实践与社会关系，比如新的合作方式和责任分配方式。要修复我们已然失灵的食物体系，我们必须要求这些实践中最优秀的部分得到尊重和投入。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/gun-buybacks-can-reduce-nonlethal-firearm-injuries-mexico-city-by-aurora-a-ramirez-alvarez-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "枪支回购有效，但并非如我们所想",
+    "zh_body": "一些人认为，除非枪支回购能降低凶杀率，否则毫无意义。但针对墨西哥城枪支回购项目的新研究表明，这类措施能够切实减少非致命伤害——这类伤害比凶杀更为常见，且可能带来严重的心理及其他长期健康后果。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/disability-inclusion-rights-in-the-un-must-go-beyond-mainstreaming-by-alberto-vasquez-encalada-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "全球残障议程的未来走向",
+    "zh_body": "曾经有一个看似合理的假设：把残障人士纳入现有的多边体系，就能让他们从各项成果中受益。但如今，这个假设已经不成立了。要想取得更好的结果，就需要向残障运动学习，学会如何把多元、可及、关怀和参与放在议程的核心位置。"
+  },
+  "macro:https://www.project-syndicate.org/commentary/ai-mineral-rush-can-advance-just-equitable-transition-by-suneeta-kaimal-2026-11?utm_source=rss&utm_medium=feed&utm_campaign=main&utm_content=en": {
+    "zh_title": "AI矿产争夺战：绿色转型的公平之路还能走多远？",
+    "zh_body": "为了给AI基础设施备足铜、铝、锂、钴等关键矿产，一场全球抢矿大战正在上演。这股热潮有可能让绿色转型过程中好不容易推动起来的负责任采矿实践出现倒退。但换个角度看，它也可能成为一个契机，帮助矿产生产国走上可持续发展的道路。"
   }
 }

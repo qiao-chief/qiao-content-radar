@@ -152,40 +152,40 @@
 <blockquote><p>https://t.co/D30u3ko1NB https://t.co/CPVPked3GP</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Nan Yu] you met me at a very chinese t</title>
+    <title>[Nan Yu] 你遇见我时，正是我人生中很中国的时刻</title>
     <link>https://x.com/thenanyu/status/2126404412604334391</link>
     <guid isPermaLink="false">x-98e2415199975bc6</guid>
     <pubDate>Sat, 28 Nov 2026 03:54:53 +0800</pubDate>
     <description><![CDATA[<p><code>@thenanyu</code> · <a href="https://x.com/thenanyu/status/2126404412604334391">查看 X 原推文 ↗</a></p>
 <h2>中文翻译</h2>
-<p>you met me at a very chinese time in my life https://t.co/jIJdhzRmcQ</p>
+<p>你遇见我时，正是我人生中很中国的时刻 https://t.co/jIJdhzRmcQ</p>
 <hr/><h2>英文原推文</h2>
 <blockquote><p>you met me at a very chinese time in my life https://t.co/jIJdhzRmcQ</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Dan Shipper] if you like me have looked at </title>
+    <title>[Dan Shipper] AI能力指数级增长：实验室里靠谱，预测人类工作却荒谬</title>
     <link>https://x.com/danshipper/status/2126397711033438535</link>
     <guid isPermaLink="false">x-814b3a834d38d7dc</guid>
     <pubDate>Sat, 28 Nov 2026 03:28:15 +0800</pubDate>
     <description><![CDATA[<p><code>@danshipper</code> · <a href="https://x.com/danshipper/status/2126397711033438535">查看 X 原推文 ↗</a></p>
 <h2>中文翻译</h2>
-<p>if you like me have looked at the exponential increase in AI capabilities you see in graphs with awe, fear, and foreboding</p>
-<p>I wrote about why they’re an effective way to measure AI capabilities in a lab. And why they’re nonsense when used to predict the future of human work: https://t.co/DTnGiO0SZs</p>
+<p>如果你和我一样，看到那些图表里AI能力的指数级增长，心里会涌起敬畏、恐惧和不安。</p>
+<p>我写过一篇文章，讲为什么这些曲线在实验室里是衡量AI能力的有效方式，但一旦用来预测人类工作的未来，就纯属胡扯：https://t.co/DTnGiO0SZs</p>
 <hr/><h2>英文原推文</h2>
 <blockquote><p>if you like me have looked at the exponential increase in AI capabilities you see in graphs with awe, fear, and foreboding</p>
 <p>I wrote about why they’re an effective way to measure AI capabilities in a lab. And why they’re nonsense when used to predict the future of human work: https://t.co/DTnGiO0SZs</p></blockquote>]]></description>
   </item>
   <item>
-    <title>[Aaron Levie] This is the diffusion challeng</title>
+    <title>[Aaron Levie] AI扩散的困局与机会：为什么大多数人会停在第一层</title>
     <link>https://x.com/levie/status/2126389098227376238</link>
     <guid isPermaLink="false">x-7e388dc99994afc5</guid>
     <pubDate>Sat, 28 Nov 2026 02:54:02 +0800</pubDate>
     <description><![CDATA[<p><code>@levie</code> · <a href="https://x.com/levie/status/2126389098227376238">查看 X 原推文 ↗</a></p>
 <h2>中文翻译</h2>
-<p>This is the diffusion challenge and opportunity in a nutshell. Most people will probably get stuck with the use-cases that initially wowed them with AI, and have little incentive to move onto the next thing that will unlock another level of productivity.</p>
-<p>Even a large number of organizations can get stuck by being “satisfied” with AI gains, well before having full blown agents that can do any amount of work in the background or agent swarms that can take on complex, ambiguous problems.</p>
-<p>Much of this comes down to the technical complexity of implementing the architectures around this. Despite lots of effort to simplify the UXes, there’s still a lot of system work, data pipelines, MCPs, and security that needs to be worked through to get the most out of agents. But even when you’re done with that, you still need to redesign your workflow or process overall to get the full benefits from agents.</p>
-<p>This is why there’s so much opportunity to be an organization that figures this out early. It’s also why there’s going to be massive services and FDE opportunities right now as well, since most companies can’t do this on their own.</p>
+<p>这就是AI扩散的挑战与机会，一句话就能说清。大多数人很可能会卡在最初让他们惊艳的那几个AI用例上，没什么动力再去尝试下一个能解锁更高生产力水平的东西。</p>
+<p>甚至很多组织也会因为对AI带来的收益感到“满意”而停滞不前——远还没到拥有能在后台干任意量级工作的成熟智能体，或者能接手复杂、模糊问题的智能体集群那一步。</p>
+<p>这很大程度上归结于落地这套架构的技术复杂度。尽管各方花了很多力气去简化交互界面，但要真正把智能体的价值榨出来，仍然有大量系统工作、数据管道、MCP和安全问题需要打通。而且就算这些都做完了，你还得整体重新设计自己的工作流或流程，才能真正拿到智能体带来的全部好处。</p>
+<p>这就是为什么，能早点把这件事搞明白的组织，面前摆着巨大的机会。这也是为什么眼下会有大量服务和FDE（前置部署工程师）的机会——因为大多数公司靠自己根本做不了这件事。</p>
 <hr/><h2>英文原推文</h2>
 <blockquote><p>This is the diffusion challenge and opportunity in a nutshell. Most people will probably get stuck with the use-cases that initially wowed them with AI, and have little incentive to move onto the next thing that will unlock another level of productivity.</p>
 <p>Even a large number of organizations can get stuck by being “satisfied” with AI gains, well before having full blown agents that can do any amount of work in the background or agent swarms that can take on complex, ambiguous problems.</p>
